@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Trabajo caritativo de la Gran Logia Provincial de Murcia. Masones comprometidos con la comunidad murciana.">
+<title>Caridad | Gran Logia Provincial de Murcia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --oro: #C9A84C;
+    --oro-claro: #E8D5A3;
+    --azul-noche: #0D1B2A;
+    --azul-medio: #1A2F45;
+    --blanco: #F5F0E8;
+    --gris-suave: #B8B0A0;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: var(--azul-noche); color: var(--blanco); overflow-x: hidden; min-height: 100vh; }
+
+  .bg-pattern {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%), var(--azul-noche);
+  }
+  .bg-pattern::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px);
+  }
+
+  .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+  /* ── NAV ── */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 3rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    backdrop-filter: blur(10px);
+    background: rgba(13,27,42,0.7);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+  .nav-emblem { width: 44px; height: 44px; flex-shrink: 0; }
+  .nav-emblem svg { width: 100%; height: 100%; }
+  .nav-title { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.76rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--oro); }
+  .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
+  .nav-cta:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── CABECERA ── */
+  .page-header {
+    padding: 5rem 3rem 3.5rem; text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    animation: fadeUp 1s ease both;
+  }
+  .ornament { display: flex; align-items: center; gap: 1.2rem; justify-content: center; margin-bottom: 1.8rem; }
+  .ornament-line { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, var(--oro)); }
+  .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
+  .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
+  .page-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1rem; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 300; color: var(--blanco); margin-bottom: 1rem; }
+  .page-title em { font-style: italic; color: var(--oro-claro); }
+  .page-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.95; color: var(--gris-suave); max-width: 560px; margin: 0 auto; letter-spacing: 0.02em; }
+
+  /* ── CIFRAS ── */
+  .stats-bar {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    animation: fadeUp 0.8s ease 0.15s both;
+  }
+  .stat-item {
+    padding: 2.2rem 2rem; text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.12);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 2.8rem;
+    font-weight: 300; color: var(--oro); line-height: 1; margin-bottom: 0.4rem;
+  }
+  .stat-label { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.18em; color: var(--gris-suave); text-transform: uppercase; }
+
+  /* ── CONTENIDO ── */
+  .content { max-width: 920px; margin: 0 auto; padding: 5rem 3rem; width: 100%; }
+
+  /* ── INTRO ── */
+  .intro-block {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    margin-bottom: 5rem; animation: fadeUp 0.9s ease 0.2s both;
+  }
+  .intro-title {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 300; color: var(--blanco); line-height: 1.2; margin-bottom: 1.4rem;
+  }
+  .intro-title em { font-style: italic; color: var(--oro-claro); }
+  .intro-body { font-size: 0.86rem; font-weight: 300; line-height: 2; color: var(--gris-suave); }
+  .intro-body p + p { margin-top: 0.9rem; }
+  .intro-body strong { color: var(--blanco); font-weight: 400; }
+
+  .intro-quote {
+    border: 1px solid rgba(201,168,76,0.2);
+    background: rgba(26,47,69,0.3);
+    padding: 2rem 1.8rem; align-self: start;
+  }
+  .intro-quote-text {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+    font-style: italic; font-weight: 300; color: var(--oro-claro); line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .intro-quote-attr { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
+  .intro-quote-divider { height: 1px; background: rgba(201,168,76,0.2); margin: 1rem 0; }
+  .intro-quote-context { font-size: 0.78rem; font-weight: 300; color: var(--gris-suave); line-height: 1.7; }
+
+  /* ── SECCIÓN HEADER ── */
+  .section-header { display: flex; align-items: center; gap: 1.4rem; margin-bottom: 2.5rem; }
+  .section-line { flex: 1; height: 1px; background: rgba(201,168,76,0.2); }
+  .section-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; color: var(--oro); text-transform: uppercase; white-space: nowrap; }
+
+  /* ── ACCIONES ── */
+  .actions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 5rem; }
+
+  .action-card {
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(26,47,69,0.3);
+    padding: 2rem 1.8rem;
+    position: relative; overflow: hidden;
+    transition: border-color 0.3s, background 0.3s;
+    animation: fadeUp 0.8s ease both;
+  }
+  .action-card:nth-child(2) { animation-delay: 0.1s; }
+  .action-card:nth-child(3) { animation-delay: 0.2s; }
+  .action-card:nth-child(4) { animation-delay: 0.3s; }
+  .action-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 100%; height: 2px; background: var(--oro);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .action-card:hover { border-color: rgba(201,168,76,0.4); background: rgba(26,47,69,0.5); }
+  .action-card:hover::before { transform: scaleX(1); }
+
+  .action-icon { font-size: 1.4rem; margin-bottom: 1rem; opacity: 0.7; }
+  .action-title { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--blanco); text-transform: uppercase; margin-bottom: 0.8rem; }
+  .action-body { font-size: 0.82rem; font-weight: 300; color: var(--gris-suave); line-height: 1.8; }
+  .action-body strong { color: var(--blanco); font-weight: 400; }
+
+  /* ── CRONOLOGÍA ── */
+  .timeline { position: relative; margin-bottom: 5rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px; background: rgba(201,168,76,0.2);
+  }
+  .timeline-item {
+    padding-left: 2.5rem; padding-bottom: 2.5rem; position: relative;
+    animation: fadeUp 0.8s ease both;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item:nth-child(2) { animation-delay: 0.1s; }
+  .timeline-item:nth-child(3) { animation-delay: 0.2s; }
+  .timeline-dot {
+    position: absolute; left: -5px; top: 4px;
+    width: 11px; height: 11px; background: var(--oro);
+    transform: rotate(45deg);
+  }
+  .timeline-date { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .timeline-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: var(--blanco); margin-bottom: 0.6rem; }
+  .timeline-body { font-size: 0.83rem; font-weight: 300; color: var(--gris-suave); line-height: 1.85; }
+  .timeline-body strong { color: var(--blanco); font-weight: 400; }
+
+  /* ── CTA ── */
+  .cta-block {
+    border: 1px solid rgba(201,168,76,0.25);
+    background: rgba(26,47,69,0.35);
+    padding: 3rem 2.5rem; text-align: center;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--blanco); margin-bottom: 0.8rem; }
+  .cta-title em { font-style: italic; color: var(--oro-claro); }
+  .cta-text { font-size: 0.85rem; font-weight: 300; color: var(--gris-suave); line-height: 1.8; max-width: 480px; margin: 0 auto 1.8rem; }
+  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em;
+    padding: 0.9rem 2.2rem; background: var(--oro); color: var(--azul-noche);
+    text-decoration: none; text-transform: uppercase; transition: all 0.3s; font-weight: 600;
+  }
+  .btn-primary:hover { background: var(--oro-claro); transform: translateY(-2px); }
+  .btn-secondary {
+    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em;
+    padding: 0.9rem 2.2rem; border: 1px solid rgba(201,168,76,0.4); color: var(--blanco);
+    text-decoration: none; text-transform: uppercase; transition: all 0.3s;
+  }
+  .btn-secondary:hover { border-color: var(--oro); color: var(--oro); }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: auto; padding: 1.6rem 3rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    background: rgba(13,27,42,0.85);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-copy { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
+  .footer-gle { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
+  .footer-gle:hover { opacity: 1; }
+  .footer-social { display: flex; gap: 1.2rem; }
+  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .footer-social a:hover { color: var(--oro); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.4rem; }
+    .nav-links { display: none; }
+    .page-header { padding: 3.5rem 1.4rem 2.5rem; }
+    .stats-bar { grid-template-columns: 1fr; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.12); }
+    .stat-item:last-child { border-bottom: none; }
+    .content { padding: 3rem 1.4rem; }
+    .intro-block { grid-template-columns: 1fr; gap: 2rem; }
+    .actions-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.4rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<div class="page">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-emblem">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="22,3 41,35 3,35" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+          <polygon points="22,41 3,9 41,9" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="22" cy="22" r="3" fill="#C9A84C" opacity="0.85"/>
+        </svg>
+      </div>
+      <div class="nav-title">Gran Logia Provincial<br>de Murcia</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="logias.html">Logias</a></li>
+      <li><a href="masoneria.html">Sobre la Masonería</a></li>
+      <li><a href="caridad.html" class="active">Caridad</a></li>
+    </ul>
+    <a href="contacto.html" class="nav-cta">Contáctenos</a>
+  </nav>
+
+  <!-- CABECERA -->
+  <header class="page-header">
+    <div class="ornament">
+      <span class="ornament-line"></span>
+      <span class="ornament-symbol">✦</span>
+      <span class="ornament-line r"></span>
+    </div>
+    <p class="page-eyebrow">Gran Logia Provincial de Murcia</p>
+    <h1 class="page-title">Trabajo <em>Caritativo</em></h1>
+    <p class="page-desc">La caridad es el corazón de la masonería. Nuestros miembros contribuyen cada año con tiempo y recursos a mejorar la vida de quienes más lo necesitan en la Región de Murcia.</p>
+  </header>
+
+  <!-- CIFRAS -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <p class="stat-num">6</p>
+      <p class="stat-label">Logias activas en la provincia</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-num">145</p>
+      <p class="stat-label">Masones en Murcia</p>
+    </div>
+    <div class="stat-item">
+      <p class="stat-num">2.000 €</p>
+      <p class="stat-label">Donados en acciones recientes</p>
+    </div>
+  </div>
+
+  <!-- CONTENIDO -->
+  <div class="content">
+
+    <!-- INTRO -->
+    <div class="intro-block">
+      <div>
+        <h2 class="intro-title">Masones <em>ayudando a Murcia</em></h2>
+        <div class="intro-body">
+          <p>La caridad siempre ha sido una parte fundamental de la masonería. No como gesto ocasional, sino como obligación moral permanente: el compromiso de devolver a la comunidad parte de lo que la comunidad nos da.</p>
+          <p>Todas las logias de la provincia se implican activamente en su entorno local. La Gran Logia Provincial de Murcia coordina y promueve estas iniciativas, sumando el esfuerzo colectivo de sus <strong>145 masones</strong> repartidos en seis logias regulares.</p>
+          <p>En Murcia, casi <strong>30.000 personas</strong> dependen de los bancos de alimentos para cubrir sus necesidades básicas diarias — una cifra que no ha dejado de crecer. Ante esta realidad, la respuesta masónica es concreta, local y sostenida en el tiempo.</p>
+        </div>
+      </div>
+      <div class="intro-quote">
+        <p class="intro-quote-text">«La caridad está en el corazón mismo de la masonería.»</p>
+        <p class="intro-quote-attr">Gran Logia Provincial de Murcia</p>
+        <div class="intro-quote-divider"></div>
+        <p class="intro-quote-context">Entre marzo y julio de 2022, se distribuyeron 850.000 kilogramos de alimentos básicos en la Región de Murcia — un aumento de casi el 40% respecto al año anterior.</p>
+      </div>
+    </div>
+
+    <!-- ACCIONES -->
+    <div class="section-header">
+      <span class="section-label">Cómo actuamos</span>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="actions-grid">
+      <div class="action-card">
+        <div class="action-icon">◈</div>
+        <p class="action-title">Bancos de alimentos</p>
+        <p class="action-body">Las logias de la provincia colaboran directamente con los servicios sociales municipales para reforzar las reservas de alimentos de los bancos locales, especialmente en períodos de mayor demanda.</p>
+      </div>
+      <div class="action-card">
+        <div class="action-icon">✦</div>
+        <p class="action-title">Cenas benéficas</p>
+        <p class="action-body">La Cena de Gala Anual de la provincia incluye actividades solidarias — rifas y colectas — cuyos fondos se destinan íntegramente a asociaciones de la región seleccionadas por su impacto social.</p>
+      </div>
+      <div class="action-card">
+        <div class="action-icon">◇</div>
+        <p class="action-title">Apoyo a asociaciones</p>
+        <p class="action-body">La provincia apoya directamente a organizaciones como <strong>MABS Murcia</strong> y <strong>Proyecto Oblatas</strong>, que trabajan con colectivos vulnerables en nuestra región.</p>
+      </div>
+      <div class="action-card">
+        <div class="action-icon">⬡</div>
+        <p class="action-title">Iniciativa provincial</p>
+        <p class="action-body">El Gran Maestro Provincial coordina iniciativas de alcance provincial que suman el esfuerzo de todas las logias, multiplicando el impacto de cada acción individual.</p>
+      </div>
+    </div>
+
+    <!-- CRONOLOGÍA -->
+    <div class="section-header">
+      <span class="section-label">Acciones recientes</span>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-date">Marzo 2023</p>
+        <h3 class="timeline-title">Cena de Gala: 1.000 € para MABS Murcia y Proyecto Oblatas</h3>
+        <p class="timeline-body">En la Cena de Gala Anual de la provincia se recaudaron <strong>1.000 €</strong> mediante una rifa, distribuidos a partes iguales entre MABS Murcia y Proyecto Oblatas. El Gran Maestro Provincial, R.H. Terence Pierce, hizo entrega personal de los cheques a los representantes de ambas organizaciones.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-date">2022</p>
+        <h3 class="timeline-title">Luz de Murcia Nº 91: 1.000 € en alimentos a Los Alcázares</h3>
+        <p class="timeline-body">La logia Luz de Murcia donó productos alimentarios valorados en <strong>1.000 €</strong> a los servicios sociales de Los Alcázares. La entrega fue recibida por Javier Pacheco, responsable de Servicios Sociales del municipio, en presencia de miembros de la logia y del Gran Maestro Provincial.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <p class="timeline-date">Iniciativa permanente</p>
+        <h3 class="timeline-title">Apoyo continuo a los bancos de alimentos de la región</h3>
+        <p class="timeline-body">La provincia mantiene una colaboración activa y sostenida con los bancos de alimentos de la Región de Murcia, respondiendo a las necesidades de las casi <strong>30.000 personas</strong> que dependen de ellos en nuestra comunidad.</p>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <h3 class="cta-title">¿Quieres <em>contribuir</em>?</h3>
+      <p class="cta-text">Si compartes estos valores y te interesa saber cómo participar en nuestra labor caritativa o en la vida de la provincia, escríbenos. Toda ayuda es bienvenida.</p>
+      <div class="cta-actions">
+        <a href="contacto.html" class="btn-primary">Contactar con nosotros</a>
+        <a href="masoneria.html" class="btn-secondary">Conocer la masonería</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
+    <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Parte de la Gran Logia de España</a>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://instagram.com/glpmurcia" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://t.me/GLEGOE" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://twitter.com/glp_murcia" target="_blank" rel="noopener">X</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
