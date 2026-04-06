@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Noticias y eventos de la Gran Logia Provincial de Murcia.">
+<title>Noticias | Gran Logia Provincial de Murcia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --oro: #C9A84C;
+    --oro-claro: #E8D5A3;
+    --azul-noche: #0D1B2A;
+    --azul-medio: #1A2F45;
+    --blanco: #F5F0E8;
+    --gris-suave: #B8B0A0;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: var(--azul-noche); color: var(--blanco); overflow-x: hidden; min-height: 100vh; }
+
+  .bg-pattern {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%), var(--azul-noche);
+  }
+  .bg-pattern::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px);
+  }
+
+  .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+  /* ── NAV ── */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 3rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    backdrop-filter: blur(10px);
+    background: rgba(13,27,42,0.7);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+  .nav-emblem { width: 44px; height: 44px; flex-shrink: 0; }
+  .nav-emblem svg { width: 100%; height: 100%; }
+  .nav-title { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.76rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--oro); }
+  .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
+  .nav-cta:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── CABECERA ── */
+  .page-header {
+    padding: 5rem 3rem 3.5rem; text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    animation: fadeUp 1s ease both;
+  }
+  .ornament { display: flex; align-items: center; gap: 1.2rem; justify-content: center; margin-bottom: 1.8rem; }
+  .ornament-line { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, var(--oro)); }
+  .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
+  .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
+  .page-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1rem; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 300; color: var(--blanco); margin-bottom: 1rem; }
+  .page-title em { font-style: italic; color: var(--oro-claro); }
+  .page-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.95; color: var(--gris-suave); max-width: 520px; margin: 0 auto; letter-spacing: 0.02em; }
+
+  /* ── REDES SOCIALES ── */
+  .social-bar {
+    display: flex; align-items: center; justify-content: center;
+    gap: 1rem; padding: 1.6rem 3rem;
+    border-bottom: 1px solid rgba(201,168,76,0.12);
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease 0.1s both;
+  }
+  .social-label { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--gris-suave); text-transform: uppercase; }
+  .social-btn {
+    font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em;
+    padding: 0.45rem 1.1rem; border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gris-suave); text-decoration: none; text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .social-btn:hover { border-color: var(--oro); color: var(--oro); }
+  .social-btn.facebook:hover { border-color: #4267B2; color: #4267B2; }
+  .social-btn.instagram:hover { border-color: #E1306C; color: #E1306C; }
+
+  /* ── CONTENIDO ── */
+  .content { max-width: 860px; margin: 0 auto; padding: 4rem 3rem; width: 100%; }
+
+  /* ── SECCIÓN HEADER ── */
+  .section-header { display: flex; align-items: center; gap: 1.4rem; margin-bottom: 2.5rem; }
+  .section-line { flex: 1; height: 1px; background: rgba(201,168,76,0.2); }
+  .section-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; color: var(--oro); text-transform: uppercase; white-space: nowrap; }
+
+  /* ── NOTICIA DESTACADA ── */
+  .news-featured {
+    border: 1px solid rgba(201,168,76,0.3);
+    background: rgba(26,47,69,0.4);
+    padding: 2.4rem 2.2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+  .news-featured::before {
+    content: 'Destacado';
+    position: absolute; top: -1px; right: 2rem;
+    font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.18em;
+    padding: 0.25rem 0.8rem; background: var(--oro); color: var(--azul-noche);
+    text-transform: uppercase; font-weight: 600;
+  }
+  .news-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .news-date { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.18em; color: var(--oro); text-transform: uppercase; }
+  .news-tag {
+    font-size: 0.6rem; letter-spacing: 0.12em; padding: 0.2rem 0.7rem;
+    border: 1px solid rgba(201,168,76,0.25); color: var(--gris-suave);
+    text-transform: uppercase;
+  }
+  .news-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--blanco); margin-bottom: 0.9rem; line-height: 1.3; }
+  .news-body { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); }
+  .news-body p + p { margin-top: 0.8rem; }
+  .news-body strong { color: var(--blanco); font-weight: 400; }
+
+  /* ── NOTICIAS SECUNDARIAS ── */
+  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 2rem; }
+
+  .news-card {
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(26,47,69,0.3);
+    padding: 1.8rem 1.6rem;
+    transition: border-color 0.3s, background 0.3s;
+    animation: fadeUp 0.8s ease both;
+    position: relative; overflow: hidden;
+  }
+  .news-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--oro);
+    transition: width 0.4s ease;
+  }
+  .news-card:hover { border-color: rgba(201,168,76,0.35); background: rgba(26,47,69,0.5); }
+  .news-card:hover::after { width: 100%; }
+  .news-card:nth-child(2) { animation-delay: 0.1s; }
+
+  .news-card .news-title { font-size: 1.1rem; margin-bottom: 0.7rem; }
+  .news-card .news-body { font-size: 0.82rem; }
+
+  /* ── AVISO FACEBOOK ── */
+  .fb-notice {
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(26,47,69,0.2);
+    padding: 1.8rem 2rem;
+    display: flex; align-items: center; gap: 1.6rem;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+  .fb-notice-icon { font-size: 1.8rem; flex-shrink: 0; opacity: 0.6; }
+  .fb-notice-text { font-size: 0.84rem; font-weight: 300; color: var(--gris-suave); line-height: 1.75; }
+  .fb-notice-text strong { color: var(--blanco); font-weight: 400; }
+  .fb-notice-link {
+    display: inline-block; margin-top: 0.6rem;
+    font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em;
+    padding: 0.4rem 1rem; border: 1px solid rgba(201,168,76,0.3);
+    color: var(--oro); text-decoration: none; text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .fb-notice-link:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: auto; padding: 1.6rem 3rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    background: rgba(13,27,42,0.85);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-copy { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
+  .footer-gle { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
+  .footer-gle:hover { opacity: 1; }
+  .footer-social { display: flex; gap: 1.2rem; }
+  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .footer-social a:hover { color: var(--oro); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.4rem; }
+    .nav-links { display: none; }
+    .page-header { padding: 3.5rem 1.4rem 2.5rem; }
+    .content { padding: 3rem 1.4rem; }
+    .news-grid { grid-template-columns: 1fr; }
+    .fb-notice { flex-direction: column; gap: 1rem; }
+    footer { padding: 1.4rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<div class="page">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-emblem">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="22,3 41,35 3,35" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+          <polygon points="22,41 3,9 41,9" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="22" cy="22" r="3" fill="#C9A84C" opacity="0.85"/>
+        </svg>
+      </div>
+      <div class="nav-title">Gran Logia Provincial<br>de Murcia</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html" class="active">Noticias</a></li>
+      <li><a href="logias.html">Logias</a></li>
+      <li><a href="masoneria.html">Sobre la Masonería</a></li>
+      <li><a href="caridad.html">Caridad</a></li>
+    </ul>
+    <a href="contacto.html" class="nav-cta">Contáctenos</a>
+  </nav>
+
+  <!-- CABECERA -->
+  <header class="page-header">
+    <div class="ornament">
+      <span class="ornament-line"></span>
+      <span class="ornament-symbol">✦</span>
+      <span class="ornament-line r"></span>
+    </div>
+    <p class="page-eyebrow">Gran Logia Provincial de Murcia</p>
+    <h1 class="page-title">Noticias y <em>Eventos</em></h1>
+    <p class="page-desc">Mantente al día de la actividad de la provincia de Murcia — actos caritativos, eventos sociales y novedades de nuestras logias.</p>
+  </header>
+
+  <!-- REDES -->
+  <div class="social-bar">
+    <span class="social-label">Síguenos para estar al día</span>
+    <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener" class="social-btn facebook">Facebook</a>
+    <a href="https://instagram.com/glpmurcia" target="_blank" rel="noopener" class="social-btn instagram">Instagram</a>
+    <a href="https://t.me/GLEGOE" target="_blank" rel="noopener" class="social-btn">Telegram</a>
+    <a href="https://twitter.com/glp_murcia" target="_blank" rel="noopener" class="social-btn">X</a>
+  </div>
+
+  <!-- NOTICIAS -->
+  <div class="content">
+
+    <div class="section-header">
+      <span class="section-label">Últimas noticias</span>
+      <span class="section-line"></span>
+    </div>
+
+    <!-- NOTICIA DESTACADA -->
+    <div class="news-featured">
+      <div class="news-meta">
+        <span class="news-date">Marzo 2023</span>
+        <span class="news-tag">Caridad</span>
+      </div>
+      <h2 class="news-title">Cena de Gala Anual: 1.000 € repartidos entre MABS Murcia y Proyecto Oblatas</h2>
+      <div class="news-body">
+        <p>Los masones de la Provincia de Murcia celebraron su Cena de Gala Anual acompañados de familiares y amigos. Durante el acto tuvo lugar una rifa de la que se obtuvo la cantidad de <strong>1.000 €</strong>, distribuidos a partes iguales entre dos asociaciones de la región: <strong>MABS Murcia</strong> y <strong>Proyecto Oblatas</strong>.</p>
+        <p>El Gran Maestro Provincial, R.H. Terence Pierce, hizo entrega personal de los cheques a los representantes de ambas organizaciones, en un acto que refleja el compromiso permanente de la masonería murciana con las causas sociales más necesitadas de nuestra comunidad.</p>
+      </div>
+    </div>
+
+    <!-- NOTICIAS SECUNDARIAS -->
+    <div class="news-grid">
+
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-date">2022</span>
+          <span class="news-tag">Caridad</span>
+        </div>
+        <h3 class="news-title">Luz de Murcia Nº 91 dona 1.000 € en alimentos a Los Alcázares</h3>
+        <div class="news-body">
+          <p>La logia Luz de Murcia, que trabaja en Los Alcázares, donó productos alimentarios valorados en 1.000 € a los servicios sociales del municipio para reforzar sus reservas del banco de alimentos local.</p>
+          <p>En Murcia, casi 30.000 personas dependen de los bancos de alimentos para sus necesidades diarias, una cifra que sigue en aumento.</p>
+        </div>
+      </div>
+
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-date">2022</span>
+          <span class="news-tag">Medios</span>
+        </div>
+        <h3 class="news-title">La provincia en Nemesis Radio: 15 aniversario de la Gran Logia Provincial</h3>
+        <div class="news-body">
+          <p>Representantes de la Gran Logia Provincial de Murcia participaron en el programa de Nemesis Radio con motivo de los actos conmemorativos del 15.º aniversario de la provincia.</p>
+          <p>Durante la entrevista se habló sobre la masonería, sus valores y su presencia en la Región de Murcia, respondiendo a las preguntas de los oyentes.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- AVISO FACEBOOK -->
+    <div class="fb-notice">
+      <span class="fb-notice-icon">◈</span>
+      <div class="fb-notice-text">
+        <strong>¿Quieres ver más noticias y fotos de nuestros eventos?</strong><br>
+        Síguenos en Facebook e Instagram, donde publicamos regularmente la actividad de la provincia, actos caritativos, tenidas y eventos sociales.
+        <br>
+        <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener" class="fb-notice-link">Ver página de Facebook</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
+    <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Parte de la Gran Logia de España</a>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://instagram.com/glpmurcia" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://t.me/GLEGOE" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://twitter.com/glp_murcia" target="_blank" rel="noopener">X</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
