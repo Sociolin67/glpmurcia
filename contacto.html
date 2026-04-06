@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contacto — Gran Logia Provincial de Murcia. ¿Interesado en la masonería? ¿Tienes alguna pregunta? Escríbenos.">
+<title>Contáctenos | Gran Logia Provincial de Murcia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --oro: #C9A84C;
+    --oro-claro: #E8D5A3;
+    --azul-noche: #0D1B2A;
+    --azul-medio: #1A2F45;
+    --blanco: #F5F0E8;
+    --gris-suave: #B8B0A0;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: var(--azul-noche); color: var(--blanco); overflow-x: hidden; min-height: 100vh; }
+
+  .bg-pattern {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%), var(--azul-noche);
+  }
+  .bg-pattern::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px);
+  }
+
+  .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+  /* ── NAV ── */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 3rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    backdrop-filter: blur(10px);
+    background: rgba(13,27,42,0.7);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+  .nav-emblem { width: 44px; height: 44px; flex-shrink: 0; }
+  .nav-emblem svg { width: 100%; height: 100%; }
+  .nav-title { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.76rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--oro); }
+  .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
+  .nav-cta:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── CABECERA ── */
+  .page-header {
+    padding: 5rem 3rem 3.5rem; text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    animation: fadeUp 1s ease both;
+  }
+  .ornament { display: flex; align-items: center; gap: 1.2rem; justify-content: center; margin-bottom: 1.8rem; }
+  .ornament-line { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, var(--oro)); }
+  .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
+  .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
+  .page-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1rem; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 300; color: var(--blanco); margin-bottom: 1rem; }
+  .page-title em { font-style: italic; color: var(--oro-claro); }
+  .page-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.95; color: var(--gris-suave); max-width: 520px; margin: 0 auto; letter-spacing: 0.02em; }
+
+  /* ── CONTENIDO ── */
+  .content {
+    display: grid; grid-template-columns: 1fr 1.6fr;
+    gap: 4rem; max-width: 1000px; margin: 0 auto;
+    padding: 5rem 3rem; width: 100%;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+
+  /* ── COLUMNA INFO ── */
+  .info-col { display: flex; flex-direction: column; gap: 2.4rem; }
+
+  .info-block {}
+  .info-label {
+    font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.25em;
+    color: var(--oro); text-transform: uppercase; margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 0.7rem;
+  }
+  .info-label::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.2); }
+  .info-text { font-size: 0.84rem; font-weight: 300; line-height: 1.85; color: var(--gris-suave); }
+
+  .motivos { display: flex; flex-direction: column; gap: 0.7rem; margin-top: 0.4rem; }
+  .motivo {
+    display: flex; align-items: flex-start; gap: 0.8rem;
+    font-size: 0.82rem; font-weight: 300; color: var(--gris-suave); line-height: 1.6;
+  }
+  .motivo-dot { color: var(--oro); flex-shrink: 0; margin-top: 0.25rem; font-size: 0.5rem; }
+
+  .redes { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.4rem; }
+  .red-link {
+    display: flex; align-items: center; gap: 0.8rem;
+    font-size: 0.8rem; font-weight: 300; color: var(--gris-suave);
+    text-decoration: none; transition: color 0.3s;
+    padding: 0.4rem 0; border-bottom: 1px solid rgba(201,168,76,0.1);
+  }
+  .red-link:hover { color: var(--oro); }
+  .red-icon { font-size: 0.65rem; font-family: 'Cinzel', serif; letter-spacing: 0.1em; color: var(--oro); min-width: 70px; }
+
+  /* ── FORMULARIO ── */
+  .form-col {}
+
+  .form-card {
+    border: 1px solid rgba(201,168,76,0.2);
+    background: rgba(26,47,69,0.35);
+    padding: 2.4rem 2.2rem;
+  }
+
+  .form-title {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+    font-weight: 300; color: var(--blanco); margin-bottom: 0.4rem;
+  }
+  .form-subtitle { font-size: 0.78rem; font-weight: 300; color: var(--gris-suave); margin-bottom: 2rem; line-height: 1.6; }
+
+  .form-group { margin-bottom: 1.4rem; }
+  .form-label {
+    display: block; font-family: 'Cinzel', serif; font-size: 0.58rem;
+    letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .form-input, .form-select, .form-textarea {
+    width: 100%; background: rgba(13,27,42,0.6);
+    border: 1px solid rgba(201,168,76,0.2); color: var(--blanco);
+    font-family: 'Lato', sans-serif; font-size: 0.85rem; font-weight: 300;
+    padding: 0.75rem 1rem; outline: none;
+    transition: border-color 0.3s;
+    appearance: none; -webkit-appearance: none;
+  }
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: rgba(201,168,76,0.6);
+  }
+  .form-input::placeholder, .form-textarea::placeholder { color: rgba(184,176,160,0.4); }
+  .form-select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23C9A84C'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+  .form-select option { background: #1A2F45; color: var(--blanco); }
+  .form-textarea { resize: vertical; min-height: 120px; line-height: 1.7; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  .btn-submit {
+    width: 100%; font-family: 'Cinzel', serif; font-size: 0.72rem;
+    letter-spacing: 0.18em; padding: 1rem; background: var(--oro);
+    color: var(--azul-noche); border: none; cursor: pointer;
+    text-transform: uppercase; font-weight: 600;
+    transition: all 0.3s; margin-top: 0.6rem;
+  }
+  .btn-submit:hover { background: var(--oro-claro); transform: translateY(-1px); }
+  .btn-submit:active { transform: translateY(0); }
+
+  .form-note { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); margin-top: 1rem; line-height: 1.6; opacity: 0.7; text-align: center; }
+
+  /* ── MENSAJE ÉXITO ── */
+  .success-msg {
+    display: none; text-align: center; padding: 2rem 1rem;
+  }
+  .success-msg.visible { display: block; }
+  .success-icon { font-size: 1.5rem; color: var(--oro); margin-bottom: 1rem; }
+  .success-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--blanco); margin-bottom: 0.5rem; }
+  .success-text { font-size: 0.82rem; font-weight: 300; color: var(--gris-suave); line-height: 1.75; }
+
+  /* ── FOOTER ── */
+  footer {
+    margin-top: auto; padding: 1.6rem 3rem;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    background: rgba(13,27,42,0.85);
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-copy { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
+  .footer-gle { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
+  .footer-gle:hover { opacity: 1; }
+  .footer-social { display: flex; gap: 1.2rem; }
+  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .footer-social a:hover { color: var(--oro); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.4rem; }
+    .nav-links { display: none; }
+    .page-header { padding: 3.5rem 1.4rem 2.5rem; }
+    .content { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.4rem; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 1.4rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<div class="page">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="nav-emblem">
+        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="22,3 41,35 3,35" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+          <polygon points="22,41 3,9 41,9" fill="none" stroke="#C9A84C" stroke-width="1.2" opacity="0.45"/>
+          <circle cx="22" cy="22" r="3" fill="#C9A84C" opacity="0.85"/>
+        </svg>
+      </div>
+      <div class="nav-title">Gran Logia Provincial<br>de Murcia</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="logias.html">Logias</a></li>
+      <li><a href="#">Sobre la Masonería</a></li>
+      <li><a href="#">Caridad</a></li>
+    </ul>
+    <a href="contacto.html" class="nav-cta active">Contáctenos</a>
+  </nav>
+
+  <!-- CABECERA -->
+  <header class="page-header">
+    <div class="ornament">
+      <span class="ornament-line"></span>
+      <span class="ornament-symbol">✦</span>
+      <span class="ornament-line r"></span>
+    </div>
+    <p class="page-eyebrow">Gran Logia Provincial de Murcia</p>
+    <h1 class="page-title">Ponte en <em>contacto</em></h1>
+    <p class="page-desc">¿Tienes preguntas sobre la masonería? ¿Te interesa unirte? ¿Quieres saber más sobre nuestro trabajo caritativo? Nos encantará escucharte.</p>
+  </header>
+
+  <!-- CONTENIDO -->
+  <div class="content">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="info-col">
+
+      <div class="info-block">
+        <p class="info-label">¿Por qué escribirnos?</p>
+        <div class="motivos">
+          <div class="motivo"><span class="motivo-dot">◆</span><span>Conocer más sobre la masonería y sus valores</span></div>
+          <div class="motivo"><span class="motivo-dot">◆</span><span>Interesarte en unirte a una de nuestras logias</span></div>
+          <div class="motivo"><span class="motivo-dot">◆</span><span>Saber más sobre nuestro trabajo caritativo en Murcia</span></div>
+          <div class="motivo"><span class="motivo-dot">◆</span><span>Visitar una logia como hermano de otra obediencia</span></div>
+          <div class="motivo"><span class="motivo-dot">◆</span><span>Cualquier otra consulta sobre la provincia</span></div>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <p class="info-label">Síguenos</p>
+        <div class="redes">
+          <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener" class="red-link">
+            <span class="red-icon">Facebook</span> /pglmurcia
+          </a>
+          <a href="https://instagram.com/glpmurcia" target="_blank" rel="noopener" class="red-link">
+            <span class="red-icon">Instagram</span> @glpmurcia
+          </a>
+          <a href="https://t.me/GLEGOE" target="_blank" rel="noopener" class="red-link">
+            <span class="red-icon">Telegram</span> Canal oficial
+          </a>
+          <a href="https://twitter.com/glp_murcia" target="_blank" rel="noopener" class="red-link">
+            <span class="red-icon">X</span> @glp_murcia
+          </a>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <p class="info-label">Gran Logia de España</p>
+        <p class="info-text">La Gran Logia Provincial de Murcia forma parte constitucional de la <a href="http://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a>, obediencia masónica regular reconocida internacionalmente.</p>
+      </div>
+
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="form-col">
+      <div class="form-card">
+
+        <div id="form-wrapper">
+          <p class="form-title">Escríbenos</p>
+          <p class="form-subtitle">Respondemos a todas las consultas en un plazo de 48 horas. Tu privacidad está garantizada.</p>
+
+          <!-- SUSTITUIR action por tu endpoint de Formspree cuando tengas el correo real -->
+          <!-- Ejemplo: action="https://formspree.io/f/XXXXXXXX" -->
+          <form id="contact-form" action="#" method="POST" onsubmit="handleSubmit(event)">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="nombre">Nombre</label>
+                <input class="form-input" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Correo electrónico</label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="tu@correo.com" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="asunto">Asunto</label>
+              <select class="form-select" id="asunto" name="asunto" required>
+                <option value="" disabled selected>Selecciona un asunto</option>
+                <option value="informacion">Información sobre la masonería</option>
+                <option value="ingreso">Interés en ingresar</option>
+                <option value="caridad">Trabajo caritativo</option>
+                <option value="visita">Visita como hermano</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="idioma">Idioma preferido</label>
+              <select class="form-select" id="idioma" name="idioma">
+                <option value="es">Español</option>
+                <option value="en">English</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="mensaje">Mensaje</label>
+              <textarea class="form-textarea" id="mensaje" name="mensaje" placeholder="Escribe tu consulta aquí..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Enviar mensaje</button>
+            <p class="form-note">Al enviar este formulario aceptas que tus datos sean utilizados únicamente para responder a tu consulta.</p>
+
+          </form>
+        </div>
+
+        <div class="success-msg" id="success-msg">
+          <div class="success-icon">✦</div>
+          <p class="success-title">Mensaje recibido</p>
+          <p class="success-text">Gracias por ponerte en contacto con nosotros.<br>Te responderemos en un plazo de 48 horas.</p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
+    <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Parte de la Gran Logia de España</a>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://instagram.com/glpmurcia" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://t.me/GLEGOE" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://twitter.com/glp_murcia" target="_blank" rel="noopener">X</a>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  // En pruebas: simula envío. Cuando conectes Formspree, elimina este script
+  // y cambia action del form por tu endpoint real.
+  document.getElementById('form-wrapper').style.display = 'none';
+  document.getElementById('success-msg').classList.add('visible');
+}
+</script>
+
+</body>
+</html>
