@@ -199,6 +199,8 @@
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta { display: none; }
     .page-header { padding: 3.5rem 1.4rem 2.5rem; }
     .content { padding: 3rem 1.4rem; }
     .news-grid { grid-template-columns: 1fr; }
@@ -207,46 +209,14 @@
   }
 
   /* ── MENÚ MÓVIL ── */
-  .nav-hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 4px;
-    background: none;
-    border: none;
-  }
-  .nav-hamburger span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--oro);
-    transition: all 0.3s;
-  }
-  .nav-mobile {
-    display: none;
-    flex-direction: column;
-    background: rgba(13,27,42,0.98);
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-    padding: 1rem 1.4rem;
-  }
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: all 0.3s; }
+  .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; width: 100%; }
   .nav-mobile.open { display: flex; }
-  .nav-mobile a {
-    font-size: 0.78rem; font-weight: 300; letter-spacing: 0.12em;
-    text-transform: uppercase; text-decoration: none;
-    color: var(--gris-suave); padding: 0.7rem 0;
-    border-bottom: 1px solid rgba(201,168,76,0.08);
-    transition: color 0.3s;
-  }
+  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
   .nav-mobile a:last-child { border-bottom: none; }
   .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
-  .nav-mobile .nav-cta-mobile {
-    margin-top: 0.8rem;
-    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em;
-    padding: 0.5rem 1.2rem; border: 1px solid var(--oro);
-    color: var(--oro); text-align: center; text-decoration: none;
-    text-transform: uppercase; transition: all 0.3s;
-  }
+  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
   .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
 </style>
 </head>
@@ -284,6 +254,7 @@
     <a href="recursos.html">Recursos</a>
     <a href="contacto.html" class="nav-cta-mobile">Contáctenos</a>
   </div>
+  
 
   <!-- CABECERA -->
   <header class="page-header">
