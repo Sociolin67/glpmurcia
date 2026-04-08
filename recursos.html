@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Recursos de la Gran Logia Provincial de Murcia — Documentales, vídeos y contenidos de interés masónico.">
+<title>Recursos — GLP Murcia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --oro: #C9A84C;
+    --oro-claro: #E8D5A3;
+    --azul-noche: #0D1B2A;
+    --azul-medio: #1A2F45;
+    --azul-card: #152338;
+    --blanco: #F0EAD8;
+    --gris-suave: #8A9BB0;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: var(--azul-noche); color: var(--blanco); overflow-x: hidden; min-height: 100vh; }
+  .bg-pattern { position: fixed; inset: 0; pointer-events: none; z-index: 0; background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%), var(--azul-noche); }
+  .page { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 100vh; }
+
+  /* ── NAV ── */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 3rem; border-bottom: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.95); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(8px); }
+  .nav-logo { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+  .nav-title { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.76rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--oro); }
+  .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
+  .nav-cta:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── CABECERA ── */
+  .page-header { text-align: center; padding: 5rem 3rem 3.5rem; border-bottom: 1px solid rgba(201,168,76,0.1); }
+  .ornament { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; }
+  .ornament-line { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, var(--oro)); }
+  .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
+  .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
+  .page-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1rem; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 300; color: var(--blanco); margin-bottom: 1rem; }
+  .page-title em { font-style: italic; color: var(--oro-claro); }
+  .page-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.95; color: var(--gris-suave); max-width: 520px; margin: 0 auto; letter-spacing: 0.02em; }
+
+  /* ── CONTENIDO ── */
+  .content { max-width: 900px; margin: 0 auto; padding: 3rem; flex: 1; width: 100%; }
+  .section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2.5rem; }
+  .section-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; color: var(--oro); text-transform: uppercase; white-space: nowrap; }
+  .section-line { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(201,168,76,0.4), transparent); }
+
+  /* ── TARJETA RECURSO ── */
+  .resource-card { border: 1px solid rgba(201,168,76,0.18); background: rgba(21,35,56,0.6); margin-bottom: 3rem; overflow: hidden; animation: fadeUp 0.6s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── VÍDEO RESPONSIVE 16:9 ── */
+  .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
+  .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+  /* ── CUERPO DEL RECURSO ── */
+  .resource-body { padding: 2rem 2.4rem; }
+  .resource-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+  .resource-tag { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.18em; padding: 0.25rem 0.8rem; background: var(--oro); color: var(--azul-noche); text-transform: uppercase; font-weight: 600; }
+  .resource-date { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.18em; color: var(--oro); text-transform: uppercase; }
+  .resource-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--blanco); margin-bottom: 1rem; line-height: 1.3; }
+  .resource-desc { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); }
+  .resource-desc p + p { margin-top: 0.8rem; }
+  .resource-desc strong { color: var(--blanco); font-weight: 400; }
+  .resource-link { display: inline-block; margin-top: 1.4rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.45rem 1.1rem; border: 1px solid rgba(201,168,76,0.35); color: var(--oro); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+  .resource-link:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── FOOTER ── */
+  footer { margin-top: auto; padding: 1.6rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.85); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-copy { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
+  .footer-gle { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
+  .footer-gle:hover { opacity: 1; }
+  .footer-social { display: flex; gap: 1.2rem; }
+  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .footer-social a:hover { color: var(--oro); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.4rem; }
+    .nav-links { display: none; }
+    .page-header { padding: 3.5rem 1.4rem 2.5rem; }
+    .content { padding: 2rem 1.4rem; }
+    .resource-body { padding: 1.4rem 1.6rem; }
+    footer { padding: 1.4rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<div class="page">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Gran Logia Provincial de Murcia" style="height:48px;width:auto;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4));">
+      <div class="nav-title">Gran Logia Provincial<br>de Murcia</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html">Noticias</a></li>
+      <li><a href="logias.html">Logias</a></li>
+      <li><a href="ordenes.html">Órdenes</a></li>
+      <li><a href="masoneria.html">Sobre la Masonería</a></li>
+      <li><a href="caridad.html">Caridad</a></li>
+      <li><a href="recursos.html" class="active">Recursos</a></li>
+    </ul>
+    <a href="contacto.html" class="nav-cta">Contáctenos</a>
+  </nav>
+
+  <!-- CABECERA -->
+  <header class="page-header">
+    <div class="ornament">
+      <span class="ornament-line"></span>
+      <span class="ornament-symbol">✦</span>
+      <span class="ornament-line r"></span>
+    </div>
+    <p class="page-eyebrow">Gran Logia Provincial de Murcia</p>
+    <h1 class="page-title">Recursos y <em>Contenidos</em></h1>
+    <p class="page-desc">Documentales, vídeos y materiales de interés sobre la masonería — una ventana abierta a quienes desean conocer nuestra Orden desde dentro.</p>
+  </header>
+
+  <!-- CONTENIDO -->
+  <div class="content">
+
+    <div class="section-header">
+      <span class="section-label">Documentales</span>
+      <span class="section-line"></span>
+    </div>
+
+    <!-- THE WORK -->
+    <article class="resource-card">
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/AAlsrxuY7qc"
+          title="The Work — La Obra | Masones de Londres"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <div class="resource-body">
+        <div class="resource-meta">
+          <span class="resource-tag">Documental</span>
+          <span class="resource-date">Londres</span>
+        </div>
+        <h2 class="resource-title">La Obra / Masones de Londres</h2>
+        <div class="resource-desc">
+          <p>El documental <strong>«The Work»</strong> sigue a Lee Townsend, masón londinense, desde su vida cotidiana en Croydon hasta la majestuosidad del Salón de los Masones. Con la canción de grime del mismo nombre de fondo, este documental no pretende explicar la masonería, sino mostrar nuestro compromiso con el crecimiento personal y la comunidad.</p>
+          <p>Filmado por <strong>Eddy Kirk</strong>, masón londinense, y producido por el responsable de comunicación de Londres, el Hno. <strong>Omaid Hiwaizi</strong>, el documental presenta a varios masones londinenses, reflejando la diversidad y la realidad de la Orden en la actualidad.</p>
+        </div>
+        <a href="https://www.londonmasons.org.uk/curious-about-freemasonry" target="_blank" rel="noopener" class="resource-link">¿Quieres saber más?</a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
+    <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Parte de la Gran Logia de España</a>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://instagram.com/glpmurcia" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://t.me/GLEGOE" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://twitter.com/glp_murcia" target="_blank" rel="noopener">X</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
