@@ -47,7 +47,7 @@
     position: sticky; top: 0; z-index: 100;
   }
   .nav-logo { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
-  .nav-logo img { height: 54px; width: auto; filter: drop-shadow(0 1px 6px rgba(0,0,0,0.6)); transition: opacity 0.3s; }
+  .nav-logo img { height: 54px; width: auto; filter: drop-shadow(0 1px 6px rgba(0,0,0,0.6)); transition: opacity 0.3s; border-radius: 4px; }
   .nav-logo:hover img { opacity: 0.85; }
   .nav-title { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
@@ -134,6 +134,8 @@
     nav { padding: 0.9rem 1.4rem; }
     .nav-title { display: none; }
     .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta { display: none; }
     .nav-logo img { height: 44px; }
     .hero { padding: 4rem 1.4rem 3rem; }
     .hero-logo img { height: 85px; }
@@ -145,6 +147,49 @@
     footer { padding: 1.8rem 1.4rem; }
     .footer-top { flex-direction: column; align-items: flex-start; }
   }
+
+  /* ── MENÚ MÓVIL ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--oro);
+    transition: all 0.3s;
+  }
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    background: rgba(13,27,42,0.98);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 1rem 1.4rem;
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    font-size: 0.78rem; font-weight: 300; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--gris-suave); padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+    transition: color 0.3s;
+  }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
+  .nav-mobile .nav-cta-mobile {
+    margin-top: 0.8rem;
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em;
+    padding: 0.5rem 1.2rem; border: 1px solid var(--oro);
+    color: var(--oro); text-align: center; text-decoration: none;
+    text-transform: uppercase; transition: all 0.3s;
+  }
+  .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
 </style>
 </head>
 <body>
@@ -169,7 +214,21 @@
       <li><a href="recursos.html">Recursos</a></li>
     </ul>
     <a href="contacto.html" class="nav-cta">Contáctenos</a>
+    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+  <!-- MENÚ MÓVIL -->
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html" class="active">Inicio</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="logias.html">Logias</a>
+    <a href="ordenes.html">Órdenes</a>
+    <a href="masoneria.html">Sobre la Masonería</a>
+    <a href="caridad.html">Caridad</a>
+    <a href="recursos.html">Recursos</a>
+    <a href="contacto.html" class="nav-cta-mobile">Contáctenos</a>
+  </div>
 
   <!-- HERO -->
   <section class="hero">

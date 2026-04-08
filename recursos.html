@@ -88,6 +88,49 @@
     .resource-body { padding: 1.4rem 1.6rem; }
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
   }
+
+  /* ── MENÚ MÓVIL ── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--oro);
+    transition: all 0.3s;
+  }
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    background: rgba(13,27,42,0.98);
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding: 1rem 1.4rem;
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    font-size: 0.78rem; font-weight: 300; letter-spacing: 0.12em;
+    text-transform: uppercase; text-decoration: none;
+    color: var(--gris-suave); padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(201,168,76,0.08);
+    transition: color 0.3s;
+  }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
+  .nav-mobile .nav-cta-mobile {
+    margin-top: 0.8rem;
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em;
+    padding: 0.5rem 1.2rem; border: 1px solid var(--oro);
+    color: var(--oro); text-align: center; text-decoration: none;
+    text-transform: uppercase; transition: all 0.3s;
+  }
+  .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
 </style>
 </head>
 <body>
@@ -112,7 +155,18 @@
       <li><a href="recursos.html" class="active">Recursos</a></li>
     </ul>
     <a href="contacto.html" class="nav-cta">Contáctenos</a>
+    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
   </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Inicio</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="logias.html">Logias</a>
+    <a href="ordenes.html">Órdenes</a>
+    <a href="masoneria.html">Sobre la Masonería</a>
+    <a href="caridad.html">Caridad</a>
+    <a href="recursos.html" class="active">Recursos</a>
+    <a href="contacto.html" class="nav-cta-mobile">Contáctenos</a>
+  </div>
 
   <!-- CABECERA -->
   <header class="page-header">
