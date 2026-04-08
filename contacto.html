@@ -175,6 +175,9 @@
   .footer-copy { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
   .footer-gle { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
   .footer-gle:hover { opacity: 1; }
+  .footer-social { display: flex; gap: 1.2rem; }
+  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .footer-social a:hover { color: var(--oro); }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -184,11 +187,24 @@
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta { display: none; }
     .page-header { padding: 3.5rem 1.4rem 2.5rem; }
     .content { grid-template-columns: 1fr; gap: 2.5rem; padding: 3rem 1.4rem; }
     .form-row { grid-template-columns: 1fr; }
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
   }
+
+  /* ── MENÚ MÓVIL ── */
+  .nav-hamburger { flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: all 0.3s; }
+  .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; width: 100%; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
+  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+  .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
 </style>
 </head>
 <body>
@@ -210,9 +226,21 @@
       <li><a href="ordenes.html">Órdenes</a></li>
       <li><a href="masoneria.html">Sobre la Masonería</a></li>
       <li><a href="caridad.html">Caridad</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
     </ul>
     <a href="contacto.html" class="nav-cta active">Contáctenos</a>
+<button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
   </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Inicio</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="logias.html">Logias</a>
+    <a href="ordenes.html">Órdenes</a>
+    <a href="masoneria.html">Sobre la Masonería</a>
+    <a href="caridad.html">Caridad</a>
+    <a href="recursos.html">Recursos</a>
+    <a href="contacto.html" class="nav-cta-mobile">Contáctenos</a>
+  </div>
 
   <!-- CABECERA -->
   <header class="page-header">
@@ -244,6 +272,21 @@
       </div>
 
       <div class="info-block">
+        <p class="info-label">Síguenos</p>
+        <div class="redes">
+          <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener" class="red-link">
+            <span class="red-icon">Facebook</span> /pglmurcia
+          </a>
+          <a href="https://instagram.com/glpmurcia" target="_blank" rel="noopener" class="red-link">
+            <span class="red-icon">Instagram</span> @glpmurcia
+          </a>
+          <a href="https://t.me/GLEGOE" target="_blank" rel="noopener" class="red-link">
+            <span class="red-icon">Telegram</span> Canal oficial
+          </a>
+          <a href="https://twitter.com/glp_murcia" target="_blank" rel="noopener" class="red-link">
+            <span class="red-icon">X</span> @glp_murcia
+          </a>
+        </div>
       </div>
 
       <div class="info-block">
@@ -322,6 +365,12 @@
   <footer>
     <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
     <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Parte de la Gran Logia de España</a>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://instagram.com/glpmurcia" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://t.me/GLEGOE" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://twitter.com/glp_murcia" target="_blank" rel="noopener">X</a>
+    </div>
   </footer>
 
 </div>
