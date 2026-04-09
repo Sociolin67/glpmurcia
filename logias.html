@@ -49,8 +49,8 @@
   .nav-emblem { width: 44px; height: 44px; flex-shrink: 0; }
   .nav-emblem svg { width: 100%; height: 100%; }
   .nav-title { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { font-size: 0.76rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); transition: color 0.3s; }
+  .nav-links { display: flex; gap: 1.2rem; list-style: none; }
+  .nav-links a { font-size: 0.7rem; font-weight: 300; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); transition: color 0.3s; }
   .nav-links a:hover, .nav-links a.active { color: var(--oro); }
   .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
   .nav-cta:hover { background: var(--oro); color: var(--azul-noche); }
@@ -174,9 +174,6 @@
   .footer-copy { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
   .footer-gle { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
   .footer-gle:hover { opacity: 1; }
-  .footer-social { display: flex; gap: 1.2rem; }
-  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
-  .footer-social a:hover { color: var(--oro); }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -225,9 +222,21 @@
       <li><a href="ordenes.html">Órdenes</a></li>
       <li><a href="masoneria.html">Sobre la Masonería</a></li>
       <li><a href="caridad.html">Caridad</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
     </ul>
     <a href="contacto.html" class="nav-cta">Contáctenos</a>
+    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
   </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Inicio</a>
+    <a href="noticias.html">Noticias</a>
+    <a href="logias.html" class="active">Logias</a>
+    <a href="ordenes.html">Órdenes</a>
+    <a href="masoneria.html">Sobre la Masonería</a>
+    <a href="caridad.html">Caridad</a>
+    <a href="recursos.html">Recursos</a>
+    <a href="contacto.html" class="nav-cta-mobile">Contáctenos</a>
+  </div>
 
   <!-- CABECERA -->
   <header class="page-header">
@@ -350,12 +359,6 @@
   <footer>
     <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
     <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Parte de la Gran Logia de España</a>
-    <div class="footer-social">
-      <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://instagram.com/glpmurcia" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://t.me/GLEGOE" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://twitter.com/glp_murcia" target="_blank" rel="noopener">X</a>
-    </div>
   </footer>
 
 </div>
