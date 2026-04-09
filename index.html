@@ -59,15 +59,12 @@
   /* ── HERO ── */
   .hero { flex: 1; display: flex; align-items: center; justify-content: center; padding: 5rem 2rem 4rem; text-align: center; }
   .hero-inner { max-width: 780px; animation: fadeUp 1.2s ease both; }
-
   .hero-logo { margin: 0 auto 2.2rem; display: flex; justify-content: center; }
   .hero-logo img { height: 110px; width: auto; filter: drop-shadow(0 4px 16px rgba(201,168,76,0.2)); }
-
   .ornament { display: flex; align-items: center; gap: 1.2rem; justify-content: center; margin-bottom: 2rem; }
   .ornament-line { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, var(--oro)); }
   .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
   .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
-
   .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1.6rem; }
   .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; line-height: 1.08; color: var(--blanco); margin-bottom: 0.5rem; }
   .hero-title em { font-style: italic; color: var(--oro-claro); }
@@ -127,6 +124,16 @@
     to   { opacity: 1; transform: translateY(0); }
   }
 
+  /* ── MENÚ MÓVIL ── */
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); }
+  .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
+  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; }
+
   @media (max-width: 768px) {
     nav { padding: 0.9rem 1.4rem; }
     .nav-title { display: none; }
@@ -144,15 +151,6 @@
     footer { padding: 1.8rem 1.4rem; }
     .footer-top { flex-direction: column; align-items: flex-start; }
   }
-
-  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); }
-  .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; }
-  .nav-mobile.open { display: flex; }
-  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
-  .nav-mobile a:last-child { border-bottom: none; }
-  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
-  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; }
 </style>
 </head>
 <body>
@@ -288,7 +286,6 @@
         <img src="logo.png" alt="Gran Logia Provincial de Murcia">
         <div class="footer-logo-text">Gran Logia Provincial<br>de Murcia</div>
       </a>
-      
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
