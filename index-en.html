@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Gran Logia Provincial de Murcia — Tradición, Fraternidad y Servicio. Masonería regular en la Región de Murcia, parte de la Gran Logia de España.">
-<title>Gran Logia Provincial de Murcia</title>
+<meta name="description" content="Provincial Grand Lodge of Murcia — Tradition, Fraternity and Service. Regular Freemasonry in the Region of Murcia, part of the Grand Lodge of Spain.">
+<title>Provincial Grand Lodge of Murcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -52,7 +52,7 @@
   .nav-title { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-size: 0.76rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); transition: color 0.3s; }
-  .nav-links a:hover { color: var(--oro); }
+  .nav-links a:hover, .nav-links a.active { color: var(--oro); }
   .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
   .nav-cta:hover { background: var(--oro); color: var(--azul-noche); }
 
@@ -173,40 +173,40 @@
 
   <!-- NAV -->
   <nav>
-    <a href="index.html" class="nav-logo">
-      <img src="logo.png" alt="Escudo Gran Logia Provincial de Murcia">
-      <div class="nav-title">Gran Logia Provincial<br>de Murcia</div>
+    <a href="index-en.html" class="nav-logo">
+      <img src="logo.png" alt="Coat of Arms — Provincial Grand Lodge of Murcia">
+      <div class="nav-title">Provincial Grand Lodge<br>of Murcia</div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="noticias.html">Noticias</a></li>
-      <li><a href="logias.html">Logias</a></li>
-      <li><a href="ordenes.html">Órdenes</a></li>
-      <li><a href="masoneria.html">Sobre la Masonería</a></li>
-      <li><a href="caridad.html">Caridad</a></li>
-      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="index-en.html" class="active">Home</a></li>
+      <li><a href="noticias-en.html">News</a></li>
+      <li><a href="logias-en.html">Lodges</a></li>
+      <li><a href="ordenes-en.html">Orders</a></li>
+      <li><a href="masoneria-en.html">About Freemasonry</a></li>
+      <li><a href="caridad-en.html">Charity</a></li>
+      <li><a href="recursos-en.html">Resources</a></li>
     </ul>
     <div class="nav-right">
-      <a href="contacto.html" class="nav-cta">Contáctenos</a>
+      <a href="contacto-en.html" class="nav-cta">Contact Us</a>
       <div class="lang-switcher">
-        <a href="index.html" class="active">ES</a>
-        <a href="index-en.html">EN</a>
+        <a href="index.html">ES</a>
+        <a href="index-en.html" class="active">EN</a>
       </div>
     </div>
-    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="nav-mobile" id="navMobile">
-    <a href="index.html" class="active">Inicio</a>
-    <a href="noticias.html">Noticias</a>
-    <a href="logias.html">Logias</a>
-    <a href="ordenes.html">Órdenes</a>
-    <a href="masoneria.html">Sobre la Masonería</a>
-    <a href="caridad.html">Caridad</a>
-    <a href="recursos.html">Recursos</a>
-    <a href="contacto.html" class="nav-cta-mobile">Contáctenos</a>
+    <a href="index-en.html" class="active">Home</a>
+    <a href="noticias-en.html">News</a>
+    <a href="logias-en.html">Lodges</a>
+    <a href="ordenes-en.html">Orders</a>
+    <a href="masoneria-en.html">About Freemasonry</a>
+    <a href="caridad-en.html">Charity</a>
+    <a href="recursos-en.html">Resources</a>
+    <a href="contacto-en.html" class="nav-cta-mobile">Contact Us</a>
     <div class="lang-switcher-mobile">
-      <a href="index.html" class="active">ES</a>
-      <a href="index-en.html">EN</a>
+      <a href="index.html">ES</a>
+      <a href="index-en.html" class="active">EN</a>
     </div>
   </div>
 
@@ -214,20 +214,20 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-logo">
-        <img src="logo.png?v=2" alt="Escudo Gran Logia Provincial de Murcia">
+        <img src="logo.png?v=2" alt="Coat of Arms — Provincial Grand Lodge of Murcia">
       </div>
       <div class="ornament">
         <span class="ornament-line"></span>
         <span class="ornament-symbol">✦</span>
         <span class="ornament-line r"></span>
       </div>
-      <p class="hero-eyebrow">Fundada el 5 de diciembre de 2009 &middot; Región de Murcia</p>
-      <h1 class="hero-title">Masonería en<br><em>Murcia</em></h1>
-      <p class="hero-subtitle">Tradición, Fraternidad y Servicio</p>
-      <p class="hero-desc">La Gran Logia Provincial de Murcia, parte constitucional de la Gran Logia de España, agrupa siete Logias Regulares comprometidas con los valores de la fraternidad universal, el progreso moral y el servicio a la comunidad.</p>
+      <p class="hero-eyebrow">Founded 5 December 2009 &middot; Region of Murcia</p>
+      <h1 class="hero-title">Freemasonry in<br><em>Murcia</em></h1>
+      <p class="hero-subtitle">Tradition, Fraternity and Service</p>
+      <p class="hero-desc">The Provincial Grand Lodge of Murcia, a constitutional part of the Grand Lodge of Spain, unites seven Regular Lodges committed to the values of universal fraternity, moral progress and service to the community.</p>
       <div class="hero-actions">
-        <a href="masoneria.html" class="btn-primary">Conviértete en masón</a>
-        <a href="logias.html" class="btn-secondary">Conocer las logias</a>
+        <a href="masoneria-en.html" class="btn-primary">Become a Freemason</a>
+        <a href="logias-en.html" class="btn-secondary">Meet the Lodges</a>
       </div>
     </div>
   </section>
@@ -237,23 +237,23 @@
     <div class="pillars-grid">
       <div class="pillar">
         <div class="pillar-icon"><span>⬡</span></div>
-        <p class="pillar-label">Fraternidad</p>
-        <p class="pillar-text">Vínculos duraderos entre hombres de bien, más allá de diferencias sociales o culturales.</p>
+        <p class="pillar-label">Fraternity</p>
+        <p class="pillar-text">Lasting bonds between men of good will, beyond social or cultural differences.</p>
       </div>
       <div class="pillar">
         <div class="pillar-icon"><span>◈</span></div>
-        <p class="pillar-label">Razón</p>
-        <p class="pillar-text">El cultivo del pensamiento libre, crítico y comprometido con la búsqueda de la verdad.</p>
+        <p class="pillar-label">Reason</p>
+        <p class="pillar-text">The cultivation of free, critical thought and a commitment to the search for truth.</p>
       </div>
       <div class="pillar">
         <div class="pillar-icon"><span>✦</span></div>
-        <p class="pillar-label">Caridad</p>
-        <p class="pillar-text">Apoyo activo a las comunidades locales y contribución a causas sociales de la región.</p>
+        <p class="pillar-label">Charity</p>
+        <p class="pillar-text">Active support for local communities and contribution to social causes in the region.</p>
       </div>
       <div class="pillar">
         <div class="pillar-icon"><span>◇</span></div>
-        <p class="pillar-label">Tradición</p>
-        <p class="pillar-text">Herederos de siglos de historia masónica, con raíces en los grandes constructores medievales.</p>
+        <p class="pillar-label">Tradition</p>
+        <p class="pillar-text">Heirs to centuries of Masonic history, with roots in the great medieval builders.</p>
       </div>
     </div>
   </section>
@@ -261,37 +261,37 @@
   <!-- ACCESOS RÁPIDOS -->
   <section class="pages-strip">
     <div class="pages-grid">
-      <a href="noticias.html" class="page-card">
+      <a href="noticias-en.html" class="page-card">
         <span class="page-card-icon">◈</span>
-        <span class="page-card-label">Noticias y Eventos</span>
-        <span class="page-card-desc">Mantente al día de la actividad de la provincia.</span>
+        <span class="page-card-label">News &amp; Events</span>
+        <span class="page-card-desc">Stay up to date with the province's activities.</span>
       </a>
-      <a href="logias.html" class="page-card">
+      <a href="logias-en.html" class="page-card">
         <span class="page-card-icon">⬡</span>
-        <span class="page-card-label">Logias</span>
-        <span class="page-card-desc">Las siete logias regulares de la provincia de Murcia.</span>
+        <span class="page-card-label">Lodges</span>
+        <span class="page-card-desc">The seven regular lodges of the Province of Murcia.</span>
       </a>
-      <a href="masoneria.html" class="page-card">
+      <a href="masoneria-en.html" class="page-card">
         <span class="page-card-icon">✦</span>
-        <span class="page-card-label">Sobre la Masonería</span>
-        <span class="page-card-desc">Historia, valores y cómo unirte a la fraternidad.</span>
+        <span class="page-card-label">About Freemasonry</span>
+        <span class="page-card-desc">History, values and how to join the fraternity.</span>
       </a>
-      <a href="caridad.html" class="page-card">
+      <a href="caridad-en.html" class="page-card">
         <span class="page-card-icon">◇</span>
-        <span class="page-card-label">Caridad</span>
-        <span class="page-card-desc">Nuestro compromiso con la comunidad murciana.</span>
+        <span class="page-card-label">Charity</span>
+        <span class="page-card-desc">Our commitment to the community of Murcia.</span>
       </a>
-      <a href="contacto.html" class="page-card">
+      <a href="contacto-en.html" class="page-card">
         <span class="page-card-icon">▷</span>
-        <span class="page-card-label">Contáctenos</span>
-        <span class="page-card-desc">Escríbenos para cualquier consulta, sin compromiso.</span>
+        <span class="page-card-label">Contact Us</span>
+        <span class="page-card-desc">Write to us for any enquiry, no commitment required.</span>
       </a>
     </div>
   </section>
 
   <!-- LOGIAS -->
   <div class="lodges-strip">
-    <span class="lodges-label">Logias de la provincia</span>
+    <span class="lodges-label">Lodges of the Province</span>
     <span class="lodge-pill">Luz de Murcia Nº 91</span>
     <span class="lodge-pill">Fraternidad Mediterránea Nº 94</span>
     <span class="lodge-pill">Sierra Espuña Nº 136</span>
@@ -304,14 +304,14 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-top">
-      <a href="index.html" class="footer-logo">
-        <img src="logo.png" alt="Gran Logia Provincial de Murcia">
-        <div class="footer-logo-text">Gran Logia Provincial<br>de Murcia</div>
+      <a href="index-en.html" class="footer-logo">
+        <img src="logo.png" alt="Provincial Grand Lodge of Murcia">
+        <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
       </a>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
-      <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Parte de la Gran Logia de España</a>
+      <span class="footer-copy">© 2026 Provincial Grand Lodge of Murcia</span>
+      <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Part of the Grand Lodge of Spain</a>
     </div>
   </footer>
 
