@@ -135,9 +135,15 @@
   .news-card:hover { border-color: rgba(201,168,76,0.35); background: rgba(26,47,69,0.5); }
   .news-card:hover::after { width: 100%; }
   .news-card:nth-child(2) { animation-delay: 0.1s; }
-
   .news-card .news-title { font-size: 1.1rem; margin-bottom: 0.7rem; }
   .news-card .news-body { font-size: 0.82rem; }
+
+  /* ── IMAGEN EN TARJETA SECUNDARIA ── */
+  .news-card-img {
+    width: calc(100% + 3.2rem); margin: -1.8rem -1.6rem 1.2rem -1.6rem;
+    aspect-ratio: 16/9; object-fit: cover;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -163,7 +169,6 @@
   .nav-mobile a:last-child { border-bottom: none; }
   .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
   .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; }
-  /* ── SELECTOR DE IDIOMA ── */
   .nav-right { display: flex; align-items: center; gap: 1rem; }
   .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
   .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
@@ -277,6 +282,7 @@
     <div class="news-grid">
 
       <div class="news-card">
+        <img src="afacmur.jpeg" alt="Entrega donación a AFACMUR" class="news-card-img">
         <div class="news-meta">
           <span class="news-date">Diciembre 2025</span>
           <span class="news-tag">Caridad</span>
