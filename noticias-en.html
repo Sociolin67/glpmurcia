@@ -178,6 +178,12 @@
   .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
   .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
 
+  /* ── SHOW MORE ── */
+  .news-more { display: none; }
+  .news-more.open { display: contents; }
+  .news-btn { display: block; margin: 0.5rem auto 2rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.55rem 1.6rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
+  .news-btn:hover { background: var(--oro); color: var(--azul-noche); }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -281,6 +287,19 @@
     <!-- SECONDARY NEWS -->
     <div class="news-grid">
 
+      <!-- VISIBLE 1: FUENSOCIAL -->
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-date">April 2026</span>
+          <span class="news-tag">Charity</span>
+        </div>
+        <h3 class="news-title">Donation of €500 to FUENSOCIAL</h3>
+        <div class="news-body">
+          <p>The Provincial Grand Lodge of Murcia donated <strong>€500</strong> to <strong>FUENSOCIAL</strong>, an association supporting people with disabilities or at risk of developing them, and their families, through the Provincial Grand Lodge of Andalusia. A reflection of Murcian Freemasonry's fraternal commitment beyond provincial boundaries.</p>
+        </div>
+      </div>
+
+      <!-- VISIBLE 2: AFACMUR with photo -->
       <div class="news-card">
         <img src="afacmur.jpeg" alt="Donation to AFACMUR" class="news-card-img">
         <div class="news-meta">
@@ -294,31 +313,48 @@
         </div>
       </div>
 
-      <div class="news-card">
-        <div class="news-meta">
-          <span class="news-date">2022</span>
-          <span class="news-tag">Charity</span>
-        </div>
-        <h3 class="news-title">Luz de Murcia No. 91 donates €1,000 in food to Los Alcázares</h3>
-        <div class="news-body">
-          <p>Luz de Murcia Lodge, which meets in Los Alcázares, donated food items valued at €1,000 to the municipal social services to strengthen the local food bank's reserves.</p>
-          <p>In Murcia, nearly 30,000 people rely on food banks for their daily needs, a figure that continues to rise.</p>
-        </div>
-      </div>
+      <!-- HIDDEN: SHOW MORE -->
+      <div class="news-more" id="news-more-en">
 
-      <div class="news-card">
-        <div class="news-meta">
-          <span class="news-date">2022</span>
-          <span class="news-tag">Media</span>
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-date">2022</span>
+            <span class="news-tag">Charity</span>
+          </div>
+          <h3 class="news-title">Luz de Murcia No. 91 donates €1,000 in food to Los Alcázares</h3>
+          <div class="news-body">
+            <p>Luz de Murcia Lodge donated food items valued at <strong>€1,000</strong> to the municipal social services to strengthen the local food bank's reserves.</p>
+            <p>In Murcia, nearly <strong>30,000 people</strong> rely on food banks for their daily needs.</p>
+          </div>
         </div>
-        <h3 class="news-title">The Province on Nemesis Radio: 15th anniversary of the Provincial Grand Lodge</h3>
-        <div class="news-body">
-          <p>Representatives of the Provincial Grand Lodge of Murcia took part in the Nemesis Radio programme to mark the commemorative events of the Province's 15th anniversary.</p>
-          <p>During the interview, Freemasonry, its values and its presence in the Region of Murcia were discussed, responding to questions from listeners.</p>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-date">2022</span>
+            <span class="news-tag">Media</span>
+          </div>
+          <h3 class="news-title">The Province on Nemesis Radio: 15th anniversary of the Provincial Grand Lodge</h3>
+          <div class="news-body">
+            <p>Representatives of the Provincial Grand Lodge of Murcia took part in the Nemesis Radio programme to mark the Province's 15th anniversary.</p>
+            <p>Freemasonry, its values and its presence in the Region of Murcia were discussed, responding to questions from listeners.</p>
+          </div>
         </div>
+
       </div>
 
     </div>
+
+    <button class="news-btn" id="news-btn-en" onclick="
+      var more = document.getElementById('news-more-en');
+      var btn = document.getElementById('news-btn-en');
+      if (more.classList.contains('open')) {
+        more.classList.remove('open');
+        btn.textContent = 'Show archive ↓';
+      } else {
+        more.classList.add('open');
+        btn.textContent = 'Hide ↑';
+      }
+    ">Show archive ↓</button>
 
   </div>
 
