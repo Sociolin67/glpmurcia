@@ -204,6 +204,23 @@
   .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
 
 
+  /* ── MASONIC RITES ── */
+  .ritos-intro { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); margin-bottom: 2.2rem; max-width: 660px; }
+  .ritos-tree { display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .ritos-root { text-align: center; margin-bottom: 0; }
+  .ritos-root-link { display: inline-flex; align-items: center; gap: 0.7rem; font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; color: var(--blanco); padding: 0.8rem 1.8rem; border: 1px solid rgba(201,168,76,0.45); background: rgba(201,168,76,0.07); transition: all 0.3s; }
+  .ritos-root-link:hover { background: rgba(201,168,76,0.14); border-color: var(--oro); color: var(--oro-claro); }
+  .ritos-root-link .ritos-icon { color: var(--oro); font-size: 0.9rem; }
+  .ritos-connector { display: flex; flex-direction: column; align-items: center; }
+  .ritos-connector-v { width: 1px; height: 28px; background: rgba(201,168,76,0.35); }
+  .ritos-branches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; width: 100%; max-width: 760px; }
+  .rito-card { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; padding: 1.2rem 1rem; border: 1px solid rgba(201,168,76,0.18); background: rgba(21,35,56,0.5); transition: all 0.3s; gap: 0.5rem; }
+  .rito-card:hover { border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.07); transform: translateY(-2px); }
+  .rito-card-name { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); line-height: 1.5; }
+  .rito-card-badge { font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; font-style: italic; color: var(--gris-suave); opacity: 0.8; margin-top: 0.2rem; }
+  .ritos-glpm-note { margin-top: 1.6rem; display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); opacity: 0.75; border-top: 1px solid rgba(201,168,76,0.15); padding-top: 1.2rem; width: 100%; max-width: 760px; justify-content: center; }
+  .ritos-glpm-note::before, .ritos-glpm-note::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.15); }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -216,6 +233,8 @@
     .section-divider { margin: 0 1.4rem; }
     .visit-notice { margin: 0 1.4rem 2rem; }
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
+    .ritos-branches { grid-template-columns: 1fr; max-width: 100%; }
+    .ritos-root-link { font-size: 0.7rem; padding: 0.7rem 1.2rem; }
   }
 </style>
 </head>
@@ -380,6 +399,55 @@
   </section>
 
 
+
+  <!-- MASONIC RITES -->
+  <div class="section" style="padding-top:0;">
+    <div class="section-header">
+      <span class="section-label">The Masonic Rites</span>
+      <span class="section-line"></span>
+    </div>
+
+    <p class="ritos-intro">
+      The Provincial Grand Lodge of Murcia works within the three great rites of regular Masonic tradition. Each rite offers its own path of initiation and knowledge, sharing the same universal principles of the Order.
+    </p>
+
+    <div class="ritos-tree">
+
+      <div class="ritos-root">
+        <a href="https://www.gle.org/masoneria/ritos/" target="_blank" rel="noopener" class="ritos-root-link">
+          <span class="ritos-icon">∴</span>
+          The Masonic Rites
+          <span class="ritos-icon">∴</span>
+        </a>
+      </div>
+
+      <div class="ritos-connector">
+        <div class="ritos-connector-v"></div>
+      </div>
+
+      <div class="ritos-branches">
+
+        <a href="https://www.gle.org/masoneria/ritos/emulacion/" target="_blank" rel="noopener" class="rito-card">
+          <span class="rito-card-name">Emulation<br>Rite</span>
+          <span class="rito-card-badge">Anglo-Saxon tradition</span>
+        </a>
+
+        <a href="https://www.gle.org/masoneria/ritos/rito-escoces-antiguo-y-aceptado/" target="_blank" rel="noopener" class="rito-card">
+          <span class="rito-card-name">Ancient &amp; Accepted<br>Scottish Rite</span>
+          <span class="rito-card-badge">33 degrees</span>
+        </a>
+
+        <a href="https://www.gle.org/masoneria/ritos/rito-frances/" target="_blank" rel="noopener" class="rito-card">
+          <span class="rito-card-name">Modern<br>French Rite</span>
+          <span class="rito-card-badge">Continental tradition</span>
+        </a>
+
+      </div>
+
+      <p class="ritos-glpm-note">The three rites practised in the P∴ G∴ L∴ of Murcia</p>
+
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
