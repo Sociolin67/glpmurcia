@@ -163,6 +163,9 @@
   .modal-close { position: absolute; top: 1rem; right: 1rem; font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; background: none; border: 1px solid rgba(201,168,76,0.3); color: var(--gris-suave); padding: 0.3rem 0.8rem; cursor: pointer; transition: all 0.3s; }
   .modal-close:hover { border-color: var(--oro); color: var(--oro); }
 
+  .modal-close-bottom { display: block; width: 100%; margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; background: var(--oro); border: none; color: var(--azul-noche); padding: 0.7rem 1rem; cursor: pointer; transition: opacity 0.3s; font-weight: 600; }
+  .modal-close-bottom:hover { opacity: 0.85; }
+
   @media (max-width: 768px) {
     nav { padding: 0.9rem 1.4rem; }
     .nav-title { display: none; }
@@ -182,9 +185,10 @@
     footer { padding: 1.8rem 1.4rem; }
     .footer-top { flex-direction: column; align-items: flex-start; }
     .modal { flex-direction: column; max-height: 88vh; }
-    .modal-photo { width: 100%; height: 200px; }
-    .modal-body { padding: 1.6rem 1.4rem 1.4rem; }
-    .modal-title { font-size: 1.15rem; }
+    .modal-photo { width: 100%; height: 150px; }
+    .modal-body { padding: 1.4rem 1.2rem 1.2rem; }
+    .modal-title { font-size: 1.1rem; }
+    .modal-text { font-size: 0.8rem; }
   }
 </style>
 </head>
@@ -347,7 +351,6 @@
 <!-- WELCOME MODAL PROVINCIAL GRAND MASTER -->
 <div class="modal-overlay" id="welcomeModal">
   <div class="modal">
-    <button class="modal-close" onclick="closeModal()">Close ×</button>
     <div class="modal-photo">
       <img src="gm-provincial.jpg" alt="R.W.Bro. Luis Alcaina Guzmán — Provincial Grand Master of Murcia">
     </div>
@@ -356,23 +359,22 @@
       <h2 class="modal-title">Provincial Grand Lodge<br>of <em>Murcia</em></h2>
       <div class="modal-divider"></div>
       <div class="modal-text">
-        <p>It is an honour to extend the warmest welcome to the website of the Provincial Grand Lodge of Murcia, Grand Lodge of Spain. We are part of the only internationally recognised regular Freemasonry and at the same time the largest in all of Spain.</p>
-        <p>It is our intention that this virtual space becomes a meeting point for Masons and non-initiates alike. For the Brethren of the Province, we will be incorporating updated information about the activities of the Provincial Grand Lodge and all its Lodges in a private area.</p>
-        <p>To those who have not yet been initiated, we extend our friendly hand, inviting you to explore the values and principles that guide our Order. We will be delighted to answer any enquiries you may have.</p>
-        <p>May the light of the Great Architect of the Universe illuminate our path and guide us in this noble work of building a better world.</p>
-        <p><strong>Welcome to the Provincial Grand Lodge of Murcia!</strong> Fraternally.</p>
+        <p>It is an honour to welcome you to the website of the Provincial Grand Lodge of Murcia. We are part of the only internationally recognised regular Freemasonry and the largest in all of Spain.</p>
+        <p>This space is a meeting point for Masons and non-initiates alike. To those not yet initiated, we invite you to explore the values and principles that guide our Order. We are at your disposal for any enquiry.</p>
+        <p>May the light of the Great Architect of the Universe illuminate our path. <strong>Welcome!</strong> Fraternally.</p>
       </div>
       <p class="modal-firma">R∴W∴Bro∴ Luis Alcaina Guzmán · Provincial Grand Master of Murcia</p>
+      <button class="modal-close-bottom" onclick="closeModalEN()">Enter the site →</button>
     </div>
   </div>
 </div>
 
 <script>
-  function closeModal() {
+  function closeModalEN() {
     document.getElementById('welcomeModal').classList.add('hidden');
-    sessionStorage.setItem('welcomeSeen', '1');
+    localStorage.setItem('glpmWelcomeEN', '1');
   }
-  if (sessionStorage.getItem('welcomeSeen')) {
+  if (localStorage.getItem('glpmWelcomeEN')) {
     document.getElementById('welcomeModal').classList.add('hidden');
   }
 </script>
