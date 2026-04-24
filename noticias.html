@@ -178,6 +178,12 @@
   .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
   .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
 
+  /* ── VER MÁS NOTICIAS ── */
+  .news-more { display: none; }
+  .news-more.open { display: contents; }
+  .news-btn { display: block; margin: 0.5rem auto 2rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.55rem 1.6rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
+  .news-btn:hover { background: var(--oro); color: var(--azul-noche); }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -281,6 +287,19 @@
     <!-- NOTICIAS SECUNDARIAS -->
     <div class="news-grid">
 
+      <!-- VISIBLE 1: FUENSOCIAL -->
+      <div class="news-card">
+        <div class="news-meta">
+          <span class="news-date">Abril 2026</span>
+          <span class="news-tag">Caridad</span>
+        </div>
+        <h3 class="news-title">Donación de 500 € a FUENSOCIAL</h3>
+        <div class="news-body">
+          <p>La Gran Logia Provincial de Murcia donó <strong>500 €</strong> a <strong>FUENSOCIAL</strong>, asociación de apoyo a personas con discapacidad o en riesgo de padecerla y a sus familias, a través de la Gran Logia Provincial de Andalucía. Una muestra del compromiso fraternal de la Masonería murciana más allá de las fronteras provinciales.</p>
+        </div>
+      </div>
+
+      <!-- VISIBLE 2: AFACMUR con foto -->
       <div class="news-card">
         <img src="afacmur.jpeg" alt="Entrega donación a AFACMUR" class="news-card-img">
         <div class="news-meta">
@@ -294,31 +313,48 @@
         </div>
       </div>
 
-      <div class="news-card">
-        <div class="news-meta">
-          <span class="news-date">2022</span>
-          <span class="news-tag">Caridad</span>
-        </div>
-        <h3 class="news-title">Luz de Murcia Nº 91 dona 1.000 € en alimentos a Los Alcázares</h3>
-        <div class="news-body">
-          <p>La logia Luz de Murcia, que trabaja en Los Alcázares, donó productos alimentarios valorados en 1.000 € a los servicios sociales del municipio para reforzar sus reservas del banco de alimentos local.</p>
-          <p>En Murcia, casi 30.000 personas dependen de los bancos de alimentos para sus necesidades diarias, una cifra que sigue en aumento.</p>
-        </div>
-      </div>
+      <!-- OCULTAS: VER MÁS -->
+      <div class="news-more" id="news-more-es">
 
-      <div class="news-card">
-        <div class="news-meta">
-          <span class="news-date">2022</span>
-          <span class="news-tag">Medios</span>
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-date">2022</span>
+            <span class="news-tag">Caridad</span>
+          </div>
+          <h3 class="news-title">Luz de Murcia Nº 91 dona 1.000 € en alimentos a Los Alcázares</h3>
+          <div class="news-body">
+            <p>La logia Luz de Murcia donó productos alimentarios valorados en <strong>1.000 €</strong> a los servicios sociales del municipio para reforzar sus reservas del banco de alimentos local.</p>
+            <p>En Murcia, casi <strong>30.000 personas</strong> dependen de los bancos de alimentos para sus necesidades diarias.</p>
+          </div>
         </div>
-        <h3 class="news-title">La provincia en Nemesis Radio: 15 aniversario de la Gran Logia Provincial</h3>
-        <div class="news-body">
-          <p>Representantes de la Gran Logia Provincial de Murcia participaron en el programa de Nemesis Radio con motivo de los actos conmemorativos del 15.º aniversario de la provincia.</p>
-          <p>Durante la entrevista se habló sobre la masonería, sus valores y su presencia en la Región de Murcia, respondiendo a las preguntas de los oyentes.</p>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-date">2022</span>
+            <span class="news-tag">Medios</span>
+          </div>
+          <h3 class="news-title">La provincia en Nemesis Radio: 15 aniversario de la Gran Logia Provincial</h3>
+          <div class="news-body">
+            <p>Representantes de la Gran Logia Provincial de Murcia participaron en el programa de Nemesis Radio con motivo de los actos conmemorativos del 15.º aniversario de la provincia.</p>
+            <p>Durante la entrevista se habló sobre la masonería, sus valores y su presencia en la Región de Murcia.</p>
+          </div>
         </div>
+
       </div>
 
     </div>
+
+    <button class="news-btn" id="news-btn-es" onclick="
+      var more = document.getElementById('news-more-es');
+      var btn = document.getElementById('news-btn-es');
+      if (more.classList.contains('open')) {
+        more.classList.remove('open');
+        btn.textContent = 'Ver archivo ↓';
+      } else {
+        more.classList.add('open');
+        btn.textContent = 'Ocultar ↑';
+      }
+    ">Ver archivo ↓</button>
 
   </div>
 
