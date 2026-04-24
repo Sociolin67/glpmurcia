@@ -425,9 +425,9 @@
   function closeBanner() {
     document.getElementById('welcomeBanner').classList.add('hidden');
     document.getElementById('welcomePanel').classList.remove('open');
-    localStorage.setItem('glpmWelcomeSeenES', '1');
+    sessionStorage.setItem('glpmWelcomeSeenES', '1');
   }
-  if (localStorage.getItem('glpmWelcomeSeenES')) {
+  if (sessionStorage.getItem('glpmWelcomeSeenES')) {
     document.getElementById('welcomeBanner').classList.add('hidden');
   }
 </script>
