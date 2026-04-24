@@ -403,7 +403,7 @@
     document.getElementById('welcomePanel').classList.remove('open');
     localStorage.setItem('glpmWelcomeSeenEN', '1');
   }
-  if (localStorage.getItem('glpmWelcomeSeenEN')) {
+ if (sessionStorage.getItem('glpmWelcomeSeenEN')) {
     document.getElementById('welcomeBanner').classList.add('hidden');
   }
 </script>
