@@ -318,8 +318,7 @@
           <p class="form-subtitle">Respondemos a todas las consultas en un plazo de 48 horas. Tu privacidad está garantizada.</p>
 
           <!-- SUSTITUIR action por tu endpoint de Formspree cuando tengas el correo real -->
-          <!-- Ejemplo: action="https://formspree.io/f/XXXXXXXX" -->
-          <form id="contact-form" action="#" method="POST" onsubmit="handleSubmit(event)">
+          <form id="contact-form" action="https://formspree.io/f/mvzdladv" method="POST">
 
             <div class="form-row">
               <div class="form-group">
@@ -383,13 +382,7 @@
 </div>
 
 <script>
-function handleSubmit(e) {
-  e.preventDefault();
-  // En pruebas: simula envío. Cuando conectes Formspree, elimina este script
-  // y cambia action del form por tu endpoint real.
-  document.getElementById('form-wrapper').style.display = 'none';
-  document.getElementById('success-msg').classList.add('visible');
-}
+
 </script>
 
 </body>
