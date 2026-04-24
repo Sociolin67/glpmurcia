@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Lodges of the Provincial Grand Lodge of Murcia — Seven Regular Lodges in the Region of Murcia.">
-<title>Lodges | Provincial Grand Lodge of Murcia</title>
+<meta name="description" content="Provincial Grand Lodge of Murcia — Tradition, Fraternity and Service. Regular Freemasonry in the Region of Murcia, part of the Grand Lodge of Spain.">
+<title>Provincial Grand Lodge of Murcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,12 +19,13 @@
   }
 
   html { scroll-behavior: smooth; }
-  body { font-family: 'Lato', sans-serif; background: var(--azul-noche); color: var(--blanco); overflow-x: hidden; }
+  body { font-family: 'Lato', sans-serif; background: var(--azul-noche); color: var(--blanco); overflow-x: hidden; min-height: 100vh; }
 
   .bg-pattern {
     position: fixed; inset: 0; z-index: 0; pointer-events: none;
     background:
-      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 30% at 80% 80%, rgba(26,47,69,0.8) 0%, transparent 60%),
       var(--azul-noche);
   }
   .bg-pattern::before {
@@ -34,149 +35,96 @@
       repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px);
   }
 
-  .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+  .page { position: relative; z-index: 1; display: flex; flex-direction: column; min-height: 100vh; }
 
   /* ── NAV ── */
   nav {
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.4rem 3rem;
+    padding: 0.9rem 3rem;
     border-bottom: 1px solid rgba(201,168,76,0.2);
     backdrop-filter: blur(10px);
     background: rgba(13,27,42,0.7);
     position: sticky; top: 0; z-index: 100;
   }
-  .nav-logo { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
-  .nav-emblem { width: 44px; height: 44px; flex-shrink: 0; }
-  .nav-emblem svg { width: 100%; height: 100%; }
-  .nav-title { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
+  .nav-logo { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
+  .nav-logo img { height: 54px; width: auto; filter: drop-shadow(0 1px 6px rgba(0,0,0,0.6)); transition: opacity 0.3s; }
+  .nav-logo:hover img { opacity: 0.85; }
+  .nav-title { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-size: 0.76rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); transition: color 0.3s; }
   .nav-links a:hover, .nav-links a.active { color: var(--oro); }
   .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
   .nav-cta:hover { background: var(--oro); color: var(--azul-noche); }
 
-  /* ── CABECERA ── */
-  .page-header {
-    padding: 5rem 3rem 3.5rem; text-align: center;
-    border-bottom: 1px solid rgba(201,168,76,0.15);
-    animation: fadeUp 1s ease both;
-  }
-  .ornament { display: flex; align-items: center; gap: 1.2rem; justify-content: center; margin-bottom: 1.8rem; }
+  /* ── SELECTOR DE IDIOMA ── */
+  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
+  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; transition: all 0.25s; color: var(--gris-suave); }
+  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche); font-weight: 600; }
+  .lang-switcher a:not(.active):hover { color: var(--oro); }
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+
+  /* ── HERO ── */
+  .hero { flex: 1; display: flex; align-items: center; justify-content: center; padding: 5rem 2rem 4rem; text-align: center; }
+  .hero-inner { max-width: 780px; animation: fadeUp 1.2s ease both; }
+  .hero-logo { margin: 0 auto 2.2rem; display: flex; justify-content: center; }
+  .hero-logo img { height: 110px; width: auto; filter: drop-shadow(0 4px 16px rgba(201,168,76,0.2)); }
+  .ornament { display: flex; align-items: center; gap: 1.2rem; justify-content: center; margin-bottom: 2rem; }
   .ornament-line { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, var(--oro)); }
   .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
   .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
-  .page-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1rem; }
-  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 300; color: var(--blanco); margin-bottom: 1rem; }
-  .page-title em { font-style: italic; color: var(--oro-claro); }
-  .page-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.95; color: var(--gris-suave); max-width: 560px; margin: 0 auto; letter-spacing: 0.02em; }
+  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1.6rem; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; line-height: 1.08; color: var(--blanco); margin-bottom: 0.5rem; }
+  .hero-title em { font-style: italic; color: var(--oro-claro); }
+  .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2.2vw, 1.7rem); font-weight: 300; color: var(--gris-suave); margin-bottom: 2.4rem; letter-spacing: 0.06em; }
+  .hero-desc { font-size: 0.9rem; font-weight: 300; line-height: 1.95; color: var(--gris-suave); max-width: 560px; margin: 0 auto 3rem; letter-spacing: 0.02em; }
+  .hero-actions { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; padding: 0.9rem 2.2rem; background: var(--oro); color: var(--azul-noche); text-decoration: none; text-transform: uppercase; transition: all 0.3s; font-weight: 600; }
+  .btn-primary:hover { background: var(--oro-claro); transform: translateY(-2px); }
+  .btn-secondary { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; padding: 0.9rem 2.2rem; border: 1px solid rgba(201,168,76,0.45); color: var(--blanco); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+  .btn-secondary:hover { border-color: var(--oro); color: var(--oro); }
 
-  /* ── SECCIÓN ── */
-  .section { padding: 4rem 3rem; max-width: 1100px; margin: 0 auto; width: 100%; }
-  .section-header { margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1.4rem; }
-  .section-line { flex: 1; height: 1px; background: rgba(201,168,76,0.25); }
-  .section-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; color: var(--oro); text-transform: uppercase; white-space: nowrap; }
-  .section-count { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--gris-suave); font-style: italic; }
+  /* ── PILARES ── */
+  .pillars { padding: 4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(26,47,69,0.3); }
+  .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); max-width: 920px; margin: 0 auto; }
+  .pillar { padding: 2rem 1.8rem; text-align: center; border-right: 1px solid rgba(201,168,76,0.15); animation: fadeUp 1s ease both; }
+  .pillar:last-child { border-right: none; }
+  .pillar:nth-child(2) { animation-delay: 0.12s; }
+  .pillar:nth-child(3) { animation-delay: 0.24s; }
+  .pillar:nth-child(4) { animation-delay: 0.36s; }
+  .pillar-icon { width: 42px; height: 42px; margin: 0 auto 1.2rem; border: 1px solid rgba(201,168,76,0.45); display: flex; align-items: center; justify-content: center; transform: rotate(45deg); }
+  .pillar-icon span { transform: rotate(-45deg); font-size: 1rem; }
+  .pillar-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; margin-bottom: 0.7rem; }
+  .pillar-text { font-size: 0.82rem; font-weight: 300; color: var(--gris-suave); line-height: 1.75; }
 
-  /* ── GRID DE LOGIAS ── */
-  .lodges-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+  /* ── ACCESOS RÁPIDOS ── */
+  .pages-strip { padding: 3.5rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); }
+  .pages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 1rem; max-width: 920px; margin: 0 auto; }
+  .page-card { border: 1px solid rgba(201,168,76,0.15); background: rgba(26,47,69,0.2); padding: 1.6rem 1.2rem; text-align: center; text-decoration: none; transition: all 0.3s; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
+  .page-card:hover { border-color: rgba(201,168,76,0.5); background: rgba(26,47,69,0.5); transform: translateY(-2px); }
+  .page-card-icon { font-size: 1rem; color: var(--oro); opacity: 0.8; }
+  .page-card-label { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.14em; color: var(--blanco); text-transform: uppercase; line-height: 1.4; }
+  .page-card-desc { font-size: 0.73rem; font-weight: 300; color: var(--gris-suave); line-height: 1.55; }
 
-  .lodge-card {
-    border: 1px solid rgba(201,168,76,0.18);
-    background: rgba(26,47,69,0.35);
-    padding: 2rem 1.8rem;
-    transition: border-color 0.3s, background 0.3s;
-    animation: fadeUp 0.8s ease both;
-    position: relative;
-    overflow: hidden;
-  }
-  .lodge-card::before {
-    content: ''; position: absolute; top: 0; left: 0;
-    width: 3px; height: 0; background: var(--oro);
-    transition: height 0.4s ease;
-  }
-  .lodge-card:hover { border-color: rgba(201,168,76,0.45); background: rgba(26,47,69,0.55); }
-  .lodge-card:hover::before { height: 100%; }
-
-  .lodge-card:nth-child(2) { animation-delay: 0.08s; }
-  .lodge-card:nth-child(3) { animation-delay: 0.16s; }
-  .lodge-card:nth-child(4) { animation-delay: 0.24s; }
-  .lodge-card:nth-child(5) { animation-delay: 0.32s; }
-  .lodge-card:nth-child(6) { animation-delay: 0.40s; }
-
-  .lodge-logo { display: flex; justify-content: center; margin-bottom: 1.2rem; }
-  .lodge-logo img { height: 80px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4)); }
-  .lodge-logo img.circular { border-radius: 50%; background: white; padding: 3px; }
-  .lodge-num {
-    font-family: 'Cormorant Garamond', serif; font-size: 0.78rem;
-    color: var(--oro); letter-spacing: 0.15em; margin-bottom: 0.5rem;
-    font-style: italic;
-  }
-  .lodge-name {
-    font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 400;
-    color: var(--blanco); margin-bottom: 0.9rem; line-height: 1.3;
-  }
-  .lodge-ritual {
-    font-size: 0.78rem; font-weight: 300; color: var(--gris-suave);
-    line-height: 1.6; margin-bottom: 1.4rem; letter-spacing: 0.02em;
-  }
-  .lodge-ritual span { color: var(--oro-claro); }
-
-  .lodge-links { display: flex; gap: 0.7rem; flex-wrap: wrap; }
-  .lodge-link {
-    font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.15em;
-    padding: 0.3rem 0.8rem; border: 1px solid rgba(201,168,76,0.3);
-    color: var(--gris-suave); text-decoration: none; text-transform: uppercase;
-    transition: all 0.3s;
-  }
-  .lodge-link:hover { border-color: var(--oro); color: var(--oro); }
-  .lodge-link.disabled { opacity: 0.3; cursor: default; pointer-events: none; }
-
-  /* ── SEPARADOR ── */
-  .section-divider {
-    border: none;
-    border-top: 1px solid rgba(201,168,76,0.12);
-    margin: 0 3rem;
-  }
-
-  /* ── CARD ESPECIAL (Installed) ── */
-  .lodge-card.special {
-    border-color: rgba(201,168,76,0.3);
-    background: rgba(201,168,76,0.04);
-  }
-  .lodge-card.special::before { background: var(--oro-claro); }
-  .badge {
-    display: inline-block; font-family: 'Cinzel', serif; font-size: 0.55rem;
-    letter-spacing: 0.15em; padding: 0.2rem 0.7rem;
-    border: 1px solid rgba(201,168,76,0.5); color: var(--oro);
-    text-transform: uppercase; margin-bottom: 0.8rem;
-  }
-
-  /* ── AVISO VISITAS ── */
-  .visit-notice {
-    margin: 0 3rem 3rem;
-    padding: 1.4rem 2rem;
-    border: 1px solid rgba(201,168,76,0.2);
-    background: rgba(26,47,69,0.3);
-    display: flex; align-items: flex-start; gap: 1rem;
-  }
-  .visit-notice-icon { color: var(--oro); font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
-  .visit-notice-text { font-size: 0.82rem; font-weight: 300; color: var(--gris-suave); line-height: 1.75; }
-  .visit-notice-text strong { color: var(--blanco); font-weight: 400; }
+  /* ── LOGIAS ── */
+  .lodges-strip { padding: 2.4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); display: flex; align-items: center; justify-content: center; gap: 0.8rem; flex-wrap: wrap; background: rgba(26,47,69,0.2); }
+  .lodges-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; margin-right: 0.4rem; }
+  .lodge-pill { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); border: 1px solid rgba(201,168,76,0.2); padding: 0.3rem 0.9rem; letter-spacing: 0.05em; transition: all 0.3s; cursor: default; }
+  .lodge-pill:hover { border-color: var(--oro); color: var(--oro); }
 
   /* ── FOOTER ── */
-  footer {
-    margin-top: auto;
-    padding: 1.6rem 3rem;
-    border-top: 1px solid rgba(201,168,76,0.15);
-    background: rgba(13,27,42,0.85);
-    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-  }
-  .footer-copy { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
-  .footer-gle { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
+  footer { padding: 2rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.9); }
+  .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.4rem; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(201,168,76,0.1); }
+  .footer-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
+  .footer-logo img { height: 42px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); opacity: 0.85; transition: opacity 0.3s; }
+  .footer-logo:hover img { opacity: 1; }
+  .footer-logo-text { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
+  .footer-nav { display: flex; gap: 1.6rem; flex-wrap: wrap; }
+  .footer-nav a { font-size: 0.7rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .footer-nav a:hover { color: var(--oro); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
+  .footer-copy { font-size: 0.68rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; opacity: 0.7; }
+  .footer-gle { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.6; transition: opacity 0.3s; }
   .footer-gle:hover { opacity: 1; }
-  .footer-social { display: flex; gap: 1.2rem; }
-  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
-  .footer-social a:hover { color: var(--oro); }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -192,49 +140,60 @@
   .nav-mobile a:last-child { border-bottom: none; }
   .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
   .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; }
-  /* ── SELECTOR DE IDIOMA ── */
-  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
-  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; transition: all 0.25s; color: var(--gris-suave, #B8B0A0); }
-  .lang-switcher a { color: #B8B0A0; }
-  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-  .lang-switcher a:not(.active):hover { color: var(--oro); }
-  .nav-right { display: flex; align-items: center; gap: 1rem; }
   .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
-  .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
-  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+  .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: var(--gris-suave); border-bottom: none; }
+  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche); font-weight: 600; }
 
-
-  /* ── MASONIC RITES ── */
-  .ritos-intro { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); margin-bottom: 2.2rem; max-width: 660px; }
-  .ritos-tree { display: flex; flex-direction: column; align-items: center; gap: 0; }
-  .ritos-root { text-align: center; margin-bottom: 0; }
-  .ritos-root-link { display: inline-flex; align-items: center; gap: 0.7rem; font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; text-decoration: none; color: var(--blanco); padding: 0.8rem 1.8rem; border: 1px solid rgba(201,168,76,0.45); background: rgba(201,168,76,0.07); transition: all 0.3s; }
-  .ritos-root-link:hover { background: rgba(201,168,76,0.14); border-color: var(--oro); color: var(--oro-claro); }
-  .ritos-root-link .ritos-icon { color: var(--oro); font-size: 0.9rem; }
-  .ritos-connector { display: flex; flex-direction: column; align-items: center; }
-  .ritos-connector-v { width: 1px; height: 28px; background: rgba(201,168,76,0.35); }
-  .ritos-branches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; width: 100%; max-width: 760px; }
-  .rito-card { display: flex; flex-direction: column; align-items: center; text-align: center; text-decoration: none; padding: 1.2rem 1rem; border: 1px solid rgba(201,168,76,0.18); background: rgba(21,35,56,0.5); transition: all 0.3s; gap: 0.5rem; }
-  .rito-card:hover { border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.07); transform: translateY(-2px); }
-  .rito-card-name { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); line-height: 1.5; }
-  .rito-card-badge { font-family: 'Cormorant Garamond', serif; font-size: 0.72rem; font-style: italic; color: var(--gris-suave); opacity: 0.8; margin-top: 0.2rem; }
-  .ritos-glpm-note { margin-top: 1.6rem; display: inline-flex; align-items: center; gap: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); opacity: 0.75; border-top: 1px solid rgba(201,168,76,0.15); padding-top: 1.2rem; width: 100%; max-width: 760px; justify-content: center; }
-  .ritos-glpm-note::before, .ritos-glpm-note::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.15); }
+  /* ── WELCOME BANNER ── */
+  .welcome-banner { background: linear-gradient(135deg, rgba(26,47,69,0.98) 0%, rgba(13,27,42,0.98) 100%); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 0.9rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 2rem; position: relative; z-index: 50; animation: slideDown 0.6s ease both; }
+  @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+  .welcome-banner.hidden { display: none; }
+  .welcome-banner-left { display: flex; align-items: center; gap: 1.2rem; flex: 1; min-width: 0; }
+  .welcome-banner-symbol { font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--oro); opacity: 0.7; flex-shrink: 0; }
+  .welcome-banner-text { min-width: 0; }
+  .welcome-banner-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.22em; color: var(--oro); text-transform: uppercase; margin-bottom: 0.2rem; }
+  .welcome-banner-quote { font-family: 'Cormorant Garamond', serif; font-size: 0.92rem; font-style: italic; color: var(--blanco); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .welcome-banner-actions { display: flex; align-items: center; gap: 0.8rem; flex-shrink: 0; }
+  .welcome-btn-read { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 1rem; border: 1px solid rgba(201,168,76,0.4); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+  .welcome-btn-read:hover { background: var(--oro); color: var(--azul-noche); }
+  .welcome-btn-close { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; border: 1px solid rgba(201,168,76,0.2); background: none; color: var(--gris-suave); cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+  .welcome-btn-close:hover { color: var(--oro); border-color: rgba(201,168,76,0.4); }
+  .welcome-panel { display: none; background: rgba(13,27,42,0.98); border-bottom: 1px solid rgba(201,168,76,0.2); position: relative; z-index: 49; }
+  .welcome-panel.open { display: block; }
+  .welcome-panel-inner { max-width: 860px; margin: 0 auto; padding: 2.4rem 3rem; display: flex; gap: 2.8rem; align-items: flex-start; }
+  .welcome-panel-photo { width: 160px; flex-shrink: 0; border: 1px solid rgba(201,168,76,0.2); overflow: hidden; }
+  .welcome-panel-photo img { width: 100%; display: block; object-fit: cover; }
+  .welcome-panel-content { flex: 1; }
+  .welcome-panel-eyebrow { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.22em; color: var(--oro); text-transform: uppercase; margin-bottom: 0.8rem; }
+  .welcome-panel-text { font-size: 0.83rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); }
+  .welcome-panel-text p + p { margin-top: 0.7rem; }
+  .welcome-panel-text strong { color: var(--blanco); font-weight: 400; }
+  .welcome-panel-firma { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; opacity: 0.8; margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(201,168,76,0.15); }
 
   @media (max-width: 768px) {
-    nav { padding: 1rem 1.4rem; }
+    nav { padding: 0.9rem 1.4rem; }
+    .nav-title { display: none; }
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
     .nav-cta { display: none; }
     .nav-right { display: none; }
     .lang-switcher { display: none; }
-    .page-header { padding: 3.5rem 1.4rem 2.5rem; }
-    .section { padding: 3rem 1.4rem; }
-    .section-divider { margin: 0 1.4rem; }
-    .visit-notice { margin: 0 1.4rem 2rem; }
-    footer { padding: 1.4rem; flex-direction: column; text-align: center; }
-    .ritos-branches { grid-template-columns: 1fr; max-width: 100%; }
-    .ritos-root-link { font-size: 0.7rem; padding: 0.7rem 1.2rem; }
+    .nav-logo img { height: 44px; }
+    .hero { padding: 4rem 1.4rem 3rem; }
+    .hero-logo img { height: 85px; }
+    .pillars { padding: 3rem 1.4rem; }
+    .pillar { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); padding: 1.5rem 1rem; }
+    .pillar:last-child { border-bottom: none; }
+    .pages-strip { padding: 2.5rem 1.4rem; }
+    .lodges-strip { padding: 2rem 1.4rem; }
+    footer { padding: 1.8rem 1.4rem; }
+    .footer-top { flex-direction: column; align-items: flex-start; }
+    .welcome-banner { padding: 0.8rem 1.2rem; gap: 0.8rem; }
+    .welcome-banner-quote { font-size: 0.82rem; }
+    .welcome-btn-read { font-size: 0.55rem; padding: 0.35rem 0.7rem; }
+    .welcome-btn-close { font-size: 0.52rem; padding: 0.35rem 0.6rem; }
+    .welcome-panel-inner { flex-direction: column; padding: 1.6rem 1.2rem; gap: 1.4rem; }
+    .welcome-panel-photo { width: 100%; max-width: 140px; }
   }
 </style>
 </head>
@@ -247,13 +206,13 @@
   <!-- NAV -->
   <nav>
     <a href="index-en.html" class="nav-logo">
-      <img src="logo.png" alt="Gran Logia Provincial de Murcia" style="height:48px;width:auto;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4));">
+      <img src="logo.png" alt="Coat of Arms — Provincial Grand Lodge of Murcia">
       <div class="nav-title">Provincial Grand Lodge<br>of Murcia</div>
     </a>
     <ul class="nav-links">
-      <li><a href="index-en.html">Home</a></li>
+      <li><a href="index-en.html" class="active">Home</a></li>
       <li><a href="noticias-en.html">News</a></li>
-      <li><a href="logias-en.html" class="active">Lodges</a></li>
+      <li><a href="logias-en.html">Lodges</a></li>
       <li><a href="ordenes-en.html">Orders</a></li>
       <li><a href="masoneria-en.html">About Freemasonry</a></li>
       <li><a href="caridad-en.html">Charity</a></li>
@@ -262,205 +221,192 @@
     <div class="nav-right">
       <a href="contacto-en.html" class="nav-cta">Contact Us</a>
       <div class="lang-switcher">
-        <a href="logias.html">ES</a>
-        <a href="logias-en.html" class="active">EN</a>
+        <a href="index.html">ES</a>
+        <a href="index-en.html" class="active">EN</a>
       </div>
     </div>
-    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
   </nav>
   <div class="nav-mobile" id="navMobile">
-    <a href="index-en.html">Home</a>
+    <a href="index-en.html" class="active">Home</a>
     <a href="noticias-en.html">News</a>
-    <a href="logias-en.html" class="active">Lodges</a>
+    <a href="logias-en.html">Lodges</a>
     <a href="ordenes-en.html">Orders</a>
     <a href="masoneria-en.html">About Freemasonry</a>
     <a href="caridad-en.html">Charity</a>
     <a href="recursos-en.html">Resources</a>
     <a href="contacto-en.html" class="nav-cta-mobile">Contact Us</a>
     <div class="lang-switcher-mobile">
-      <a href="logias.html">ES</a>
-      <a href="logias-en.html" class="active">EN</a>
+      <a href="index.html">ES</a>
+      <a href="index-en.html" class="active">EN</a>
     </div>
   </div>
 
-  <!-- CABECERA -->
-  <header class="page-header">
-    <div class="ornament">
-      <span class="ornament-line"></span>
-      <span class="ornament-symbol">✦</span>
-      <span class="ornament-line r"></span>
+  <!-- WELCOME BANNER -->
+  <div class="welcome-banner" id="welcomeBanner">
+    <div class="welcome-banner-left">
+      <span class="welcome-banner-symbol">∴</span>
+      <div class="welcome-banner-text">
+        <p class="welcome-banner-label">Welcome from the Provincial Grand Master</p>
+        <p class="welcome-banner-quote">"It is an honour to welcome you to the Provincial Grand Lodge of Murcia."</p>
+      </div>
     </div>
-    <p class="page-eyebrow">Provincial Grand Lodge of Murcia</p>
-    <h1 class="page-title">Lodges of <em>the Province</em></h1>
-    <p class="page-desc">The Province of Murcia has seven Regular Lodges in both Spanish and English, constitutionally founded under the Grand Lodge of Spain. If you wish to visit a lodge, please contact its Secretary in the first instance.</p>
-  </header>
-
-  <!-- AVISO VISITAS -->
-  <div class="visit-notice">
-    <span class="visit-notice-icon">◈</span>
-    <p class="visit-notice-text"><strong>Visits:</strong> If you wish to visit one of our lodges as a Brother from another obedience or as an interested non-Mason, please contact us via the contact form or directly with the Secretary of the relevant lodge.</p>
+    <div class="welcome-banner-actions">
+      <button class="welcome-btn-read" onclick="togglePanel()">Read message</button>
+      <button class="welcome-btn-close" onclick="closeBanner()">Close ×</button>
+    </div>
   </div>
 
-  <!-- LOGIAS REGULARES -->
-  <section class="section">
-    <div class="section-header">
-      <span class="section-label">Regular Lodges</span>
-      <span class="section-line"></span>
-      <span class="section-count">Seven lodges · Province founded in 2009</span>
+  <div class="welcome-panel" id="welcomePanel">
+    <div class="welcome-panel-inner">
+      <div class="welcome-panel-photo">
+        <img src="gm-provincial.jpg" alt="R.W.Bro. Luis Alcaina Guzmán — Provincial Grand Master of Murcia">
+      </div>
+      <div class="welcome-panel-content">
+        <p class="welcome-panel-eyebrow">R∴W∴Bro∴ Luis Alcaina Guzmán — Provincial Grand Master of Murcia</p>
+        <div class="welcome-panel-text">
+          <p>It is an honour to welcome you to the website of the Provincial Grand Lodge of Murcia. We are part of the only internationally recognised regular Freemasonry and the largest in all of Spain.</p>
+          <p>This space is a meeting point for Masons and non-initiates alike. To those not yet initiated, we invite you to explore the values and principles that guide our Order. We are at your disposal for any enquiry.</p>
+          <p>May the light of the Great Architect of the Universe illuminate our path. <strong>Welcome to the Provincial Grand Lodge of Murcia!</strong> Fraternally.</p>
+        </div>
+        <p class="welcome-panel-firma">R∴W∴Bro∴ Luis Alcaina Guzmán · Provincial Grand Master of Murcia</p>
+      </div>
     </div>
+  </div>
 
-    <div class="lodges-grid">
-
-      <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-luz-murcia.png" alt="Luz de Murcia"></div>
-        <p class="lodge-num">Nº 91</p>
-        <h2 class="lodge-name">Luz de Murcia</h2>
-        <p class="lodge-ritual">Works the <span>Emulation Ritual in English</span></p>
-        <div class="lodge-links">
-          <a href="#" class="lodge-link disabled">Website</a>
-          <a href="#" class="lodge-link disabled">Twitter</a>
-          <a href="https://www.facebook.com/LuzDeMurcia/" target="_blank" rel="noopener" class="lodge-link">Facebook</a>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-logo">
+        <img src="logo.png?v=2" alt="Coat of Arms — Provincial Grand Lodge of Murcia">
       </div>
-
-      <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-fraternidad.png" alt="Fraternidad Mediterránea"></div>
-        <p class="lodge-num">Nº 94</p>
-        <h2 class="lodge-name">Fraternidad Mediterránea</h2>
-        <p class="lodge-ritual">Works the <span>Emulation Ritual in Spanish</span></p>
-        <div class="lodge-links">
-          <a href="http://www.fm94.es/" target="_blank" rel="noopener" class="lodge-link">Website</a>
-          <a href="#" class="lodge-link disabled">Twitter</a>
-          <a href="#" class="lodge-link disabled">Facebook</a>
-        </div>
+      <div class="ornament">
+        <span class="ornament-line"></span>
+        <span class="ornament-symbol">✦</span>
+        <span class="ornament-line r"></span>
       </div>
-
-      <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-sierra-espuna.png?v=5" alt="Sierra Espuña"></div>
-        <p class="lodge-num">Nº 136</p>
-        <h2 class="lodge-name">Sierra Espuña</h2>
-        <p class="lodge-ritual">Works the <span>Emulation Ritual in English</span></p>
-        <div class="lodge-links">
-          <a href="#" class="lodge-link disabled">Website</a>
-          <a href="#" class="lodge-link disabled">Twitter</a>
-          <a href="https://www.facebook.com/groups/819069828281182/" target="_blank" rel="noopener" class="lodge-link">Facebook</a>
-        </div>
+      <p class="hero-eyebrow">Founded 5 December 2009 &middot; Region of Murcia</p>
+      <h1 class="hero-title">Freemasonry in<br><em>Murcia</em></h1>
+      <p class="hero-subtitle">Tradition, Fraternity and Service</p>
+      <p class="hero-desc">The Provincial Grand Lodge of Murcia, a constitutional part of the Grand Lodge of Spain, unites seven Regular Lodges committed to the values of universal fraternity, moral progress and service to the community.</p>
+      <div class="hero-actions">
+        <a href="masoneria-en.html" class="btn-primary">Become a Freemason</a>
+        <a href="logias-en.html" class="btn-secondary">Meet the Lodges</a>
       </div>
-
-      <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-moria.png" alt="Logia Moriá"></div>
-        <p class="lodge-num">Nº 143</p>
-        <h2 class="lodge-name">Moriá</h2>
-        <p class="lodge-ritual">Works the <span>Ancient and Accepted Scottish Rite in Spanish</span></p>
-        <div class="lodge-links">
-          <a href="https://logiamoria.org/" target="_blank" rel="noopener" class="lodge-link">Website</a>
-          <a href="#" class="lodge-link disabled">Twitter</a>
-          <a href="#" class="lodge-link disabled">Facebook</a>
-        </div>
-      </div>
-
-      <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-floridablanca.png?v=4" alt="Conde de Floridablanca" class="circular"></div>
-        <p class="lodge-num">Nº 164</p>
-        <h2 class="lodge-name">Conde de Floridablanca</h2>
-        <p class="lodge-ritual">Works the <span>Emulation Ritual in Spanish</span></p>
-        <div class="lodge-links">
-          <a href="https://www.masoneriamurcia.es/" target="_blank" rel="noopener" class="lodge-link">Website</a>
-          <a href="#" class="lodge-link disabled">Twitter</a>
-          <a href="#" class="lodge-link disabled">Facebook</a>
-        </div>
-      </div>
-
-      <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-caballeros.png" alt="Caballeros de Levante"></div>
-        <p class="lodge-num">Nº 193</p>
-        <h2 class="lodge-name">Caballeros de Levante</h2>
-        <p class="lodge-ritual">Works the <span>French Rite in Spanish</span></p>
-        <div class="lodge-links">
-          <a href="https://caballerosdelevante193.es/" target="_blank" rel="noopener" class="lodge-link">Website</a>
-          <a href="#" class="lodge-link disabled">Twitter</a>
-          <a href="#" class="lodge-link disabled">Facebook</a>
-        </div>
-      </div>
-
-      <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-maestros.png" alt="Logia de Maestros Instalados"></div>
-        <p class="lodge-num">Nº 180</p>
-        <h2 class="lodge-name">Maestros Instalados de Murcia</h2>
-        <p class="lodge-ritual">Works the <span>Emulation Ritual in English and Spanish</span></p>
-        <div class="lodge-links">
-          <a href="#" class="lodge-link disabled">Website</a>
-          <a href="#" class="lodge-link disabled">Twitter</a>
-          <a href="#" class="lodge-link disabled">Facebook</a>
-        </div>
-      </div>
-
     </div>
   </section>
 
-
-
-  <!-- MASONIC RITES -->
-  <div class="section" style="padding-top:0;">
-    <div class="section-header">
-      <span class="section-label">The Masonic Rites</span>
-      <span class="section-line"></span>
+  <!-- PILARES -->
+  <section class="pillars">
+    <div class="pillars-grid">
+      <div class="pillar">
+        <div class="pillar-icon"><span>⬡</span></div>
+        <p class="pillar-label">Fraternity</p>
+        <p class="pillar-text">Lasting bonds between men of good will, beyond social or cultural differences.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon"><span>◈</span></div>
+        <p class="pillar-label">Reason</p>
+        <p class="pillar-text">The cultivation of free, critical thought and a commitment to the search for truth.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon"><span>✦</span></div>
+        <p class="pillar-label">Charity</p>
+        <p class="pillar-text">Active support for local communities and contribution to social causes in the region.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon"><span>◇</span></div>
+        <p class="pillar-label">Tradition</p>
+        <p class="pillar-text">Heirs to centuries of Masonic history, with roots in the great medieval builders.</p>
+      </div>
     </div>
+  </section>
 
-    <p class="ritos-intro">
-      The Provincial Grand Lodge of Murcia works within the three great rites of regular Masonic tradition. Each rite offers its own path of initiation and knowledge, sharing the same universal principles of the Order.
-    </p>
-
-    <div class="ritos-tree">
-
-      <div class="ritos-root">
-        <a href="https://www.gle.org/masoneria/ritos/" target="_blank" rel="noopener" class="ritos-root-link">
-          <span class="ritos-icon">∴</span>
-          The Masonic Rites
-          <span class="ritos-icon">∴</span>
-        </a>
-      </div>
-
-      <div class="ritos-connector">
-        <div class="ritos-connector-v"></div>
-      </div>
-
-      <div class="ritos-branches">
-
-        <a href="https://www.gle.org/masoneria/ritos/emulacion/" target="_blank" rel="noopener" class="rito-card">
-          <span class="rito-card-name">Emulation<br>Rite</span>
-          <span class="rito-card-badge">Anglo-Saxon tradition</span>
-        </a>
-
-        <a href="https://www.gle.org/masoneria/ritos/rito-escoces-antiguo-y-aceptado/" target="_blank" rel="noopener" class="rito-card">
-          <span class="rito-card-name">Ancient &amp; Accepted<br>Scottish Rite</span>
-          <span class="rito-card-badge">33 degrees</span>
-        </a>
-
-        <a href="https://www.gle.org/masoneria/ritos/rito-frances/" target="_blank" rel="noopener" class="rito-card">
-          <span class="rito-card-name">Modern<br>French Rite</span>
-          <span class="rito-card-badge">Continental tradition</span>
-        </a>
-
-      </div>
-
-      <p class="ritos-glpm-note">The three rites practised in the P∴ G∴ L∴ of Murcia</p>
-
+  <!-- ACCESOS RÁPIDOS -->
+  <section class="pages-strip">
+    <div class="pages-grid">
+      <a href="noticias-en.html" class="page-card">
+        <span class="page-card-icon">◈</span>
+        <span class="page-card-label">News &amp; Events</span>
+        <span class="page-card-desc">Stay up to date with the province's activities.</span>
+      </a>
+      <a href="logias-en.html" class="page-card">
+        <span class="page-card-icon">⬡</span>
+        <span class="page-card-label">Lodges</span>
+        <span class="page-card-desc">The seven regular lodges of the Province of Murcia.</span>
+      </a>
+      <a href="masoneria-en.html" class="page-card">
+        <span class="page-card-icon">✦</span>
+        <span class="page-card-label">About Freemasonry</span>
+        <span class="page-card-desc">History, values and how to join the fraternity.</span>
+      </a>
+      <a href="caridad-en.html" class="page-card">
+        <span class="page-card-icon">◇</span>
+        <span class="page-card-label">Charity</span>
+        <span class="page-card-desc">Our commitment to the community of Murcia.</span>
+      </a>
+      <a href="recursos-en.html" class="page-card">
+        <span class="page-card-icon">∴</span>
+        <span class="page-card-label">Resources</span>
+        <span class="page-card-desc">Documentaries, constitutions and Masonic publications.</span>
+      </a>
+      <a href="contacto-en.html" class="page-card">
+        <span class="page-card-icon">▷</span>
+        <span class="page-card-label">Contact Us</span>
+        <span class="page-card-desc">Write to us for any enquiry, no commitment required.</span>
+      </a>
     </div>
+  </section>
+
+  <!-- LOGIAS -->
+  <div class="lodges-strip">
+    <span class="lodges-label">Lodges of the Province</span>
+    <span class="lodge-pill">Luz de Murcia Nº 91</span>
+    <span class="lodge-pill">Fraternidad Mediterránea Nº 94</span>
+    <span class="lodge-pill">Sierra Espuña Nº 136</span>
+    <span class="lodge-pill">Logia Moriá Nº 143</span>
+    <span class="lodge-pill">Conde de Floridablanca Nº 164</span>
+    <span class="lodge-pill">Logia de Maestros Instalados Nº 180</span>
+    <span class="lodge-pill">Caballeros de Levante Nº 193</span>
   </div>
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-copy">© 2026 Provincial Grand Lodge of Murcia</span>
-    <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Part of the Grand Lodge of Spain</a>
-    <div class="footer-social">
-      <a href="https://www.facebook.com/pglmurcia" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://instagram.com/glpmurcia" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://t.me/GLEGOE" target="_blank" rel="noopener">Telegram</a>
-      <a href="https://twitter.com/glp_murcia" target="_blank" rel="noopener">X</a>
+    <div class="footer-top">
+      <a href="index-en.html" class="footer-logo">
+        <img src="logo.png" alt="Provincial Grand Lodge of Murcia">
+        <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 Provincial Grand Lodge of Murcia</span>
+      <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Part of the Grand Lodge of Spain</a>
     </div>
   </footer>
 
 </div>
+
+<script>
+  function togglePanel() {
+    var panel = document.getElementById('welcomePanel');
+    var btn = document.querySelector('.welcome-btn-read');
+    if (panel.classList.contains('open')) {
+      panel.classList.remove('open');
+      btn.textContent = 'Read message';
+    } else {
+      panel.classList.add('open');
+      btn.textContent = 'Close message';
+    }
+  }
+  function closeBanner() {
+    document.getElementById('welcomeBanner').classList.add('hidden');
+    document.getElementById('welcomePanel').classList.remove('open');
+    localStorage.setItem('glpmWelcomeSeenEN', '1');
+  }
+  if (localStorage.getItem('glpmWelcomeSeenEN')) {
+    document.getElementById('welcomeBanner').classList.add('hidden');
+  }
+</script>
+
 </body>
 </html>
