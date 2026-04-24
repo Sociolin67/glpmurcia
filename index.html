@@ -224,6 +224,9 @@
   }
   .modal-close:hover { border-color: var(--oro); color: var(--oro); }
 
+  .modal-close-bottom { display: block; width: 100%; margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; background: var(--oro); border: none; color: var(--azul-noche); padding: 0.7rem 1rem; cursor: pointer; transition: opacity 0.3s; font-weight: 600; }
+  .modal-close-bottom:hover { opacity: 0.85; }
+
   @media (max-width: 768px) {
     nav { padding: 0.9rem 1.4rem; }
     .nav-title { display: none; }
@@ -243,9 +246,10 @@
     footer { padding: 1.8rem 1.4rem; }
     .footer-top { flex-direction: column; align-items: flex-start; }
     .modal { flex-direction: column; max-height: 88vh; }
-    .modal-photo { width: 100%; height: 200px; }
-    .modal-body { padding: 1.6rem 1.4rem 1.4rem; }
-    .modal-title { font-size: 1.15rem; }
+    .modal-photo { width: 100%; height: 150px; }
+    .modal-body { padding: 1.4rem 1.2rem 1.2rem; }
+    .modal-title { font-size: 1.1rem; }
+    .modal-text { font-size: 0.8rem; }
   }
 </style>
 </head>
@@ -408,7 +412,6 @@
 <!-- MODAL BIENVENIDA GRAN MAESTRO PROVINCIAL -->
 <div class="modal-overlay" id="welcomeModal">
   <div class="modal">
-    <button class="modal-close" onclick="closeModal()">Cerrar ×</button>
     <div class="modal-photo">
       <img src="gm-provincial.jpg" alt="R.H. Luis Alcaina Guzmán — Gran Maestro Provincial de Murcia">
     </div>
@@ -417,23 +420,22 @@
       <h2 class="modal-title">Gran Logia Provincial<br>de <em>Murcia</em></h2>
       <div class="modal-divider"></div>
       <div class="modal-text">
-        <p>Es un honor darles la más cordial bienvenida a la página web de la Gran Logia Provincial de Murcia, Gran Logia de España. Formamos parte de la única Masonería regular reconocida internacionalmente y al mismo tiempo la más numerosa en toda España.</p>
-        <p>Es nuestra intención que este espacio virtual se convierta en un punto de encuentro para Masones y no iniciados. Para los hermanos de la Provincia, iremos incorporando en el área privada información actualizada sobre las actividades de la Gran Logia Provincial y de todas las Logias de la Provincia.</p>
-        <p>A los no iniciados, les extendemos nuestra mano amiga, invitándoles a explorar los valores y principios que guían nuestra Orden. Estaremos encantados de atender las consultas que nos puedan hacer.</p>
-        <p>Que la luz del Gran Arquitecto del Universo ilumine nuestro camino y nos guíe en esta noble labor de construir un mundo mejor.</p>
-        <p><strong>¡Bienvenidos a la Gran Logia Provincial de Murcia!</strong> Fraternalmente.</p>
+        <p>Es un honor darles la más cordial bienvenida a la página web de la Gran Logia Provincial de Murcia. Somos parte de la única Masonería regular reconocida internacionalmente y la más numerosa de España.</p>
+        <p>Este espacio es un punto de encuentro para Masones y no iniciados. A quienes aún no pertenecen a nuestra Orden, les invitamos a explorar los valores que nos guían. Estamos a su disposición para cualquier consulta.</p>
+        <p>Que la luz del Gran Arquitecto del Universo ilumine nuestro camino. <strong>¡Bienvenidos!</strong> Fraternalmente.</p>
       </div>
       <p class="modal-firma">R∴H∴ Luis Alcaina Guzmán · Gran Maestro Provincial de Murcia</p>
+      <button class="modal-close-bottom" onclick="closeModalES()">Entrar →</button>
     </div>
   </div>
 </div>
 
 <script>
-  function closeModal() {
+  function closeModalES() {
     document.getElementById('welcomeModal').classList.add('hidden');
-    sessionStorage.setItem('welcomeSeen', '1');
+    localStorage.setItem('glpmWelcomeES', '1');
   }
-  if (sessionStorage.getItem('welcomeSeen')) {
+  if (localStorage.getItem('glpmWelcomeES')) {
     document.getElementById('welcomeModal').classList.add('hidden');
   }
 </script>
