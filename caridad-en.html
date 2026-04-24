@@ -233,6 +233,10 @@
   .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
   .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
 
+  /* ── SHOW MORE ── */
+  .timeline-btn { display: block; margin: 1.5rem auto 0; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.5rem 1.4rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
+  .timeline-btn:hover { background: var(--oro); color: var(--azul-noche); }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -384,31 +388,55 @@
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
+        <p class="timeline-date">April 2026</p>
+        <h3 class="timeline-title">Donation of €500 to FUENSOCIAL</h3>
+        <p class="timeline-body">The Provincial Grand Lodge of Murcia donated <strong>€500</strong> to <strong>FUENSOCIAL</strong>, an association supporting people with disabilities or at risk of developing them, and their families, through the Provincial Grand Lodge of Andalusia. A reflection of Murcian Freemasonry's fraternal commitment beyond provincial boundaries.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
         <p class="timeline-date">December 2025</p>
         <h3 class="timeline-title">Provincial Gala: €1,600 for AFACMUR</h3>
         <p class="timeline-body">The Province of Murcia donated the <strong>€1,600</strong> raised at its Provincial Gala to <strong>AFACMUR</strong>, an association dedicated to supporting children, young people and their families throughout the cancer treatment process. The Provincial Grand Master <strong>Luis Alcaina</strong> and Provincial Grand Secretary <strong>Ángel Sánchez</strong> made the presentation in person.</p>
       </div>
 
-            <div class="timeline-item">
+      <div class="timeline-item">
         <div class="timeline-dot"></div>
         <p class="timeline-date">March 2023</p>
         <h3 class="timeline-title">Gala Dinner: €1,000 for MABS Murcia and Proyecto Oblatas</h3>
         <p class="timeline-body">At the Province's Annual Gala Dinner, <strong>€1,000</strong> was raised through a raffle, distributed equally between MABS Murcia and Proyecto Oblatas. The Provincial Grand Master, R.W.Bro. Terence Pierce, personally presented the cheques to representatives of both organisations.</p>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-date">2022</p>
-        <h3 class="timeline-title">Luz de Murcia No. 91: €1,000 in food to Los Alcázares</h3>
-        <p class="timeline-body">Luz de Murcia Lodge donated food items valued at <strong>€1,000</strong> to the social services of Los Alcázares. The donation was received by Javier Pacheco, head of Municipal Social Services, in the presence of lodge members and the Provincial Grand Master.</p>
+      <!-- HIDDEN ENTRIES -->
+      <div class="timeline-more" id="timeline-more-en" style="display:none;">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">2022</p>
+          <h3 class="timeline-title">Luz de Murcia No. 91: €1,000 in food to Los Alcázares</h3>
+          <p class="timeline-body">Luz de Murcia Lodge donated food items valued at <strong>€1,000</strong> to the social services of Los Alcázares. The donation was received by Javier Pacheco, head of Municipal Social Services, in the presence of lodge members and the Provincial Grand Master.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">Ongoing initiative</p>
+          <h3 class="timeline-title">Ongoing support for the region's food banks</h3>
+          <p class="timeline-body">The Province maintains an active and sustained collaboration with the food banks of the Region of Murcia, responding to the needs of the nearly <strong>30,000 people</strong> who depend on them in our community.</p>
+        </div>
+
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-date">Ongoing initiative</p>
-        <h3 class="timeline-title">Ongoing support for the region's food banks</h3>
-        <p class="timeline-body">The Province maintains an active and sustained collaboration with the food banks of the Region of Murcia, responding to the needs of the nearly <strong>30,000 people</strong> who depend on them in our community.</p>
-      </div>
+      <button class="timeline-btn" id="timeline-btn-en" onclick="
+        var more = document.getElementById('timeline-more-en');
+        var btn = document.getElementById('timeline-btn-en');
+        if (more.style.display === 'none') {
+          more.style.display = 'block';
+          btn.textContent = 'Show less ↑';
+        } else {
+          more.style.display = 'none';
+          btn.textContent = 'Show more ↓';
+        }
+      ">Show more ↓</button>
 
     </div>
 
