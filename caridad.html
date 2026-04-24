@@ -233,6 +233,10 @@
   .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
   .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
 
+  /* ── VER MÁS ── */
+  .timeline-btn { display: block; margin: 1.5rem auto 0; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.5rem 1.4rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
+  .timeline-btn:hover { background: var(--oro); color: var(--azul-noche); }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -384,31 +388,55 @@
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
+        <p class="timeline-date">Abril 2026</p>
+        <h3 class="timeline-title">Donación de 500 € a FUENSOCIAL</h3>
+        <p class="timeline-body">La Gran Logia Provincial de Murcia donó <strong>500 €</strong> a <strong>FUENSOCIAL</strong>, asociación de apoyo a personas con discapacidad y sus familias, a través de la Gran Logia Provincial de Andalucía. Una muestra del compromiso fraternal de la Masonería murciana más allá de las fronteras provinciales.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
         <p class="timeline-date">Diciembre 2025</p>
         <h3 class="timeline-title">Gala Provincial: 1.600 € para AFACMUR</h3>
         <p class="timeline-body">La Provincia de Murcia donó los <strong>1.600 €</strong> recaudados en su Gala Provincial a <strong>AFACMUR</strong>, asociación dedicada al apoyo de niños, jóvenes y sus familias durante el proceso de tratamiento contra el cáncer. El Gran Maestro Provincial <strong>Luis Alcaina</strong> y el Secretario Provincial <strong>Ángel Sánchez</strong> realizaron la entrega en persona.</p>
       </div>
 
-            <div class="timeline-item">
+      <div class="timeline-item">
         <div class="timeline-dot"></div>
         <p class="timeline-date">Marzo 2023</p>
         <h3 class="timeline-title">Cena de Gala: 1.000 € para MABS Murcia y Proyecto Oblatas</h3>
         <p class="timeline-body">En la Cena de Gala Anual de la provincia se recaudaron <strong>1.000 €</strong> mediante una rifa, distribuidos a partes iguales entre MABS Murcia y Proyecto Oblatas. El Gran Maestro Provincial, R.H. Terence Pierce, hizo entrega personal de los cheques a los representantes de ambas organizaciones.</p>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-date">2022</p>
-        <h3 class="timeline-title">Luz de Murcia Nº 91: 1.000 € en alimentos a Los Alcázares</h3>
-        <p class="timeline-body">La logia Luz de Murcia donó productos alimentarios valorados en <strong>1.000 €</strong> a los servicios sociales de Los Alcázares. La entrega fue recibida por Javier Pacheco, responsable de Servicios Sociales del municipio, en presencia de miembros de la logia y del Gran Maestro Provincial.</p>
+      <!-- ENTRADAS OCULTAS -->
+      <div class="timeline-more" id="timeline-more-es" style="display:none;">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">2022</p>
+          <h3 class="timeline-title">Luz de Murcia Nº 91: 1.000 € en alimentos a Los Alcázares</h3>
+          <p class="timeline-body">La logia Luz de Murcia donó productos alimentarios valorados en <strong>1.000 €</strong> a los servicios sociales de Los Alcázares. La entrega fue recibida por Javier Pacheco, responsable de Servicios Sociales del municipio, en presencia de miembros de la logia y del Gran Maestro Provincial.</p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">Iniciativa permanente</p>
+          <h3 class="timeline-title">Apoyo continuo a los bancos de alimentos de la región</h3>
+          <p class="timeline-body">La provincia mantiene una colaboración activa y sostenida con los bancos de alimentos de la Región de Murcia, respondiendo a las necesidades de las casi <strong>30.000 personas</strong> que dependen de ellos en nuestra comunidad.</p>
+        </div>
+
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-date">Iniciativa permanente</p>
-        <h3 class="timeline-title">Apoyo continuo a los bancos de alimentos de la región</h3>
-        <p class="timeline-body">La provincia mantiene una colaboración activa y sostenida con los bancos de alimentos de la Región de Murcia, respondiendo a las necesidades de las casi <strong>30.000 personas</strong> que dependen de ellos en nuestra comunidad.</p>
-      </div>
+      <button class="timeline-btn" id="timeline-btn-es" onclick="
+        var more = document.getElementById('timeline-more-es');
+        var btn = document.getElementById('timeline-btn-es');
+        if (more.style.display === 'none') {
+          more.style.display = 'block';
+          btn.textContent = 'Ver menos ↑';
+        } else {
+          more.style.display = 'none';
+          btn.textContent = 'Ver más ↓';
+        }
+      ">Ver más ↓</button>
 
     </div>
 
