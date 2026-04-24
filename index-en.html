@@ -401,9 +401,9 @@
   function closeBanner() {
     document.getElementById('welcomeBanner').classList.add('hidden');
     document.getElementById('welcomePanel').classList.remove('open');
-    localStorage.setItem('glpmWelcomeSeenEN', '1');
+    sessionStorage.setItem('glpmWelcomeSeenEN', '1');
   }
- if (sessionStorage.getItem('glpmWelcomeSeenEN')) {
+  if (sessionStorage.getItem('glpmWelcomeSeenEN')) {
     document.getElementById('welcomeBanner').classList.add('hidden');
   }
 </script>
