@@ -239,6 +239,19 @@
   .gm-link { align-self: flex-start; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.5rem 1.2rem; border: 1px solid rgba(201,168,76,0.35); color: var(--oro); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
   .gm-link:hover { background: var(--oro); color: var(--azul-noche); }
 
+  /* ── CHARACTERISTICS ── */
+  .caracteristicas-block { margin-bottom: 3rem; }
+  .caracteristicas-intro { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); margin-bottom: 2rem; }
+  .caracteristicas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .caract-item { border: 1px solid rgba(201,168,76,0.18); background: rgba(21,35,56,0.5); padding: 1.6rem 1.4rem; display: flex; flex-direction: column; gap: 0.8rem; transition: border-color 0.3s; }
+  .caract-item:hover { border-color: rgba(201,168,76,0.45); }
+  .caract-symbol { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; }
+  .caract-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.12em; color: var(--blanco); text-transform: uppercase; line-height: 1.4; }
+  .caract-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.8; color: var(--gris-suave); }
+  .caracteristicas-requisitos { border: 1px solid rgba(201,168,76,0.15); background: rgba(21,35,56,0.3); padding: 1.4rem 1.8rem; }
+  .caracteristicas-requisitos p { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: var(--gris-suave); }
+  .caracteristicas-requisitos strong { color: var(--blanco); font-weight: 400; }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -251,6 +264,7 @@
     .grades { grid-template-columns: 1fr; }
     .inner-nav a { padding: 0.8rem 1rem; font-size: 0.55rem; }
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
+    .caracteristicas-grid { grid-template-columns: 1fr; }
   }
 
 </style>
@@ -324,6 +338,16 @@
 
   <!-- CONTENIDO -->
   <div class="content">
+
+    <!-- GRAND MASTER -->
+    <div class="gm-block" style="margin-bottom:3rem;">
+      <div class="gm-quote">
+        <p>"We are not a political party, nor are we a religion. We are simply people eager to improve, who use diversity of thought and fraternity as instruments of learning."</p>
+        <p class="gm-attribution">M∴ W∴ Bro∴ Shaun Parsons Herrera — Grand Master of the Grand Lodge of Spain</p>
+      </div>
+      <p class="gm-desc">The Grand Master is the highest authority of Regular Freemasonry in Spain. Discover his message and his vision for the Order in our country. <em>Content in Spanish.</em></p>
+      <a href="https://www.gle.org/gran-logia/gran-maestro/" target="_blank" rel="noopener" class="gm-link">The Grand Master of the G∴ L∴ E∴</a>
+    </div>
 
     <!-- QUÉ ES -->
     <div class="text-block">
@@ -454,6 +478,42 @@
       </div>
     </div>
 
+    <!-- CHARACTERISTICS OF A FREEMASON -->
+    <div class="caracteristicas-block">
+      <div class="section-header" style="margin-bottom:1.8rem;">
+        <span class="section-label" style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.22em;color:var(--oro);text-transform:uppercase;white-space:nowrap;">Characteristics of a Freemason</span>
+        <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.4),transparent);"></span>
+      </div>
+
+      <p class="caracteristicas-intro">Every person interested in joining Freemasonry must meet the following three fundamental requirements:</p>
+
+      <div class="caracteristicas-grid">
+
+        <div class="caract-item">
+          <span class="caract-symbol">∴ I</span>
+          <span class="caract-title">A Free Person</span>
+          <p class="caract-desc">The request for initiation must arise from the individual's innate freedom, free from all pressure, influence, dependence or circumstance that might constrain it.</p>
+        </div>
+
+        <div class="caract-item">
+          <span class="caract-symbol">∴ II</span>
+          <span class="caract-title">Of Good Character</span>
+          <p class="caract-desc">Trustworthy, honourable in private life and in their manner of working, and of good reputation in their community.</p>
+        </div>
+
+        <div class="caract-item">
+          <span class="caract-symbol">∴ III</span>
+          <span class="caract-title">Belief in a Supreme Being</span>
+          <p class="caract-desc">A belief in a First Cause of all creation, whom Freemasons, respecting every individual belief, refer to as the <em>Great Architect of the Universe</em>.</p>
+        </div>
+
+      </div>
+
+      <div class="caracteristicas-requisitos">
+        <p>Additionally, membership requires being a <strong>male aged 18 or over</strong>, regardless of nationality, social group or religion, with the capacity to understand the philosophical concepts of the Order and to possess a <strong>"science, art, trade or income"</strong>, as expressed in the ancient landmarks of the Order.</p>
+      </div>
+    </div>
+
     <!-- CTA -->
     <div class="cta-block">
       <h3 class="cta-title">Interested in <em>taking the step</em>?</h3>
@@ -464,18 +524,6 @@
       </div>
     </div>
 
-  </div>
-
-  <!-- GRAND MASTER -->
-  <div style="max-width:860px; margin:0 auto; padding:0 3rem 4rem; width:100%;">
-    <div class="gm-block">
-      <div class="gm-quote">
-        <p>"We are not a political party, nor are we a religion. We are simply people eager to improve, who use diversity of thought and fraternity as instruments of learning."</p>
-        <p class="gm-attribution">M∴ W∴ Bro∴ Shaun Parsons Herrera — Grand Master of the Grand Lodge of Spain</p>
-      </div>
-      <p class="gm-desc">The Grand Master is the highest authority of Regular Freemasonry in Spain. Discover his message and his vision for the Order in our country. <em>Content in Spanish.</em></p>
-      <a href="https://www.gle.org/gran-logia/gran-maestro/" target="_blank" rel="noopener" class="gm-link">The Grand Master of the G∴ L∴ E∴</a>
-    </div>
   </div>
 
   <!-- FOOTER -->
