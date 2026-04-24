@@ -98,6 +98,24 @@
   .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
 
 
+  /* ── ANCIENT CONSTITUTIONS ── */
+  .constituciones-intro { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); margin-bottom: 2rem; }
+  .constituciones-intro a { color: var(--oro); text-decoration: none; }
+  .constituciones-intro a:hover { text-decoration: underline; }
+  .docs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid rgba(201,168,76,0.18); margin-bottom: 0.5rem; }
+  .doc-item { display: flex; align-items: baseline; gap: 0.9rem; padding: 0.75rem 1.1rem; border-bottom: 1px solid rgba(201,168,76,0.09); border-right: 1px solid rgba(201,168,76,0.09); text-decoration: none; transition: background 0.2s; }
+  .doc-item:nth-child(even) { border-right: none; }
+  .doc-item:hover { background: rgba(201,168,76,0.06); }
+  .doc-year { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.1em; color: var(--oro); opacity: 0.75; white-space: nowrap; min-width: 62px; flex-shrink: 0; }
+  .doc-title { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--blanco); line-height: 1.35; transition: color 0.2s; }
+  .doc-item:hover .doc-title { color: var(--oro-claro); }
+  .doc-lang { font-family: 'Cinzel', serif; font-size: 0.5rem; letter-spacing: 0.08em; color: var(--gris-suave); opacity: 0.5; white-space: nowrap; flex-shrink: 0; margin-left: auto; padding-right: 0.3rem; }
+  .doc-arrow { font-size: 0.65rem; color: var(--oro); opacity: 0; transition: opacity 0.2s, transform 0.2s; flex-shrink: 0; }
+  .doc-item:hover .doc-arrow { opacity: 1; transform: translateX(3px); }
+  .constituciones-note { font-size: 0.75rem; font-weight: 300; color: var(--gris-suave); opacity: 0.7; letter-spacing: 0.04em; margin-top: 1rem; font-style: italic; }
+  .constituciones-note a { color: var(--oro); text-decoration: none; opacity: 0.85; }
+  .constituciones-note a:hover { opacity: 1; }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -109,6 +127,8 @@
     .content { padding: 2rem 1.4rem; }
     .resource-body { padding: 1.4rem 1.6rem; }
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
+    .docs-grid { grid-template-columns: 1fr; }
+    .doc-item { border-right: none; }
   }
 
 </style>
@@ -201,6 +221,161 @@
         <a href="https://www.londonmasons.org.uk/curious-about-freemasonry" target="_blank" rel="noopener" class="resource-link">Want to know more?</a>
       </div>
     </article>
+
+    <div class="section-header" style="margin-top:1rem;">
+      <span class="section-label">Ancient Constitutions</span>
+      <span class="section-line"></span>
+    </div>
+
+    <p class="constituciones-intro">
+      The historical documents that underpin universal Masonic tradition, from mediaeval manuscripts to the great constitutions of the modern age. The full texts are hosted on the portal of the <a href="https://www.gle.org" target="_blank" rel="noopener">Grand Lodge of Spain</a>. <em>All documents are in Spanish.</em>
+    </p>
+
+    <div class="docs-grid">
+
+      <a href="https://www.gle.org/constituciones-de-anderson-1723/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1723</span>
+        <span class="doc-title">Anderson's Constitutions</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/la-regla-en-12-puntos/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year"></span>
+        <span class="doc-title">The Rule in 12 Points</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/codigo-moral-masonico/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year"></span>
+        <span class="doc-title">Masonic Moral Code</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/constitucion-de-york-926/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">926</span>
+        <span class="doc-title">York Constitution</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/carta-de-bolonia-1248/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1248</span>
+        <span class="doc-title">Bologna Charter</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/manuscrito-regius-1390/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1390</span>
+        <span class="doc-title">Regius Manuscript</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/manuscrito-cooke-1410/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1410</span>
+        <span class="doc-title">Cooke Manuscript</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/constituciones-de-los-masones-de-estrasburgo-1459/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1459</span>
+        <span class="doc-title">Strasbourg Constitutions</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/estatutos-de-ratisbona-1498/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1498</span>
+        <span class="doc-title">Regensburg Statutes</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/manuscrito-grand-lodge-numero-1-1583/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1583</span>
+        <span class="doc-title">Grand Lodge Manuscript No.&thinsp;1</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/estatutos-schaw-1598/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1598</span>
+        <span class="doc-title">Schaw Statutes</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/manuscrito-inigo-jones-1607/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1607</span>
+        <span class="doc-title">Inigo Jones Manuscript</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/reglamento-de-1663/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1663</span>
+        <span class="doc-title">Regulations of 1663</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/manuscrito-de-edimburgo-1696/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1696</span>
+        <span class="doc-title">Edinburgh Manuscript</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/manuscrito-dumfries-numero-4-1710/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1710</span>
+        <span class="doc-title">Dumfries Manuscript No.&thinsp;4</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/manuscrito-kewan-1714-1720/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1714–1720</span>
+        <span class="doc-title">Kewan Manuscript</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/la-institucion-de-los-franc-masones-1725/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1725</span>
+        <span class="doc-title">The Institution of Free-Masons</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/manuscrito-graham-1726/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1726</span>
+        <span class="doc-title">Graham Manuscript</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/la-masoneria-segun-las-escrituras-1737/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1737</span>
+        <span class="doc-title">Freemasonry According to Scripture</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/dialogo-entre-simon-y-felipe-1740/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1740</span>
+        <span class="doc-title">Dialogue between Simon and Philip</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/manuscrito-essex-1750/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1750</span>
+        <span class="doc-title">Essex Manuscript</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/grandes-constituciones-de-berlin-1786/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1786</span>
+        <span class="doc-title">Grand Constitutions of Berlin</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <a href="https://www.gle.org/convento-de-lausana-1875/" target="_blank" rel="noopener" class="doc-item">
+        <span class="doc-year">1875</span>
+        <span class="doc-title">Convent of Lausanne</span>
+        <span class="doc-lang">ES</span>
+        <span class="doc-arrow">→</span>
+      </a>
+      <!-- empty cell to balance grid -->
+      <div class="doc-item" style="pointer-events:none; opacity:0;"></div>
+
+    </div>
+    <p class="constituciones-note">Texts link to the <a href="https://www.gle.org" target="_blank" rel="noopener">Grand Lodge of Spain</a> portal, where the complete versions are hosted. Content is in Spanish.</p>
 
   </div>
 
