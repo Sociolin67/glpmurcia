@@ -468,9 +468,187 @@
     main { padding: 2rem 1rem; }
     .area-provincial { flex-direction: column; text-align: center; }
   }
+
+  /* ACCESO SECRETO */
+  #modal-secreto {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20,0,0,0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #modal-secreto.visible {
+    display: flex;
+  }
+  #modal-secreto .modal-box {
+    background: var(--granate);
+    border: 2px solid var(--dorado);
+    border-radius: 4px;
+    padding: 2.5rem 3rem;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(201,168,76,0.2);
+    max-width: 360px;
+    width: 90%;
+  }
+  #modal-secreto .modal-symbol {
+    font-size: 2.5rem;
+    color: var(--dorado);
+    margin-bottom: 1rem;
+    letter-spacing: 0.3em;
+  }
+  #modal-secreto input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid var(--dorado);
+    color: var(--crema);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    text-align: center;
+    border-radius: 2px;
+    outline: none;
+    margin-bottom: 1rem;
+  }
+  #modal-secreto input::placeholder {
+    color: rgba(245,240,232,0.35);
+    letter-spacing: 0.1em;
+  }
+  #modal-secreto .modal-error {
+    color: #e88;
+    font-size: 0.85rem;
+    min-height: 1.2rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  #modal-secreto .modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    color: rgba(245,240,232,0.4);
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+  }
+  #modal-secreto .modal-close:hover {
+    color: var(--crema);
+  }
+  #escudo-secreto {
+    cursor: default;
+    user-select: none;
+  }
+
+
+  /* ACCESO SECRETO — PORTAL LOCK */
+  #portal-lock {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #4a0a14;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #portal-lock .lock-box {
+    background: #6b0e1e;
+    border: 2px solid #c9a84c;
+    border-radius: 4px;
+    padding: 3rem 3.5rem;
+    text-align: center;
+    box-shadow: 0 0 80px rgba(201,168,76,0.2);
+    max-width: 380px;
+    width: 90%;
+  }
+  #portal-lock .lock-symbol {
+    font-size: 2.5rem;
+    color: #c9a84c;
+    letter-spacing: 0.4em;
+    margin-bottom: 1.5rem;
+  }
+  #portal-lock .lock-title {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    color: rgba(245,240,232,0.5);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  #portal-lock input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid #c9a84c;
+    color: #f5f0e8;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.3em;
+    text-align: center;
+    border-radius: 2px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  #portal-lock input::placeholder { color: rgba(245,240,232,0.25); }
+  #portal-lock .lock-error {
+    color: #e88;
+    font-size: 0.85rem;
+    min-height: 1.4rem;
+    margin-top: 0.75rem;
+  }
+  #portal-lock .lock-hint {
+    font-size: 0.7rem;
+    color: rgba(245,240,232,0.25);
+    margin-top: 1.5rem;
+    letter-spacing: 0.1em;
+  }
+
 </style>
 </head>
 <body>
+
+  <!-- ACCESO SECRETO — PORTAL LOCK -->
+  <div id="portal-lock">
+    <div class="lock-box">
+      <div class="lock-symbol">∴ ∴ ∴</div>
+      <div class="lock-title">Gran Logia Provincial de Murcia</div>
+      <input type="password" id="lock-input" placeholder="···" maxlength="20" autocomplete="off" spellcheck="false">
+      <div class="lock-error" id="lock-error"></div>
+      <div class="lock-hint">Enter para acceder · Escape para cerrar</div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var lock=document.getElementById('portal-lock');
+    var input=document.getElementById('lock-input');
+    var err=document.getElementById('lock-error');
+    var PASS='AICRUM26';
+
+    // Foco automático
+    setTimeout(function(){input.focus();},200);
+
+    input.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){
+        if(input.value.trim().toUpperCase()===PASS){
+          lock.style.transition='opacity 0.4s';
+          lock.style.opacity='0';
+          setTimeout(function(){lock.style.display='none';},400);
+        } else {
+          err.textContent='✕';
+          input.value='';
+          setTimeout(function(){err.textContent='';},1500);
+        }
+      }
+    });
+  })();
+  </script>
+  <!-- FIN ACCESO SECRETO — PORTAL LOCK -->
+
 
 <!-- NAV -->
 <nav>
@@ -492,7 +670,7 @@
       <p>Bienvenido, Hermano. Este espacio está reservado para los miembros de la Provincia. Aquí encontrarás documentación, recursos formativos y acceso a los cursos de cada grado y rito.</p>
       <p class="en">Welcome, Brother. This space is reserved for the Brethren of the Province. Here you will find documentation, educational resources and access to courses for each degree and rite.</p>
     </div>
-    <img src="escudo-glp-murcia.png" alt="Gran Logia Provincial de Murcia" class="hero-escudo-lateral">
+    <img src="escudo-glp-murcia.png" alt="Gran Logia Provincial de Murcia" class="hero-escudo-lateral" id="escudo-secreto" title="">
   </div>
 </header>
 
@@ -504,7 +682,7 @@
       <h2>∴ Área Provincial · Provincial Area</h2>
       <p>Documentos y recursos comunes para todos los Hermanos de la Provincia · Documents and resources for all Brethren of the province</p>
     </div>
-    <a href="https://drive.google.com/drive/folders/1o9Qa2lw5EPHWhglV6wOwS7RkDFUcv4UM?usp=drive_link" target="_blank" class="btn-provincial">Acceder · Enter ›</a>
+
   </div>
 
   <!-- RITO FRANCÉS MODERNO -->
@@ -703,6 +881,69 @@
   <p>Parte de la · Part of the <a href="http://www.gle.org" target="_blank">Gran Logia de España</a></p>
   <p style="margin-top: 0.75rem; font-size: 0.75rem;">∴ Este espacio es de uso exclusivo para los Hermanos de la Provincia · For the exclusive use of the Brethren of the province ∴</p>
 </footer>
+
+
+  <!-- ACCESO SECRETO -->
+  <div id="modal-secreto" role="dialog">
+    <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+    <div class="modal-box">
+      <div class="modal-symbol">∴ ∴ ∴</div>
+      <input type="password" id="palabra-paso" placeholder="···" maxlength="20" autocomplete="off" spellcheck="false">
+      <div class="modal-error" id="modal-error"></div>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var clicks = 0;
+      var timer = null;
+      var escudo = document.getElementById('escudo-secreto');
+      var modal = document.getElementById('modal-secreto');
+      var input = document.getElementById('palabra-paso');
+      var errorEl = document.getElementById('modal-error');
+      var closeBtn = document.getElementById('modal-close');
+      var PASS = 'AICRUM26';
+      var URL = 'https://drive.google.com/drive/folders/1o9Qa2lw5EPHWhglV6wOwS7RkDFUcv4UM?usp=drive_link';
+
+      escudo.addEventListener('click', function() {
+        clicks++;
+        clearTimeout(timer);
+        if (clicks === 3) {
+          clicks = 0;
+          modal.classList.add('visible');
+          setTimeout(function(){ input.focus(); }, 100);
+        } else {
+          timer = setTimeout(function(){ clicks = 0; }, 800);
+        }
+      });
+
+      function cerrar() {
+        modal.classList.remove('visible');
+        input.value = '';
+        errorEl.textContent = '';
+        clicks = 0;
+      }
+
+      closeBtn.addEventListener('click', cerrar);
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) cerrar();
+      });
+
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          if (input.value.trim().toUpperCase() === PASS) {
+            cerrar();
+            window.open(URL, '_blank');
+          } else {
+            errorEl.textContent = '✕';
+            input.value = '';
+            setTimeout(function(){ errorEl.textContent = ''; }, 1500);
+          }
+        }
+        if (e.key === 'Escape') cerrar();
+      });
+    })();
+  </script>
 
 </body>
 </html>
