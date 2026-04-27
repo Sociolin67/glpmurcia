@@ -195,6 +195,70 @@
     .welcome-panel-inner { flex-direction: column; padding: 1.6rem 1.2rem; gap: 1.4rem; }
     .welcome-panel-photo { width: 100%; max-width: 140px; }
   }
+
+  /* ACCESO SECRETO */
+  #modal-secreto {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20,0,0,0.88);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #modal-secreto.visible { display: flex; }
+  #modal-secreto .modal-box {
+    background: #6b0e1e;
+    border: 2px solid #c9a84c;
+    border-radius: 4px;
+    padding: 2.5rem 3rem;
+    text-align: center;
+    box-shadow: 0 0 60px rgba(201,168,76,0.25);
+    max-width: 360px;
+    width: 90%;
+    position: relative;
+  }
+  #modal-secreto .modal-symbol {
+    font-size: 2rem;
+    color: #c9a84c;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.4em;
+  }
+  #modal-secreto input {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid #c9a84c;
+    color: #f5f0e8;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.25em;
+    text-align: center;
+    border-radius: 2px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  #modal-secreto input::placeholder { color: rgba(245,240,232,0.3); }
+  #modal-secreto .modal-error {
+    color: #e88;
+    font-size: 0.9rem;
+    min-height: 1.4rem;
+    margin-top: 0.6rem;
+  }
+  #modal-secreto .modal-close {
+    position: absolute;
+    top: 0.75rem; right: 1rem;
+    color: rgba(245,240,232,0.35);
+    font-size: 1.3rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+  }
+  #modal-secreto .modal-close:hover { color: #f5f0e8; }
+  #logo-secreto { cursor: default; user-select: none; }
+
 </style>
 </head>
 <body>
@@ -407,6 +471,65 @@
     document.getElementById('welcomeBanner').classList.add('hidden');
   }
 </script>
+
+
+  <!-- ACCESO SECRETO -->
+  <div id="modal-secreto" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+      <div class="modal-symbol">∴ ∴ ∴</div>
+      <input type="password" id="palabra-paso" placeholder="···" maxlength="20" autocomplete="off" spellcheck="false">
+      <div class="modal-error" id="modal-error"></div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var clicks=0, timer=null;
+    var logo=document.getElementById('logo-secreto');
+    var modal=document.getElementById('modal-secreto');
+    var input=document.getElementById('palabra-paso');
+    var err=document.getElementById('modal-error');
+    var closeBtn=document.getElementById('modal-close');
+    var PASS='AICRUM26';
+    var URL='https://sociolin67.github.io/glpmurcia/portal-formacion-glp.html';
+
+    logo.addEventListener('click',function(){
+      clicks++;
+      clearTimeout(timer);
+      if(clicks===3){
+        clicks=0;
+        modal.classList.add('visible');
+        setTimeout(function(){input.focus();},100);
+      } else {
+        timer=setTimeout(function(){clicks=0;},800);
+      }
+    });
+
+    function cerrar(){
+      modal.classList.remove('visible');
+      input.value='';
+      err.textContent='';
+      clicks=0;
+    }
+
+    closeBtn.addEventListener('click',cerrar);
+    modal.addEventListener('click',function(e){if(e.target===modal)cerrar();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')cerrar();});
+
+    input.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){
+        if(input.value.trim().toUpperCase()===PASS){
+          cerrar();
+          window.open(URL,'_blank');
+        } else {
+          err.textContent='✕';
+          input.value='';
+          setTimeout(function(){err.textContent='';},1500);
+        }
+      }
+    });
+  })();
+  </script>
 
 </body>
 </html>
