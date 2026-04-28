@@ -112,19 +112,15 @@
   .lodge-pill:hover { border-color: var(--oro); color: var(--oro); }
 
   /* ── FOOTER ── */
-  footer { padding: 2rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.9); }
-  .footer-top { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.4rem; padding-bottom: 1.4rem; border-bottom: 1px solid rgba(201,168,76,0.1); }
-  .footer-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; }
-  .footer-logo img { height: 42px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); opacity: 0.85; transition: opacity 0.3s; }
-  .footer-logo:hover img { opacity: 1; }
-  .footer-logo-text { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
-  .footer-nav { display: flex; gap: 1.6rem; flex-wrap: wrap; }
-  .footer-nav a { font-size: 0.7rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
-  .footer-nav a:hover { color: var(--oro); }
-  .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.8rem; }
-  .footer-copy { font-size: 0.68rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; opacity: 0.7; }
-  .footer-gle { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.6; transition: opacity 0.3s; }
+  footer { padding: 1.4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.9); display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-gle { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.8; }
   .footer-gle:hover { opacity: 1; }
+  .footer-gle-symbol { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--oro); opacity: 0.7; }
+  .footer-gle-text { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; line-height: 1.5; }
+  .footer-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.85; }
+  .footer-logo:hover { opacity: 1; }
+  .footer-logo img { height: 38px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
+  .footer-logo-text { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
@@ -352,7 +348,7 @@
       <p class="hero-eyebrow">Consecrated on 5 December 2009 &middot; Region of Murcia</p>
       <h1 class="hero-title">Freemasonry in<br><em>Murcia</em></h1>
       <p class="hero-subtitle">Tradition, Fraternity and Service</p>
-      <p class="hero-desc">The Provincial Grand Lodge of Murcia, belonging to the Grand Lodge of Spain, brings together seven Regular Lodges committed to the values of universal fraternity, moral progress and service to the community.</p>
+      <p class="hero-desc">The Provincial Grand Lodge of Murcia, belonging to the <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Grand Lodge of Spain</a>, brings together seven Regular Lodges committed to the values of universal fraternity, moral progress and service to the community.</p>
       <div class="hero-actions">
         <a href="masoneria-en.html" class="btn-primary">Become a Freemason</a>
         <a href="logias-en.html" class="btn-secondary">Meet the Lodges</a>
@@ -436,16 +432,14 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-top">
-      <a href="index-en.html" class="footer-logo">
-        <img src="logo.png" alt="Provincial Grand Lodge of Murcia">
-        <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
-      </a>
-    </div>
-    <div class="footer-bottom">
-      <span class="footer-copy">© 2026 Provincial Grand Lodge of Murcia</span>
-      <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Part of the Grand Lodge of Spain</a>
-    </div>
+    <a href="https://www.gle.org" target="_blank" rel="noopener" class="footer-gle">
+      <span class="footer-gle-symbol">∴</span>
+      <span class="footer-gle-text">Grand Lodge<br>of Spain</span>
+    </a>
+    <a href="index-en.html" class="footer-logo">
+      <img src="logo.png" alt="Provincial Grand Lodge of Murcia">
+      <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
+    </a>
   </footer>
 
 </div>
