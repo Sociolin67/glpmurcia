@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Qué es la masonería, su historia, sus valores y cómo unirse. Gran Logia Provincial de Murcia.">
-<title>Sobre la Masonería | Gran Logia Provincial de Murcia</title>
+<title>About Freemasonry | Provincial Grand Lodge of Murcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -203,24 +203,52 @@
   .footer-logo:hover { opacity: 1; }
   .footer-logo img { height: 38px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
   .footer-logo-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
-  .footer-social { display: flex; gap: 1.2rem; }
-  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
-  .footer-social a:hover { color: var(--oro); }
-
-  /* ── SELECTOR DE IDIOMA ── */
-  .nav-right { display: flex; align-items: center; gap: 1rem; }
-  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
-  .lang-switcher a { font-family: "Cinzel", serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
-  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-  .lang-switcher a:not(.active):hover { color: var(--oro); }
-  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
-  .nav-mobile .lang-switcher-mobile a { font-family: "Cinzel", serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
-  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
   .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: all 0.3s; }
   .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; width: 100%; }
   .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
+  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+  .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  /* ── SELECTOR DE IDIOMA ── */
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
+  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
+  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+  .lang-switcher a:not(.active):hover { color: var(--oro); }
+  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
+  .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
+  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+
+
+  /* ── GRAND MASTER ── */
+  .gm-block { border: 1px solid rgba(201,168,76,0.22); background: rgba(21,35,56,0.5); padding: 2.4rem; display: flex; flex-direction: column; gap: 1.6rem; animation: fadeUp 0.6s ease both; }
+  .gm-quote { border-left: 2px solid var(--oro); padding-left: 1.4rem; }
+  .gm-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-style: italic; font-weight: 300; line-height: 1.8; color: var(--blanco); }
+  .gm-attribution { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; margin-top: 0.6rem; opacity: 0.85; }
+  .gm-desc { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); }
+  .gm-link { align-self: flex-start; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.5rem 1.2rem; border: 1px solid rgba(201,168,76,0.35); color: var(--oro); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+  .gm-link:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── CHARACTERISTICS ── */
+  .caracteristicas-block { margin-bottom: 3rem; }
+  .caracteristicas-intro { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); margin-bottom: 2rem; }
+  .caracteristicas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .caract-item { border: 1px solid rgba(201,168,76,0.18); background: rgba(21,35,56,0.5); padding: 1.6rem 1.4rem; display: flex; flex-direction: column; gap: 0.8rem; transition: border-color 0.3s; }
+  .caract-item:hover { border-color: rgba(201,168,76,0.45); }
+  .caract-symbol { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; }
+  .caract-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.12em; color: var(--blanco); text-transform: uppercase; line-height: 1.4; }
+  .caract-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.8; color: var(--gris-suave); }
+  .caracteristicas-requisitos { border: 1px solid rgba(201,168,76,0.15); background: rgba(21,35,56,0.3); padding: 1.4rem 1.8rem; }
+  .caracteristicas-requisitos p { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: var(--gris-suave); }
+  .caracteristicas-requisitos strong { color: var(--blanco); font-weight: 400; }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
@@ -247,40 +275,40 @@
 
   <!-- NAV -->
   <nav>
-    <a href="index.html" class="nav-logo">
+    <a href="index-en.html" class="nav-logo">
       <img src="logo.png" alt="Gran Logia Provincial de Murcia" style="height:48px;width:auto;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4));">
-      <div class="nav-title">Gran Logia Provincial<br>de Murcia</div>
+      <div class="nav-title">Provincial Grand Lodge<br>of Murcia</div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="noticias.html">Noticias</a></li>
-      <li><a href="logias.html">Logias</a></li>
-      <li><a href="ordenes.html">Órdenes</a></li>
-      <li><a href="masoneria.html" class="active">Sobre la Masonería</a></li>
-      <li><a href="caridad.html">Caridad</a></li>
-      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="index-en.html">Home</a></li>
+      <li><a href="noticias-en.html">News</a></li>
+      <li><a href="logias-en.html">Lodges</a></li>
+      <li><a href="ordenes-en.html">Orders</a></li>
+      <li><a href="masoneria-en.html" class="active">About Freemasonry</a></li>
+      <li><a href="caridad-en.html">Charity</a></li>
+      <li><a href="recursos-en.html">Resources</a></li>
     </ul>
     <div class="nav-right">
-      <a href="contacto.html" class="nav-cta">Contáctenos</a>
+      <a href="contacto-en.html" class="nav-cta">Contact Us</a>
       <div class="lang-switcher">
-        <a href="masoneria.html" class="active">ES</a>
-        <a href="masoneria-en.html" >EN</a>
+        <a href="masoneria.html">ES</a>
+        <a href="masoneria-en.html" class="active">EN</a>
       </div>
     </div>
     <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
   </nav>
   <div class="nav-mobile" id="navMobile">
-    <a href="index.html">Inicio</a>
-    <a href="noticias.html">Noticias</a>
-    <a href="logias.html">Logias</a>
-    <a href="ordenes.html">Órdenes</a>
-    <a href="masoneria.html" class="active">Sobre la Masonería</a>
-    <a href="caridad.html">Caridad</a>
-    <a href="recursos.html">Recursos</a>
-    <a href="contacto.html" class="nav-cta-mobile">Contáctenos</a>
+    <a href="index-en.html">Home</a>
+    <a href="noticias-en.html">News</a>
+    <a href="logias-en.html">Lodges</a>
+    <a href="ordenes-en.html">Orders</a>
+    <a href="masoneria-en.html" class="active">About Freemasonry</a>
+    <a href="caridad-en.html">Charity</a>
+    <a href="recursos-en.html">Resources</a>
+    <a href="contacto-en.html" class="nav-cta-mobile">Contact Us</a>
     <div class="lang-switcher-mobile">
-      <a href="masoneria.html" class="active">ES</a>
-      <a href="masoneria-en.html" >EN</a>
+      <a href="masoneria.html">ES</a>
+      <a href="masoneria-en.html" class="active">EN</a>
     </div>
   </div>
   
@@ -292,84 +320,84 @@
       <span class="ornament-symbol">✦</span>
       <span class="ornament-line r"></span>
     </div>
-    <p class="page-eyebrow">Gran Logia Provincial de Murcia</p>
-    <h1 class="page-title">Sobre la <em>Masonería</em></h1>
-    <p class="page-desc">Una de las organizaciones fraternales más antiguas del mundo: sus raíces, sus valores y lo que significa ser masón hoy.</p>
+    <p class="page-eyebrow">Provincial Grand Lodge of Murcia</p>
+    <h1 class="page-title">About <em>Freemasonry</em></h1>
+    <p class="page-desc">One of the oldest fraternal organisations in the world: its roots, its values and what it means to be a Freemason today.</p>
   </header>
 
   <!-- NAV INTERNA -->
   <nav class="inner-nav">
-    <a href="#que-es">¿Qué es?</a>
-    <a href="#historia">Historia</a>
-    <a href="#grados">Los grados</a>
-    <a href="#valores">Valores</a>
-    <a href="#faq">Preguntas frecuentes</a>
+    <a href="#que-es">What is it?</a>
+    <a href="#historia">History</a>
+    <a href="#grados">The degrees</a>
+    <a href="#valores">Values</a>
+    <a href="#faq">Frequently asked questions</a>
   </nav>
 
   <!-- CONTENIDO -->
   <div class="content">
 
-    <!-- GRAN MAESTRO -->
+    <!-- GRAND MASTER -->
     <div class="gm-block" style="margin-bottom:3rem;">
       <div class="gm-quote">
-        <p>«No somos un partido político, ni somos una religión. Solo somos personas ávidas de mejorar, que usamos la diversidad de pensamiento y la fraternidad como instrumentos de aprendizaje.»</p>
-        <p class="gm-attribution">M∴ R∴ H∴ Shaun Parsons Herrera — Gran Maestro de la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a></p>
+        <p>"We are not a political party, nor are we a religion. We are simply people eager to improve, who use diversity of thought and fraternity as instruments of learning."</p>
+        <p class="gm-attribution">M∴ W∴ Bro∴ Shaun Parsons Herrera — Grand Master of the Grand Lodge of Spain</p>
       </div>
-      <p class="gm-desc">El Gran Maestro es la máxima autoridad de la Masonería Regular en España. Conoce su mensaje y su visión para la Orden en nuestro país.</p>
-      <a href="https://www.gle.org/gran-logia/gran-maestro/" target="_blank" rel="noopener" class="gm-link">El Gran Maestro de la G∴ L∴ E∴</a>
+      <p class="gm-desc">The Grand Master is the highest authority of Regular Freemasonry in Spain. Discover his message and his vision for the Order in our country. <em>Content in Spanish.</em></p>
+      <a href="https://www.gle.org/gran-logia/gran-maestro/" target="_blank" rel="noopener" class="gm-link">The Grand Master of the G∴ L∴ E∴</a>
     </div>
 
     <!-- QUÉ ES -->
     <div class="text-block">
       <span class="block-anchor" id="que-es"></span>
-      <p class="block-label">Qué es la masonería</p>
-      <h2 class="block-title">Una fraternidad de <em>hombres libres y de buenas costumbres</em></h2>
+      <p class="block-label">What is Freemasonry</p>
+      <h2 class="block-title">A fraternity of <em>free men of good character</em></h2>
       <div class="block-body">
-        <p>La masonería es una de las organizaciones no religiosas, no políticas, fraternales y caritativas más antiguas y más grandes del mundo. No es una religión ni un sustituto de ella. Exige de sus miembros una creencia en un Ser Supremo, pero no impone ninguna doctrina teológica concreta.</p>
-        <p>La masonería significa cosas diferentes para cada individuo: hacer nuevos amigos y fortalecer vínculos, contribuir a la sociedad, celebrar una larga tradición, experimentar el crecimiento personal. Es, ante todo, una escuela de vida.</p>
-        <p>En todo el mundo hay aproximadamente <strong>seis millones de masones</strong>, organizados en logias que trabajan bajo obediencias reconocidas internacionalmente. En España, la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a> es la obediencia regular de referencia, de la que forma parte la Gran Logia Provincial de Murcia.</p>
+        <p>Freemasonry is one of the oldest and largest non-religious, non-political, fraternal and charitable organisations in the world. It is not a religion, nor a substitute for one. It requires its members to believe in a Supreme Being, but imposes no specific theological doctrine.</p>
+        <p>Freemasonry means different things to each individual: making new friends and strengthening bonds, contributing to society, celebrating a long tradition, experiencing personal growth. It is, above all, a school of life.</p>
+        <p>There are approximately <strong>six million Freemasons</strong> worldwide, organised in lodges working under internationally recognised grand lodges. In Spain, the Grand Lodge of Spain is the regular obedience of reference, of which the Provincial Grand Lodge of Murcia forms part.</p>
       </div>
     </div>
 
     <!-- HISTORIA -->
     <div class="text-block">
       <span class="block-anchor" id="historia"></span>
-      <p class="block-label">Historia</p>
-      <h2 class="block-title">De los canteros medievales a la <em>masonería especulativa</em></h2>
+      <p class="block-label">History</p>
+      <h2 class="block-title">From medieval stonemasons to <em>speculative Freemasonry</em></h2>
       <div class="block-body">
-        <p>Las preguntas de cuándo, cómo, por qué y dónde se originó la masonería siguen siendo objeto de intensa investigación histórica. El consenso general entre los estudiosos es que desciende, directa o indirectamente, de las organizaciones de canteros operativos que construyeron las grandes catedrales y castillos de la Edad Media.</p>
-        <p>Estos gremios medievales desarrollaron sistemas de reconocimiento entre hermanos de oficio, formas de transmitir el conocimiento técnico y normas de conducta que protegían la calidad del trabajo y la reputación del gremio. Con el tiempo, y especialmente a partir del siglo XVII en las islas británicas, las logias comenzaron a admitir miembros no vinculados al trabajo de la piedra — los llamados masones <strong>aceptados o especulativos</strong>.</p>
-        <p>La Gran Logia de Londres, fundada en <strong>1717</strong>, marcó el inicio de la masonería moderna tal como la conocemos. Desde entonces, la institución se extendió por Europa y el resto del mundo, convirtiéndose en una fraternidad universal comprometida con los valores del humanismo ilustrado.</p>
+        <p>The questions of when, how, why and where Freemasonry originated remain the subject of intense historical research. The general scholarly consensus is that it descends, directly or indirectly, from the organisations of operative stonemasons who built the great cathedrals and castles of the Middle Ages.</p>
+        <p>These medieval guilds developed systems of recognition between fellow craftsmen, ways of transmitting technical knowledge and codes of conduct that protected the quality of work and the reputation of the guild. Over time, and especially from the 17th century in the British Isles, lodges began to admit members not connected to stonework — the so-called <strong>accepted or speculative</strong> Masons.</p>
+        <p>The Grand Lodge of London, founded in <strong>1717</strong>, marked the beginning of modern Freemasonry as we know it. From then on, the institution spread across Europe and the rest of the world, becoming a universal fraternity committed to the values of Enlightenment humanism.</p>
       </div>
       <div class="quote-block">
-        <p class="quote-text">«La masonería es un sistema peculiar de moralidad, velado en alegoría e ilustrado por símbolos.»</p>
-        <p class="quote-author">Definición clásica de la masonería especulativa</p>
+        <p class="quote-text">"Freemasonry is a peculiar system of morality, veiled in allegory and illustrated by symbols."</p>
+        <p class="quote-author">Classic definition of speculative Freemasonry</p>
       </div>
     </div>
 
     <!-- GRADOS -->
     <div class="text-block">
       <span class="block-anchor" id="grados"></span>
-      <p class="block-label">Los grados</p>
-      <h2 class="block-title">El viaje del <em>aprendiz al maestro</em></h2>
+      <p class="block-label">The degrees</p>
+      <h2 class="block-title">The journey from <em>Entered Apprentice to Master Mason</em></h2>
       <div class="block-body">
-        <p>El ingreso y la progresión en una logia masónica se articulan en tres etapas ceremoniales llamadas <strong>grados</strong>. Cada uno representa un nivel de iniciación, reflexión y compromiso. Por lo general, se necesita entre uno y dos años para completar los tres grados y recibir el título de Maestro Masón.</p>
+        <p>Entry and progression in a Masonic lodge is structured in three ceremonial stages called <strong>degrees</strong>. Each represents a level of initiation, reflection and commitment. It generally takes between one and two years to complete the three degrees and receive the title of Master Mason.</p>
       </div>
       <div class="grades">
         <div class="grade-card">
           <p class="grade-num">I</p>
-          <p class="grade-name">Aprendiz</p>
-          <p class="grade-desc">El inicio del camino. El candidato es introducido en los principios y símbolos fundamentales de la fraternidad.</p>
+          <p class="grade-name">Entered Apprentice</p>
+          <p class="grade-desc">The beginning of the journey. The candidate is introduced to the fundamental principles and symbols of the fraternity.</p>
         </div>
         <div class="grade-card">
           <p class="grade-num">II</p>
-          <p class="grade-name">Compañero</p>
-          <p class="grade-desc">La etapa del conocimiento. El masón profundiza en el estudio de las artes liberales y las ciencias.</p>
+          <p class="grade-name">Fellow Craft</p>
+          <p class="grade-desc">The stage of knowledge. The Mason deepens his study of the liberal arts and sciences.</p>
         </div>
         <div class="grade-card">
           <p class="grade-num">III</p>
-          <p class="grade-name">Maestro</p>
-          <p class="grade-desc">La culminación del grado simbólico. El Maestro Masón asume plena responsabilidad en la vida de la logia.</p>
+          <p class="grade-name">Master Mason</p>
+          <p class="grade-desc">The culmination of the symbolic degree. The Master Mason assumes full responsibility in the life of the lodge.</p>
         </div>
       </div>
     </div>
@@ -377,120 +405,120 @@
     <!-- VALORES -->
     <div class="text-block">
       <span class="block-anchor" id="valores"></span>
-      <p class="block-label">Valores</p>
-      <h2 class="block-title">Lo que une a <em>todos los masones</em></h2>
+      <p class="block-label">Values</p>
+      <h2 class="block-title">What unites <em>all Freemasons</em></h2>
       <div class="block-body">
-        <p>Más allá de las diferencias rituales entre obediencias, la masonería se asienta sobre un conjunto de valores compartidos que han permanecido constantes a lo largo de siglos.</p>
-        <p><strong>Fraternidad.</strong> El vínculo entre masones trasciende las fronteras nacionales, las diferencias culturales y las opiniones políticas. En la logia, todos son iguales.</p>
-        <p><strong>Tolerancia.</strong> La masonería exige el respeto a las convicciones ajenas. La discusión de política y religión está vedada en logia precisamente para preservar la armonía entre hermanos de distintas sensibilidades.</p>
-        <p><strong>Búsqueda de la verdad.</strong> El masón se compromete con el estudio, la reflexión y el perfeccionamiento continuo. La logia es una escuela permanente de pensamiento libre y crítico.</p>
-        <p><strong>Caridad.</strong> El servicio a la comunidad y el apoyo a los más necesitados son obligaciones morales, no gestos ocasionales. Las logias de la provincia de Murcia lo practican activamente cada año.</p>
+        <p>Beyond ritual differences between grand lodges, Freemasonry rests on a set of shared values that have remained constant throughout the centuries.</p>
+        <p><strong>Fraternity.</strong> The bond between Masons transcends national borders, cultural differences and political opinions. In the lodge, all are equal.</p>
+        <p><strong>Tolerance.</strong> Freemasonry demands respect for the beliefs of others. The discussion of politics and religion is prohibited in lodge precisely to preserve harmony among brethren of different sensibilities.</p>
+        <p><strong>The pursuit of truth.</strong> The Mason is committed to study, reflection and continuous self-improvement. The lodge is a permanent school of free and critical thought.</p>
+        <p><strong>Charity.</strong> Service to the community and support for those most in need are moral obligations, not occasional gestures. The lodges of the Province of Murcia practise this actively every year.</p>
       </div>
     </div>
 
     <!-- FAQ -->
     <div class="text-block">
       <span class="block-anchor" id="faq"></span>
-      <p class="block-label">Preguntas frecuentes</p>
-      <h2 class="block-title">Lo que la gente <em>suele preguntar</em></h2>
+      <p class="block-label">Frequently asked questions</p>
+      <h2 class="block-title">What people <em>often ask</em></h2>
       <div class="faq">
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-q-text">¿Cualquier persona puede hacerse masón?</span>
+            <span class="faq-q-text">Can anyone become a Freemason?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Cualquier hombre mayor de 18 años puede solicitar el ingreso, independientemente de su origen étnico, posición económica u opiniones políticas. Se espera que el candidato tenga una creencia en algún principio superior, aunque la masonería no impone ninguna religión concreta. Las mujeres tienen sus propias obediencias masónicas reconocidas.</div>
+            <div class="faq-answer-inner">Any man over 18 years of age may apply for membership, regardless of ethnic origin, economic position or political views. The candidate is expected to hold a belief in some higher principle, although Freemasonry imposes no specific religion. Women have their own recognised Masonic obediences.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-q-text">¿Es la masonería una religión o una secta?</span>
+            <span class="faq-q-text">Is Freemasonry a religion or a sect?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">No. La masonería no es una religión, no tiene dogmas teológicos, no ofrece sacramentos ni proporciona medios de salvación. Es una fraternidad que reúne a hombres de diferentes credos en torno a valores éticos comunes. Tampoco es una secta: sus miembros son libres de abandonarla cuando lo deseen y no existe ningún tipo de presión o control sobre su vida personal.</div>
+            <div class="faq-answer-inner">No. Freemasonry is not a religion, has no theological dogmas, offers no sacraments and provides no means of salvation. It is a fraternity that brings together men of different creeds around common ethical values. Nor is it a sect: its members are free to leave whenever they wish and there is no pressure or control over their personal lives.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-q-text">¿Por qué hay tanto secreto en torno a la masonería?</span>
+            <span class="faq-q-text">Why is there so much secrecy surrounding Freemasonry?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Históricamente, la discreción fue necesaria en épocas de persecución. Hoy en día, la masonería es una institución abierta: sus principios, valores e historia son de dominio público. Lo que se mantiene reservado son los rituales de iniciación y ciertos medios de reconocimiento entre hermanos — una práctica que comparte con muchas otras fraternidades y que forma parte de su tradición simbólica, no de ningún propósito oculto.</div>
+            <div class="faq-answer-inner">Historically, discretion was necessary in times of persecution. Today, Freemasonry is an open institution: its principles, values and history are in the public domain. What is kept private are the initiation rituals and certain means of recognition between brethren — a practice shared with many other fraternities, and part of its symbolic tradition, not of any hidden purpose.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-q-text">¿Cuánto tiempo requiere ser masón?</span>
+            <span class="faq-q-text">How much time does being a Freemason require?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Las logias se reúnen habitualmente una o dos veces al mes. La implicación depende de cada miembro y de las responsabilidades que vaya asumiendo dentro de la logia. No existe una exigencia mínima de tiempo más allá de la asistencia razonable a las tenidas — las reuniones formales de la logia.</div>
+            <div class="faq-answer-inner">Lodges typically meet once or twice a month. Involvement depends on each member and the responsibilities they take on within the lodge. There is no minimum time requirement beyond reasonable attendance at lodge meetings — the formal gatherings of the lodge.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-q-text">¿Cómo puedo dar el primer paso?</span>
+            <span class="faq-q-text">How can I take the first step?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Si no conoces a ningún masón con quien hablar directamente, puedes <strong><a href="contacto.html" style="color:var(--oro);text-decoration:none;">ponerte en contacto con nosotros</a></strong> a través del formulario de contacto. Alguien de la provincia te responderá y podrás resolver todas tus dudas sin ningún compromiso.</div>
+            <div class="faq-answer-inner">If you do not know a Freemason to speak to directly, you can <strong><a href="contacto-en.html" style="color:var(--oro);text-decoration:none;">get in touch with us</a></strong> via the contact form. Someone from the Province will reply and you can have all your questions answered with no commitment.</div>
           </div>
         </div>
 
       </div>
     </div>
 
-    <!-- CARACTERÍSTICAS DE UN MASÓN -->
+    <!-- CHARACTERISTICS OF A FREEMASON -->
     <div class="caracteristicas-block">
       <div class="section-header" style="margin-bottom:1.8rem;">
-        <span class="section-label" style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.22em;color:var(--oro);text-transform:uppercase;white-space:nowrap;">Características de un Masón</span>
+        <span class="section-label" style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.22em;color:var(--oro);text-transform:uppercase;white-space:nowrap;">Characteristics of a Freemason</span>
         <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.4),transparent);"></span>
       </div>
 
-      <p class="caracteristicas-intro">Toda persona interesada en pertenecer a la Francmasonería ha de reunir los siguientes tres requisitos fundamentales:</p>
+      <p class="caracteristicas-intro">Every person interested in joining Freemasonry must meet the following three fundamental requirements:</p>
 
       <div class="caracteristicas-grid">
 
         <div class="caract-item">
           <span class="caract-symbol">∴ I</span>
-          <span class="caract-title">Persona Libre</span>
-          <p class="caract-desc">La solicitud de iniciación ha de ser consecuencia de la innata libertad individual, lejos de toda presión, influencia, dependencia o circunstancia que la coarte.</p>
+          <span class="caract-title">A Free Person</span>
+          <p class="caract-desc">The request for initiation must arise from the individual's innate freedom, free from all pressure, influence, dependence or circumstance that might constrain it.</p>
         </div>
 
         <div class="caract-item">
           <span class="caract-symbol">∴ II</span>
-          <span class="caract-title">De Buenas Costumbres</span>
-          <p class="caract-desc">Digna de confianza, honrada en su vida privada y en su forma de trabajar, y de buena reputación en su entorno.</p>
+          <span class="caract-title">Of Good Character</span>
+          <p class="caract-desc">Trustworthy, honourable in private life and in their manner of working, and of good reputation in their community.</p>
         </div>
 
         <div class="caract-item">
           <span class="caract-symbol">∴ III</span>
-          <span class="caract-title">Creyente en un Principio Superior</span>
-          <p class="caract-desc">Creencia en una Causa Primera de todo lo creado, a quien los masones, respetando toda creencia particular, nombran como <em>Gran Arquitecto del Universo</em>.</p>
+          <span class="caract-title">Belief in a Supreme Being</span>
+          <p class="caract-desc">A belief in a First Cause of all creation, whom Freemasons, respecting every individual belief, refer to as the <em>Great Architect of the Universe</em>.</p>
         </div>
 
       </div>
 
       <div class="caracteristicas-requisitos">
-        <p>Además, es preciso ser <strong>varón mayor de 18 años</strong>, sin distinción de nacionalidad, grupo social o religión, con capacidad de comprensión de los conceptos filosóficos de la Orden y disponer de una <strong>«ciencia, arte, oficio o renta»</strong>, tal como expresan los antiguos lineamientos de la Orden.</p>
+        <p>Additionally, membership requires being a <strong>male aged 18 or over</strong>, regardless of nationality, social group or religion, with the capacity to understand the philosophical concepts of the Order and to possess a <strong>"science, art, trade or income"</strong>, as expressed in the ancient landmarks of the Order.</p>
       </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-block">
-      <h3 class="cta-title">¿Te interesa <em>dar el paso</em>?</h3>
-      <p class="cta-text">Si lo que has leído ha despertado tu curiosidad, el siguiente paso es sencillo: escríbenos. Sin compromisos, sin presiones. Solo una conversación.</p>
+      <h3 class="cta-title">Interested in <em>taking the step</em>?</h3>
+      <p class="cta-text">If what you have read has sparked your curiosity, the next step is simple: write to us. No commitments, no pressure. Just a conversation.</p>
       <div class="cta-actions">
-        <a href="contacto.html" class="btn-primary">Contactar con nosotros</a>
-        <a href="logias.html" class="btn-secondary">Ver las logias</a>
+        <a href="contacto-en.html" class="btn-primary">Contact us</a>
+        <a href="logias-en.html" class="btn-secondary">See the lodges</a>
       </div>
     </div>
 
@@ -500,11 +528,11 @@
   <footer>
     <a href="https://www.gle.org" target="_blank" rel="noopener" class="footer-gle">
       <span class="footer-gle-symbol">∴</span>
-      <span class="footer-gle-text">Gran Logia<br>de España</span>
+      <span class="footer-gle-text">Grand Lodge<br>of Spain</span>
     </a>
-    <a href="index.html" class="footer-logo">
-      <img src="logo.png" alt="Gran Logia Provincial de Murcia">
-      <div class="footer-logo-text">Gran Logia Provincial<br>de Murcia</div>
+    <a href="index-en.html" class="footer-logo">
+      <img src="logo.png" alt="Provincial Grand Lodge of Murcia">
+      <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
     </a>
   </footer>
 
