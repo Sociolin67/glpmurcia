@@ -351,9 +351,28 @@
   .footer-logo:hover { opacity: 1; }
   .footer-logo img { height: 38px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
   .footer-logo-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
-  .footer-social { display: flex; gap: 1.2rem; }
-  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
-  .footer-social a:hover { color: var(--oro); }
+  /* ── MENÚ MÓVIL ── */
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: all 0.3s; }
+  .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; width: 100%; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
+  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+  .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
+  
+  /* ── RESPONSIVE ── */
+  /* ── SELECTOR DE IDIOMA ── */
+  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
+  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; transition: all 0.25s; color: var(--gris-suave, #B8B0A0); }
+  .lang-switcher a { color: #B8B0A0; }
+  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+  .lang-switcher a:not(.active):hover { color: var(--oro); }
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
+  .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
+  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
 
   @media (max-width: 700px) {
     nav, main, footer { padding-left: 1.4rem; padding-right: 1.4rem; }
@@ -803,7 +822,7 @@
 
 </main>
 
-  <!-- FOOTER -->
+<!-- FOOTER -->
   <footer>
     <a href="https://www.gle.org" target="_blank" rel="noopener" class="footer-gle">
       <span class="footer-gle-symbol">∴</span>
