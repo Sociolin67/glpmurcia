@@ -11,14 +11,14 @@
 <style>
   /* ── VARIABLES ── */
   :root {
-    --azul:       #0d1b2a;
-    --azul-medio: #12263d;
-    --azul-card:  #152338;
+    --azul:       #F7F3EC;
+    --azul-medio: #FFFFFF;
+    --azul-card:  #FFFFFF;
     --oro:        #c9a84c;
     --oro-claro:  #e2c97e;
-    --blanco:     #f0ead8;
-    --gris:       #8a9bb0;
-    --borde:      rgba(201,168,76,0.18);
+    --blanco:     #1C2B3A;
+    --gris:       #2E3D4F;
+    --borde:      rgba(201,168,76,0.25);
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,7 +53,7 @@
   .nav-title { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 400;
     letter-spacing: 0.12em;
     color: var(--gris);
@@ -108,7 +108,7 @@
   .hero-sub {
     max-width: 640px;
     margin: 0 auto;
-    font-size: 0.88rem;
+    font-size: 0.95rem;
     font-weight: 300;
     line-height: 1.85;
     color: var(--gris);
@@ -165,8 +165,8 @@
     align-items: center;
     gap: 0.9rem;
     padding: 1rem 2.4rem;
-    border-top: 1px solid rgba(201,168,76,0.08);
-    background: rgba(13,27,42,0.35);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    background: #F7F3EC;
   }
   .order-motto-icon {
     color: var(--oro);
@@ -242,13 +242,13 @@
   .lodge-info { flex: 1; }
   .lodge-title {
     font-family: 'Cinzel', serif;
-    font-size: 0.88rem;
+    font-size: 0.95rem;
     font-weight: 400;
     letter-spacing: 0.05em;
     color: var(--blanco);
   }
   .lodge-detail {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 300;
     color: var(--gris);
     margin-top: 0.15rem;
@@ -293,7 +293,7 @@
     margin-top: 2rem;
     padding: 1.2rem 1.8rem;
     border: 1px solid var(--borde);
-    background: rgba(13,27,42,0.6);
+    background: #FFFFFF;
     display: flex;
     gap: 1rem;
     align-items: flex-start;
@@ -305,13 +305,13 @@
     color: var(--gris);
     line-height: 1.8;
   }
-  .info-note-text strong { color: var(--blanco); font-weight: 400; }
+  .info-note-text strong { color: #1C2B3A; font-weight: 600; }
 
   /* ── CRONOLOGÍA ── */
   .order-history {
-    border-top: 1px solid rgba(201,168,76,0.08);
-    border-bottom: 1px solid rgba(201,168,76,0.08);
-    background: rgba(13,27,42,0.4);
+    border-top: 1px solid rgba(201,168,76,0.15);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    background: #F7F3EC;
   }
   .timeline {
     display: flex;
@@ -335,7 +335,7 @@
     padding-top: 0.05rem;
   }
   .tl-text {
-    font-size: 0.75rem;
+    font-size: 0.82rem;
     font-weight: 300;
     color: var(--gris);
     line-height: 1.7;
@@ -356,7 +356,7 @@
   .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: all 0.3s; }
   .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; width: 100%; }
   .nav-mobile.open { display: flex; }
-  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
+  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.15); transition: color 0.3s; }
   .nav-mobile a:last-child { border-bottom: none; }
   .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
   .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
