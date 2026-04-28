@@ -19,11 +19,11 @@
   }
 
   html { scroll-behavior: smooth; }
-  body { font-family: 'Lato', sans-serif; background: var(--azul-noche); color: var(--blanco); overflow-x: hidden; min-height: 100vh; }
+  body { font-family: 'Lato', sans-serif; background: #F7F3EC; color: #1C2B3A; overflow-x: hidden; min-height: 100vh; }
 
   .bg-pattern {
     position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%), var(--azul-noche);
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.04) 0%, transparent 70%), #F7F3EC;
   }
   .bg-pattern::before {
     content: ''; position: absolute; inset: 0;
@@ -64,24 +64,26 @@
   .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
   .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
   .page-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1rem; }
-  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 300; color: var(--blanco); margin-bottom: 1rem; }
-  .page-title em { font-style: italic; color: var(--oro-claro); }
-  .page-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.95; color: var(--gris-suave); max-width: 560px; margin: 0 auto; letter-spacing: 0.02em; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 300; color: #1C2B3A; margin-bottom: 1rem; }
+  .page-title em { font-style: italic; color: var(--oro); }
+  .page-desc { font-size: 0.95rem; font-weight: 300; line-height: 1.95; color: #2E3D4F; max-width: 560px; margin: 0 auto; letter-spacing: 0.02em; }
 
   /* ── NAVEGACIÓN INTERNA ── */
   .inner-nav {
     display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
+    border-top: 1px solid rgba(201,168,76,0.15);
     border-bottom: 1px solid rgba(201,168,76,0.15);
+    background: #FFFFFF;
     animation: fadeUp 0.8s ease 0.1s both;
   }
   .inner-nav a {
-    font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.18em;
-    padding: 1rem 1.6rem; color: var(--gris-suave); text-decoration: none;
-    text-transform: uppercase; border-right: 1px solid rgba(201,168,76,0.12);
+    font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.18em;
+    padding: 1rem 1.8rem; color: #1C2B3A; text-decoration: none;
+    text-transform: uppercase; border-right: 1px solid rgba(201,168,76,0.15);
     transition: all 0.3s;
   }
   .inner-nav a:last-child { border-right: none; }
-  .inner-nav a:hover { color: var(--oro); background: rgba(201,168,76,0.04); }
+  .inner-nav a:hover { color: var(--oro); background: rgba(201,168,76,0.05); }
 
   /* ── CONTENIDO PRINCIPAL ── */
   .content { max-width: 960px; margin: 0 auto; padding: 5rem 3rem; width: 100%; }
@@ -99,31 +101,31 @@
 
   .block-title {
     font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 300; color: var(--blanco); margin-bottom: 1.6rem; line-height: 1.2;
+    font-weight: 300; color: #1C2B3A; margin-bottom: 1.6rem; line-height: 1.2;
   }
-  .block-title em { font-style: italic; color: var(--oro-claro); }
+  .block-title em { font-style: italic; color: var(--oro); }
 
-  .block-body { font-size: 0.88rem; font-weight: 300; line-height: 2; color: var(--gris-suave); }
+  .block-body { font-size: 0.93rem; font-weight: 300; line-height: 2; color: #2E3D4F; }
   .block-body p + p { margin-top: 1rem; }
-  .block-body strong { color: var(--blanco); font-weight: 400; }
+  .block-body strong { color: #1C2B3A; font-weight: 600; }
 
   /* ── CITA ── */
   .quote-block {
     border-left: 2px solid var(--oro);
     padding: 1.2rem 2rem; margin: 2rem 0;
-    background: rgba(201,168,76,0.04);
+    background: #FFFFFF;
   }
   .quote-text {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
-    font-style: italic; font-weight: 300; color: var(--oro-claro); line-height: 1.6;
+    font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+    font-style: italic; font-weight: 400; color: #1C2B3A; line-height: 1.6;
   }
-  .quote-author { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); margin-top: 0.6rem; letter-spacing: 0.08em; }
+  .quote-author { font-size: 0.72rem; font-weight: 300; color: #4A5C6A; margin-top: 0.6rem; letter-spacing: 0.08em; }
 
   /* ── GRADOS ── */
   .grades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 2rem 0; }
   .grade-card {
     border: 1px solid rgba(201,168,76,0.2);
-    background: rgba(26,47,69,0.3);
+    background: #FFFFFF;
     padding: 1.6rem 1.4rem; text-align: center;
     transition: border-color 0.3s;
   }
@@ -134,9 +136,9 @@
   }
   .grade-name {
     font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.15em;
-    color: var(--blanco); text-transform: uppercase; margin-bottom: 0.7rem;
+    color: #1C2B3A; text-transform: uppercase; margin-bottom: 0.7rem;
   }
-  .grade-desc { font-size: 0.78rem; font-weight: 300; color: var(--gris-suave); line-height: 1.7; }
+  .grade-desc { font-size: 0.82rem; font-weight: 300; color: #2E3D4F; line-height: 1.7; }
 
   /* ── PREGUNTAS FRECUENTES ── */
   .faq { margin: 2rem 0; }
@@ -151,7 +153,7 @@
   }
   .faq-q-text {
     font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.1em;
-    color: var(--blanco); text-transform: uppercase; line-height: 1.4;
+    color: #1C2B3A; text-transform: uppercase; line-height: 1.4;
   }
   .faq-icon {
     color: var(--oro); font-size: 1rem; flex-shrink: 0;
@@ -163,22 +165,22 @@
   }
   .faq-item.open .faq-answer { max-height: 400px; }
   .faq-answer-inner {
-    font-size: 0.84rem; font-weight: 300; color: var(--gris-suave);
+    font-size: 0.90rem; font-weight: 300; color: #2E3D4F;
     line-height: 1.85; padding-bottom: 1.2rem;
   }
-  .faq-answer-inner strong { color: var(--blanco); font-weight: 400; }
+  .faq-answer-inner strong { color: #1C2B3A; font-weight: 600; }
 
   /* ── CTA FINAL ── */
   .cta-block {
     border: 1px solid rgba(201,168,76,0.25);
-    background: rgba(26,47,69,0.35);
+    background: #FFFFFF;
     padding: 3rem 2.5rem; text-align: center;
     margin-top: 3rem;
     animation: fadeUp 0.8s ease 0.3s both;
   }
-  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--blanco); margin-bottom: 0.8rem; }
-  .cta-title em { font-style: italic; color: var(--oro-claro); }
-  .cta-text { font-size: 0.85rem; font-weight: 300; color: var(--gris-suave); line-height: 1.8; max-width: 480px; margin: 0 auto 1.8rem; }
+  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: #1C2B3A; margin-bottom: 0.8rem; }
+  .cta-title em { font-style: italic; color: var(--oro); }
+  .cta-text { font-size: 0.92rem; font-weight: 300; color: #2E3D4F; line-height: 1.8; max-width: 480px; margin: 0 auto 1.8rem; }
   .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
   .btn-primary {
     font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em;
@@ -188,7 +190,7 @@
   .btn-primary:hover { background: var(--oro-claro); transform: translateY(-2px); }
   .btn-secondary {
     font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em;
-    padding: 0.9rem 2.2rem; border: 1px solid rgba(201,168,76,0.4); color: var(--blanco);
+    padding: 0.9rem 2.2rem; border: 1px solid rgba(201,168,76,0.5); color: #1C2B3A;
     text-decoration: none; text-transform: uppercase; transition: all 0.3s;
   }
   .btn-secondary:hover { border-color: var(--oro); color: var(--oro); }
@@ -231,24 +233,24 @@
   /* ── GRAND MASTER ── */
   .gm-block { border: 1px solid rgba(201,168,76,0.22); background: rgba(21,35,56,0.5); padding: 2.4rem; display: flex; flex-direction: column; gap: 1.6rem; animation: fadeUp 0.6s ease both; }
   .gm-quote { border-left: 2px solid var(--oro); padding-left: 1.4rem; }
-  .gm-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-style: italic; font-weight: 300; line-height: 1.8; color: var(--blanco); }
+  .gm-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-style: italic; font-weight: 300; line-height: 1.8; color: #1C2B3A; }
   .gm-attribution { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; margin-top: 0.6rem; opacity: 0.85; }
-  .gm-desc { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); }
+  .gm-desc { font-size: 0.90rem; font-weight: 300; line-height: 1.9; color: #2E3D4F; }
   .gm-link { align-self: flex-start; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.5rem 1.2rem; border: 1px solid rgba(201,168,76,0.35); color: var(--oro); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
   .gm-link:hover { background: var(--oro); color: var(--azul-noche); }
 
   /* ── CHARACTERISTICS ── */
   .caracteristicas-block { margin-bottom: 3rem; }
-  .caracteristicas-intro { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); margin-bottom: 2rem; }
+  .caracteristicas-intro { font-size: 0.93rem; font-weight: 300; line-height: 1.9; color: #2E3D4F; margin-bottom: 2rem; }
   .caracteristicas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
   .caract-item { border: 1px solid rgba(201,168,76,0.18); background: rgba(21,35,56,0.5); padding: 1.6rem 1.4rem; display: flex; flex-direction: column; gap: 0.8rem; transition: border-color 0.3s; }
   .caract-item:hover { border-color: rgba(201,168,76,0.45); }
   .caract-symbol { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; }
-  .caract-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.12em; color: var(--blanco); text-transform: uppercase; line-height: 1.4; }
-  .caract-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.8; color: var(--gris-suave); }
+  .caract-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.12em; color: #1C2B3A; text-transform: uppercase; line-height: 1.4; }
+  .caract-desc { font-size: 0.89rem; font-weight: 300; line-height: 1.8; color: #2E3D4F; }
   .caracteristicas-requisitos { border: 1px solid rgba(201,168,76,0.15); background: rgba(21,35,56,0.3); padding: 1.4rem 1.8rem; }
-  .caracteristicas-requisitos p { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: var(--gris-suave); }
-  .caracteristicas-requisitos strong { color: var(--blanco); font-weight: 400; }
+  .caracteristicas-requisitos p { font-size: 0.89rem; font-weight: 300; line-height: 1.85; color: #2E3D4F; }
+  .caracteristicas-requisitos strong { color: #1C2B3A; font-weight: 600; }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
