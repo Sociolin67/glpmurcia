@@ -203,24 +203,52 @@
   .footer-logo:hover { opacity: 1; }
   .footer-logo img { height: 38px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
   .footer-logo-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
-  .footer-social { display: flex; gap: 1.2rem; }
-  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
-  .footer-social a:hover { color: var(--oro); }
-
-  /* ── SELECTOR DE IDIOMA ── */
-  .nav-right { display: flex; align-items: center; gap: 1rem; }
-  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
-  .lang-switcher a { font-family: "Cinzel", serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
-  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-  .lang-switcher a:not(.active):hover { color: var(--oro); }
-  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
-  .nav-mobile .lang-switcher-mobile a { font-family: "Cinzel", serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
-  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
   .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: all 0.3s; }
   .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; width: 100%; }
   .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
+  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+  .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  /* ── SELECTOR DE IDIOMA ── */
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
+  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
+  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+  .lang-switcher a:not(.active):hover { color: var(--oro); }
+  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
+  .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
+  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+
+
+  /* ── GRAN MAESTRO ── */
+  .gm-block { border: 1px solid rgba(201,168,76,0.22); background: rgba(21,35,56,0.5); padding: 2.4rem; display: flex; flex-direction: column; gap: 1.6rem; animation: fadeUp 0.6s ease both; }
+  .gm-quote { border-left: 2px solid var(--oro); padding-left: 1.4rem; }
+  .gm-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-style: italic; font-weight: 300; line-height: 1.8; color: var(--blanco); }
+  .gm-attribution { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; margin-top: 0.6rem; opacity: 0.85; }
+  .gm-desc { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); }
+  .gm-link { align-self: flex-start; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.5rem 1.2rem; border: 1px solid rgba(201,168,76,0.35); color: var(--oro); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+  .gm-link:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── CARACTERÍSTICAS ── */
+  .caracteristicas-block { margin-bottom: 3rem; }
+  .caracteristicas-intro { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); margin-bottom: 2rem; }
+  .caracteristicas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .caract-item { border: 1px solid rgba(201,168,76,0.18); background: rgba(21,35,56,0.5); padding: 1.6rem 1.4rem; display: flex; flex-direction: column; gap: 0.8rem; transition: border-color 0.3s; }
+  .caract-item:hover { border-color: rgba(201,168,76,0.45); }
+  .caract-symbol { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; }
+  .caract-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.12em; color: var(--blanco); text-transform: uppercase; line-height: 1.4; }
+  .caract-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.8; color: var(--gris-suave); }
+  .caracteristicas-requisitos { border: 1px solid rgba(201,168,76,0.15); background: rgba(21,35,56,0.3); padding: 1.4rem 1.8rem; }
+  .caracteristicas-requisitos p { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: var(--gris-suave); }
+  .caracteristicas-requisitos strong { color: var(--blanco); font-weight: 400; }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
@@ -313,7 +341,7 @@
     <div class="gm-block" style="margin-bottom:3rem;">
       <div class="gm-quote">
         <p>«No somos un partido político, ni somos una religión. Solo somos personas ávidas de mejorar, que usamos la diversidad de pensamiento y la fraternidad como instrumentos de aprendizaje.»</p>
-        <p class="gm-attribution">M∴ R∴ H∴ Shaun Parsons Herrera — Gran Maestro de la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a></p>
+        <p class="gm-attribution">M∴ R∴ H∴ Shaun Parsons Herrera — Gran Maestro de la Gran Logia de España</p>
       </div>
       <p class="gm-desc">El Gran Maestro es la máxima autoridad de la Masonería Regular en España. Conoce su mensaje y su visión para la Orden en nuestro país.</p>
       <a href="https://www.gle.org/gran-logia/gran-maestro/" target="_blank" rel="noopener" class="gm-link">El Gran Maestro de la G∴ L∴ E∴</a>
@@ -327,7 +355,7 @@
       <div class="block-body">
         <p>La masonería es una de las organizaciones no religiosas, no políticas, fraternales y caritativas más antiguas y más grandes del mundo. No es una religión ni un sustituto de ella. Exige de sus miembros una creencia en un Ser Supremo, pero no impone ninguna doctrina teológica concreta.</p>
         <p>La masonería significa cosas diferentes para cada individuo: hacer nuevos amigos y fortalecer vínculos, contribuir a la sociedad, celebrar una larga tradición, experimentar el crecimiento personal. Es, ante todo, una escuela de vida.</p>
-        <p>En todo el mundo hay aproximadamente <strong>seis millones de masones</strong>, organizados en logias que trabajan bajo obediencias reconocidas internacionalmente. En España, la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a> es la obediencia regular de referencia, de la que forma parte la Gran Logia Provincial de Murcia.</p>
+        <p>En todo el mundo hay aproximadamente <strong>seis millones de masones</strong>, organizados en logias que trabajan bajo obediencias reconocidas internacionalmente. En España, la Gran Logia de España es la obediencia regular de referencia, de la que forma parte la Gran Logia Provincial de Murcia.</p>
       </div>
     </div>
 
