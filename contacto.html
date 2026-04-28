@@ -166,30 +166,18 @@
   .success-text { font-size: 0.82rem; font-weight: 300; color: var(--gris-suave); line-height: 1.75; }
 
   /* ── FOOTER ── */
-  footer {
-    margin-top: auto; padding: 1.6rem 3rem;
-    border-top: 1px solid rgba(201,168,76,0.15);
-    background: rgba(13,27,42,0.85);
-    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-  }
-  .footer-copy { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
-  .footer-gle { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
+  footer { margin-top: auto; padding: 1.4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.85); display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-gle { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.8; }
   .footer-gle:hover { opacity: 1; }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  /* ── SELECTOR DE IDIOMA ── */
-  .nav-right { display: flex; align-items: center; gap: 1rem; }
-  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
-  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
-  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-  .lang-switcher a:not(.active):hover { color: var(--oro); }
-  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
-  .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
-  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-
+  .footer-gle-symbol { font-family: "Cinzel", serif; font-size: 1.1rem; color: var(--oro); opacity: 0.7; }
+  .footer-gle-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; line-height: 1.5; }
+  .footer-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.85; }
+  .footer-logo:hover { opacity: 1; }
+  .footer-logo img { height: 38px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
+  .footer-logo-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
+  .footer-social { display: flex; gap: 1.2rem; }
+  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .footer-social a:hover { color: var(--oro); }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
@@ -375,8 +363,14 @@
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
-    <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Parte de la Gran Logia de España</a>
+    <a href="https://www.gle.org" target="_blank" rel="noopener" class="footer-gle">
+      <span class="footer-gle-symbol">∴</span>
+      <span class="footer-gle-text">Gran Logia<br>de España</span>
+    </a>
+    <a href="index.html" class="footer-logo">
+      <img src="logo.png" alt="Gran Logia Provincial de Murcia">
+      <div class="footer-logo-text">Gran Logia Provincial<br>de Murcia</div>
+    </a>
   </footer>
 
 </div>
