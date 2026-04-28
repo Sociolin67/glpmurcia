@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Qué es la masonería, su historia, sus valores y cómo unirse. Gran Logia Provincial de Murcia.">
-<title>Sobre la Masonería | Gran Logia Provincial de Murcia</title>
+<meta name="description" content="Lodges of the Provincial Grand Lodge of Murcia — Seven Regular Lodges in the Region of Murcia.">
+<title>Lodges | Provincial Grand Lodge of Murcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,11 +19,13 @@
   }
 
   html { scroll-behavior: smooth; }
-  body { font-family: 'Lato', sans-serif; background: var(--azul-noche); color: var(--blanco); overflow-x: hidden; min-height: 100vh; }
+  body { font-family: 'Lato', sans-serif; background: var(--azul-noche); color: var(--blanco); overflow-x: hidden; }
 
   .bg-pattern {
     position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%), var(--azul-noche);
+    background:
+      radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 70%),
+      var(--azul-noche);
   }
   .bg-pattern::before {
     content: ''; position: absolute; inset: 0;
@@ -68,189 +70,112 @@
   .page-title em { font-style: italic; color: var(--oro-claro); }
   .page-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.95; color: var(--gris-suave); max-width: 560px; margin: 0 auto; letter-spacing: 0.02em; }
 
-  /* ── NAVEGACIÓN INTERNA ── */
-  .inner-nav {
-    display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
-    border-bottom: 1px solid rgba(201,168,76,0.15);
-    animation: fadeUp 0.8s ease 0.1s both;
-  }
-  .inner-nav a {
-    font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.18em;
-    padding: 1rem 1.6rem; color: var(--gris-suave); text-decoration: none;
-    text-transform: uppercase; border-right: 1px solid rgba(201,168,76,0.12);
-    transition: all 0.3s;
-  }
-  .inner-nav a:last-child { border-right: none; }
-  .inner-nav a:hover { color: var(--oro); background: rgba(201,168,76,0.04); }
+  /* ── SECCIÓN ── */
+  .section { padding: 4rem 3rem; max-width: 1100px; margin: 0 auto; width: 100%; }
+  .section-header { margin-bottom: 2.5rem; display: flex; align-items: center; gap: 1.4rem; }
+  .section-line { flex: 1; height: 1px; background: rgba(201,168,76,0.25); }
+  .section-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.25em; color: var(--oro); text-transform: uppercase; white-space: nowrap; }
+  .section-count { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--gris-suave); font-style: italic; }
 
-  /* ── CONTENIDO PRINCIPAL ── */
-  .content { max-width: 960px; margin: 0 auto; padding: 5rem 3rem; width: 100%; }
+  /* ── GRID DE LOGIAS ── */
+  .lodges-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
 
-  /* ── BLOQUE TEXTO ── */
-  .text-block { margin-bottom: 5rem; animation: fadeUp 0.9s ease 0.2s both; }
-  .block-anchor { display: block; margin-top: -80px; padding-top: 80px; }
-
-  .block-label {
-    font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.25em;
-    color: var(--oro); text-transform: uppercase; margin-bottom: 1.2rem;
-    display: flex; align-items: center; gap: 1rem;
-  }
-  .block-label::before { content: ''; width: 32px; height: 1px; background: var(--oro); flex-shrink: 0; }
-
-  .block-title {
-    font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 300; color: var(--blanco); margin-bottom: 1.6rem; line-height: 1.2;
-  }
-  .block-title em { font-style: italic; color: var(--oro-claro); }
-
-  .block-body { font-size: 0.88rem; font-weight: 300; line-height: 2; color: var(--gris-suave); }
-  .block-body p + p { margin-top: 1rem; }
-  .block-body strong { color: var(--blanco); font-weight: 400; }
-
-  /* ── CITA ── */
-  .quote-block {
-    border-left: 2px solid var(--oro);
-    padding: 1.2rem 2rem; margin: 2rem 0;
-    background: rgba(201,168,76,0.04);
-  }
-  .quote-text {
-    font-family: 'Cormorant Garamond', serif; font-size: 1.15rem;
-    font-style: italic; font-weight: 300; color: var(--oro-claro); line-height: 1.6;
-  }
-  .quote-author { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); margin-top: 0.6rem; letter-spacing: 0.08em; }
-
-  /* ── GRADOS ── */
-  .grades { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin: 2rem 0; }
-  .grade-card {
-    border: 1px solid rgba(201,168,76,0.2);
-    background: rgba(26,47,69,0.3);
-    padding: 1.6rem 1.4rem; text-align: center;
-    transition: border-color 0.3s;
-  }
-  .grade-card:hover { border-color: rgba(201,168,76,0.5); }
-  .grade-num {
-    font-family: 'Cormorant Garamond', serif; font-size: 2.2rem;
-    font-weight: 300; color: var(--oro); line-height: 1; margin-bottom: 0.5rem;
-  }
-  .grade-name {
-    font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.15em;
-    color: var(--blanco); text-transform: uppercase; margin-bottom: 0.7rem;
-  }
-  .grade-desc { font-size: 0.78rem; font-weight: 300; color: var(--gris-suave); line-height: 1.7; }
-
-  /* ── PREGUNTAS FRECUENTES ── */
-  .faq { margin: 2rem 0; }
-  .faq-item {
-    border-bottom: 1px solid rgba(201,168,76,0.12);
+  .lodge-card {
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(26,47,69,0.35);
+    padding: 2rem 1.8rem;
+    transition: border-color 0.3s, background 0.3s;
+    animation: fadeUp 0.8s ease both;
+    position: relative;
     overflow: hidden;
   }
-  .faq-question {
-    width: 100%; background: none; border: none; cursor: pointer;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 0; text-align: left; gap: 1rem;
+  .lodge-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 3px; height: 0; background: var(--oro);
+    transition: height 0.4s ease;
   }
-  .faq-q-text {
-    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.1em;
-    color: var(--blanco); text-transform: uppercase; line-height: 1.4;
-  }
-  .faq-icon {
-    color: var(--oro); font-size: 1rem; flex-shrink: 0;
-    transition: transform 0.3s; font-family: monospace;
-  }
-  .faq-item.open .faq-icon { transform: rotate(45deg); }
-  .faq-answer {
-    max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s;
-  }
-  .faq-item.open .faq-answer { max-height: 400px; }
-  .faq-answer-inner {
-    font-size: 0.84rem; font-weight: 300; color: var(--gris-suave);
-    line-height: 1.85; padding-bottom: 1.2rem;
-  }
-  .faq-answer-inner strong { color: var(--blanco); font-weight: 400; }
+  .lodge-card:hover { border-color: rgba(201,168,76,0.45); background: rgba(26,47,69,0.55); }
+  .lodge-card:hover::before { height: 100%; }
 
-  /* ── CTA FINAL ── */
-  .cta-block {
-    border: 1px solid rgba(201,168,76,0.25);
-    background: rgba(26,47,69,0.35);
-    padding: 3rem 2.5rem; text-align: center;
-    margin-top: 3rem;
-    animation: fadeUp 0.8s ease 0.3s both;
+  .lodge-card:nth-child(2) { animation-delay: 0.08s; }
+  .lodge-card:nth-child(3) { animation-delay: 0.16s; }
+  .lodge-card:nth-child(4) { animation-delay: 0.24s; }
+  .lodge-card:nth-child(5) { animation-delay: 0.32s; }
+  .lodge-card:nth-child(6) { animation-delay: 0.40s; }
+
+  .lodge-logo { display: flex; justify-content: center; margin-bottom: 1.2rem; }
+  .lodge-logo img { height: 80px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4)); }
+  .lodge-logo img.circular { border-radius: 50%; background: white; padding: 3px; }
+  .lodge-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 0.78rem;
+    color: var(--oro); letter-spacing: 0.15em; margin-bottom: 0.5rem;
+    font-style: italic;
   }
-  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--blanco); margin-bottom: 0.8rem; }
-  .cta-title em { font-style: italic; color: var(--oro-claro); }
-  .cta-text { font-size: 0.85rem; font-weight: 300; color: var(--gris-suave); line-height: 1.8; max-width: 480px; margin: 0 auto 1.8rem; }
-  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .btn-primary {
-    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em;
-    padding: 0.9rem 2.2rem; background: var(--oro); color: var(--azul-noche);
-    text-decoration: none; text-transform: uppercase; transition: all 0.3s; font-weight: 600;
+  .lodge-name {
+    font-family: 'Cinzel', serif; font-size: 1.05rem; font-weight: 400;
+    color: var(--blanco); margin-bottom: 0.9rem; line-height: 1.3;
   }
-  .btn-primary:hover { background: var(--oro-claro); transform: translateY(-2px); }
-  .btn-secondary {
-    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em;
-    padding: 0.9rem 2.2rem; border: 1px solid rgba(201,168,76,0.4); color: var(--blanco);
-    text-decoration: none; text-transform: uppercase; transition: all 0.3s;
+  .lodge-ritual {
+    font-size: 0.78rem; font-weight: 300; color: var(--gris-suave);
+    line-height: 1.6; margin-bottom: 1.4rem; letter-spacing: 0.02em;
   }
-  .btn-secondary:hover { border-color: var(--oro); color: var(--oro); }
+  .lodge-ritual span { color: var(--oro-claro); }
+
+  .lodge-links { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+  .lodge-link {
+    font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.15em;
+    padding: 0.3rem 0.8rem; border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gris-suave); text-decoration: none; text-transform: uppercase;
+    transition: all 0.3s;
+  }
+  .lodge-link:hover { border-color: var(--oro); color: var(--oro); }
+  .lodge-link.disabled { opacity: 0.3; cursor: default; pointer-events: none; }
+
+  /* ── SEPARADOR ── */
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(201,168,76,0.12);
+    margin: 0 3rem;
+  }
+
+  /* ── CARD ESPECIAL (Installed) ── */
+  .lodge-card.special {
+    border-color: rgba(201,168,76,0.3);
+    background: rgba(201,168,76,0.04);
+  }
+  .lodge-card.special::before { background: var(--oro-claro); }
+  .badge {
+    display: inline-block; font-family: 'Cinzel', serif; font-size: 0.55rem;
+    letter-spacing: 0.15em; padding: 0.2rem 0.7rem;
+    border: 1px solid rgba(201,168,76,0.5); color: var(--oro);
+    text-transform: uppercase; margin-bottom: 0.8rem;
+  }
+
+  /* ── AVISO VISITAS ── */
+  .visit-notice {
+    margin: 0 3rem 3rem;
+    padding: 1.4rem 2rem;
+    border: 1px solid rgba(201,168,76,0.2);
+    background: rgba(26,47,69,0.3);
+    display: flex; align-items: flex-start; gap: 1rem;
+  }
+  .visit-notice-icon { color: var(--oro); font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+  .visit-notice-text { font-size: 0.82rem; font-weight: 300; color: var(--gris-suave); line-height: 1.75; }
+  .visit-notice-text strong { color: var(--blanco); font-weight: 400; }
 
   /* ── FOOTER ── */
-  footer {
-    margin-top: auto; padding: 1.6rem 3rem;
-    border-top: 1px solid rgba(201,168,76,0.15);
-    background: rgba(13,27,42,0.85);
-    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
-  }
-  .footer-copy { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
-  .footer-gle { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
+  footer { margin-top: auto; padding: 1.4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.85); display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-gle { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.8; }
   .footer-gle:hover { opacity: 1; }
-
-   /* ── MENÚ MÓVIL ── */
-  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: all 0.3s; }
-  .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; width: 100%; }
-  .nav-mobile.open { display: flex; }
-  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--gris-suave); padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
-  .nav-mobile a:last-child { border-bottom: none; }
-  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
-  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
-  .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
-
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  /* ── SELECTOR DE IDIOMA ── */
-  .nav-right { display: flex; align-items: center; gap: 1rem; }
-  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
-  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
-  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-  .lang-switcher a:not(.active):hover { color: var(--oro); }
-  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
-  .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
-  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-
-
-  /* ── GRAN MAESTRO ── */
-  .gm-block { border: 1px solid rgba(201,168,76,0.22); background: rgba(21,35,56,0.5); padding: 2.4rem; display: flex; flex-direction: column; gap: 1.6rem; animation: fadeUp 0.6s ease both; }
-  .gm-quote { border-left: 2px solid var(--oro); padding-left: 1.4rem; }
-  .gm-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-style: italic; font-weight: 300; line-height: 1.8; color: var(--blanco); }
-  .gm-attribution { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; margin-top: 0.6rem; opacity: 0.85; }
-  .gm-desc { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); }
-  .gm-link { align-self: flex-start; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.5rem 1.2rem; border: 1px solid rgba(201,168,76,0.35); color: var(--oro); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
-  .gm-link:hover { background: var(--oro); color: var(--azul-noche); }
-
-  /* ── CARACTERÍSTICAS ── */
-  .caracteristicas-block { margin-bottom: 3rem; }
-  .caracteristicas-intro { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); margin-bottom: 2rem; }
-  .caracteristicas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 2rem; }
-  .caract-item { border: 1px solid rgba(201,168,76,0.18); background: rgba(21,35,56,0.5); padding: 1.6rem 1.4rem; display: flex; flex-direction: column; gap: 0.8rem; transition: border-color 0.3s; }
-  .caract-item:hover { border-color: rgba(201,168,76,0.45); }
-  .caract-symbol { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; }
-  .caract-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.12em; color: var(--blanco); text-transform: uppercase; line-height: 1.4; }
-  .caract-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.8; color: var(--gris-suave); }
-  .caracteristicas-requisitos { border: 1px solid rgba(201,168,76,0.15); background: rgba(21,35,56,0.3); padding: 1.4rem 1.8rem; }
-  .caracteristicas-requisitos p { font-size: 0.82rem; font-weight: 300; line-height: 1.85; color: var(--gris-suave); }
-  .caracteristicas-requisitos strong { color: var(--blanco); font-weight: 400; }
+  .footer-gle-symbol { font-family: "Cinzel", serif; font-size: 1.1rem; color: var(--oro); opacity: 0.7; }
+  .footer-gle-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; line-height: 1.5; }
+  .footer-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.85; }
+  .footer-logo:hover { opacity: 1; }
+  .footer-logo img { height: 38px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
+  .footer-logo-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
+  .footer-social { display: flex; gap: 1.2rem; }
+  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .footer-social a:hover { color: var(--oro); }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
@@ -260,13 +185,13 @@
     .nav-right { display: none; }
     .lang-switcher { display: none; }
     .page-header { padding: 3.5rem 1.4rem 2.5rem; }
-    .content { padding: 3rem 1.4rem; }
-    .grades { grid-template-columns: 1fr; }
-    .inner-nav a { padding: 0.8rem 1rem; font-size: 0.55rem; }
+    .section { padding: 3rem 1.4rem; }
+    .section-divider { margin: 0 1.4rem; }
+    .visit-notice { margin: 0 1.4rem 2rem; }
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
-    .caracteristicas-grid { grid-template-columns: 1fr; }
+    .ritos-branches { grid-template-columns: 1fr; max-width: 100%; }
+    .ritos-root-link { font-size: 0.7rem; padding: 0.7rem 1.2rem; }
   }
-
 </style>
 </head>
 <body>
@@ -277,43 +202,42 @@
 
   <!-- NAV -->
   <nav>
-    <a href="index.html" class="nav-logo">
+    <a href="index-en.html" class="nav-logo">
       <img src="logo.png" alt="Gran Logia Provincial de Murcia" style="height:48px;width:auto;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4));">
-      <div class="nav-title">Gran Logia Provincial<br>de Murcia</div>
+      <div class="nav-title">Provincial Grand Lodge<br>of Murcia</div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="noticias.html">Noticias</a></li>
-      <li><a href="logias.html">Logias</a></li>
-      <li><a href="ordenes.html">Órdenes</a></li>
-      <li><a href="masoneria.html" class="active">Sobre la Masonería</a></li>
-      <li><a href="caridad.html">Caridad</a></li>
-      <li><a href="recursos.html">Recursos</a></li>
+      <li><a href="index-en.html">Home</a></li>
+      <li><a href="noticias-en.html">News</a></li>
+      <li><a href="logias-en.html" class="active">Lodges</a></li>
+      <li><a href="ordenes-en.html">Orders</a></li>
+      <li><a href="masoneria-en.html">About Freemasonry</a></li>
+      <li><a href="caridad-en.html">Charity</a></li>
+      <li><a href="recursos-en.html">Resources</a></li>
     </ul>
     <div class="nav-right">
-      <a href="contacto.html" class="nav-cta">Contáctenos</a>
+      <a href="contacto-en.html" class="nav-cta">Contact Us</a>
       <div class="lang-switcher">
-        <a href="masoneria.html" class="active">ES</a>
-        <a href="masoneria-en.html" >EN</a>
+        <a href="logias.html">ES</a>
+        <a href="logias-en.html" class="active">EN</a>
       </div>
     </div>
     <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
   </nav>
   <div class="nav-mobile" id="navMobile">
-    <a href="index.html">Inicio</a>
-    <a href="noticias.html">Noticias</a>
-    <a href="logias.html">Logias</a>
-    <a href="ordenes.html">Órdenes</a>
-    <a href="masoneria.html" class="active">Sobre la Masonería</a>
-    <a href="caridad.html">Caridad</a>
-    <a href="recursos.html">Recursos</a>
-    <a href="contacto.html" class="nav-cta-mobile">Contáctenos</a>
+    <a href="index-en.html">Home</a>
+    <a href="noticias-en.html">News</a>
+    <a href="logias-en.html" class="active">Lodges</a>
+    <a href="ordenes-en.html">Orders</a>
+    <a href="masoneria-en.html">About Freemasonry</a>
+    <a href="caridad-en.html">Charity</a>
+    <a href="recursos-en.html">Resources</a>
+    <a href="contacto-en.html" class="nav-cta-mobile">Contact Us</a>
     <div class="lang-switcher-mobile">
-      <a href="masoneria.html" class="active">ES</a>
-      <a href="masoneria-en.html" >EN</a>
+      <a href="logias.html">ES</a>
+      <a href="logias-en.html" class="active">EN</a>
     </div>
   </div>
-  
 
   <!-- CABECERA -->
   <header class="page-header">
@@ -322,226 +246,177 @@
       <span class="ornament-symbol">✦</span>
       <span class="ornament-line r"></span>
     </div>
-    <p class="page-eyebrow">Gran Logia Provincial de Murcia</p>
-    <h1 class="page-title">Sobre la <em>Masonería</em></h1>
-    <p class="page-desc">Una de las organizaciones fraternales más antiguas del mundo: sus raíces, sus valores y lo que significa ser masón hoy.</p>
+    <p class="page-eyebrow">Provincial Grand Lodge of Murcia</p>
+    <h1 class="page-title">Lodges of <em>the Province</em></h1>
+    <p class="page-desc">The Province of Murcia has seven Regular Lodges in both Spanish and English. If you wish to visit a lodge, please contact its Secretary in the first instance.</p>
   </header>
 
-  <!-- NAV INTERNA -->
-  <nav class="inner-nav">
-    <a href="#que-es">¿Qué es?</a>
-    <a href="#historia">Historia</a>
-    <a href="#grados">Los grados</a>
-    <a href="#valores">Valores</a>
-    <a href="#faq">Preguntas frecuentes</a>
-  </nav>
+  <!-- AVISO VISITAS -->
+  <div class="visit-notice">
+    <span class="visit-notice-icon">◈</span>
+    <p class="visit-notice-text"><strong>Visits:</strong> Whether you are a Brother wishing to visit one of our Lodges, or an uninitiated person seeking further information about our Order, please get in touch through the corresponding form.</p>
+  </div>
 
-  <!-- CONTENIDO -->
-  <div class="content">
-
-    <!-- GRAN MAESTRO -->
-    <div class="gm-block" style="margin-bottom:3rem;">
-      <div class="gm-quote">
-        <p>«No somos un partido político, ni somos una religión. Solo somos personas ávidas de mejorar, que usamos la diversidad de pensamiento y la fraternidad como instrumentos de aprendizaje.»</p>
-        <p class="gm-attribution">M∴ R∴ H∴ Shaun Parsons Herrera — Gran Maestro de la Gran Logia de España</p>
-      </div>
-      <p class="gm-desc">El Gran Maestro es la máxima autoridad de la Masonería Regular en España. Conoce su mensaje y su visión para la Orden en nuestro país.</p>
-      <a href="https://www.gle.org/gran-logia/gran-maestro/" target="_blank" rel="noopener" class="gm-link">El Gran Maestro de la G∴ L∴ E∴</a>
+  <!-- LOGIAS REGULARES -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-label">Regular Lodges</span>
+      <span class="section-line"></span>
+      <span class="section-count">Seven lodges · Province founded in 2009</span>
     </div>
 
-    <!-- QUÉ ES -->
-    <div class="text-block">
-      <span class="block-anchor" id="que-es"></span>
-      <p class="block-label">Qué es la masonería</p>
-      <h2 class="block-title">Una fraternidad de <em>hombres libres y de buenas costumbres</em></h2>
-      <div class="block-body">
-        <p>La masonería es una de las organizaciones no religiosas, no políticas, fraternales y caritativas más antiguas y más grandes del mundo. No es una religión ni un sustituto de ella. Exige de sus miembros una creencia en un Ser Supremo, pero no impone ninguna doctrina teológica concreta.</p>
-        <p>La masonería significa cosas diferentes para cada individuo: hacer nuevos amigos y fortalecer vínculos, contribuir a la sociedad, celebrar una larga tradición, experimentar el crecimiento personal. Es, ante todo, una escuela de vida.</p>
-        <p>En todo el mundo hay aproximadamente <strong>seis millones de masones</strong>, organizados en logias que trabajan bajo obediencias reconocidas internacionalmente. En España, la Gran Logia de España es la obediencia regular de referencia, de la que forma parte la Gran Logia Provincial de Murcia.</p>
+    <div class="lodges-grid">
+
+      <div class="lodge-card">
+        <div class="lodge-logo"><img src="logo-luz-murcia.png" alt="Luz de Murcia"></div>
+        <p class="lodge-num">Nº 91</p>
+        <h2 class="lodge-name">Luz de Murcia</h2>
+        <p class="lodge-ritual">Works the <span>Emulation Ritual in English</span></p>
+        <div class="lodge-links">
+          <a href="#" class="lodge-link disabled">Website</a>
+          <a href="#" class="lodge-link disabled">Twitter</a>
+          <a href="https://www.facebook.com/LuzDeMurcia/" target="_blank" rel="noopener" class="lodge-link">Facebook</a>
+        </div>
       </div>
+
+      <div class="lodge-card">
+        <div class="lodge-logo"><img src="logo-fraternidad.png" alt="Fraternidad Mediterránea"></div>
+        <p class="lodge-num">Nº 94</p>
+        <h2 class="lodge-name">Fraternidad Mediterránea</h2>
+        <p class="lodge-ritual">Works the <span>Emulation Ritual in Spanish</span></p>
+        <div class="lodge-links">
+          <a href="http://www.fm94.es/" target="_blank" rel="noopener" class="lodge-link">Website</a>
+          <a href="#" class="lodge-link disabled">Twitter</a>
+          <a href="#" class="lodge-link disabled">Facebook</a>
+        </div>
+      </div>
+
+      <div class="lodge-card">
+        <div class="lodge-logo"><img src="logo-sierra-espuna.png?v=5" alt="Sierra Espuña"></div>
+        <p class="lodge-num">Nº 136</p>
+        <h2 class="lodge-name">Sierra Espuña</h2>
+        <p class="lodge-ritual">Works the <span>Emulation Ritual in English</span></p>
+        <div class="lodge-links">
+          <a href="#" class="lodge-link disabled">Website</a>
+          <a href="#" class="lodge-link disabled">Twitter</a>
+          <a href="https://www.facebook.com/groups/819069828281182/" target="_blank" rel="noopener" class="lodge-link">Facebook</a>
+        </div>
+      </div>
+
+      <div class="lodge-card">
+        <div class="lodge-logo"><img src="logo-moria.png" alt="Logia Moriá"></div>
+        <p class="lodge-num">Nº 143</p>
+        <h2 class="lodge-name">Moriá</h2>
+        <p class="lodge-ritual">Works the <span>Ancient and Accepted Scottish Rite in Spanish</span></p>
+        <div class="lodge-links">
+          <a href="https://logiamoria.org/" target="_blank" rel="noopener" class="lodge-link">Website</a>
+          <a href="#" class="lodge-link disabled">Twitter</a>
+          <a href="#" class="lodge-link disabled">Facebook</a>
+        </div>
+      </div>
+
+      <div class="lodge-card">
+        <div class="lodge-logo"><img src="logo-floridablanca.png?v=4" alt="Conde de Floridablanca" class="circular"></div>
+        <p class="lodge-num">Nº 164</p>
+        <h2 class="lodge-name">Conde de Floridablanca</h2>
+        <p class="lodge-ritual">Works the <span>Emulation Ritual in Spanish</span></p>
+        <div class="lodge-links">
+          <a href="https://www.masoneriamurcia.es/" target="_blank" rel="noopener" class="lodge-link">Website</a>
+          <a href="https://twitter.com/RFloridablanca" target="_blank" rel="noopener" class="lodge-link">Twitter</a>
+          <a href="#" class="lodge-link disabled">Facebook</a>
+        </div>
+      </div>
+
+      <div class="lodge-card">
+        <div class="lodge-logo"><img src="logo-caballeros.png" alt="Caballeros de Levante"></div>
+        <p class="lodge-num">Nº 193</p>
+        <h2 class="lodge-name">Caballeros de Levante</h2>
+        <p class="lodge-ritual">Works the <span>French Rite in Spanish</span></p>
+        <div class="lodge-links">
+          <a href="https://caballerosdelevante193.es/" target="_blank" rel="noopener" class="lodge-link">Website</a>
+          <a href="#" class="lodge-link disabled">Twitter</a>
+          <a href="#" class="lodge-link disabled">Facebook</a>
+        </div>
+      </div>
+
+      <div class="lodge-card">
+        <div class="lodge-logo"><img src="logo-maestros.png" alt="Logia de Maestros Instalados"></div>
+        <p class="lodge-num">Nº 180</p>
+        <h2 class="lodge-name">Maestros Instalados de Murcia</h2>
+        <p class="lodge-ritual">Works the <span>Emulation Ritual in English and Spanish</span></p>
+        <div class="lodge-links">
+          <a href="#" class="lodge-link disabled">Website</a>
+          <a href="#" class="lodge-link disabled">Twitter</a>
+          <a href="#" class="lodge-link disabled">Facebook</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- MASONIC RITES -->
+  <div class="section" style="padding-top:0;">
+    <div class="section-header">
+      <span class="section-label">The Masonic Rites</span>
+      <span class="section-line"></span>
     </div>
 
-    <!-- HISTORIA -->
-    <div class="text-block">
-      <span class="block-anchor" id="historia"></span>
-      <p class="block-label">Historia</p>
-      <h2 class="block-title">De los canteros medievales a la <em>masonería especulativa</em></h2>
-      <div class="block-body">
-        <p>Las preguntas de cuándo, cómo, por qué y dónde se originó la masonería siguen siendo objeto de intensa investigación histórica. El consenso general entre los estudiosos es que desciende, directa o indirectamente, de las organizaciones de canteros operativos que construyeron las grandes catedrales y castillos de la Edad Media.</p>
-        <p>Estos gremios medievales desarrollaron sistemas de reconocimiento entre hermanos de oficio, formas de transmitir el conocimiento técnico y normas de conducta que protegían la calidad del trabajo y la reputación del gremio. Con el tiempo, y especialmente a partir del siglo XVII en las islas británicas, las logias comenzaron a admitir miembros no vinculados al trabajo de la piedra — los llamados masones <strong>aceptados o especulativos</strong>.</p>
-        <p>La Gran Logia de Londres, fundada en <strong>1717</strong>, marcó el inicio de la masonería moderna tal como la conocemos. Desde entonces, la institución se extendió por Europa y el resto del mundo, convirtiéndose en una fraternidad universal comprometida con los valores del humanismo ilustrado.</p>
+    <p class="ritos-intro">
+      The Provincial Grand Lodge of Murcia works within the three great rites of regular Masonic tradition. Each rite offers its own path of initiation and knowledge, sharing the same universal principles of the Order.
+    </p>
+
+    <div class="ritos-tree">
+
+      <div class="ritos-root">
+        <a href="https://www.gle.org/masoneria/ritos/" target="_blank" rel="noopener" class="ritos-root-link">
+          <span class="ritos-icon">∴</span>
+          The Masonic Rites
+          <span class="ritos-icon">∴</span>
+        </a>
       </div>
-      <div class="quote-block">
-        <p class="quote-text">«La masonería es un sistema peculiar de moralidad, velado en alegoría e ilustrado por símbolos.»</p>
-        <p class="quote-author">Definición clásica de la masonería especulativa</p>
+
+      <div class="ritos-connector">
+        <div class="ritos-connector-v"></div>
       </div>
+
+      <div class="ritos-branches">
+
+        <a href="https://www.gle.org/masoneria/ritos/emulacion/" target="_blank" rel="noopener" class="rito-card">
+          <span class="rito-card-name">Emulation<br>Rite</span>
+          <span class="rito-card-badge">Anglo-Saxon tradition</span>
+        </a>
+
+        <a href="https://www.gle.org/masoneria/ritos/rito-escoces-antiguo-y-aceptado/" target="_blank" rel="noopener" class="rito-card">
+          <span class="rito-card-name">Ancient &amp; Accepted<br>Scottish Rite</span>
+          <span class="rito-card-badge">33 degrees</span>
+        </a>
+
+        <a href="https://www.gle.org/masoneria/ritos/rito-frances/" target="_blank" rel="noopener" class="rito-card">
+          <span class="rito-card-name">Modern<br>French Rite</span>
+          <span class="rito-card-badge">Continental tradition</span>
+        </a>
+
+      </div>
+
+      <p class="ritos-glpm-note">The three rites practised in the P∴ G∴ L∴ of Murcia</p>
+
     </div>
-
-    <!-- GRADOS -->
-    <div class="text-block">
-      <span class="block-anchor" id="grados"></span>
-      <p class="block-label">Los grados</p>
-      <h2 class="block-title">El viaje del <em>aprendiz al maestro</em></h2>
-      <div class="block-body">
-        <p>El ingreso y la progresión en una logia masónica se articulan en tres etapas ceremoniales llamadas <strong>grados</strong>. Cada uno representa un nivel de iniciación, reflexión y compromiso. Por lo general, se necesita entre uno y dos años para completar los tres grados y recibir el título de Maestro Masón.</p>
-      </div>
-      <div class="grades">
-        <div class="grade-card">
-          <p class="grade-num">I</p>
-          <p class="grade-name">Aprendiz</p>
-          <p class="grade-desc">El inicio del camino. El candidato es introducido en los principios y símbolos fundamentales de la fraternidad.</p>
-        </div>
-        <div class="grade-card">
-          <p class="grade-num">II</p>
-          <p class="grade-name">Compañero</p>
-          <p class="grade-desc">La etapa del conocimiento. El masón profundiza en el estudio de las artes liberales y las ciencias.</p>
-        </div>
-        <div class="grade-card">
-          <p class="grade-num">III</p>
-          <p class="grade-name">Maestro</p>
-          <p class="grade-desc">La culminación del grado simbólico. El Maestro Masón asume plena responsabilidad en la vida de la logia.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- VALORES -->
-    <div class="text-block">
-      <span class="block-anchor" id="valores"></span>
-      <p class="block-label">Valores</p>
-      <h2 class="block-title">Lo que une a <em>todos los masones</em></h2>
-      <div class="block-body">
-        <p>Más allá de las diferencias rituales entre obediencias, la masonería se asienta sobre un conjunto de valores compartidos que han permanecido constantes a lo largo de siglos.</p>
-        <p><strong>Fraternidad.</strong> El vínculo entre masones trasciende las fronteras nacionales, las diferencias culturales y las opiniones políticas. En la logia, todos son iguales.</p>
-        <p><strong>Tolerancia.</strong> La masonería exige el respeto a las convicciones ajenas. La discusión de política y religión está vedada en logia precisamente para preservar la armonía entre hermanos de distintas sensibilidades.</p>
-        <p><strong>Búsqueda de la verdad.</strong> El masón se compromete con el estudio, la reflexión y el perfeccionamiento continuo. La logia es una escuela permanente de pensamiento libre y crítico.</p>
-        <p><strong>Caridad.</strong> El servicio a la comunidad y el apoyo a los más necesitados son obligaciones morales, no gestos ocasionales. Las logias de la provincia de Murcia lo practican activamente cada año.</p>
-      </div>
-    </div>
-
-    <!-- FAQ -->
-    <div class="text-block">
-      <span class="block-anchor" id="faq"></span>
-      <p class="block-label">Preguntas frecuentes</p>
-      <h2 class="block-title">Lo que la gente <em>suele preguntar</em></h2>
-      <div class="faq">
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-q-text">¿Cualquier persona puede hacerse masón?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Cualquier hombre mayor de 18 años puede solicitar el ingreso, independientemente de su origen étnico, posición económica u opiniones políticas. Se espera que el candidato tenga una creencia en algún principio superior, aunque la masonería no impone ninguna religión concreta. Las mujeres tienen sus propias obediencias masónicas reconocidas.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-q-text">¿Es la masonería una religión o una secta?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">No. La masonería no es una religión, no tiene dogmas teológicos, no ofrece sacramentos ni proporciona medios de salvación. Es una fraternidad que reúne a hombres de diferentes credos en torno a valores éticos comunes. Tampoco es una secta: sus miembros son libres de abandonarla cuando lo deseen y no existe ningún tipo de presión o control sobre su vida personal.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-q-text">¿Por qué hay tanto secreto en torno a la masonería?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Históricamente, la discreción fue necesaria en épocas de persecución. Hoy en día, la masonería es una institución abierta: sus principios, valores e historia son de dominio público. Lo que se mantiene reservado son los rituales de iniciación y ciertos medios de reconocimiento entre hermanos — una práctica que comparte con muchas otras fraternidades y que forma parte de su tradición simbólica, no de ningún propósito oculto.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-q-text">¿Cuánto tiempo requiere ser masón?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Las logias se reúnen habitualmente una o dos veces al mes. La implicación depende de cada miembro y de las responsabilidades que vaya asumiendo dentro de la logia. No existe una exigencia mínima de tiempo más allá de la asistencia razonable a las tenidas — las reuniones formales de la logia.</div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            <span class="faq-q-text">¿Cómo puedo dar el primer paso?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">Si no conoces a ningún masón con quien hablar directamente, puedes <strong><a href="contacto.html" style="color:var(--oro);text-decoration:none;">ponerte en contacto con nosotros</a></strong> a través del formulario de contacto. Alguien de la provincia te responderá y podrás resolver todas tus dudas sin ningún compromiso.</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- CARACTERÍSTICAS DE UN MASÓN -->
-    <div class="caracteristicas-block">
-      <div class="section-header" style="margin-bottom:1.8rem;">
-        <span class="section-label" style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.22em;color:var(--oro);text-transform:uppercase;white-space:nowrap;">Características de un Masón</span>
-        <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.4),transparent);"></span>
-      </div>
-
-      <p class="caracteristicas-intro">Toda persona interesada en pertenecer a la Francmasonería ha de reunir los siguientes tres requisitos fundamentales:</p>
-
-      <div class="caracteristicas-grid">
-
-        <div class="caract-item">
-          <span class="caract-symbol">∴ I</span>
-          <span class="caract-title">Persona Libre</span>
-          <p class="caract-desc">La solicitud de iniciación ha de ser consecuencia de la innata libertad individual, lejos de toda presión, influencia, dependencia o circunstancia que la coarte.</p>
-        </div>
-
-        <div class="caract-item">
-          <span class="caract-symbol">∴ II</span>
-          <span class="caract-title">De Buenas Costumbres</span>
-          <p class="caract-desc">Digna de confianza, honrada en su vida privada y en su forma de trabajar, y de buena reputación en su entorno.</p>
-        </div>
-
-        <div class="caract-item">
-          <span class="caract-symbol">∴ III</span>
-          <span class="caract-title">Creyente en un Principio Superior</span>
-          <p class="caract-desc">Creencia en una Causa Primera de todo lo creado, a quien los masones, respetando toda creencia particular, nombran como <em>Gran Arquitecto del Universo</em>.</p>
-        </div>
-
-      </div>
-
-      <div class="caracteristicas-requisitos">
-        <p>Además, es preciso ser <strong>varón mayor de 18 años</strong>, sin distinción de nacionalidad, grupo social o religión, con capacidad de comprensión de los conceptos filosóficos de la Orden y disponer de una <strong>«ciencia, arte, oficio o renta»</strong>, tal como expresan los antiguos lineamientos de la Orden.</p>
-      </div>
-    </div>
-
-    <!-- CTA -->
-    <div class="cta-block">
-      <h3 class="cta-title">¿Te interesa <em>dar el paso</em>?</h3>
-      <p class="cta-text">Si lo que has leído ha despertado tu curiosidad, el siguiente paso es sencillo: escríbenos. Sin compromisos, sin presiones. Solo una conversación.</p>
-      <div class="cta-actions">
-        <a href="contacto.html" class="btn-primary">Contactar con nosotros</a>
-        <a href="logias.html" class="btn-secondary">Ver las logias</a>
-      </div>
-    </div>
-
   </div>
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
-    <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Parte de la Gran Logia de España</a>
+    <a href="https://www.gle.org" target="_blank" rel="noopener" class="footer-gle">
+      <span class="footer-gle-symbol">∴</span>
+      <span class="footer-gle-text">Grand Lodge<br>of Spain</span>
+    </a>
+    <a href="index-en.html" class="footer-logo">
+      <img src="logo.png" alt="Provincial Grand Lodge of Murcia">
+      <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
+    </a>
   </footer>
 
 </div>
-
-<script>
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
-}
-</script>
-
 </body>
 </html>
