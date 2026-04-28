@@ -177,6 +177,21 @@
   .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
   .footer-social a:hover { color: var(--oro); }
 
+  /* ── SELECTOR DE IDIOMA ── */
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
+  .lang-switcher a { font-family: "Cinzel", serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
+  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+  .lang-switcher a:not(.active):hover { color: var(--oro); }
+  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
+  .nav-mobile .lang-switcher-mobile a { font-family: "Cinzel", serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
+  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+
+  .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: all 0.3s; }
+  .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; width: 100%; }
+  .nav-mobile.open { display: flex; }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
