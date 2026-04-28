@@ -83,45 +83,18 @@
   .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
   
   /* ── FOOTER ── */
-  footer { margin-top: auto; padding: 1.6rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.85); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-  .footer-copy { font-size: 0.72rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.08em; }
-  .footer-gle { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; color: var(--oro); text-decoration: none; opacity: 0.7; transition: opacity 0.3s; }
+  footer { margin-top: auto; padding: 1.4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.85); display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-gle { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.8; }
   .footer-gle:hover { opacity: 1; }
-  /* ── SELECTOR DE IDIOMA ── */
-  .nav-right { display: flex; align-items: center; gap: 1rem; }
-  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
-  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
-  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-  .lang-switcher a:not(.active):hover { color: var(--oro); }
-  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
-  .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
-  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-
-
-  /* ── ANTIGUAS CONSTITUCIONES ── */
-  .constituciones-intro { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); margin-bottom: 2rem; }
-  .constituciones-intro a { color: var(--oro); text-decoration: none; }
-  .constituciones-intro a:hover { text-decoration: underline; }
-  .docs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; border: 1px solid rgba(201,168,76,0.18); margin-bottom: 0.5rem; }
-  .doc-item { display: flex; align-items: baseline; gap: 0.9rem; padding: 0.75rem 1.1rem; border-bottom: 1px solid rgba(201,168,76,0.09); border-right: 1px solid rgba(201,168,76,0.09); text-decoration: none; transition: background 0.2s; }
-  .doc-item:nth-child(even) { border-right: none; }
-  .doc-item:hover { background: rgba(201,168,76,0.06); }
-  .doc-year { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.1em; color: var(--oro); opacity: 0.75; white-space: nowrap; min-width: 62px; flex-shrink: 0; }
-  .doc-title { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--blanco); line-height: 1.35; transition: color 0.2s; }
-  .doc-item:hover .doc-title { color: var(--oro-claro); }
-  .doc-arrow { margin-left: auto; font-size: 0.65rem; color: var(--oro); opacity: 0; transition: opacity 0.2s, transform 0.2s; flex-shrink: 0; }
-  .doc-item:hover .doc-arrow { opacity: 1; transform: translateX(3px); }
-  .constituciones-note { font-size: 0.75rem; font-weight: 300; color: var(--gris-suave); opacity: 0.7; letter-spacing: 0.04em; margin-top: 1rem; font-style: italic; }
-  .constituciones-note a { color: var(--oro); text-decoration: none; opacity: 0.85; }
-  .constituciones-note a:hover { opacity: 1; }
-
-  /* ── EL ORIENTE ── */
-  .oriente-card { border: 1px solid rgba(201,168,76,0.18); background: rgba(21,35,56,0.5); overflow: hidden; animation: fadeUp 0.6s ease both; }
-  .oriente-banner { display: block; width: 100%; }
-  .oriente-banner img { width: 100%; height: auto; display: block; }
-  .oriente-body { padding: 2rem 2.4rem; }
-  .oriente-desc { font-size: 0.85rem; font-weight: 300; line-height: 1.9; color: var(--gris-suave); }
-  .oriente-desc p + p { margin-top: 0.8rem; }
+  .footer-gle-symbol { font-family: "Cinzel", serif; font-size: 1.1rem; color: var(--oro); opacity: 0.7; }
+  .footer-gle-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; line-height: 1.5; }
+  .footer-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.85; }
+  .footer-logo:hover { opacity: 1; }
+  .footer-logo img { height: 38px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
+  .footer-logo-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
+  .footer-social { display: flex; gap: 1.2rem; }
+  .footer-social a { font-size: 0.68rem; font-weight: 300; letter-spacing: 0.1em; color: var(--gris-suave); text-decoration: none; text-transform: uppercase; transition: color 0.3s; }
+  .footer-social a:hover { color: var(--oro); }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
@@ -374,7 +347,7 @@
         </div>
         <h2 class="resource-title">Constitución y Reglamentos de la Gran Logia de España</h2>
         <div class="resource-desc">
-          <p>Texto completo de la <strong>Constitución y los Reglamentos</strong> que rigen la Gran Logia de España — Grande Oriente Español, la institución masónica regular de la que forma parte la Gran Logia Provincial de Murcia. Documento de referencia fundamental para conocer la estructura, principios y normas de gobierno de la Orden en España.</p>
+          <p>Texto completo de la <strong>Constitución y los Reglamentos</strong> que rigen la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a> — Grande Oriente Español, la institución masónica regular de la que forma parte la Gran Logia Provincial de Murcia. Documento de referencia fundamental para conocer la estructura, principios y normas de gobierno de la Orden en España.</p>
         </div>
         <a href="https://www.gle.org/masoneria/constituciones-gle/" target="_blank" rel="noopener" class="resource-link">Acceder al documento</a>
       </div>
@@ -396,7 +369,7 @@
         </div>
         <h2 class="resource-title">El Oriente</h2>
         <div class="oriente-desc">
-          <p>Boletín de noticias de la <strong>Gran Logia de España — Grande Oriente Español</strong>. Recoge las actividades, comunicados y noticias de la institución masónica regular española, de la que forma parte la Gran Logia Provincial de Murcia.</p>
+          <p>Boletín de noticias de la <strong><a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a> — Grande Oriente Español</strong>. Recoge las actividades, comunicados y noticias de la institución masónica regular española, de la que forma parte la Gran Logia Provincial de Murcia.</p>
         </div>
         <a href="https://www.gle.org/eloriente/" target="_blank" rel="noopener" class="resource-link">Acceder a El Oriente</a>
       </div>
@@ -406,8 +379,14 @@
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-copy">© 2026 Gran Logia Provincial de Murcia</span>
-    <a href="http://www.gle.org" target="_blank" rel="noopener" class="footer-gle">Parte de la Gran Logia de España</a>
+    <a href="https://www.gle.org" target="_blank" rel="noopener" class="footer-gle">
+      <span class="footer-gle-symbol">∴</span>
+      <span class="footer-gle-text">Gran Logia<br>de España</span>
+    </a>
+    <a href="index.html" class="footer-logo">
+      <img src="logo.png" alt="Gran Logia Provincial de Murcia">
+      <div class="footer-logo-text">Gran Logia Provincial<br>de Murcia</div>
+    </a>
   </footer>
 
 </div>
