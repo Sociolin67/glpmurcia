@@ -608,6 +608,40 @@
     letter-spacing: 0.1em;
   }
 
+
+  .col-card-active {
+    border: 1px solid rgba(201,168,76,0.4);
+    background: rgba(201,168,76,0.05);
+  }
+  .col-card-active h3 { color: var(--dorado); }
+  .col-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .col-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.45rem 0.75rem;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 3px;
+    color: var(--crema);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .col-link:hover {
+    background: rgba(201,168,76,0.15);
+    border-color: var(--dorado);
+    color: var(--dorado);
+  }
+
 </style>
 </head>
 <body>
@@ -840,22 +874,34 @@
   <section class="rito-section">
     <div class="rito-header">
       <h2>Órdenes Colaterales · Appendant Orders</h2>
-      <span class="rito-badge">Próximamente · Coming Soon</span>
     </div>
     <div class="colaterales-grid">
+
+      <div class="col-card col-card-active">
+        <span class="col-icon">◈</span>
+        <h3>Mark Master Masons · Marca</h3>
+        <p>Siete Coronas Nº 1957</p>
+        <div class="col-links">
+          <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9jYThlZTI5ZTE4NzFlYzVjL0lnRGtMdUFObUpYNVJaU0xhM0FiZ05EWEFXc21ueV8xSVMtYjRyZG5CM3g3WkpFP2U9M0hYcGZ2&id=CA8EE29E1871EC5C%21s5a13f1907ee7402497f27b84df822f1d&cid=CA8EE29E1871EC5C&sb=name&sd=1" target="_blank" class="col-link">📁 General</a>
+          <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9jYThlZTI5ZTE4NzFlYzVjL0lnRGtMdUFObUpYNVJaU0xhM0FiZ05EWEFXc21ueV8xSVMtYjRyZG5CM3g3WkpFP2U9M0hYcGZ2&id=CA8EE29E1871EC5C%21s10a0b7d7769e4a53bbac20fb39509066&cid=CA8EE29E1871EC5C&sb=name&sd=1" target="_blank" class="col-link">📁 Mark · Marca</a>
+          <a href="https://onedrive.live.com/?id=CA8EE29E1871EC5C%21s82c7247f31d849fba4d11a19bf5eced1&cid=CA8EE29E1871EC5C&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9jYThlZTI5ZTE4NzFlYzVjL0lnRGtMdUFObUpYNVJaU0xhM0FiZ05EWEFXc21ueV8xSVMtYjRyZG5CM3g3WkpFP2U9M0hYcGZ2" target="_blank" class="col-link">🖼 Logos</a>
+        </div>
+      </div>
+
+      <div class="col-card col-card-active">
+        <span class="col-icon">◈</span>
+        <h3>Royal Ark Mariner · Nautas</h3>
+        <p>Nautas Siete Coronas Nº 1957</p>
+        <div class="col-links">
+          <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9jYThlZTI5ZTE4NzFlYzVjL0lnRGtMdUFObUpYNVJaU0xhM0FiZ05EWEFXc21ueV8xSVMtYjRyZG5CM3g3WkpFP2U9M0hYcGZ2&id=CA8EE29E1871EC5C%21s5a13f1907ee7402497f27b84df822f1d&cid=CA8EE29E1871EC5C&sb=name&sd=1" target="_blank" class="col-link">📁 General</a>
+          <a href="https://onedrive.live.com/?redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9jYThlZTI5ZTE4NzFlYzVjL0lnRGtMdUFObUpYNVJaU0xhM0FiZ05EWEFXc21ueV8xSVMtYjRyZG5CM3g3WkpFP2U9M0hYcGZ2&id=CA8EE29E1871EC5C%21scedad8b818a748948890f122bdc763e6&cid=CA8EE29E1871EC5C&sb=name&sd=1" target="_blank" class="col-link">📁 RAM · Nautas</a>
+          <a href="https://onedrive.live.com/?id=CA8EE29E1871EC5C%21s82c7247f31d849fba4d11a19bf5eced1&cid=CA8EE29E1871EC5C&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy9jYThlZTI5ZTE4NzFlYzVjL0lnRGtMdUFObUpYNVJaU0xhM0FiZ05EWEFXc21ueV8xSVMtYjRyZG5CM3g3WkpFP2U9M0hYcGZ2" target="_blank" class="col-link">🖼 Logos</a>
+        </div>
+      </div>
+
       <div class="col-card">
         <span class="col-icon">◈</span>
         <h3>Santo Arco Real</h3>
-        <p>En construcción · Coming soon</p>
-      </div>
-      <div class="col-card">
-        <span class="col-icon">◈</span>
-        <h3>Mark Master</h3>
-        <p>En construcción · Coming soon</p>
-      </div>
-      <div class="col-card">
-        <span class="col-icon">◈</span>
-        <h3>Royal Ark Mariner</h3>
         <p>En construcción · Coming soon</p>
       </div>
       <div class="col-card">
@@ -868,6 +914,7 @@
         <h3>Orden de Athelstan</h3>
         <p>En construcción · Coming soon</p>
       </div>
+
     </div>
   </section>
 
