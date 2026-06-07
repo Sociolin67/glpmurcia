@@ -178,6 +178,42 @@
   .news-btn { display: block; margin: 0.5rem auto 2rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.55rem 1.6rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
   .news-btn:hover { background: var(--oro); color: var(--azul-noche); }
 
+  /* ── LODGE LIFE ── */
+  .lodge-section { margin-top: 3.5rem; }
+  .lodge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem; }
+  .lodge-card {
+    display: flex; gap: 1.1rem; align-items: flex-start;
+    border: 1px solid rgba(201,168,76,0.22);
+    background: #FFFFFF;
+    padding: 1.3rem 1.3rem;
+    transition: border-color 0.3s, background 0.3s;
+    animation: fadeUp 0.8s ease both;
+    position: relative; overflow: hidden;
+  }
+  .lodge-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--oro);
+    transition: width 0.4s ease;
+  }
+  .lodge-card:hover { border-color: rgba(201,168,76,0.45); background: #FDF9F2; }
+  .lodge-card:hover::after { width: 100%; }
+  .lodge-logo { width: 56px; height: 56px; flex-shrink: 0; object-fit: contain; opacity: 0.9; }
+  .lodge-content { flex: 1; min-width: 0; }
+  .lodge-meta { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .lodge-date { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; }
+  .lodge-chip {
+    font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.12em;
+    padding: 0.18rem 0.55rem;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: #8B7330;
+    text-transform: uppercase;
+  }
+  .lodge-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: #1C2B3A; margin-bottom: 0.45rem; line-height: 1.35; }
+  .lodge-text { font-size: 0.84rem; font-weight: 300; line-height: 1.7; color: #2E3D4F; }
+  .lodge-more { display: none; }
+  .lodge-more.open { display: contents; }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -189,6 +225,7 @@
     .content { padding: 3rem 1.4rem; }
     .news-grid { grid-template-columns: 1fr; }
     .news-gallery { grid-template-columns: 1fr; }
+    .lodge-grid { grid-template-columns: 1fr; }
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
   }
 </style>
@@ -306,22 +343,22 @@
         </div>
       </div>
 
-      <!-- VISIBLE 2: AFACMUR with photo -->
-      <div class="news-card">
-        <img src="afacmur.jpeg" alt="Donation to AFACMUR" class="news-card-img">
-        <div class="news-meta">
-          <span class="news-date">December 2025</span>
-          <span class="news-tag">Charity</span>
-        </div>
-        <h3 class="news-title">The Province of Murcia donates €1,600 to AFACMUR</h3>
-        <div class="news-body">
-          <p>The Province of Murcia has donated the <strong>€1,600</strong> raised at its Provincial Gala to <strong>AFACMUR</strong>, in support of their work helping children, young people and their families throughout the cancer treatment process.</p>
-          <p>The Provincial Grand Master <strong>Luis Alcaina</strong> and the Provincial Grand Secretary <strong>Ángel Sánchez</strong> made the presentation in person.</p>
-        </div>
-      </div>
-
       <!-- HIDDEN: SHOW MORE -->
       <div class="news-more" id="news-more-en">
+
+        <!-- ARCHIVED: AFACMUR -->
+        <div class="news-card">
+          <img src="afacmur.jpeg" alt="Donation to AFACMUR" class="news-card-img">
+          <div class="news-meta">
+            <span class="news-date">December 2025</span>
+            <span class="news-tag">Charity</span>
+          </div>
+          <h3 class="news-title">The Province of Murcia donates €1,600 to AFACMUR</h3>
+          <div class="news-body">
+            <p>The Province of Murcia has donated the <strong>€1,600</strong> raised at its Provincial Gala to <strong>AFACMUR</strong>, in support of their work helping children, young people and their families throughout the cancer treatment process.</p>
+            <p>The Provincial Grand Master <strong>Luis Alcaina</strong> and the Provincial Grand Secretary <strong>Ángel Sánchez</strong> made the presentation in person.</p>
+          </div>
+        </div>
 
         <div class="news-card">
           <div class="news-meta">
@@ -362,6 +399,64 @@
         btn.textContent = 'Hide ↑';
       }
     ">Show archive ↓</button>
+
+    <!-- ── LODGE LIFE ── -->
+    <div class="lodge-section">
+
+      <div class="section-header">
+        <span class="section-label">Lodge Life</span>
+        <span class="section-line"></span>
+      </div>
+
+      <div class="lodge-grid">
+
+        <!-- CHRONICLE: CABALLEROS DE LEVANTE No. 193 -->
+        <div class="lodge-card">
+          <img src="logo-caballeros.png" alt="Logo R∴L∴S∴ Caballeros de Levante No. 193" class="lodge-logo">
+          <div class="lodge-content">
+            <div class="lodge-meta">
+              <span class="lodge-date">5 June 2026</span>
+              <span class="lodge-chip">Caballeros de Levante No. 193</span>
+            </div>
+            <h3 class="lodge-title">R∴L∴S∴ Caballeros de Levante No. 193 holds its June meeting and closes the 2025–2026 year</h3>
+            <p class="lodge-text">The Respectable Symbolic Lodge Caballeros de Levante No. 193 held its works at the Orient of Murcia, under the First Degree ritual of the French Rite. During the meeting, the Worshipful Master, Treasurer, and Conciliator were elected for the 2026–2027 year of the t∴ e∴. The works concluded with the circulation of the Trunk of Beneficence and the customary Fraternal Banquet, thereby closing the year's activities.</p>
+          </div>
+        </div>
+
+        <!-- CHRONICLE: FRATERNIDAD MEDITERRÁNEA No. 94 -->
+        <div class="lodge-card">
+          <img src="logo-fraternidad.png" alt="Logo R∴L∴S∴ Fraternidad Mediterránea No. 94" class="lodge-logo">
+          <div class="lodge-content">
+            <div class="lodge-meta">
+              <span class="lodge-date">5 June 2026</span>
+              <span class="lodge-chip">Fraternidad Mediterránea No. 94</span>
+            </div>
+            <h3 class="lodge-title">R∴L∴S∴ Fraternidad Mediterránea No. 94 holds its June meeting</h3>
+            <p class="lodge-text">The Respectable Symbolic Lodge Fraternidad Mediterránea No. 94, in the Valleys of Cartagena, held its works under the Emulation Rite. During the meeting, the Worshipful Master, Inner Guard, Treasurer, and Conciliator were elected for the 2026–2027 year of the t∴ e∴, and the B∴B∴ Auditors of Accounts were also appointed. The works concluded with the customary fraternal agape.</p>
+          </div>
+        </div>
+
+        <!-- LODGE ARCHIVE (HIDDEN) — empty for now, to be populated -->
+        <div class="lodge-more" id="lodge-more-en">
+          <!-- Chronicles will be moved here as they age -->
+        </div>
+
+      </div>
+
+      <!-- SHOW LODGE ARCHIVE BUTTON -->
+      <button class="news-btn" id="lodge-btn-en" onclick="
+        var more = document.getElementById('lodge-more-en');
+        var btn = document.getElementById('lodge-btn-en');
+        if (more.classList.contains('open')) {
+          more.classList.remove('open');
+          btn.textContent = 'Show Lodge archive ↓';
+        } else {
+          more.classList.add('open');
+          btn.textContent = 'Hide ↑';
+        }
+      ">Show Lodge archive ↓</button>
+
+    </div>
 
   </div>
 

@@ -178,6 +178,42 @@
   .news-btn { display: block; margin: 0.5rem auto 2rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.55rem 1.6rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
   .news-btn:hover { background: var(--oro); color: var(--azul-noche); }
 
+  /* ── VIDA DE LAS LOGIAS ── */
+  .lodge-section { margin-top: 3.5rem; }
+  .lodge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem; }
+  .lodge-card {
+    display: flex; gap: 1.1rem; align-items: flex-start;
+    border: 1px solid rgba(201,168,76,0.22);
+    background: #FFFFFF;
+    padding: 1.3rem 1.3rem;
+    transition: border-color 0.3s, background 0.3s;
+    animation: fadeUp 0.8s ease both;
+    position: relative; overflow: hidden;
+  }
+  .lodge-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--oro);
+    transition: width 0.4s ease;
+  }
+  .lodge-card:hover { border-color: rgba(201,168,76,0.45); background: #FDF9F2; }
+  .lodge-card:hover::after { width: 100%; }
+  .lodge-logo { width: 56px; height: 56px; flex-shrink: 0; object-fit: contain; opacity: 0.9; }
+  .lodge-content { flex: 1; min-width: 0; }
+  .lodge-meta { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .lodge-date { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; }
+  .lodge-chip {
+    font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.12em;
+    padding: 0.18rem 0.55rem;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: #8B7330;
+    text-transform: uppercase;
+  }
+  .lodge-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: #1C2B3A; margin-bottom: 0.45rem; line-height: 1.35; }
+  .lodge-text { font-size: 0.84rem; font-weight: 300; line-height: 1.7; color: #2E3D4F; }
+  .lodge-more { display: none; }
+  .lodge-more.open { display: contents; }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -189,6 +225,7 @@
     .content { padding: 3rem 1.4rem; }
     .news-grid { grid-template-columns: 1fr; }
     .news-gallery { grid-template-columns: 1fr; }
+    .lodge-grid { grid-template-columns: 1fr; }
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
   }
 </style>
@@ -306,22 +343,22 @@
         </div>
       </div>
 
-      <!-- VISIBLE 2: AFACMUR con foto -->
-      <div class="news-card">
-        <img src="afacmur.jpeg" alt="Entrega donación a AFACMUR" class="news-card-img">
-        <div class="news-meta">
-          <span class="news-date">Diciembre 2025</span>
-          <span class="news-tag">Caridad</span>
-        </div>
-        <h3 class="news-title">La Provincia de Murcia dona 1.600 € a AFACMUR</h3>
-        <div class="news-body">
-          <p>La Provincia de Murcia ha donado los <strong>1.600 €</strong> recaudados en su Gala Provincial a <strong>AFACMUR</strong>, para su labor de ayuda y soporte a niños, jóvenes y sus familias a lo largo del proceso de tratamiento contra el cáncer.</p>
-          <p>El Gran Maestro Provincial <strong>Luis Alcaina</strong> y el Secretario Provincial <strong>Ángel Sánchez</strong> realizaron la entrega en persona.</p>
-        </div>
-      </div>
-
       <!-- OCULTAS: VER MÁS -->
       <div class="news-more" id="news-more-es">
+
+        <!-- ARCHIVADA: AFACMUR -->
+        <div class="news-card">
+          <img src="afacmur.jpeg" alt="Entrega donación a AFACMUR" class="news-card-img">
+          <div class="news-meta">
+            <span class="news-date">Diciembre 2025</span>
+            <span class="news-tag">Caridad</span>
+          </div>
+          <h3 class="news-title">La Provincia de Murcia dona 1.600 € a AFACMUR</h3>
+          <div class="news-body">
+            <p>La Provincia de Murcia ha donado los <strong>1.600 €</strong> recaudados en su Gala Provincial a <strong>AFACMUR</strong>, para su labor de ayuda y soporte a niños, jóvenes y sus familias a lo largo del proceso de tratamiento contra el cáncer.</p>
+            <p>El Gran Maestro Provincial <strong>Luis Alcaina</strong> y el Secretario Provincial <strong>Ángel Sánchez</strong> realizaron la entrega en persona.</p>
+          </div>
+        </div>
 
         <div class="news-card">
           <div class="news-meta">
@@ -362,6 +399,64 @@
         btn.textContent = 'Ocultar ↑';
       }
     ">Ver archivo ↓</button>
+
+    <!-- ── VIDA DE LAS LOGIAS ── -->
+    <div class="lodge-section">
+
+      <div class="section-header">
+        <span class="section-label">Vida de las Logias</span>
+        <span class="section-line"></span>
+      </div>
+
+      <div class="lodge-grid">
+
+        <!-- CRÓNICA: CABALLEROS DE LEVANTE Nº 193 -->
+        <div class="lodge-card">
+          <img src="logo-caballeros.png" alt="Logo RLS Caballeros de Levante nº 193" class="lodge-logo">
+          <div class="lodge-content">
+            <div class="lodge-meta">
+              <span class="lodge-date">5 Junio 2026</span>
+              <span class="lodge-chip">Caballeros de Levante nº 193</span>
+            </div>
+            <h3 class="lodge-title">La RLS Caballeros de Levante nº 193 celebra su tenida de junio y cierra el curso 2025–2026</h3>
+            <p class="lodge-text">La Respetable Logia Simbólica Caballeros de Levante nº 193 celebró sus trabajos en el Oriente de Murcia, bajo el ritual de Primer Grado del Rito Francés. Durante la tenida se procedió a la elección del Venerable Maestro, Tesorero y Conciliador para el curso 2026–2027 de la e.·. v.·. Los trabajos concluyeron con la circulación del Tronco de Beneficencia y el preceptivo Banquete Fraternal, cerrando así las labores del curso.</p>
+          </div>
+        </div>
+
+        <!-- CRÓNICA: FRATERNIDAD MEDITERRÁNEA Nº 94 -->
+        <div class="lodge-card">
+          <img src="logo-fraternidad.png" alt="Logo RLS Fraternidad Mediterránea nº 94" class="lodge-logo">
+          <div class="lodge-content">
+            <div class="lodge-meta">
+              <span class="lodge-date">5 Junio 2026</span>
+              <span class="lodge-chip">Fraternidad Mediterránea nº 94</span>
+            </div>
+            <h3 class="lodge-title">La RLS Fraternidad Mediterránea nº 94 celebra su tenida de junio</h3>
+            <p class="lodge-text">La Respetable Logia Simbólica Fraternidad Mediterránea nº 94, en los Valles de Cartagena, celebró sus trabajos bajo el Rito de Emulación. Durante la tenida se procedió a la elección del Venerable Maestro, Guarda Templo, Tesorero y Conciliador para el curso 2026–2027 de la e.·. v.·., así como a la designación de los HH.·. Censores de Cuentas. Los trabajos concluyeron con el preceptivo ágape fraternal.</p>
+          </div>
+        </div>
+
+        <!-- ARCHIVO DE LOGIAS (OCULTO) — vacío de momento, se irá llenando -->
+        <div class="lodge-more" id="lodge-more-es">
+          <!-- Aquí se irán moviendo las crónicas conforme envejezcan -->
+        </div>
+
+      </div>
+
+      <!-- BOTÓN VER ARCHIVO DE LOGIAS -->
+      <button class="news-btn" id="lodge-btn-es" onclick="
+        var more = document.getElementById('lodge-more-es');
+        var btn = document.getElementById('lodge-btn-es');
+        if (more.classList.contains('open')) {
+          more.classList.remove('open');
+          btn.textContent = 'Ver archivo de Logias ↓';
+        } else {
+          more.classList.add('open');
+          btn.textContent = 'Ocultar ↑';
+        }
+      ">Ver archivo de Logias ↓</button>
+
+    </div>
 
   </div>
 
