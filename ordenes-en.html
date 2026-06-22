@@ -374,6 +374,89 @@
   .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
   .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
 
+  /* ── COLLATERAL ORDERS CORNER ── */
+  .collaterals-section-title {
+    text-align: center;
+    margin: 3.5rem 0 2rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--borde);
+  }
+  .collaterals-eyebrow {
+    font-family: 'Cinzel', serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.32em;
+    color: var(--oro);
+    text-transform: uppercase;
+    opacity: 0.85;
+    margin-bottom: 0.6rem;
+  }
+  .collaterals-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--blanco);
+    margin-bottom: 0.5rem;
+  }
+  .collaterals-sub {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--gris);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .collaterals-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--oro);
+    margin: 1rem auto 0;
+    opacity: 0.6;
+  }
+  .collateral-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+  }
+  .collateral-card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.4rem;
+    border: 1px solid var(--borde);
+    background: var(--azul-card);
+    transition: border-color 0.3s;
+  }
+  .collateral-card:hover { border-color: var(--oro); }
+  .collateral-card img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+  .collateral-chip {
+    display: inline-block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--oro);
+    border: 1px solid rgba(201,168,76,0.4);
+    padding: 0.15rem 0.55rem;
+    margin-bottom: 0.4rem;
+  }
+  .collateral-date {
+    font-size: 0.68rem;
+    color: var(--gris);
+    opacity: 0.75;
+    margin-bottom: 0.3rem;
+  }
+  .collateral-text {
+    font-size: 0.82rem;
+    font-weight: 300;
+    color: var(--gris);
+    line-height: 1.65;
+  }
+
   @media (max-width: 700px) {
     nav, main, footer { padding-left: 1.4rem; padding-right: 1.4rem; }
     .page-hero { padding: 3rem 1.4rem 2rem; }
@@ -387,6 +470,7 @@
     .nav-cta { display: none; }
     .nav-right { display: none; }
     .lang-switcher { display: none; }
+    .collateral-grid { grid-template-columns: 1fr; }
   }
 
  
@@ -811,6 +895,42 @@
       </div>
     </div>
   </section>
+
+  <!-- ═══════════════════════════════════════════
+       COLLATERAL ORDERS CORNER
+  ════════════════════════════════════════════ -->
+  <div class="collaterals-section-title">
+    <p class="collaterals-eyebrow">Collateral Orders Corner</p>
+    <h2 class="collaterals-title">Recent Chronicles</h2>
+    <p class="collaterals-sub">
+      Recent activity of the collateral Lodges and Chapters working under the auspices of the Provincial Grand Lodge of Murcia.
+    </p>
+    <div class="collaterals-divider"></div>
+  </div>
+
+  <div class="collateral-grid">
+    <div class="collateral-card">
+      <img src="logo-nautas.png" alt="Siete Coronas Royal Ark Mariners">
+      <div>
+        <span class="collateral-chip">Siete Coronas Royal Ark Mariners No.&nbsp;1957</span>
+        <p class="collateral-date">19 June 2026</p>
+        <p class="collateral-text">
+          The Royal Ark Mariners Lodge "Siete Coronas" No. 1957 held its ordinary meeting at the Orient of Murcia. During the meeting, the installation of officers still pending ceremony was carried out, and instruction was given on the Tracing Board of the Degree, aimed at deepening its symbolism. The work proceeded according to the Order's own ritual.
+        </p>
+      </div>
+    </div>
+
+    <div class="collateral-card">
+      <img src="logo-marca.png" alt="Siete Coronas Mark Master Masons">
+      <div>
+        <span class="collateral-chip">Siete Coronas Mark Master Masons No.&nbsp;1957</span>
+        <p class="collateral-date">19 June 2026</p>
+        <p class="collateral-text">
+          The Mark Master Masons Lodge "Siete Coronas" No. 1957 held its Election Meeting at the Orient of Murcia. During the proceedings, officers were elected for the 2026-2027 year: Worshipful Master, Treasurer, and Inner Guard. The meeting concluded with the presentation of Diplomas to six brethren on the occasion of their recent admission into the Order.
+        </p>
+      </div>
+    </div>
+  </div>
 
   <!-- NOTA INFORMATIVA -->
   <div class="info-note">
