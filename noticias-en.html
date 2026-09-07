@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="News and events from the Provincial Grand Lodge of Murcia.">
-<title>News | Provincial Grand Lodge of Murcia</title>
+<meta name="description" content="Noticias y eventos de la Gran Logia Provincial de Murcia.">
+<title>Noticias | Gran Logia Provincial de Murcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -86,7 +86,7 @@
     animation: fadeUp 0.9s ease 0.2s both;
   }
   .news-featured::before {
-    content: 'Featured';
+    content: 'Destacado';
     position: absolute; top: -1px; right: 2rem;
     font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.18em;
     padding: 0.25rem 0.8rem; background: var(--oro); color: var(--azul-noche);
@@ -120,7 +120,7 @@
   .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 2rem; }
 
   .news-card {
-    border: 1px solid rgba(201,168,76,0.15);
+    border: 1px solid rgba(201,168,76,0.25);
     background: #FFFFFF;
     padding: 1.8rem 1.6rem;
     transition: border-color 0.3s, background 0.3s;
@@ -172,13 +172,13 @@
   .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
   .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
 
-  /* ── SHOW MORE ── */
+  /* ── VER MÁS NOTICIAS ── */
   .news-more { display: none; }
   .news-more.open { display: contents; }
   .news-btn { display: block; margin: 0.5rem auto 2rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.55rem 1.6rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
   .news-btn:hover { background: var(--oro); color: var(--azul-noche); }
 
-  /* ── LODGE LIFE ── */
+  /* ── VIDA DE LAS LOGIAS ── */
   .lodge-section { margin-top: 3.5rem; }
   .lodge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem; }
   .lodge-card {
@@ -238,149 +238,149 @@
 
   <!-- NAV -->
   <nav>
-    <a href="index-en.html" class="nav-logo">
-      <img src="logo.png" alt="Provincial Grand Lodge of Murcia" style="height:48px;width:auto;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4));">
-      <div class="nav-title">Provincial Grand Lodge<br>of Murcia</div>
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Gran Logia Provincial de Murcia" style="height:48px;width:auto;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4));">
+      <div class="nav-title">Gran Logia Provincial<br>de Murcia</div>
     </a>
     <ul class="nav-links">
-      <li><a href="index-en.html">Home</a></li>
-      <li><a href="noticias-en.html" class="active">News</a></li>
-      <li><a href="logias-en.html">Lodges</a></li>
-      <li><a href="ordenes-en.html">Orders</a></li>
-      <li><a href="masoneria-en.html">About Freemasonry</a></li>
-      <li><a href="caridad-en.html">Charity</a></li>
-      <li><a href="recursos-en.html">Resources</a></li>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="noticias.html" class="active">Noticias</a></li>
+      <li><a href="logias.html">Logias</a></li>
+      <li><a href="ordenes.html">Órdenes</a></li>
+      <li><a href="masoneria.html">Sobre la Masonería</a></li>
+      <li><a href="caridad.html">Caridad</a></li>
+      <li><a href="recursos.html">Recursos</a></li>
     </ul>
     <div class="nav-right">
-      <a href="contacto-en.html" class="nav-cta">Contact Us</a>
+      <a href="contacto.html" class="nav-cta">Contáctenos</a>
       <div class="lang-switcher">
-        <a href="noticias.html">ES</a>
-        <a href="noticias-en.html" class="active">EN</a>
+        <a href="noticias.html" class="active">ES</a>
+        <a href="noticias-en.html">EN</a>
       </div>
     </div>
-    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
   </nav>
 
   <div class="nav-mobile" id="navMobile">
-    <a href="index-en.html">Home</a>
-    <a href="noticias-en.html" class="active">News</a>
-    <a href="logias-en.html">Lodges</a>
-    <a href="ordenes-en.html">Orders</a>
-    <a href="masoneria-en.html">About Freemasonry</a>
-    <a href="caridad-en.html">Charity</a>
-    <a href="recursos-en.html">Resources</a>
-    <a href="contacto-en.html" class="nav-cta-mobile">Contact Us</a>
+    <a href="index.html">Inicio</a>
+    <a href="noticias.html" class="active">Noticias</a>
+    <a href="logias.html">Logias</a>
+    <a href="ordenes.html">Órdenes</a>
+    <a href="masoneria.html">Sobre la Masonería</a>
+    <a href="caridad.html">Caridad</a>
+    <a href="recursos.html">Recursos</a>
+    <a href="contacto.html" class="nav-cta-mobile">Contáctenos</a>
     <div class="lang-switcher-mobile">
-      <a href="noticias.html">ES</a>
-      <a href="noticias-en.html" class="active">EN</a>
+      <a href="noticias.html" class="active">ES</a>
+      <a href="noticias-en.html">EN</a>
     </div>
   </div>
 
-  <!-- HEADER -->
+  <!-- CABECERA -->
   <header class="page-header">
     <div class="ornament">
       <span class="ornament-line"></span>
       <span class="ornament-symbol">✦</span>
       <span class="ornament-line r"></span>
     </div>
-    <p class="page-eyebrow">Provincial Grand Lodge of Murcia</p>
-    <h1 class="page-title">News and <em>Events</em></h1>
-    <p class="page-desc">Keep up to date with the activities of the Province of Murcia — charitable acts, social events and news from our lodges.</p>
+    <p class="page-eyebrow">Gran Logia Provincial de Murcia</p>
+    <h1 class="page-title">Noticias y <em>Eventos</em></h1>
+    <p class="page-desc">Mantente al día de la actividad de la provincia de Murcia — actos caritativos, eventos sociales y novedades de nuestras logias.</p>
   </header>
 
-  <!-- NEWS -->
+  <!-- NOTICIAS -->
   <div class="content">
 
     <div class="section-header">
-      <span class="section-label">Latest news</span>
+      <span class="section-label">Últimas noticias</span>
       <span class="section-line"></span>
     </div>
 
-    <!-- FEATURED: SUPREME GRAND CHAPTER -->
+    <!-- NOTICIA DESTACADA: SUPREMO GRAN CAPÍTULO -->
     <div class="news-featured">
       <div class="news-meta">
-        <span class="news-date">May 2026</span>
-        <span class="news-tag">National</span>
+        <span class="news-date">Mayo 2026</span>
+        <span class="news-tag">Nacional</span>
       </div>
-      <h2 class="news-title">The Supreme Grand Chapter of Spain renews its leadership in a day of fraternity</h2>
+      <h2 class="news-title">El Supremo Gran Capítulo de España renueva su liderazgo en una jornada de fraternidad</h2>
       <div class="news-body">
-        <p>On <strong>9 May 2026</strong>, the Supreme Grand Chapter of Spain held its installation ceremony in Madrid, in an event marked by a deep spirit of fellowship and attended by more than one hundred members.</p>
-        <p><strong>M.E. Comp. Txema Oleaga Zalvidea</strong> presided over the ceremony, during which <strong>M.E. Comp. Shaun Parsons Herrera</strong> formally assumed the office of <strong>First Grand Principal</strong>. He is joined by M.E. Comp. Clive Williams Blake as Deputy, M.E. Comp. José Luis Menoyo García as Second Grand Principal, and <strong>R∴W∴Bro. Luis Alcaina Guzmán</strong>, Provincial Grand Master of Murcia, as Third Grand Principal.</p>
-        <p>During the ceremony, the new First Grand Principal installed two new <strong>Grand Superintendents</strong>: M.E. Comp. José Manuel Merello y Álvarez for <strong>Andalusia</strong>, and M.E. Comp. Jacob Magnusen for <strong>Valencia</strong>. He also confirmed in their posts the remaining Grand Superintendents and formally installed the body of Grand Officers.</p>
-        <p>The day concluded with a <strong>fraternal banquet</strong> bringing together members and their families in a warm celebration of unity, reflecting the values that define the institution.</p>
+        <p>El pasado <strong>9 de mayo de 2026</strong>, el Supremo Gran Capítulo de España celebró en Madrid la ceremonia de instalación de sus nuevas autoridades, en un acto marcado por un profundo espíritu de compañerismo y con una asistencia que superó el centenar de miembros.</p>
+        <p>El <strong>M.E. Comp. Txema Oleaga Zalvidea</strong> presidió la ceremonia, mediante la cual el <strong>M.E. Comp. Shaun Parsons Herrera</strong> asumió formalmente el cargo de <strong>Primer Gran Principal</strong>. Le acompañan como Diputado el M.E. Comp. Clive Williams Blake, como Segundo Gran Principal el M.E. Comp. José Luis Menoyo García, y como <strong>Tercer Gran Principal el R∴H∴ Luis Alcaina Guzmán</strong>, Gran Maestro Provincial de Murcia.</p>
+        <p>Durante el acto, el nuevo Primer Gran Principal procedió a la instalación de dos nuevos <strong>Grandes Superintendentes</strong>: el M.E. Comp. José Manuel Merello y Álvarez para <strong>Andalucía</strong>, y el M.E. Comp. Jacob Magnusen para <strong>Valencia</strong>. Asimismo, ratificó en sus cargos al resto de los Grandes Superintendentes e instaló formalmente al cuerpo de Grandes Oficiales.</p>
+        <p>La jornada concluyó con un <strong>ágape fraternal</strong> que reunió a miembros y familiares en un ambiente de celebración y unión, subrayando los valores que caracterizan a la institución.</p>
       </div>
       <div class="news-gallery" style="grid-template-columns: 1fr;">
-        <img src="supremoGCE.jpeg" alt="Installation ceremony of the Supreme Grand Chapter of Spain — May 2026" style="max-height: 420px; width: 100%; object-fit: cover;">
+        <img src="supremoGCE.jpeg" alt="Ceremonia de instalación del Supremo Gran Capítulo de España — Mayo 2026" style="max-height: 420px; width: 100%; object-fit: cover;">
       </div>
     </div>
 
-    <!-- SECONDARY NEWS -->
+    <!-- NOTICIAS SECUNDARIAS -->
     <div class="news-grid">
 
-      <!-- VISIBLE 1: XVI ASSEMBLY -->
+      <!-- VISIBLE 1: XVI ASAMBLEA -->
       <div class="news-card">
-        <img src="asamblea1.jpg" alt="XVI Assembly PGL Murcia" class="news-card-img">
+        <img src="asamblea1.jpg" alt="XVI Asamblea GLP Murcia" class="news-card-img">
         <div class="news-meta">
-          <span class="news-date">April 2026</span>
-          <span class="news-tag">Province</span>
+          <span class="news-date">Abril 2026</span>
+          <span class="news-tag">Provincia</span>
         </div>
-        <h3 class="news-title">XVI Assembly of the Provincial Grand Lodge of Murcia</h3>
+        <h3 class="news-title">XVI Asamblea de la Gran Logia Provincial de Murcia</h3>
         <div class="news-body">
-          <p>The Provincial Grand Lodge of Murcia held its <strong>XVI Assembly on 18 April 2026</strong> at the Salones del Hotel Agalia in Murcia, with over one hundred brethren. Provincial officers were invested for the <strong>2026–2027</strong> term.</p>
+          <p>La Gran Logia Provincial de Murcia celebró el <strong>18 de abril de 2026</strong> su XVI Asamblea en los Salones del Hotel Agalia de Murcia, con más de cien hermanos. Se procedió a la investidura de los oficiales provinciales para el curso <strong>2026-2027</strong>.</p>
         </div>
       </div>
 
       <!-- VISIBLE 2: FUENSOCIAL -->
       <div class="news-card">
-        <img src="fuensocial.jpeg" alt="FUENSOCIAL headquarters" class="news-card-img">
+        <img src="fuensocial.jpeg" alt="Sede de FUENSOCIAL" class="news-card-img">
         <div class="news-meta">
-          <span class="news-date">April 2026</span>
-          <span class="news-tag">Charity</span>
+          <span class="news-date">Abril 2026</span>
+          <span class="news-tag">Caridad</span>
         </div>
-        <h3 class="news-title">Donation of €500 to FUENSOCIAL</h3>
+        <h3 class="news-title">Donación de 500 € a FUENSOCIAL</h3>
         <div class="news-body">
-          <p>The Provincial Grand Lodge of Murcia donated <strong>€500</strong> to <strong>FUENSOCIAL</strong>, an association supporting people with disabilities or at risk of developing them, and their families, through the Provincial Grand Lodge of Andalusia. A reflection of Murcian Freemasonry's fraternal commitment beyond provincial boundaries.</p>
+          <p>La Gran Logia Provincial de Murcia donó <strong>500 €</strong> a <strong>FUENSOCIAL</strong>, asociación de apoyo a personas con discapacidad o en riesgo de padecerla y a sus familias, a través de la Gran Logia Provincial de Andalucía. Una muestra del compromiso fraternal de la Masonería murciana más allá de las fronteras provinciales.</p>
         </div>
       </div>
 
-      <!-- HIDDEN: SHOW MORE -->
-      <div class="news-more" id="news-more-en">
+      <!-- OCULTAS: VER MÁS -->
+      <div class="news-more" id="news-more-es">
 
-        <!-- ARCHIVED: AFACMUR -->
+        <!-- ARCHIVADA: AFACMUR -->
         <div class="news-card">
-          <img src="afacmur.jpeg" alt="Donation to AFACMUR" class="news-card-img">
+          <img src="afacmur.jpeg" alt="Entrega donación a AFACMUR" class="news-card-img">
           <div class="news-meta">
-            <span class="news-date">December 2025</span>
-            <span class="news-tag">Charity</span>
+            <span class="news-date">Diciembre 2025</span>
+            <span class="news-tag">Caridad</span>
           </div>
-          <h3 class="news-title">The Province of Murcia donates €1,600 to AFACMUR</h3>
+          <h3 class="news-title">La Provincia de Murcia dona 1.600 € a AFACMUR</h3>
           <div class="news-body">
-            <p>The Province of Murcia has donated the <strong>€1,600</strong> raised at its Provincial Gala to <strong>AFACMUR</strong>, in support of their work helping children, young people and their families throughout the cancer treatment process.</p>
-            <p>The Provincial Grand Master <strong>Luis Alcaina</strong> and the Provincial Grand Secretary <strong>Ángel Sánchez</strong> made the presentation in person.</p>
+            <p>La Provincia de Murcia ha donado los <strong>1.600 €</strong> recaudados en su Gala Provincial a <strong>AFACMUR</strong>, para su labor de ayuda y soporte a niños, jóvenes y sus familias a lo largo del proceso de tratamiento contra el cáncer.</p>
+            <p>El Gran Maestro Provincial <strong>Luis Alcaina</strong> y el Secretario Provincial <strong>Ángel Sánchez</strong> realizaron la entrega en persona.</p>
           </div>
         </div>
 
         <div class="news-card">
           <div class="news-meta">
             <span class="news-date">2022</span>
-            <span class="news-tag">Charity</span>
+            <span class="news-tag">Caridad</span>
           </div>
-          <h3 class="news-title">Luz de Murcia No. 91 donates €1,000 in food to Los Alcázares</h3>
+          <h3 class="news-title">Luz de Murcia Nº 91 dona 1.000 € en alimentos a Los Alcázares</h3>
           <div class="news-body">
-            <p>Luz de Murcia Lodge donated food items valued at <strong>€1,000</strong> to the municipal social services to strengthen the local food bank's reserves.</p>
-            <p>In Murcia, nearly <strong>30,000 people</strong> rely on food banks for their daily needs.</p>
+            <p>La logia Luz de Murcia donó productos alimentarios valorados en <strong>1.000 €</strong> a los servicios sociales del municipio para reforzar sus reservas del banco de alimentos local.</p>
+            <p>En Murcia, casi <strong>30.000 personas</strong> dependen de los bancos de alimentos para sus necesidades diarias.</p>
           </div>
         </div>
 
         <div class="news-card">
           <div class="news-meta">
             <span class="news-date">2022</span>
-            <span class="news-tag">Media</span>
+            <span class="news-tag">Medios</span>
           </div>
-          <h3 class="news-title">The Province on Nemesis Radio: 15th anniversary of the Provincial Grand Lodge</h3>
+          <h3 class="news-title">La provincia en Nemesis Radio: 15 aniversario de la Gran Logia Provincial</h3>
           <div class="news-body">
-            <p>Representatives of the Provincial Grand Lodge of Murcia took part in the Nemesis Radio programme to mark the Province's 15th anniversary.</p>
-            <p>Freemasonry, its values and its presence in the Region of Murcia were discussed, responding to questions from listeners.</p>
+            <p>Representantes de la Gran Logia Provincial de Murcia participaron en el programa de Nemesis Radio con motivo de los actos conmemorativos del 15.º aniversario de la provincia.</p>
+            <p>Durante la entrevista se habló sobre la masonería, sus valores y su presencia en la Región de Murcia.</p>
           </div>
         </div>
 
@@ -388,98 +388,98 @@
 
     </div>
 
-    <button class="news-btn" id="news-btn-en" onclick="
-      var more = document.getElementById('news-more-en');
-      var btn = document.getElementById('news-btn-en');
+    <button class="news-btn" id="news-btn-es" onclick="
+      var more = document.getElementById('news-more-es');
+      var btn = document.getElementById('news-btn-es');
       if (more.classList.contains('open')) {
         more.classList.remove('open');
-        btn.textContent = 'Show archive ↓';
+        btn.textContent = 'Ver archivo ↓';
       } else {
         more.classList.add('open');
-        btn.textContent = 'Hide ↑';
+        btn.textContent = 'Ocultar ↑';
       }
-    ">Show archive ↓</button>
+    ">Ver archivo ↓</button>
 
-    <!-- ── LODGE LIFE ── -->
+    <!-- ── VIDA DE LAS LOGIAS ── -->
     <div class="lodge-section">
 
       <div class="section-header">
-        <span class="section-label">Lodge Life</span>
+        <span class="section-label">Vida de las Logias</span>
         <span class="section-line"></span>
       </div>
 
       <div class="lodge-grid">
 
-        <!-- CHRONICLE: MORIÁ No. 143 -->
+        <!-- CRÓNICA: MORIÁ Nº 143 -->
         <div class="lodge-card">
-          <img src="logo-floridablanca.png" alt="Logo R∴L∴S∴ Conde de Floridablanca No. 164" class="lodge-logo">
+          <img src="logo-floridablanca.png" alt="Logo RLS Conde de Floridablanca nº 164" class="lodge-logo">
           <div class="lodge-content">
             <div class="lodge-meta">
-              <span class="lodge-date">26 June 2026</span>
-              <span class="lodge-chip">Conde de Floridablanca No. 164</span>
+              <span class="lodge-date">26 Junio 2026</span>
+              <span class="lodge-chip">Conde de Floridablanca nº 164</span>
             </div>
-            <h3 class="lodge-title">R∴L∴S∴ Conde de Floridablanca No. 164 holds its last meeting before the summer recess</h3>
-            <p class="lodge-text">The Respectable Symbolic Lodge Conde de Floridablanca No. 164 held its last meeting of the 2025-2026 year at the Orient of Murcia, before the summer recess, under the Emulation Rite. During the works, officers were elected for the 2026-2027 year: Worshipful Master, Treasurer, Inner Guard, and Conciliator. The highlight of the meeting was the Initiation Ceremony of a candidate, who thereby joined the Order. The work concluded with the circulation of the Widow's Box.</p>
+            <h3 class="lodge-title">La RLS Conde de Floridablanca nº 164 celebra su última tenida antes del receso estival</h3>
+            <p class="lodge-text">La Respetable Logia Simbólica Conde de Floridablanca nº 164 celebró su última tenida del curso 2025-2026 en el Oriente de Murcia, antes del receso estival, bajo el Rito de Emulación. Durante los trabajos se procedió a la elección de los oficiales para el curso 2026-2027: Venerable Maestro, Tesorero, Guarda Exterior y Conciliador. La tenida tuvo como momento culminante la Ceremonia de Iniciación de un caballero profano, quien se incorporó así a la Orden. Los trabajos concluyeron con la circulación del Tronco de la Viuda.</p>
           </div>
         </div>
 
         <div class="lodge-card">
-          <img src="logo-moria.png" alt="Logo R∴L∴S∴ Moriá No. 143" class="lodge-logo">
+          <img src="logo-moria.png" alt="Logo RLS Moriá nº 143" class="lodge-logo">
           <div class="lodge-content">
             <div class="lodge-meta">
-              <span class="lodge-date">12 June 2026</span>
-              <span class="lodge-chip">Moriá No. 143</span>
+              <span class="lodge-date">12 Junio 2026</span>
+              <span class="lodge-chip">Moriá nº 143</span>
             </div>
-            <h3 class="lodge-title">R∴L∴S∴ Moriá No. 143 holds its election meeting</h3>
-            <p class="lodge-text">The Respectable Symbolic Lodge Moriá No. 143 held its Election Meeting at the First Degree, at the Orient of Murcia. During the works, the officers for the 2026-2027 year of the t∴ e∴ were elected, including the next Worshipful Master, the Treasurer, and the B∴ Conciliator of the Lodge, as well as the B∴B∴ Auditors of Accounts for the 2025-2026 year. New readmissions, dual memberships, and proposals of candidates for initiation were also put to a vote. The meeting concluded with the traditional fraternal agape.</p>
+            <h3 class="lodge-title">La RLS Moriá nº 143 celebra su tenida de elecciones</h3>
+            <p class="lodge-text">La Respetable Logia Simbólica Moriá nº 143 celebró su Tenida de Elecciones en grado de Aprendiz, en el Oriente de Murcia. Durante los trabajos se procedió a la elección de los oficiales para el curso 2026-2027 de la e.·. v.·., entre ellos el próximo Venerable Maestro, el Tesorero y el Q.·. H.·. Conciliador del Taller, así como de los HH.·. Censores de Cuentas del curso 2025-2026. Asimismo, se sometieron a votación nuevas reincorporaciones, segundas afiliaciones y propuestas de caballeros profanos. La tenida concluyó con el ágape fraternal de final de curso.</p>
           </div>
         </div>
 
-        <!-- CHRONICLE: CABALLEROS DE LEVANTE No. 193 -->
+        <!-- CRÓNICA: CABALLEROS DE LEVANTE Nº 193 -->
         <div class="lodge-card">
-          <img src="logo-caballeros.png" alt="Logo R∴L∴S∴ Caballeros de Levante No. 193" class="lodge-logo">
+          <img src="logo-caballeros.png" alt="Logo RLS Caballeros de Levante nº 193" class="lodge-logo">
           <div class="lodge-content">
             <div class="lodge-meta">
-              <span class="lodge-date">5 June 2026</span>
-              <span class="lodge-chip">Caballeros de Levante No. 193</span>
+              <span class="lodge-date">5 Junio 2026</span>
+              <span class="lodge-chip">Caballeros de Levante nº 193</span>
             </div>
-            <h3 class="lodge-title">R∴L∴S∴ Caballeros de Levante No. 193 holds its June meeting and closes the 2025–2026 year</h3>
-            <p class="lodge-text">The Respectable Symbolic Lodge Caballeros de Levante No. 193 held its works at the Orient of Murcia, under the First Degree ritual of the French Rite. During the meeting, the Worshipful Master, Treasurer, and Conciliator were elected for the 2026–2027 year of the t∴ e∴. The works concluded with the circulation of the Trunk of Beneficence and the customary Fraternal Banquet, thereby closing the year's activities.</p>
+            <h3 class="lodge-title">La RLS Caballeros de Levante nº 193 celebra su tenida de junio y cierra el curso 2025–2026</h3>
+            <p class="lodge-text">La Respetable Logia Simbólica Caballeros de Levante nº 193 celebró sus trabajos en el Oriente de Murcia, bajo el ritual de Primer Grado del Rito Francés. Durante la tenida se procedió a la elección del Venerable Maestro, Tesorero y Conciliador para el curso 2026–2027 de la e.·. v.·. Los trabajos concluyeron con la circulación del Tronco de Beneficencia y el preceptivo Banquete Fraternal, cerrando así las labores del curso.</p>
           </div>
         </div>
 
-        <!-- CHRONICLE: FRATERNIDAD MEDITERRÁNEA No. 94 -->
+        <!-- CRÓNICA: FRATERNIDAD MEDITERRÁNEA Nº 94 -->
         <div class="lodge-card">
-          <img src="logo-fraternidad.png" alt="Logo R∴L∴S∴ Fraternidad Mediterránea No. 94" class="lodge-logo">
+          <img src="logo-fraternidad.png" alt="Logo RLS Fraternidad Mediterránea nº 94" class="lodge-logo">
           <div class="lodge-content">
             <div class="lodge-meta">
-              <span class="lodge-date">5 June 2026</span>
-              <span class="lodge-chip">Fraternidad Mediterránea No. 94</span>
+              <span class="lodge-date">5 Junio 2026</span>
+              <span class="lodge-chip">Fraternidad Mediterránea nº 94</span>
             </div>
-            <h3 class="lodge-title">R∴L∴S∴ Fraternidad Mediterránea No. 94 holds its June meeting</h3>
-            <p class="lodge-text">The Respectable Symbolic Lodge Fraternidad Mediterránea No. 94, in the Valleys of Cartagena, held its works under the Emulation Rite. During the meeting, the Worshipful Master, Inner Guard, Treasurer, and Conciliator were elected for the 2026–2027 year of the t∴ e∴, and the B∴B∴ Auditors of Accounts were also appointed. The works concluded with the customary fraternal agape.</p>
+            <h3 class="lodge-title">La RLS Fraternidad Mediterránea nº 94 celebra su tenida de junio</h3>
+            <p class="lodge-text">La Respetable Logia Simbólica Fraternidad Mediterránea nº 94, en los Valles de Cartagena, celebró sus trabajos bajo el Rito de Emulación. Durante la tenida se procedió a la elección del Venerable Maestro, Guarda Templo, Tesorero y Conciliador para el curso 2026–2027 de la e.·. v.·., así como a la designación de los HH.·. Censores de Cuentas. Los trabajos concluyeron con el preceptivo ágape fraternal.</p>
           </div>
         </div>
 
-        <!-- LODGE ARCHIVE (HIDDEN) — empty for now, to be populated -->
-        <div class="lodge-more" id="lodge-more-en">
-          <!-- Chronicles will be moved here as they age -->
+        <!-- ARCHIVO DE LOGIAS (OCULTO) — vacío de momento, se irá llenando -->
+        <div class="lodge-more" id="lodge-more-es">
+          <!-- Aquí se irán moviendo las crónicas conforme envejezcan -->
         </div>
 
       </div>
 
-      <!-- SHOW LODGE ARCHIVE BUTTON -->
-      <button class="news-btn" id="lodge-btn-en" onclick="
-        var more = document.getElementById('lodge-more-en');
-        var btn = document.getElementById('lodge-btn-en');
+      <!-- BOTÓN VER ARCHIVO DE LOGIAS -->
+      <button class="news-btn" id="lodge-btn-es" onclick="
+        var more = document.getElementById('lodge-more-es');
+        var btn = document.getElementById('lodge-btn-es');
         if (more.classList.contains('open')) {
           more.classList.remove('open');
-          btn.textContent = 'Show Lodge archive ↓';
+          btn.textContent = 'Ver archivo de Logias ↓';
         } else {
           more.classList.add('open');
-          btn.textContent = 'Hide ↑';
+          btn.textContent = 'Ocultar ↑';
         }
-      ">Show Lodge archive ↓</button>
+      ">Ver archivo de Logias ↓</button>
 
     </div>
 
@@ -489,11 +489,11 @@
   <footer>
     <a href="https://www.gle.org" target="_blank" rel="noopener" class="footer-gle">
       <span class="footer-gle-symbol">∴</span>
-      <span class="footer-gle-text">Grand Lodge<br>of Spain</span>
+      <span class="footer-gle-text">Gran Logia<br>de España</span>
     </a>
-    <a href="index-en.html" class="footer-logo">
-      <img src="logo.png" alt="Provincial Grand Lodge of Murcia">
-      <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
+    <a href="index.html" class="footer-logo">
+      <img src="logo.png" alt="Gran Logia Provincial de Murcia">
+      <div class="footer-logo-text">Gran Logia Provincial<br>de Murcia</div>
     </a>
   </footer>
 
