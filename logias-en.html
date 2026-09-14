@@ -241,7 +241,26 @@
     opacity: 0.8;
   }
 
+  /* ── LODGE LIFE ── */
+  .cronica-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem; }
+  .cronica-card { display: flex; gap: 1.1rem; align-items: flex-start; border: 1px solid rgba(201,168,76,0.22); background: #FFFFFF; padding: 1.3rem; transition: border-color 0.3s, background 0.3s; animation: fadeUp 0.8s ease both; position: relative; overflow: hidden; }
+  .cronica-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--oro); transition: width 0.4s ease; }
+  .cronica-card:hover { border-color: rgba(201,168,76,0.45); background: #FDF9F2; }
+  .cronica-card:hover::after { width: 100%; }
+  .cronica-logo { width: 56px; height: 56px; flex-shrink: 0; object-fit: contain; opacity: 0.9; }
+  .cronica-content { flex: 1; min-width: 0; }
+  .cronica-meta { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .cronica-date { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; }
+  .cronica-chip { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.12em; padding: 0.18rem 0.55rem; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); color: #8B7330; text-transform: uppercase; }
+  .cronica-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: #1C2B3A; margin-bottom: 0.45rem; line-height: 1.35; }
+  .cronica-text { font-size: 0.84rem; font-weight: 300; line-height: 1.7; color: #2E3D4F; }
+  .cronica-more { display: none; }
+  .cronica-more.open { display: contents; }
+  .cronica-btn { display: block; margin: 0.5rem auto 1rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.55rem 1.6rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
+  .cronica-btn:hover { background: var(--oro); color: var(--azul-noche); }
+
   @media (max-width: 768px) {
+    .cronica-grid { grid-template-columns: 1fr; }
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
     .nav-hamburger { display: flex; }
@@ -419,6 +438,114 @@
   </section>
 
 
+
+  <!-- LODGE LIFE -->
+  <div class="section" style="padding-top:0;">
+    <div class="section-header">
+      <span class="section-label">Lodge Life</span>
+      <span class="section-line"></span>
+    </div>
+
+    <div class="cronica-grid">
+
+      <div class="cronica-card">
+        <img src="logo-moria.png" alt="Logo R∴L∴S∴ Moriá No. 143" class="cronica-logo">
+        <div class="cronica-content">
+          <div class="cronica-meta">
+            <span class="cronica-date">11 September 2026</span>
+            <span class="cronica-chip">Moriá No. 143</span>
+          </div>
+          <h3 class="cronica-title">R∴L∴S∴ Moriá No. 143 opens the 2026-2027 year with its Installation Meeting</h3>
+          <p class="cronica-text">The Respectable Symbolic Lodge Moriá No. 143 held its Installation Meeting at the Orient of Murcia, opening the 2026-2027 year under the Ancient and Accepted Scottish Rite. During the works, the new Worshipful Master was invested and the officers for the coming year were installed. The meeting concluded with a fraternal agape attended by a significant number of visiting brethren from other Lodges and rites, reflecting the bonds of fraternity that unite the workshops of the Province.</p>
+        </div>
+      </div>
+
+      <div class="cronica-card">
+        <img src="logo-fraternidad.png" alt="Logo R∴L∴S∴ Fraternidad Mediterránea No. 94" class="cronica-logo">
+        <div class="cronica-content">
+          <div class="cronica-meta">
+            <span class="cronica-date">4 September 2026</span>
+            <span class="cronica-chip">Fraternidad Mediterránea No. 94</span>
+          </div>
+          <h3 class="cronica-title">R∴L∴S∴ Fraternidad Mediterránea No. 94 opens the 2026-2027 year with its Installation Meeting</h3>
+          <p class="cronica-text">The Respectable Symbolic Lodge Fraternidad Mediterránea No. 94 opened the 2026-2027 year at the Orient of Cartagena with its Installation Meeting, held under the Emulation Rite. The central act was the investiture of the new Worshipful Master and the installation of the officers for the coming year, marking the handover of office with which the Lodge resumes its work after the summer recess.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ARCHIVE: 2025-2026 YEAR -->
+    <div class="cronica-more" id="cronica-more-en">
+      <div class="section-header" style="margin-top:1rem;">
+        <span class="section-label">2025–2026 Year</span>
+        <span class="section-line"></span>
+      </div>
+      <div class="cronica-grid">
+
+        <div class="cronica-card">
+          <img src="logo-floridablanca.png" alt="Logo R∴L∴S∴ Conde de Floridablanca No. 164" class="cronica-logo">
+          <div class="cronica-content">
+            <div class="cronica-meta">
+              <span class="cronica-date">26 June 2026</span>
+              <span class="cronica-chip">Conde de Floridablanca No. 164</span>
+            </div>
+            <h3 class="cronica-title">R∴L∴S∴ Conde de Floridablanca No. 164 holds its last meeting before the summer recess</h3>
+            <p class="cronica-text">The Respectable Symbolic Lodge Conde de Floridablanca No. 164 held its last meeting of the 2025-2026 year at the Orient of Murcia, before the summer recess, under the Emulation Rite. During the works, officers were elected for the 2026-2027 year: Worshipful Master, Treasurer, Inner Guard, and Conciliator. The highlight of the meeting was the Initiation Ceremony of a candidate, who thereby joined the Order. The work concluded with the circulation of the Widow's Box.</p>
+          </div>
+        </div>
+
+        <div class="cronica-card">
+          <img src="logo-moria.png" alt="Logo R∴L∴S∴ Moriá No. 143" class="cronica-logo">
+          <div class="cronica-content">
+            <div class="cronica-meta">
+              <span class="cronica-date">12 June 2026</span>
+              <span class="cronica-chip">Moriá No. 143</span>
+            </div>
+            <h3 class="cronica-title">R∴L∴S∴ Moriá No. 143 holds its election meeting</h3>
+            <p class="cronica-text">The Respectable Symbolic Lodge Moriá No. 143 held its Election Meeting at the First Degree, at the Orient of Murcia. During the works, the officers for the 2026-2027 year of the t∴ e∴ were elected, including the next Worshipful Master, the Treasurer, and the B∴ Conciliator of the Lodge, as well as the B∴B∴ Auditors of Accounts for the 2025-2026 year. New readmissions, dual memberships, and proposals of candidates for initiation were also put to a vote. The meeting concluded with the traditional fraternal agape.</p>
+          </div>
+        </div>
+
+        <div class="cronica-card">
+          <img src="logo-caballeros.png" alt="Logo R∴L∴S∴ Caballeros de Levante No. 193" class="cronica-logo">
+          <div class="cronica-content">
+            <div class="cronica-meta">
+              <span class="cronica-date">5 June 2026</span>
+              <span class="cronica-chip">Caballeros de Levante No. 193</span>
+            </div>
+            <h3 class="cronica-title">R∴L∴S∴ Caballeros de Levante No. 193 holds its June meeting and closes the 2025–2026 year</h3>
+            <p class="cronica-text">The Respectable Symbolic Lodge Caballeros de Levante No. 193 held its works at the Orient of Murcia, under the First Degree ritual of the French Rite. During the meeting, the Worshipful Master, Treasurer, and Conciliator were elected for the 2026–2027 year of the t∴ e∴. The works concluded with the circulation of the Trunk of Beneficence and the customary Fraternal Banquet, thereby closing the year's activities.</p>
+          </div>
+        </div>
+
+        <div class="cronica-card">
+          <img src="logo-fraternidad.png" alt="Logo R∴L∴S∴ Fraternidad Mediterránea No. 94" class="cronica-logo">
+          <div class="cronica-content">
+            <div class="cronica-meta">
+              <span class="cronica-date">5 June 2026</span>
+              <span class="cronica-chip">Fraternidad Mediterránea No. 94</span>
+            </div>
+            <h3 class="cronica-title">R∴L∴S∴ Fraternidad Mediterránea No. 94 holds its June meeting</h3>
+            <p class="cronica-text">The Respectable Symbolic Lodge Fraternidad Mediterránea No. 94, in the Valleys of Cartagena, held its works under the Emulation Rite. During the meeting, the Worshipful Master, Inner Guard, Treasurer, and Conciliator were elected for the 2026–2027 year of the t∴ e∴, and the B∴B∴ Auditors of Accounts were also appointed. The works concluded with the customary fraternal agape.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="cronica-btn" id="cronica-btn-en" onclick="
+      var more = document.getElementById('cronica-more-en');
+      var btn = document.getElementById('cronica-btn-en');
+      if (more.classList.contains('open')) {
+        more.classList.remove('open');
+        btn.textContent = 'Previous years ↓';
+      } else {
+        more.classList.add('open');
+        btn.textContent = 'Hide ↑';
+      }
+    ">Previous years ↓</button>
+
+  </div>
 
   <!-- MASONIC RITES -->
   <div class="section" style="padding-top:0;">
