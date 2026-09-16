@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0D1B2A">
+<link rel="apple-touch-icon" href="icon-192x192.png">
 <meta name="description" content="Contacto — Gran Logia Provincial de Murcia. ¿Interesado en la masonería? ¿Tienes alguna pregunta? Escríbenos.">
 <title>Contáctenos | Gran Logia Provincial de Murcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
@@ -398,5 +402,10 @@
 
 
 <script data-goatcounter="https://glpmurcia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
 </body>
 </html>

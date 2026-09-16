@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0D1B2A">
+<link rel="apple-touch-icon" href="icon-192x192.png">
 <meta name="description" content="Recursos de la Gran Logia Provincial de Murcia — Documentales, vídeos y contenidos de interés masónico.">
 <title>Recursos — GLP Murcia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -423,5 +427,10 @@
 
 </div>
   <script data-goatcounter="https://glpmurcia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
 </body>
 </html>
