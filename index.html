@@ -143,56 +143,17 @@
   .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: var(--gris-suave); border-bottom: none; }
   .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche); font-weight: 600; }
 
-  /* ── BANNER BIENVENIDA ── */
-  .welcome-banner {
-    background: linear-gradient(135deg, rgba(26,47,69,0.98) 0%, rgba(13,27,42,0.98) 100%);
-    border-bottom: 1px solid rgba(201,168,76,0.25);
-    padding: 0.9rem 3rem;
-    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
-    position: relative; z-index: 50;
-    animation: slideDown 0.6s ease both;
-  }
-  @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-  .welcome-banner.hidden { display: none; }
-
-  .welcome-banner-left { display: flex; align-items: center; gap: 1.2rem; flex: 1; min-width: 0; }
-  .welcome-banner-symbol { font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--oro); opacity: 0.7; flex-shrink: 0; }
-  .welcome-banner-text { min-width: 0; }
-  .welcome-banner-label { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.22em; color: var(--oro); text-transform: uppercase; margin-bottom: 0.2rem; }
-  .welcome-banner-quote { font-family: 'Cormorant Garamond', serif; font-size: 0.92rem; font-style: italic; color: #F5F0E8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-  .welcome-banner-actions { display: flex; align-items: center; gap: 0.8rem; flex-shrink: 0; }
-  .welcome-btn-read { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 1rem; border: 1px solid rgba(201,168,76,0.4); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; white-space: nowrap; }
-  .welcome-btn-read:hover { background: var(--oro); color: var(--azul-noche); }
-  .welcome-btn-close { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.4rem 0.8rem; border: 1px solid rgba(201,168,76,0.2); background: none; color: var(--gris-suave); cursor: pointer; transition: all 0.3s; white-space: nowrap; }
-  .welcome-btn-close:hover { color: var(--oro); border-color: rgba(201,168,76,0.4); }
-
-  /* ── PANEL DESPLEGABLE ── */
-  .welcome-panel {
-    display: none;
-    background: rgba(13,27,42,0.98);
-    border-bottom: 1px solid rgba(201,168,76,0.2);
-    animation: fadeIn 0.3s ease both;
-    position: relative; z-index: 49;
-  }
-  .welcome-panel.open { display: block; }
-  .welcome-panel-inner {
-    max-width: 860px; margin: 0 auto;
-    padding: 2.4rem 3rem;
-    display: flex; gap: 2.8rem; align-items: flex-start;
-  }
-  .welcome-panel-photo {
-    width: 160px; flex-shrink: 0;
-    border: 1px solid rgba(201,168,76,0.2);
-    overflow: hidden;
-  }
-  .welcome-panel-photo img { width: 100%; display: block; object-fit: cover; }
-  .welcome-panel-content { flex: 1; }
-  .welcome-panel-eyebrow { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.22em; color: var(--oro); text-transform: uppercase; margin-bottom: 0.8rem; }
-  .welcome-panel-text { font-size: 0.90rem; font-weight: 300; line-height: 1.9; color: #B8B0A0; }
-  .welcome-panel-text p + p { margin-top: 0.7rem; }
-  .welcome-panel-text strong { color: #F5F0E8; font-weight: 400; }
-  .welcome-panel-firma { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; opacity: 0.8; margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid rgba(201,168,76,0.15); }
+  /* ── BIENVENIDA DEL GRAN MAESTRO PROVINCIAL ── */
+  .welcome-section { position: relative; z-index: 1; padding: 3rem 2rem 2.6rem; border-bottom: 1px solid rgba(201,168,76,0.25); }
+  .welcome-inner { max-width: 880px; margin: 0 auto; display: flex; gap: 2.6rem; align-items: flex-start; }
+  .welcome-photo { width: 220px; flex-shrink: 0; margin: 0; }
+  .welcome-photo img { width: 100%; height: auto; display: block; border: 1px solid rgba(201,168,76,0.45); padding: 5px; background: #FFFFFF; }
+  .welcome-photo figcaption { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: #9A6F2E; text-align: center; line-height: 1.6; margin-top: 0.7rem; }
+  .welcome-content { flex: 1; min-width: 0; }
+  .welcome-eyebrow { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: #9A6F2E; margin-bottom: 0.9rem; }
+  .welcome-text { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; line-height: 1.75; color: #1C2B3A; }
+  .welcome-text p + p { margin-top: 0.8rem; }
+  .welcome-text strong { font-weight: 600; }
 
   @media (max-width: 768px) {
     nav { padding: 0.9rem 1.4rem; }
@@ -213,12 +174,10 @@
     footer { padding: 1.2rem 1.4rem; }
     .footer-inner { flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
     .footer-logo-text { text-align: center; }
-    .welcome-banner { padding: 0.8rem 1.2rem; gap: 0.8rem; }
-    .welcome-banner-quote { font-size: 0.82rem; }
-    .welcome-btn-read { font-size: 0.55rem; padding: 0.35rem 0.7rem; }
-    .welcome-btn-close { font-size: 0.52rem; padding: 0.35rem 0.6rem; }
-    .welcome-panel-inner { flex-direction: column; padding: 1.6rem 1.2rem; gap: 1.4rem; }
-    .welcome-panel-photo { width: 100%; max-width: 140px; }
+    .welcome-section { padding: 2rem 1.4rem 1.8rem; }
+    .welcome-inner { flex-direction: column; align-items: center; gap: 1.4rem; }
+    .welcome-photo { width: 180px; }
+    .welcome-text { font-size: 1.05rem; }
   }
 
   /* ACCESO SECRETO */
@@ -331,37 +290,23 @@
     </div>
   </div>
 
-  <!-- BANNER BIENVENIDA -->
-  <div class="welcome-banner" id="welcomeBanner">
-    <div class="welcome-banner-left">
-      <span class="welcome-banner-symbol">∴</span>
-      <div class="welcome-banner-text">
-        <p class="welcome-banner-label">Bienvenida del Gran Maestro Provincial</p>
-        <p class="welcome-banner-quote">«Es un honor darles la más cordial bienvenida a la Gran Logia Provincial de Murcia.»</p>
-      </div>
-    </div>
-    <div class="welcome-banner-actions">
-      <button class="welcome-btn-read" onclick="togglePanel()">Leer mensaje</button>
-      <button class="welcome-btn-close" onclick="closeBanner()">Cerrar ×</button>
-    </div>
-  </div>
-
-  <div class="welcome-panel" id="welcomePanel">
-    <div class="welcome-panel-inner">
-      <div class="welcome-panel-photo">
-        <img src="gm-provincial.jpg" alt="R.H. Luis Alcaina Guzmán — Gran Maestro Provincial de Murcia">
-      </div>
-      <div class="welcome-panel-content">
-        <p class="welcome-panel-eyebrow">R∴H∴ Luis Alcaina Guzmán — Gran Maestro Provincial de Murcia</p>
-        <div class="welcome-panel-text">
+  <!-- BIENVENIDA DEL GRAN MAESTRO PROVINCIAL -->
+  <section class="welcome-section" aria-labelledby="welcome-title">
+    <div class="welcome-inner">
+      <figure class="welcome-photo">
+        <img src="gm-provincial-retrato.jpg" alt="R∴H∴ Luis Alcaina Guzmán, Gran Maestro Provincial de Murcia" width="343" height="397">
+        <figcaption>R∴H∴ Luis Alcaina Guzmán<br>Gran Maestro Provincial</figcaption>
+      </figure>
+      <div class="welcome-content">
+        <p class="welcome-eyebrow" id="welcome-title">Bienvenida del Gran Maestro Provincial</p>
+        <div class="welcome-text">
           <p>Es un honor darles la más cordial bienvenida a la página web de la Gran Logia Provincial de Murcia. Somos parte de la única Masonería regular reconocida internacionalmente y la más numerosa de España.</p>
           <p>Este espacio es un punto de encuentro para Masones y no iniciados. A quienes aún no pertenecen a nuestra Orden, les invitamos a explorar los valores que nos guían. Estamos a su disposición para cualquier consulta.</p>
           <p>Que la luz del Gran Arquitecto del Universo ilumine nuestro camino. <strong>¡Bienvenidos a la Gran Logia Provincial de Murcia!</strong> Fraternalmente.</p>
         </div>
-        <p class="welcome-panel-firma">R∴H∴ Luis Alcaina Guzmán · Gran Maestro Provincial de Murcia</p>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- HERO -->
   <section class="hero">
@@ -528,27 +473,6 @@
   </footer>
 
 </div>
-<script>
-  function togglePanel() {
-    var panel = document.getElementById('welcomePanel');
-    var btn = document.querySelector('.welcome-btn-read');
-    if (panel.classList.contains('open')) {
-      panel.classList.remove('open');
-      btn.textContent = 'Leer mensaje';
-    } else {
-      panel.classList.add('open');
-      btn.textContent = 'Cerrar mensaje';
-    }
-  }
-  function closeBanner() {
-    document.getElementById('welcomeBanner').classList.add('hidden');
-    document.getElementById('welcomePanel').classList.remove('open');
-    sessionStorage.setItem('glpmWelcomeSeenES', '1');
-  }
-  if (sessionStorage.getItem('glpmWelcomeSeenES')) {
-    document.getElementById('welcomeBanner').classList.add('hidden');
-  }
-</script>
 
 
   <!-- ACCESO SECRETO -->
