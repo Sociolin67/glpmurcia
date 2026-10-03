@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0D1B2A">
+<link rel="apple-touch-icon" href="icon-192x192.png">
+<meta name="description" content="News and events from the Provincial Grand Lodge of Murcia.">
+<title>News | Provincial Grand Lodge of Murcia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --oro: #C9A84C;
+    --oro-claro: #E8D5A3;
+    --azul-noche: #0D1B2A;
+    --azul-medio: #1A2F45;
+    --blanco: #F5F0E8;
+    --gris-suave: #B8B0A0;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: #F7F3EC; color: #1C2B3A; overflow-x: hidden; min-height: 100vh; }
+
+  .bg-pattern {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.04) 0%, transparent 70%), #F7F3EC;
+  }
+  .bg-pattern::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px);
+  }
+
+  .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+  /* ── NAV ── */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 3rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    backdrop-filter: blur(10px);
+    background: rgba(13,27,42,0.95);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+  .nav-emblem { width: 44px; height: 44px; flex-shrink: 0; }
+  .nav-emblem svg { width: 100%; height: 100%; }
+  .nav-title { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.76rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: #C8D0D8; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--oro); }
+  .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
+  .nav-cta:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── CABECERA ── */
+  .page-header {
+    padding: 5rem 3rem 3.5rem; text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    animation: fadeUp 1s ease both;
+  }
+  .ornament { display: flex; align-items: center; gap: 1.2rem; justify-content: center; margin-bottom: 1.8rem; }
+  .ornament-line { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, var(--oro)); }
+  .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
+  .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
+  .page-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1rem; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 300; color: #1C2B3A; margin-bottom: 1rem; }
+  .page-title em { font-style: italic; color: var(--oro); }
+  .page-desc { font-size: 0.95rem; font-weight: 300; line-height: 1.95; color: #2E3D4F; max-width: 520px; margin: 0 auto; letter-spacing: 0.02em; }
+
+  /* ── CONTENIDO ── */
+  .content { max-width: 860px; margin: 0 auto; padding: 4rem 3rem; width: 100%; }
+
+  /* ── SECCIÓN HEADER ── */
+  .section-header { display: flex; align-items: center; gap: 1.4rem; margin-bottom: 2.5rem; }
+  .section-line { flex: 1; height: 1px; background: rgba(201,168,76,0.2); }
+  .section-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; color: var(--oro); text-transform: uppercase; white-space: nowrap; }
+
+  /* ── NOTICIA DESTACADA ── */
+  .news-featured {
+    border: 1px solid rgba(201,168,76,0.3);
+    background: #FFFFFF;
+    padding: 2.4rem 2.2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    animation: fadeUp 0.9s ease 0.2s both;
+  }
+  .news-featured::before {
+    content: 'Featured';
+    position: absolute; top: -1px; right: 2rem;
+    font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.18em;
+    padding: 0.25rem 0.8rem; background: var(--oro); color: var(--azul-noche);
+    text-transform: uppercase; font-weight: 600;
+  }
+  .news-meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .news-date { font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.18em; color: var(--oro); text-transform: uppercase; }
+  .news-tag {
+    font-size: 0.6rem; letter-spacing: 0.12em; padding: 0.2rem 0.7rem;
+    border: 1px solid rgba(201,168,76,0.35); color: #4A5C6A;
+    text-transform: uppercase;
+  }
+  .news-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: #1C2B3A; margin-bottom: 0.9rem; line-height: 1.3; }
+  .news-body { font-size: 0.93rem; font-weight: 300; line-height: 1.9; color: #2E3D4F; }
+  .news-body p + p { margin-top: 0.8rem; }
+  .news-body strong { color: #1C2B3A; font-weight: 600; }
+
+  /* ── GALERÍA FOTOS ── */
+  .news-gallery {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem;
+    margin-top: 1.6rem;
+  }
+  .news-gallery img {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover;
+    border: 1px solid rgba(201,168,76,0.2);
+    transition: opacity 0.3s;
+  }
+  .news-gallery img:hover { opacity: 0.85; }
+
+  /* ── NOTICIAS SECUNDARIAS ── */
+  .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 2rem; }
+
+  .news-card {
+    border: 1px solid rgba(201,168,76,0.15);
+    background: #FFFFFF;
+    padding: 1.8rem 1.6rem;
+    transition: border-color 0.3s, background 0.3s;
+    animation: fadeUp 0.8s ease both;
+    position: relative; overflow: hidden;
+  }
+  .news-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--oro);
+    transition: width 0.4s ease;
+  }
+  .news-card:hover { border-color: rgba(201,168,76,0.5); background: #FDF9F2; }
+  .news-card:hover::after { width: 100%; }
+  .news-card:nth-child(2) { animation-delay: 0.1s; }
+  .news-card .news-title { font-size: 1.1rem; margin-bottom: 0.7rem; }
+  .news-card .news-body { font-size: 0.89rem; }
+
+  /* ── IMAGEN EN TARJETA SECUNDARIA ── */
+  .news-card-img {
+    width: calc(100% + 3.2rem); margin: -1.8rem -1.6rem 1.2rem -1.6rem;
+    aspect-ratio: 16/9; object-fit: cover;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  /* ── FOOTER ── */
+  footer { margin-top: auto; padding: 1.4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.85); display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-gle { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.8; }
+  .footer-gle:hover { opacity: 1; }
+  .footer-gle-symbol { font-family: "Cinzel", serif; font-size: 1.1rem; color: var(--oro); opacity: 0.7; }
+  .footer-gle-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; line-height: 1.5; }
+  .footer-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.85; }
+  .footer-logo:hover { opacity: 1; }
+  .footer-logo img { height: 38px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
+  .footer-logo-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
+  .nav-hamburger { flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; display: none; }
+  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); }
+  .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #B8B0A0; padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
+  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; }
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
+  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
+  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+  .lang-switcher a:not(.active):hover { color: var(--oro); }
+  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
+  .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
+  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+
+  /* ── SHOW MORE ── */
+  .news-more { display: none; }
+  .news-more.open { display: contents; }
+  .news-btn { display: block; margin: 0.5rem auto 2rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.55rem 1.6rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
+  .news-btn:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── LODGE LIFE ── */
+  .lodge-section { margin-top: 3.5rem; }
+  .lodge-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.5rem; }
+  .lodge-card {
+    display: flex; gap: 1.1rem; align-items: flex-start;
+    border: 1px solid rgba(201,168,76,0.22);
+    background: #FFFFFF;
+    padding: 1.3rem 1.3rem;
+    transition: border-color 0.3s, background 0.3s;
+    animation: fadeUp 0.8s ease both;
+    position: relative; overflow: hidden;
+  }
+  .lodge-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--oro);
+    transition: width 0.4s ease;
+  }
+  .lodge-card:hover { border-color: rgba(201,168,76,0.45); background: #FDF9F2; }
+  .lodge-card:hover::after { width: 100%; }
+  .lodge-logo { width: 56px; height: 56px; flex-shrink: 0; object-fit: contain; opacity: 0.9; }
+  .lodge-content { flex: 1; min-width: 0; }
+  .lodge-meta { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+  .lodge-date { font-family: 'Cinzel', serif; font-size: 0.55rem; letter-spacing: 0.16em; color: var(--oro); text-transform: uppercase; }
+  .lodge-chip {
+    font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.12em;
+    padding: 0.18rem 0.55rem;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: #8B7330;
+    text-transform: uppercase;
+  }
+  .lodge-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 500; color: #1C2B3A; margin-bottom: 0.45rem; line-height: 1.35; }
+  .lodge-text { font-size: 0.84rem; font-weight: 300; line-height: 1.7; color: #2E3D4F; }
+  .lodge-more { display: none; }
+  .lodge-more.open { display: contents; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.4rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta { display: none; }
+    .nav-right { display: none; }
+    .lang-switcher { display: none; }
+    .page-header { padding: 3.5rem 1.4rem 2.5rem; }
+    .content { padding: 3rem 1.4rem; }
+    .news-grid { grid-template-columns: 1fr; }
+    .news-gallery { grid-template-columns: 1fr; }
+    .lodge-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.4rem; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<div class="page">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index-en.html" class="nav-logo">
+      <img src="logo.png" alt="Provincial Grand Lodge of Murcia" style="height:48px;width:auto;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4));">
+      <div class="nav-title">Provincial Grand Lodge<br>of Murcia</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index-en.html">Home</a></li>
+      <li><a href="noticias-en.html" class="active">News</a></li>
+      <li><a href="logias-en.html">Lodges</a></li>
+      <li><a href="ordenes-en.html">Orders</a></li>
+      <li><a href="masoneria-en.html">About Freemasonry</a></li>
+      <li><a href="caridad-en.html">Charity</a></li>
+      <li><a href="recursos-en.html">Resources</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="contacto-en.html" class="nav-cta">Contact Us</a>
+      <div class="lang-switcher">
+        <a href="noticias.html">ES</a>
+        <a href="noticias-en.html" class="active">EN</a>
+      </div>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+
+  <div class="nav-mobile" id="navMobile">
+    <a href="index-en.html">Home</a>
+    <a href="noticias-en.html" class="active">News</a>
+    <a href="logias-en.html">Lodges</a>
+    <a href="ordenes-en.html">Orders</a>
+    <a href="masoneria-en.html">About Freemasonry</a>
+    <a href="caridad-en.html">Charity</a>
+    <a href="recursos-en.html">Resources</a>
+    <a href="contacto-en.html" class="nav-cta-mobile">Contact Us</a>
+    <div class="lang-switcher-mobile">
+      <a href="noticias.html">ES</a>
+      <a href="noticias-en.html" class="active">EN</a>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="ornament">
+      <span class="ornament-line"></span>
+      <span class="ornament-symbol">✦</span>
+      <span class="ornament-line r"></span>
+    </div>
+    <p class="page-eyebrow">Provincial Grand Lodge of Murcia</p>
+    <h1 class="page-title">News and <em>Events</em></h1>
+    <p class="page-desc">Keep up to date with the activities of the Province of Murcia — charitable acts, social events and news from our lodges.</p>
+  </header>
+
+  <!-- NEWS -->
+  <div class="content">
+
+    <div class="section-header">
+      <span class="section-label">Latest news</span>
+      <span class="section-line"></span>
+    </div>
+
+    <!-- FEATURED: MURCIA YORK -->
+    <div class="news-featured" id="murcia-york-consecration">
+      <div class="news-meta">
+        <span class="news-date">October 2026</span>
+        <span class="news-tag">Lodges</span>
+      </div>
+      <h2 class="news-title">R∴L∴ Murcia York No. 201 is solemnly consecrated at the Orient of Murcia</h2>
+      <div class="news-body">
+        <p>Murcia York Lodge No. 201 was solemnly consecrated on <strong>3 October 2026</strong> at the Orient of Murcia, in a ceremony presided over by <strong>R∴W∴Bro∴ Luis Alcaina Guzmán</strong>, Provincial Grand Master, acting as Consecrating Officer. The ceremony, held at the Occidental Murcia Agalia Hotel under the York Rite, marked the birth of the first Lodge of this Rite at the Orient of Murcia, working in both Spanish and English. During the proceedings, the first Worshipful Master was installed and the founding officer team was invested.</p>
+      </div>
+      <div class="news-gallery" style="grid-template-columns: 1fr;">
+        <img src="murcia-york-consagracion-2026.jpg" alt="Banner of R∴L∴ Murcia York No. 201 — Consecration 3 October 2026" style="max-height: 480px; width: 100%; object-fit: cover;">
+      </div>
+    </div>
+
+    <!-- FEATURED: SECRET MONITOR -->
+    <div class="news-featured" id="secret-monitor">
+      <div class="news-meta">
+        <span class="news-date">September 2026</span>
+        <span class="news-tag">Collateral Orders</span>
+      </div>
+      <h2 class="news-title">The Order of the Secret Monitor installs its new District Grand Supreme Ruler for Spain</h2>
+      <div class="news-body">
+        <p>The Order of the Secret Monitor held its District Installation Ceremony on <strong>26 September 2026</strong> at Ciudad Quesada (Rojales, Alicante), installing <strong>Rt. Wy. Bro. Luis Alcaina Guzmán</strong>, Provincial Grand Master of Murcia, as the new <strong>District Grand Supreme Ruler for Spain</strong>. The ceremony, led by the Supreme Ruler and the Grand Lodge officer team, brought together a large gathering of brethren from the District of Spain in a spirit of solemnity and fraternity.</p>
+      </div>
+      <div class="news-gallery" style="grid-template-columns: 1fr;">
+        <img src="osm-instalacion-2026-v2.jpg" alt="Installation Ceremony of the District Grand Supreme Ruler for Spain — Order of the Secret Monitor — 26 September 2026" style="max-height: 480px; width: 100%; object-fit: cover;">
+      </div>
+    </div>
+
+    <!-- FEATURED: SCARLET CORD -->
+    <div class="news-featured" id="scarlet-cord">
+      <div class="news-meta">
+        <span class="news-date">September 2026</span>
+        <span class="news-tag">Collateral Orders</span>
+      </div>
+      <h2 class="news-title">The Ancient and Masonic Order of the Scarlet Cord installs its new District Grand Summus for Spain</h2>
+      <div class="news-body">
+        <p>The Ancient and Masonic Order of the Scarlet Cord held its District Installation Ceremony on <strong>26 September 2026</strong> at Ciudad Quesada (Rojales, Alicante), installing <strong>Dist.Comp. Luis Alcaina Guzmán</strong>, Provincial Grand Master of Murcia, as the new <strong>District Grand Summus for Spain</strong>. The ceremony was presided over by M.Dist.Comp. Ian Stanley Currans, VI, Grand Summus. The event brought together the Consistories of the District — Levante Scarlet Cord No. 1TI, Vega Baja Scarlet Cord No. 44TI, and Caballeros de Rahab No. 50TI — marking a significant milestone for the Order in Spain.</p>
+      </div>
+      <div class="news-gallery" style="grid-template-columns: 1fr;">
+        <img src="cordon-escarlata-2026.jpg" alt="Installation Ceremony of the District Grand Summus for Spain — Ancient and Masonic Order of the Scarlet Cord — 26 September 2026" style="max-height: 480px; width: 100%; object-fit: cover;">
+      </div>
+    </div>
+
+    <!-- FEATURED: GRAND CHARITY BALL -->
+    <div class="news-featured" id="charity-ball">
+      <div class="news-meta">
+        <span class="news-date">November 2026</span>
+        <span class="news-tag">Province</span>
+      </div>
+      <h2 class="news-title">Grand Charity Ball of the Provincial Grand Lodge of Murcia</h2>
+      <div class="news-body">
+        <p>By invitation of the Grand Master of the Province of Murcia, the Provincial Grand Lodge will host its <strong>Grand Charity Ball</strong> on <strong>Saturday 21 November 2026</strong> at the <strong>Hotel Thalasia</strong>, San Pedro del Pinatar, from 7:00 PM.</p>
+        <p>The evening will feature a <strong>gala dinner, music and dancing</strong>, with a charity raffle in aid of charitable causes. Elegant attire is required. Tickets are priced at <strong>€55</strong> and can be requested at <a href="mailto:provgsecmurcia@gmail.com" style="color:#C9A84C;">provgsecmurcia@gmail.com</a>.</p>
+      </div>
+      <div class="news-gallery" style="grid-template-columns: 1fr;">
+        <img src="baile-benefico-en-1.jpg" alt="Grand Charity Ball — Provincial Grand Lodge of Murcia — 21 November 2026" style="max-height: 520px; width: 100%; object-fit: cover; border-radius: 6px;">
+      </div>
+    </div>
+
+    <!-- FEATURED: MURCIA YORK CONSECRATION -->
+    <!-- SECONDARY NEWS -->
+    <div class="news-grid">
+
+      <!-- VISIBLE 1: ANDALUSIA -->
+      <div class="news-card">
+        <img src="andalucia-apoyo-2026.jpg" alt="Andalusia needs your support — July 2026 wildfires" class="news-card-img">
+        <div class="news-meta">
+          <span class="news-date">July 2026</span>
+          <span class="news-tag">Charity</span>
+        </div>
+        <h3 class="news-title">The PGLM donates €500 to the Provincial Grand Lodge of Andalusia Relief Fund</h3>
+        <div class="news-body">
+          <p>The Provincial Grand Lodge of Murcia made a donation of <strong>€500</strong> to the Provincial Relief Fund established by the <strong>Provincial Grand Lodge of Andalusia</strong> in response to the devastating forest fire of July 2026, which severely affected the municipalities of Bédar, Los Gallardos and surrounding areas in the province of Almería. A further expression of the fraternal and charitable commitment of Murcia's Freemasonry beyond its own provincial boundaries.</p>
+        </div>
+      </div>
+
+      <!-- VISIBLE 2: SUPREME GRAND CHAPTER -->
+      <div class="news-card">
+        <img src="supremoGCE.jpeg" alt="Installation ceremony of the Supreme Grand Chapter of Spain — May 2026" class="news-card-img">
+        <div class="news-meta">
+          <span class="news-date">May 2026</span>
+          <span class="news-tag">National</span>
+        </div>
+        <h3 class="news-title">The Supreme Grand Chapter of Spain renews its leadership in a day of fraternity</h3>
+        <div class="news-body">
+          <p>On <strong>9 May 2026</strong>, the Supreme Grand Chapter of Spain held its installation ceremony in Madrid, in an event marked by a deep spirit of fellowship and attended by more than one hundred members.</p>
+        </div>
+      </div>
+
+      <!-- VISIBLE 3: XVI ASSEMBLY -->
+      <div class="news-card">
+        <img src="asamblea1.jpg" alt="XVI Assembly PGL Murcia" class="news-card-img">
+        <div class="news-meta">
+          <span class="news-date">April 2026</span>
+          <span class="news-tag">Province</span>
+        </div>
+        <h3 class="news-title">XVI Assembly of the Provincial Grand Lodge of Murcia</h3>
+        <div class="news-body">
+          <p>The Provincial Grand Lodge of Murcia held its <strong>XVI Assembly on 18 April 2026</strong> at the Salones del Hotel Agalia in Murcia, with over one hundred brethren. Provincial officers were invested for the <strong>2026–2027</strong> term.</p>
+        </div>
+      </div>
+
+      <!-- VISIBLE 2: FUENSOCIAL -->
+      <div class="news-card">
+        <img src="fuensocial.jpeg" alt="FUENSOCIAL headquarters" class="news-card-img">
+        <div class="news-meta">
+          <span class="news-date">April 2026</span>
+          <span class="news-tag">Charity</span>
+        </div>
+        <h3 class="news-title">Donation of €500 to FUENSOCIAL</h3>
+        <div class="news-body">
+          <p>The Provincial Grand Lodge of Murcia donated <strong>€500</strong> to <strong>FUENSOCIAL</strong>, an association supporting people with disabilities or at risk of developing them, and their families, through the Provincial Grand Lodge of Andalusia. A reflection of Murcian Freemasonry's fraternal commitment beyond provincial boundaries.</p>
+        </div>
+      </div>
+
+      <!-- HIDDEN: SHOW MORE -->
+      <div class="news-more" id="news-more-en">
+
+        <!-- ARCHIVED: AFACMUR -->
+        <div class="news-card">
+          <img src="afacmur.jpeg" alt="Donation to AFACMUR" class="news-card-img">
+          <div class="news-meta">
+            <span class="news-date">December 2025</span>
+            <span class="news-tag">Charity</span>
+          </div>
+          <h3 class="news-title">The Province of Murcia donates €1,600 to AFACMUR</h3>
+          <div class="news-body">
+            <p>The Province of Murcia has donated the <strong>€1,600</strong> raised at its Provincial Gala to <strong>AFACMUR</strong>, in support of their work helping children, young people and their families throughout the cancer treatment process.</p>
+            <p>The Provincial Grand Master <strong>Luis Alcaina</strong> and the Provincial Grand Secretary <strong>Ángel Sánchez</strong> made the presentation in person.</p>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-date">2022</span>
+            <span class="news-tag">Charity</span>
+          </div>
+          <h3 class="news-title">Luz de Murcia No. 91 donates €1,000 in food to Los Alcázares</h3>
+          <div class="news-body">
+            <p>Luz de Murcia Lodge donated food items valued at <strong>€1,000</strong> to the municipal social services to strengthen the local food bank's reserves.</p>
+            <p>In Murcia, nearly <strong>30,000 people</strong> rely on food banks for their daily needs.</p>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-meta">
+            <span class="news-date">2022</span>
+            <span class="news-tag">Media</span>
+          </div>
+          <h3 class="news-title">The Province on Nemesis Radio: 15th anniversary of the Provincial Grand Lodge</h3>
+          <div class="news-body">
+            <p>Representatives of the Provincial Grand Lodge of Murcia took part in the Nemesis Radio programme to mark the Province's 15th anniversary.</p>
+            <p>Freemasonry, its values and its presence in the Region of Murcia were discussed, responding to questions from listeners.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <button class="news-btn" id="news-btn-en" onclick="
+      var more = document.getElementById('news-more-en');
+      var btn = document.getElementById('news-btn-en');
+      if (more.classList.contains('open')) {
+        more.classList.remove('open');
+        btn.textContent = 'Show archive ↓';
+      } else {
+        more.classList.add('open');
+        btn.textContent = 'Hide ↑';
+      }
+    ">Show archive ↓</button>
+
+    <!-- LINK TO LODGE LIFE -->
+    <div style="text-align:center; margin: 3rem 0 1rem; padding-top: 2.5rem; border-top: 1px solid rgba(201,168,76,0.15);">
+      <p style="font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.22em; color:var(--oro); text-transform:uppercase; margin-bottom:0.8rem;">Lodge Life</p>
+      <p style="font-size:0.9rem; font-weight:300; color:#2E3D4F; margin-bottom:1.2rem;">Chronicles of the meetings and activities of the lodges of the Province.</p>
+      <a href="logias-en.html" style="font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; padding:0.55rem 1.6rem; border:1px solid rgba(201,168,76,0.35); color:var(--oro); text-decoration:none; transition:all 0.3s; display:inline-block;">View Lodge Life →</a>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="https://www.gle.org" target="_blank" rel="noopener" class="footer-gle">
+      <span class="footer-gle-symbol">∴</span>
+      <span class="footer-gle-text">Grand Lodge<br>of Spain</span>
+    </a>
+    <a href="index-en.html" class="footer-logo">
+      <img src="logo.png" alt="Provincial Grand Lodge of Murcia">
+      <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
+    </a>
+  </footer>
+
+</div>
+ <script data-goatcounter="https://glpmurcia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+</body>
+</html>
