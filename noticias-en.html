@@ -119,6 +119,7 @@
     transition: opacity 0.3s;
   }
   .news-gallery img:hover { opacity: 0.85; }
+  .news-gallery img[style*="height: auto"] { aspect-ratio: unset; object-fit: unset; }
 
   /* ── NOTICIAS SECUNDARIAS ── */
   .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 2rem; }
