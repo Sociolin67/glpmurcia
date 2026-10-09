@@ -59,9 +59,14 @@
   .resource-card { border: 1px solid rgba(201,168,76,0.25); background: #FFFFFF; margin-bottom: 3rem; overflow: hidden; animation: fadeUp 0.6s ease both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* ── VÍDEO RESPONSIVE 16:9 ── */
-  .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; }
-  .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  /* ── TARJETA DE ENLACE (sustituye al iframe) ── */
+  .video-link-card { display: block; position: relative; text-decoration: none; overflow: hidden; background: #000; }
+  .video-link-card img { width: 100%; height: auto; display: block; opacity: 0.75; transition: opacity 0.3s; }
+  .video-link-card:hover img { opacity: 0.55; }
+  .video-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; background: rgba(201,168,76,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.3s, transform 0.3s; }
+  .video-link-card:hover .video-play-btn { background: var(--oro); transform: translate(-50%, -50%) scale(1.08); }
+  .video-play-btn svg { width: 28px; height: 28px; fill: #0D1B2A; margin-left: 4px; }
+  .video-link-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.6rem 1rem; background: linear-gradient(transparent, rgba(13,27,42,0.85)); font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; }
 
   /* ── CUERPO DEL RECURSO ── */
   .resource-body { padding: 2rem 2.4rem; }
@@ -74,8 +79,18 @@
   .resource-desc strong { color: #1C2B3A; font-weight: 600; }
   .resource-link { display: inline-block; margin-top: 1.4rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; padding: 0.45rem 1.1rem; border: 1px solid rgba(201,168,76,0.35); color: var(--oro); text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
   .resource-link:hover { background: var(--oro); color: var(--azul-noche); }
+  .resource-link + .resource-link { margin-left: 0.8rem; }
 
-    /* ── MENÚ MÓVIL ── */
+  /* ── TARJETA ORGANISMO EXTERNO ── */
+  .org-card { border: 1px solid rgba(201,168,76,0.25); background: #FFFFFF; margin-bottom: 2rem; overflow: hidden; animation: fadeUp 0.6s ease both; display: flex; align-items: stretch; }
+  .org-card-logo { width: 140px; min-width: 140px; background: var(--azul-noche); display: flex; align-items: center; justify-content: center; padding: 2rem 1.4rem; }
+  .org-card-logo img { width: 100%; height: auto; max-height: 90px; object-fit: contain; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.4)); }
+  .org-card-logo-text { font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 0.14em; color: var(--oro); text-align: center; line-height: 1.6; text-transform: uppercase; }
+  .org-card-body { padding: 1.6rem 2rem; flex: 1; }
+  .org-card-body .resource-title { font-size: 1.25rem; margin-bottom: 0.6rem; }
+  .org-card-body .resource-desc { font-size: 0.9rem; }
+
+  /* ── MENÚ MÓVIL ── */
   .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
   .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: all 0.3s; }
   .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; width: 100%; }
@@ -85,7 +100,7 @@
   .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
   .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
   .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
-  
+
   /* ── FOOTER ── */
   footer { margin-top: auto; padding: 1.4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.85); display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; }
   .footer-gle { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.8; }
@@ -96,6 +111,7 @@
   .footer-logo:hover { opacity: 1; }
   .footer-logo img { height: 38px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
   .footer-logo-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
+
   /* ── SELECTOR DE IDIOMA ── */
   .nav-right { display: flex; align-items: center; gap: 1rem; }
   .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
@@ -105,7 +121,6 @@
   .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
   .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
   .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
-
 
   /* ── ANTIGUAS CONSTITUCIONES ── */
   .constituciones-intro { font-size: 0.93rem; font-weight: 300; line-height: 1.9; color: #2E3D4F; margin-bottom: 2rem; }
@@ -145,8 +160,10 @@
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
     .docs-grid { grid-template-columns: 1fr; }
     .doc-item { border-right: none; }
+    .org-card { flex-direction: column; }
+    .org-card-logo { width: 100%; min-width: unset; padding: 1.4rem; }
+    .org-card-body { padding: 1.2rem 1.4rem; }
   }
-
 </style>
 </head>
 <body>
@@ -174,7 +191,7 @@
       <a href="contacto.html" class="nav-cta">Contáctenos</a>
       <div class="lang-switcher">
         <a href="recursos.html" class="active">ES</a>
-        <a href="recursos-en.html" >EN</a>
+        <a href="recursos-en.html">EN</a>
       </div>
     </div>
     <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
@@ -190,7 +207,7 @@
     <a href="contacto.html" class="nav-cta-mobile">Contáctenos</a>
     <div class="lang-switcher-mobile">
       <a href="recursos.html" class="active">ES</a>
-      <a href="recursos-en.html" >EN</a>
+      <a href="recursos-en.html">EN</a>
     </div>
   </div>
 
@@ -216,14 +233,13 @@
 
     <!-- THE WORK -->
     <article class="resource-card">
-      <div class="video-wrapper">
-        <iframe
-          src="https://www.youtube.com/embed/AAlsrxuY7qc"
-          title="The Work — La Obra | Masones de Londres"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
+      <a href="https://www.youtube.com/watch?v=AAlsrxuY7qc" target="_blank" rel="noopener" class="video-link-card" aria-label="Ver The Work en YouTube">
+        <img src="https://img.youtube.com/vi/AAlsrxuY7qc/maxresdefault.jpg" alt="The Work — Masones de Londres" onerror="this.src='https://img.youtube.com/vi/AAlsrxuY7qc/hqdefault.jpg'">
+        <div class="video-play-btn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span class="video-link-label">Ver en YouTube ↗</span>
+      </a>
       <div class="resource-body">
         <div class="resource-meta">
           <span class="resource-tag">Documental</span>
@@ -234,6 +250,7 @@
           <p>El documental <strong>«The Work»</strong> sigue a Lee Townsend, masón londinense, desde su vida cotidiana en Croydon hasta la majestuosidad del Salón de los Masones. Con la canción de grime del mismo nombre de fondo, este documental no pretende explicar la masonería, sino mostrar nuestro compromiso con el crecimiento personal y la comunidad.</p>
           <p>Filmado por <strong>Eddy Kirk</strong>, masón londinense, y producido por el responsable de comunicación de Londres, el Hno. <strong>Omaid Hiwaizi</strong>, el documental presenta a varios masones londinenses, reflejando la diversidad y la realidad de la Orden en la actualidad.</p>
         </div>
+        <a href="https://www.youtube.com/watch?v=AAlsrxuY7qc" target="_blank" rel="noopener" class="resource-link">Ver en YouTube</a>
         <a href="https://www.londonmasons.org.uk/curious-about-freemasonry" target="_blank" rel="noopener" class="resource-link">¿Quieres saber más?</a>
       </div>
     </article>
@@ -248,7 +265,6 @@
     </p>
 
     <div class="docs-grid">
-
       <a href="https://www.gle.org/constituciones-de-anderson-1723/" target="_blank" rel="noopener" class="doc-item">
         <span class="doc-year">1723 e∴v∴</span>
         <span class="doc-title">Constituciones de Anderson</span>
@@ -364,9 +380,7 @@
         <span class="doc-title">Convento de Lausana</span>
         <span class="doc-arrow">→</span>
       </a>
-      <!-- celda vacía para equilibrar la cuadrícula -->
       <div class="doc-item" style="pointer-events:none; opacity:0;"></div>
-
     </div>
     <p class="constituciones-note">Los textos enlazan al portal de la <a href="https://www.gle.org" target="_blank" rel="noopener">Gran Logia de España</a>, donde se alojan sus versiones completas.</p>
 
@@ -411,6 +425,47 @@
       </div>
     </article>
 
+    <div class="section-header" style="margin-top:2rem;">
+      <span class="section-label">Organismos masónicos</span>
+      <span class="section-line"></span>
+    </div>
+
+    <!-- UGLE -->
+    <article class="org-card">
+      <div class="org-card-logo">
+        <span class="org-card-logo-text">UGLE<br><span style="font-size:0.55rem; opacity:0.7;">Est. 1717</span></span>
+      </div>
+      <div class="org-card-body">
+        <div class="resource-meta">
+          <span class="resource-tag">Gran Logia</span>
+          <span class="resource-date">Londres</span>
+        </div>
+        <h2 class="resource-title">United Grand Lodge of England</h2>
+        <div class="resource-desc">
+          <p>La <strong>Gran Logia Unida de Inglaterra</strong>, fundada en 1717, es la madre de todas las grandes logias regulares del mundo. Custodio del Rito de Emulación practicado en varias de nuestras logias, y referencia histórica y ritual de la masonería regular anglosajona.</p>
+        </div>
+        <a href="https://www.ugle.org.uk" target="_blank" rel="noopener" class="resource-link">Visitar ugle.org.uk</a>
+      </div>
+    </article>
+
+    <!-- QUATUOR CORONATI -->
+    <article class="org-card">
+      <div class="org-card-logo">
+        <span class="org-card-logo-text">QC<br>Lodge<br><span style="font-size:0.55rem; opacity:0.7;">n.º 2076</span></span>
+      </div>
+      <div class="org-card-body">
+        <div class="resource-meta">
+          <span class="resource-tag">Investigación masónica</span>
+          <span class="resource-date">Londres</span>
+        </div>
+        <h2 class="resource-title">Quatuor Coronati Lodge</h2>
+        <div class="resource-desc">
+          <p>La logia <strong>Quatuor Coronati n.º 2076</strong>, fundada en 1884 bajo patente de la UGLE, es la principal logia de investigación masónica del mundo. Sus publicaciones — los <em>Ars Quatuor Coronatorum</em> — constituyen el corpus de referencia para el estudio histórico y filosófico de la masonería.</p>
+        </div>
+        <a href="https://www.quatuorcoronati.com" target="_blank" rel="noopener" class="resource-link">Visitar quatuorcoronati.com</a>
+      </div>
+    </article>
+
   </div>
 
   <!-- FOOTER -->
@@ -426,7 +481,7 @@
   </footer>
 
 </div>
-  <script data-goatcounter="https://glpmurcia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://glpmurcia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
