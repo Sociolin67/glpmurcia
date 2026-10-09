@@ -59,14 +59,19 @@
   .resource-card { border: 1px solid rgba(201,168,76,0.18); background: #FFFFFF; margin-bottom: 3rem; overflow: hidden; animation: fadeUp 0.6s ease both; }
   @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
-  /* ── TARJETA DE ENLACE (sustituye al iframe) ── */
-  .video-link-card { display: block; position: relative; text-decoration: none; overflow: hidden; background: #000; }
-  .video-link-card img { width: 100%; height: auto; display: block; opacity: 0.75; transition: opacity 0.3s; }
-  .video-link-card:hover img { opacity: 0.55; }
-  .video-play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; background: rgba(201,168,76,0.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background 0.3s, transform 0.3s; }
-  .video-link-card:hover .video-play-btn { background: var(--oro); transform: translate(-50%, -50%) scale(1.08); }
-  .video-play-btn svg { width: 28px; height: 28px; fill: #0D1B2A; margin-left: 4px; }
-  .video-link-label { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.6rem 1rem; background: linear-gradient(transparent, rgba(13,27,42,0.85)); font-family: 'Cinzel', serif; font-size: 0.6rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; }
+  /* ── TARJETA DE ENLACE DOCUMENTAL ── */
+  .video-link-card { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 2.2rem 2.4rem; background: var(--azul-noche); text-decoration: none; transition: background 0.3s; }
+  .video-link-card:hover { background: var(--azul-medio); }
+  .video-link-info { flex: 1; }
+  .video-link-eyebrow { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.22em; color: var(--oro); text-transform: uppercase; margin-bottom: 0.6rem; opacity: 0.8; }
+  .video-link-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; color: var(--blanco); line-height: 1.25; margin-bottom: 0.4rem; }
+  .video-link-sub { font-family: 'Lato', sans-serif; font-size: 0.82rem; font-weight: 300; color: var(--gris-suave); letter-spacing: 0.04em; }
+  .video-link-btn { flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .video-play-circle { width: 64px; height: 64px; border-radius: 50%; border: 2px solid var(--oro); display: flex; align-items: center; justify-content: center; transition: background 0.3s, transform 0.3s; }
+  .video-link-card:hover .video-play-circle { background: var(--oro); transform: scale(1.06); }
+  .video-play-circle svg { width: 24px; height: 24px; fill: var(--oro); margin-left: 3px; transition: fill 0.3s; }
+  .video-link-card:hover .video-play-circle svg { fill: var(--azul-noche); }
+  .video-play-label { font-family: 'Cinzel', serif; font-size: 0.52rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; opacity: 0.75; }
 
   /* ── CUERPO DEL RECURSO ── */
   .resource-body { padding: 2rem 2.4rem; }
@@ -235,11 +240,17 @@
     <!-- THE WORK -->
     <article class="resource-card">
       <a href="https://www.youtube.com/watch?v=AAlsrxuY7qc" target="_blank" rel="noopener" class="video-link-card" aria-label="Watch The Work on YouTube">
-        <img src="https://img.youtube.com/vi/AAlsrxuY7qc/maxresdefault.jpg" alt="The Work — London Masons" onerror="this.src='https://img.youtube.com/vi/AAlsrxuY7qc/hqdefault.jpg'">
-        <div class="video-play-btn">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+        <div class="video-link-info">
+          <p class="video-link-eyebrow">Documentary · London · 2018</p>
+          <h3 class="video-link-title">«The Work»</h3>
+          <p class="video-link-sub">London Masons — United Grand Lodge of England</p>
         </div>
-        <span class="video-link-label">Watch on YouTube ↗</span>
+        <div class="video-link-btn">
+          <div class="video-play-circle">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="video-play-label">Watch on YouTube</span>
+        </div>
       </a>
       <div class="resource-body">
         <div class="resource-meta">
