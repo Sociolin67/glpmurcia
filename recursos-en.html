@@ -153,6 +153,9 @@
   .oriente-desc { font-size: 0.93rem; font-weight: 300; line-height: 1.9; color: #2E3D4F; }
   .oriente-desc p + p { margin-top: 0.8rem; }
 
+  /* ── SCROLL MARGIN (compensar nav sticky) ── */
+  [id] { scroll-margin-top: 80px; }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -170,6 +173,21 @@
     .org-card-logo { width: 100%; min-width: unset; padding: 1.4rem; }
     .org-card-body { padding: 1.2rem 1.4rem; }
   }
+
+  /* ── BOTÓN VOLVER ARRIBA ── */
+  #btn-top {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--azul-noche, #0D1B2A);
+    border: 1px solid rgba(201,168,76,0.5);
+    color: #C9A84C; font-size: 1.3rem; line-height: 1;
+    cursor: pointer; opacity: 0; visibility: hidden;
+    transition: opacity 0.35s, visibility 0.35s, background 0.25s;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  }
+  #btn-top.visible { opacity: 1; visibility: visible; }
+  #btn-top:hover { background: rgba(201,168,76,0.15); }
 </style>
 </head>
 <body>
@@ -410,7 +428,7 @@
 
     <article class="oriente-card">
       <a href="https://www.gle.org/eloriente/" target="_blank" rel="noopener" class="oriente-banner">
-        <img src="eloriente.jpg" alt="El Oriente — Gran Logia de España">
+        <img src="eloriente.jpg" alt="El Oriente — Gran Logia de España" loading="lazy">
       </a>
       <div class="oriente-body">
         <div class="resource-meta">
@@ -475,7 +493,7 @@
       <span class="footer-gle-text">Grand Lodge<br>of Spain</span>
     </a>
     <a href="index-en.html" class="footer-logo">
-      <img src="logo.png" alt="Provincial Grand Lodge of Murcia">
+      <img src="logo.png" alt="Provincial Grand Lodge of Murcia" loading="lazy">
       <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
     </a>
   </footer>
@@ -486,6 +504,16 @@
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
+</script>
+
+<button id="btn-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
+<script>
+  (function(){
+    var btn = document.getElementById('btn-top');
+    window.addEventListener('scroll', function(){
+      btn.classList.toggle('visible', window.scrollY > 300);
+    }, {passive: true});
+  })();
 </script>
 </body>
 </html>

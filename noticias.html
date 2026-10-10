@@ -219,6 +219,9 @@
   .lodge-more { display: none; }
   .lodge-more.open { display: contents; }
 
+  /* ── SCROLL MARGIN (compensar nav sticky) ── */
+  [id] { scroll-margin-top: 80px; }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -233,6 +236,21 @@
     .lodge-grid { grid-template-columns: 1fr; }
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
   }
+
+  /* ── BOTÓN VOLVER ARRIBA ── */
+  #btn-top {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--azul-noche, #0D1B2A);
+    border: 1px solid rgba(201,168,76,0.5);
+    color: #C9A84C; font-size: 1.3rem; line-height: 1;
+    cursor: pointer; opacity: 0; visibility: hidden;
+    transition: opacity 0.35s, visibility 0.35s, background 0.25s;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  }
+  #btn-top.visible { opacity: 1; visibility: visible; }
+  #btn-top:hover { background: rgba(201,168,76,0.15); }
 </style>
 </head>
 <body>
@@ -313,7 +331,7 @@
         <p>La velada incluirá <strong>cena de gala, música y baile</strong>, con sorteo benéfico cuyos fondos se destinarán a causas solidarias. Se requiere vestimenta elegante. Las entradas, al precio de <strong>55 €</strong>, pueden solicitarse en <a href="mailto:provgsecmurcia@gmail.com" style="color:#C9A84C;">provgsecmurcia@gmail.com</a>.</p>
       </div>
       <div class="news-gallery" style="grid-template-columns: 1fr;">
-        <img src="baile-benefico-es-1.jpg" alt="Gran Baile Benéfico — Gran Logia Provincial de Murcia — 21 de noviembre de 2026" style="max-width: 480px; width: 100%; height: auto; display: block; border-radius: 6px; margin: 0 auto;">
+        <img src="baile-benefico-es-1.jpg" alt="Gran Baile Benéfico — Gran Logia Provincial de Murcia — 21 de noviembre de 2026" style="max-width: 480px; width: 100%; height: auto; display: block; border-radius: 6px; margin: 0 auto;" loading="lazy">
       </div>
     </div>
 
@@ -330,8 +348,8 @@
         <p>Para quienes deseen alojarse en el Gran Hotel Bali, existe un código de descuento grupal disponible a través de la Secretaría del Distrito: <strong>MARK27</strong>.</p>
       </div>
       <div class="news-gallery" style="display:flex; gap:1.2rem; align-items:center; margin-top:1.6rem; flex-wrap:wrap;">
-        <img src="asamblea-marca-benidorm-2027.jpg" alt="Asamblea de Maestros Masones de Marca — Gran Hotel Bali, Benidorm" style="flex:2; min-width:200px; max-height:260px; object-fit:cover; border:1px solid rgba(201,168,76,0.2);">
-        <img src="logo-marca-distrito.png" alt="Gran Logia de Distrito de Maestros Masones de Marca de España" style="flex:0 0 auto; height:120px; width:auto; object-fit:contain; background:white; padding:6px; border:1px solid rgba(201,168,76,0.2);">
+        <img src="asamblea-marca-benidorm-2027.jpg" alt="Asamblea de Maestros Masones de Marca — Gran Hotel Bali, Benidorm" style="flex:2; min-width:200px; max-height:260px; object-fit:cover; border:1px solid rgba(201,168,76,0.2);" loading="lazy">
+        <img src="logo-marca-distrito.png" alt="Gran Logia de Distrito de Maestros Masones de Marca de España" style="flex:0 0 auto; height:120px; width:auto; object-fit:contain; background:white; padding:6px; border:1px solid rgba(201,168,76,0.2);" loading="lazy">
       </div>
     </div>
 
@@ -346,8 +364,8 @@
         <p>La Respetable Logia Murcia York nº 201 fue solemnemente consagrada el <strong>3 de octubre de 2026</strong> en el Oriente de Murcia, en un acto presidido por el <strong>R∴H∴ Luis Alcaina Guzmán</strong>, Gran Maestro Provincial, en su condición de Oficial Consagrador. La ceremonia, celebrada en el Hotel Occidental Murcia Agalia bajo el Rito de York, marcó el nacimiento del primer taller de este Rito en el Oriente de Murcia, trabajando en lengua española e inglesa. Durante los trabajos se procedió a la instalación del primer Venerable Maestro y a la investidura del cuadro de oficiales fundador.</p>
       </div>
       <div class="news-gallery" style="grid-template-columns: 1fr; gap: 0.5rem;">
-        <img src="murcia-york-consagracion-2026.jpg" alt="Estandarte de la R∴L∴ Murcia York nº 201 — Consagración 3 octubre 2026" style="max-width: 100%; display: block; margin: 0 auto;">
-        <img src="murcia-york-consagracion-grupo-2026.jpg" alt="Foto de grupo — Consagración R∴L∴ Murcia York nº 201 — 3 octubre 2026" style="width: 100%; display: block;">
+        <img src="murcia-york-consagracion-2026.jpg" alt="Estandarte de la R∴L∴ Murcia York nº 201 — Consagración 3 octubre 2026" style="max-width: 100%; display: block; margin: 0 auto;" loading="lazy">
+        <img src="murcia-york-consagracion-grupo-2026.jpg" alt="Foto de grupo — Consagración R∴L∴ Murcia York nº 201 — 3 octubre 2026" style="width: 100%; display: block;" loading="lazy">
       </div>
     </div>
 
@@ -362,7 +380,7 @@
         <p>La Orden del Monitor Secreto celebró el pasado <strong>26 de septiembre de 2026</strong> en Ciudad Quesada (Rojales, Alicante), la Ceremonia de Instalación del nuevo <strong>Gran Rector Supremo de Distrito para España</strong>, cargo que recayó en el <strong>R∴H∴ Luis Alcaina Guzmán</strong>, Gran Maestro Provincial de Murcia. El acto, dirigido por el Gran Rector Supremo y su equipo de oficiales de Gran Logia, reunió a un nutrido grupo de hermanos del Distrito de España en un marco de solemnidad y fraternidad.</p>
       </div>
       <div class="news-gallery" style="grid-template-columns: 1fr;">
-        <img src="osm-instalacion-2026-v2.jpg" alt="Ceremonia de Instalación del Gran Rector Supremo de Distrito para España — Orden del Monitor Secreto — 26 septiembre 2026" style="max-height: 480px; width: 100%; object-fit: cover;">
+        <img src="osm-instalacion-2026-v2.jpg" alt="Ceremonia de Instalación del Gran Rector Supremo de Distrito para España — Orden del Monitor Secreto — 26 septiembre 2026" style="max-height: 480px; width: 100%; object-fit: cover;" loading="lazy">
       </div>
     </div>
 
@@ -377,7 +395,7 @@
         <p>La Antigua Orden Masónica del Cordón Escarlata celebró el pasado <strong>26 de septiembre de 2026</strong> en Ciudad Quesada (Rojales, Alicante), la Instalación del nuevo <strong>Gran Summus de Distrito de España</strong>, cargo que recayó en el <strong>D∴Comp∴ Luis Alcaina Guzmán</strong>, Gran Maestro Provincial de Murcia. El acto fue presidido por el M∴Dist∴Comp∴ Ian Stanley Currans, VI, Gran Summus, en representación del Gran Senatus de Distrito de España. La ceremonia reunió a los Consistorios del Distrito — Levante Scarlet Cord nº 1TI, Vega Baja Scarlet Cord nº 44TI y Caballeros de Rahab nº 50TI — en un acto de especial relevancia para la Orden en España.</p>
       </div>
       <div class="news-gallery" style="grid-template-columns: 1fr;">
-        <img src="cordon-escarlata-2026.jpg" alt="Ceremonia de Instalación del Gran Summus de Distrito de España — Antigua Orden Masónica del Cordón Escarlata — 26 septiembre 2026" style="max-height: 480px; width: 100%; object-fit: cover;">
+        <img src="cordon-escarlata-2026.jpg" alt="Ceremonia de Instalación del Gran Summus de Distrito de España — Antigua Orden Masónica del Cordón Escarlata — 26 septiembre 2026" style="max-height: 480px; width: 100%; object-fit: cover;" loading="lazy">
       </div>
     </div>
 
@@ -387,7 +405,7 @@
 
       <!-- VISIBLE 1: ANDALUCÍA -->
       <div class="news-card">
-        <img src="andalucia-apoyo-2026.jpg" alt="Andalucía necesita tu apoyo — Incendios julio 2026" class="news-card-img">
+        <img src="andalucia-apoyo-2026.jpg" alt="Andalucía necesita tu apoyo — Incendios julio 2026" class="news-card-img" loading="lazy">
         <div class="news-meta">
           <span class="news-date">Julio 2026</span>
           <span class="news-tag">Caridad</span>
@@ -400,7 +418,7 @@
 
       <!-- VISIBLE 2: SUPREMO GRAN CAPÍTULO -->
       <div class="news-card">
-        <img src="supremoGCE.jpeg" alt="Ceremonia de instalación del Supremo Gran Capítulo de España — Mayo 2026" class="news-card-img">
+        <img src="supremoGCE.jpeg" alt="Ceremonia de instalación del Supremo Gran Capítulo de España — Mayo 2026" class="news-card-img" loading="lazy">
         <div class="news-meta">
           <span class="news-date">Mayo 2026</span>
           <span class="news-tag">Nacional</span>
@@ -413,7 +431,7 @@
 
       <!-- VISIBLE 3: XVI ASAMBLEA -->
       <div class="news-card">
-        <img src="asamblea1.jpg" alt="XVI Asamblea GLP Murcia" class="news-card-img">
+        <img src="asamblea1.jpg" alt="XVI Asamblea GLP Murcia" class="news-card-img" loading="lazy">
         <div class="news-meta">
           <span class="news-date">Abril 2026</span>
           <span class="news-tag">Provincia</span>
@@ -429,7 +447,7 @@
 
         <!-- ARCHIVADA: FUENSOCIAL -->
         <div class="news-card">
-          <img src="fuensocial.jpeg" alt="Sede de FUENSOCIAL" class="news-card-img">
+          <img src="fuensocial.jpeg" alt="Sede de FUENSOCIAL" class="news-card-img" loading="lazy">
           <div class="news-meta">
             <span class="news-date">Abril 2026</span>
             <span class="news-tag">Caridad</span>
@@ -442,7 +460,7 @@
 
         <!-- ARCHIVADA: AFACMUR -->
         <div class="news-card">
-          <img src="afacmur.jpeg" alt="Entrega donación a AFACMUR" class="news-card-img">
+          <img src="afacmur.jpeg" alt="Entrega donación a AFACMUR" class="news-card-img" loading="lazy">
           <div class="news-meta">
             <span class="news-date">Diciembre 2025</span>
             <span class="news-tag">Caridad</span>
@@ -510,7 +528,7 @@
       <span class="footer-gle-text">Gran Logia<br>de España</span>
     </a>
     <a href="index.html" class="footer-logo">
-      <img src="logo.png" alt="Gran Logia Provincial de Murcia">
+      <img src="logo.png" alt="Gran Logia Provincial de Murcia" loading="lazy">
       <div class="footer-logo-text">Gran Logia Provincial<br>de Murcia</div>
     </a>
   </footer>
@@ -521,6 +539,16 @@
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
 }
+</script>
+
+<button id="btn-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
+<script>
+  (function(){
+    var btn = document.getElementById('btn-top');
+    window.addEventListener('scroll', function(){
+      btn.classList.toggle('visible', window.scrollY > 300);
+    }, {passive: true});
+  })();
 </script>
 </body>
 </html>
