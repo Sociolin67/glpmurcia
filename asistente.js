@@ -32,7 +32,7 @@
                 'Cada logia tiene su ficha con número, rito, idioma y enlaces.'],
             l: ['logias.html', 'Logias'] },
           { p: '¿Qué órdenes masónicas hay en Murcia?',
-            r: ['Bajo el amparo de la Provincia trabajan distintas órdenes, como Maestros Masones de la Marca, Marineros del Arca Real o el Monitor Secreto.',
+            r: ['Bajo los auspicios de la Provincia trabajan distintas órdenes, como Maestros Masones de la Marca, Marineros del Arca Real o el Monitor Secreto.',
                 'Todas están descritas en la página Órdenes, con el «Rincón de los colaterales».'],
             l: ['ordenes.html', 'Órdenes'] },
           { p: '¿Hay materiales para saber más?',
