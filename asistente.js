@@ -41,8 +41,7 @@
         ]},
         { g: 'Dar un paso', q: [
           { p: '¿Cómo puedo ingresar?',
-            r: ['Escríbanos por el formulario de contacto eligiendo el asunto «Interés en ingresar».',
-                'Respondemos a todas las consultas en un plazo de 48 horas.'],
+            r: ['Escríbanos por el formulario de contacto eligiendo el asunto «Interés en ingresar».'],
             l: ['contacto.html', 'Contáctenos'] },
           { p: 'Soy hermano: ¿cómo visito una logia?',
             r: ['Contacte en primera instancia con el Secretario de la logia, o use el formulario de contacto con el asunto «Visita como hermano».'],
@@ -94,8 +93,7 @@
         ]},
         { g: 'Taking a step', q: [
           { p: 'How can I join?',
-            r: ['Write to us through the contact form, choosing the subject “Interest in joining”.',
-                'We respond to all enquiries within 48 hours.'],
+            r: ['Write to us through the contact form, choosing the subject “Interest in joining”.'],
             l: ['contacto-en.html', 'Contact Us'] },
           { p: 'I am a Brother: how do I visit a lodge?',
             r: ['Please contact the lodge Secretary in the first instance, or use the contact form with the subject “Visit as a Brother”.'],
@@ -152,6 +150,9 @@
     '#glpa-panel .glpa-pie{border-top:1px solid #E2D8C4;padding:.6rem 1rem;display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-size:.74rem;color:#4A5868}',
     '#glpa-panel .glpa-volver{white-space:nowrap;flex:none;background:none;border:0;margin:0;padding:.2rem 0;font-family:inherit;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8A6126;cursor:pointer}',
     '#glpa-panel .glpa-volver[hidden]{display:none!important}',
+    '#btn-top{bottom:calc(88px + env(safe-area-inset-bottom,0px))!important;right:24px!important}',
+    'body.glpa-abierto #btn-top{display:none!important}',
+    '@media (max-width:760px){#btn-top{right:20px!important}}',
     '#glpa-boton:focus-visible,#glpa-panel button:focus-visible,#glpa-panel a:focus-visible{outline:2px solid #C9A84C;outline-offset:3px}',
     '@media (prefers-reduced-motion:no-preference){#glpa-panel:not([hidden]){animation:glpa-sube .22s ease-out}@keyframes glpa-sube{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}}',
     '@media (max-width:760px){#glpa-panel{right:16px;left:16px;width:auto;max-width:none}#glpa-boton{right:16px}}'
@@ -253,6 +254,7 @@
       panel.hidden = !si;
       boton.setAttribute('aria-expanded', si ? 'true' : 'false');
       btxt.textContent = si ? t.cerrar : t.boton;
+      document.body.classList.toggle('glpa-abierto', si);
       if (si) { menu(); var p = cuerpo.querySelector('.glpa-op'); if (p) p.focus(); }
     }
 
