@@ -34,7 +34,10 @@
           { p: '¿Qué órdenes masónicas hay en Murcia?',
             r: ['Bajo el amparo de la Provincia trabajan distintas órdenes, como Maestros Masones de la Marca, Marineros del Arca Real o el Monitor Secreto.',
                 'Todas están descritas en la página Órdenes, con el «Rincón de los colaterales».'],
-            l: ['ordenes.html', 'Órdenes'] }
+            l: ['ordenes.html', 'Órdenes'] },
+          { p: '¿Hay materiales para saber más?',
+            r: ['Documentos, publicaciones y enlaces de interés sobre la masonería.'],
+            l: ['recursos.html', 'Recursos'] }
         ]},
         { g: 'Dar un paso', q: [
           { p: '¿Cómo puedo ingresar?',
@@ -49,6 +52,9 @@
             l: ['caridad.html', 'Caridad'] }
         ]},
         { g: 'Usar la web', q: [
+          { p: '¿Cómo puedo conocer las noticias importantes?',
+            r: ['La actualidad de la Provincia, con la noticia más reciente siempre destacada.'],
+            l: ['noticias.html', 'Noticias'] },
           { p: '¿Dónde leo las crónicas de las logias?',
             r: ['En «Vida de las Logias», dentro de la página Logias. Están ordenadas de la más reciente a la más antigua, y el botón «Ver cursos anteriores» abre el archivo.'],
             l: ['logias.html#vida-logias', 'Vida de las Logias'] },
@@ -81,7 +87,10 @@
           { p: 'Which Masonic Orders work in Murcia?',
             r: ['Several Orders work under the auspices of the Province, such as the Mark Master Masons, the Royal Ark Mariners and the Secret Monitor.',
                 'They are all described on the Orders page, including the “Collateral Orders Corner”.'],
-            l: ['ordenes-en.html', 'Orders'] }
+            l: ['ordenes-en.html', 'Orders'] },
+          { p: 'Is there material to learn more?',
+            r: ['Documents, publications and useful links about Freemasonry.'],
+            l: ['recursos-en.html', 'Resources'] }
         ]},
         { g: 'Taking a step', q: [
           { p: 'How can I join?',
@@ -96,6 +105,9 @@
             l: ['caridad-en.html', 'Charity'] }
         ]},
         { g: 'Using the site', q: [
+          { p: 'How can I keep up with the main news?',
+            r: ['The latest from the Province, with the most recent item always first.'],
+            l: ['noticias-en.html', 'News'] },
           { p: 'Where can I read the lodge chronicles?',
             r: ['In “Lodge Life”, on the Lodges page. They run from the most recent to the oldest, and the “Previous years” button opens the archive.'],
             l: ['logias-en.html#lodge-life', 'Lodge Life'] },
