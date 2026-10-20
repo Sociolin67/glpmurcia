@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://glpmurcia.com/cookies-en.html">
+<link rel="alternate" hreflang="es" href="https://glpmurcia.com/cookies.html">
+<link rel="alternate" hreflang="en" href="https://glpmurcia.com/cookies-en.html">
+<link rel="alternate" hreflang="x-default" href="https://glpmurcia.com/cookies.html">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0D1B2A">
+<link rel="apple-touch-icon" href="icon-192x192.png">
+<meta name="description" content="Information about the use of cookies on glpmurcia.com.">
+<title>Cookie policy | Provincial Grand Lodge of Murcia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --oro: #C9A84C;
+    --oro-claro: #E8D5A3;
+    --azul-noche: #0D1B2A;
+    --azul-medio: #1A2F45;
+    --blanco: #F5F0E8;
+    --gris-suave: #B8B0A0;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Lato', sans-serif; background: #F7F3EC; color: #1C2B3A; overflow-x: hidden; min-height: 100vh; }
+
+  .bg-pattern {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,168,76,0.04) 0%, transparent 70%), #F7F3EC;
+  }
+  .bg-pattern::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(201,168,76,0.04) 59px, rgba(201,168,76,0.04) 60px);
+  }
+
+  .page { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+  /* ── NAV ── */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 3rem;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    backdrop-filter: blur(10px);
+    background: rgba(13,27,42,0.95);
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 1rem; text-decoration: none; }
+  .nav-emblem { width: 44px; height: 44px; flex-shrink: 0; }
+  .nav-emblem svg { width: 100%; height: 100%; }
+  .nav-title { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); line-height: 1.5; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.76rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: #C8D0D8; transition: color 0.3s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--oro); }
+  .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
+  .nav-cta:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── CABECERA ── */
+  .page-header {
+    padding: 5rem 3rem 3.5rem; text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    animation: fadeUp 1s ease both;
+  }
+  .ornament { display: flex; align-items: center; gap: 1.2rem; justify-content: center; margin-bottom: 1.8rem; }
+  .ornament-line { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, var(--oro)); }
+  .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
+  .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
+  .page-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1rem; }
+  .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.6rem); font-weight: 300; color: #1C2B3A; margin-bottom: 1rem; }
+  .page-title em { font-style: italic; color: var(--oro-claro); }
+  .page-desc { font-size: 0.95rem; font-weight: 300; line-height: 1.95; color: #2E3D4F; max-width: 560px; margin: 0 auto; letter-spacing: 0.02em; }
+
+  /* ── CIFRAS ── */
+  .stats-bar {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    animation: fadeUp 0.8s ease 0.15s both;
+  }
+  .stat-item {
+    padding: 2.2rem 2rem; text-align: center;
+    border-right: 1px solid rgba(201,168,76,0.12);
+  }
+  .stat-item:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif; font-size: 2.8rem;
+    font-weight: 300; color: var(--oro); line-height: 1; margin-bottom: 0.4rem;
+  }
+  .stat-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.18em; color: #2E3D4F; text-transform: uppercase; }
+
+  /* ── CONTENIDO ── */
+  .content { max-width: 920px; margin: 0 auto; padding: 5rem 3rem; width: 100%; }
+
+  /* ── INTRO ── */
+  .intro-block {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    margin-bottom: 5rem; animation: fadeUp 0.9s ease 0.2s both;
+  }
+  .intro-title {
+    font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 300; color: #1C2B3A; line-height: 1.2; margin-bottom: 1.4rem;
+  }
+  .intro-title em { font-style: italic; color: var(--oro); }
+  .intro-body { font-size: 0.93rem; font-weight: 300; line-height: 2; color: #2E3D4F; }
+  .intro-body p + p { margin-top: 0.9rem; }
+  .intro-body strong { color: #1C2B3A; font-weight: 600; }
+
+  .intro-quote {
+    border: 1px solid rgba(201,168,76,0.3);
+    background: #FFFFFF;
+    padding: 2rem 1.8rem; align-self: start;
+  }
+  .intro-quote-text {
+    font-family: 'Cormorant Garamond', serif; font-size: 1.3rem;
+    font-style: italic; font-weight: 400; color: #1C2B3A; line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  .intro-quote-attr { font-size: 0.72rem; font-weight: 400; color: #4A5C6A; letter-spacing: 0.08em; }
+  .intro-quote-divider { height: 1px; background: rgba(201,168,76,0.3); margin: 1rem 0; }
+  .intro-quote-context { font-size: 0.85rem; font-weight: 300; color: #2E3D4F; line-height: 1.7; }
+
+  /* ── SECCIÓN HEADER ── */
+  .section-header { display: flex; align-items: center; gap: 1.4rem; margin-bottom: 2.5rem; }
+  .section-line { flex: 1; height: 1px; background: rgba(201,168,76,0.2); }
+  .section-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; color: var(--oro); text-transform: uppercase; white-space: nowrap; }
+
+  /* ── ACCIONES ── */
+  .actions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-bottom: 5rem; }
+
+  .action-card {
+    border: 1px solid rgba(201,168,76,0.25);
+    background: #FFFFFF;
+    padding: 2rem 1.8rem;
+    position: relative; overflow: hidden;
+    transition: border-color 0.3s, background 0.3s;
+    animation: fadeUp 0.8s ease both;
+  }
+  .action-card:nth-child(2) { animation-delay: 0.1s; }
+  .action-card:nth-child(3) { animation-delay: 0.2s; }
+  .action-card:nth-child(4) { animation-delay: 0.3s; }
+  .action-card::before {
+    content: ''; position: absolute; top: 0; left: 0;
+    width: 100%; height: 2px; background: var(--oro);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  .action-card:hover { border-color: rgba(201,168,76,0.5); background: #FDF9F2; }
+  .action-card:hover::before { transform: scaleX(1); }
+
+  .action-icon { font-size: 1.4rem; margin-bottom: 1rem; opacity: 0.7; }
+  .action-title { font-family: 'Cinzel', serif; font-size: 0.78rem; letter-spacing: 0.12em; color: #1C2B3A; text-transform: uppercase; margin-bottom: 0.8rem; }
+  .action-body { font-size: 0.89rem; font-weight: 300; color: #2E3D4F; line-height: 1.8; }
+  .action-body strong { color: #1C2B3A; font-weight: 600; }
+
+  /* ── CRONOLOGÍA ── */
+  .timeline { position: relative; margin-bottom: 5rem; }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px; background: rgba(201,168,76,0.2);
+  }
+  .timeline-item {
+    padding-left: 2.5rem; padding-bottom: 2.5rem; position: relative;
+    animation: fadeUp 0.8s ease both;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-item:nth-child(2) { animation-delay: 0.1s; }
+  .timeline-item:nth-child(3) { animation-delay: 0.2s; }
+  .timeline-dot {
+    position: absolute; left: -5px; top: 4px;
+    width: 11px; height: 11px; background: var(--oro);
+    transform: rotate(45deg);
+  }
+  .timeline-date { font-family: 'Cinzel', serif; font-size: 0.67rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; margin-bottom: 0.5rem; }
+  .timeline-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: #1C2B3A; margin-bottom: 0.6rem; }
+  .timeline-body { font-size: 0.90rem; font-weight: 300; color: #2E3D4F; line-height: 1.85; }
+  .timeline-body strong { color: #1C2B3A; font-weight: 600; }
+
+  /* ── CTA ── */
+  .cta-block {
+    border: 1px solid rgba(201,168,76,0.3);
+    background: #FFFFFF;
+    padding: 3rem 2.5rem; text-align: center;
+    animation: fadeUp 0.8s ease 0.3s both;
+  }
+  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: #1C2B3A; margin-bottom: 0.8rem; }
+  .cta-title em { font-style: italic; color: var(--oro); }
+  .cta-text { font-size: 0.92rem; font-weight: 300; color: #2E3D4F; line-height: 1.8; max-width: 480px; margin: 0 auto 1.8rem; }
+  .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-primary {
+    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em;
+    padding: 0.9rem 2.2rem; background: var(--oro); color: var(--azul-noche);
+    text-decoration: none; text-transform: uppercase; transition: all 0.3s; font-weight: 600;
+  }
+  .btn-primary:hover { background: var(--oro-claro); transform: translateY(-2px); }
+  .btn-secondary {
+    font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.14em;
+    padding: 0.9rem 2.2rem; border: 1px solid rgba(201,168,76,0.5); color: #1C2B3A;
+    text-decoration: none; text-transform: uppercase; transition: all 0.3s;
+  }
+  .btn-secondary:hover { border-color: var(--oro); color: var(--oro); }
+
+  /* ── FOOTER ── */
+  footer { margin-top: auto; padding: 1.4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); background: rgba(13,27,42,0.85); display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-gle { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.8; }
+  .footer-gle:hover { opacity: 1; }
+  .footer-gle-symbol { font-family: "Cinzel", serif; font-size: 1.1rem; color: var(--oro); opacity: 0.7; }
+  .footer-gle-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.14em; color: var(--oro); text-transform: uppercase; line-height: 1.5; }
+  .footer-logo { display: flex; align-items: center; gap: 0.8rem; text-decoration: none; transition: opacity 0.3s; opacity: 0.85; }
+  .footer-logo:hover { opacity: 1; }
+  .footer-logo img { height: 38px; width: auto; filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5)); }
+  .footer-logo-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
+  .nav-hamburger { flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; display: none; }
+  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); }
+  .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #B8B0A0; padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.08); transition: color 0.3s; }
+  .nav-mobile a:last-child { border-bottom: none; }
+  .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
+  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; }
+  /* ── SELECTOR DE IDIOMA ── */
+  .nav-right { display: flex; align-items: center; gap: 1rem; }
+  .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
+  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
+  .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+  .lang-switcher a:not(.active):hover { color: var(--oro); }
+  .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
+  .nav-mobile .lang-switcher-mobile a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.7rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; border-bottom: none; }
+  .nav-mobile .lang-switcher-mobile a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
+
+  /* ── SHOW MORE ── */
+  .timeline-btn { display: block; margin: 1.5rem auto 0; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.5rem 1.4rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
+  .timeline-btn:hover { background: var(--oro); color: var(--azul-noche); }
+
+  /* ── SCROLL MARGIN (compensar nav sticky) ── */
+  [id] { scroll-margin-top: 80px; }
+  /* ── BOTÓN VOLVER ARRIBA ── */
+  #btn-top {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--azul-noche, #0D1B2A);
+    border: 1px solid rgba(201,168,76,0.5);
+    color: #C9A84C; font-size: 1.3rem; line-height: 1;
+    cursor: pointer; opacity: 0; visibility: hidden;
+    transition: opacity 0.35s, visibility 0.35s, background 0.25s;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  }
+  #btn-top.visible { opacity: 1; visibility: visible; }
+  #btn-top:hover { background: rgba(201,168,76,0.15); }
+  /* ── LOGO NAV (antes inline) ── */
+  .nav-logo img.nav-logo-img { height:48px; width:auto; filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4)); }
+  /* ── BARRA LEGAL ── */
+  .legal-bar { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 0.8rem; padding: 0.7rem 1.4rem 0.9rem; background: rgba(13,27,42,0.92); font-family: 'Lato', sans-serif; font-size: 0.72rem; letter-spacing: 0.04em; color: #B8B0A0; }
+  .legal-bar a { color: #B8B0A0; text-decoration: none; }
+  .legal-bar a:hover { color: #C9A84C; }
+
+  /* ── PÁGINAS LEGALES ── */
+  .legal-text h2 { font-family: 'Cinzel', serif; font-size: 1.05rem; letter-spacing: 0.06em; color: #1C2B3A; margin: 2.4rem 0 0.9rem; }
+  .legal-text h2:first-child { margin-top: 0; }
+  .legal-text p { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; line-height: 1.75; margin-bottom: 0.9rem; }
+  .legal-text a { color: #9A6F2E; }
+  .legal-text mark.pendiente { background: #FFE9A8; color: #7A4B00; padding: 0 0.3em; font-family: 'Lato', sans-serif; font-size: 0.85em; }
+  .legal-updated { margin-top: 2.6rem; font-size: 0.8rem; color: #8A8270; font-family: 'Lato', sans-serif; }
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.4rem; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta { display: none; }
+    .nav-right { display: none; }
+    .lang-switcher { display: none; }
+    .page-header { padding: 3.5rem 1.4rem 2.5rem; }
+    .stats-bar { grid-template-columns: 1fr; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.12); }
+    .stat-item:last-child { border-bottom: none; }
+    .content { padding: 3rem 1.4rem; }
+    .intro-block { grid-template-columns: 1fr; gap: 2rem; }
+    .actions-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.4rem; flex-direction: column; text-align: center; }
+  }
+</style>
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Provincial Grand Lodge of Murcia">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:url" content="https://glpmurcia.com/cookies-en.html">
+<meta property="og:title" content="Cookie policy | Provincial Grand Lodge of Murcia">
+<meta property="og:description" content="Information about the use of cookies on glpmurcia.com.">
+<meta property="og:image" content="https://glpmurcia.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cookie policy | Provincial Grand Lodge of Murcia">
+<meta name="twitter:description" content="Information about the use of cookies on glpmurcia.com.">
+<meta name="twitter:image" content="https://glpmurcia.com/og-image.png">
+</head>
+<body>
+
+<div class="bg-pattern"></div>
+
+<div class="page">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index-en.html" class="nav-logo">
+      <img src="logo.png" alt="Provincial Grand Lodge of Murcia" class="nav-logo-img">
+      <div class="nav-title">Provincial Grand Lodge<br>of Murcia</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index-en.html">Home</a></li>
+      <li><a href="noticias-en.html">News</a></li>
+      <li><a href="logias-en.html">Lodges</a></li>
+      <li><a href="ordenes-en.html">Orders</a></li>
+      <li><a href="masoneria-en.html">About Freemasonry</a></li>
+      <li><a href="caridad-en.html">Charity</a></li>
+      <li><a href="recursos-en.html">Resources</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="contacto-en.html" class="nav-cta">Contact Us</a>
+      <div class="lang-switcher">
+        <a href="cookies.html">ES</a>
+        <a href="cookies-en.html" class="active">EN</a>
+      </div>
+    </div>
+    <button class="nav-hamburger" onclick="document.getElementById('navMobile').classList.toggle('open')" aria-label="Menú"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index-en.html">Home</a>
+    <a href="noticias-en.html">News</a>
+    <a href="logias-en.html">Lodges</a>
+    <a href="ordenes-en.html">Orders</a>
+    <a href="masoneria-en.html">About Freemasonry</a>
+    <a href="caridad-en.html">Charity</a>
+    <a href="recursos-en.html">Resources</a>
+    <a href="contacto-en.html" class="nav-cta-mobile">Contact Us</a>
+    <div class="lang-switcher-mobile">
+      <a href="cookies.html">ES</a>
+      <a href="cookies-en.html" class="active">EN</a>
+    </div>
+  </div>
+
+  <!-- CABECERA -->
+  <header class="page-header">
+    <div class="ornament">
+      <span class="ornament-line"></span>
+      <span class="ornament-symbol">✦</span>
+      <span class="ornament-line r"></span>
+    </div>
+    <p class="page-eyebrow">Provincial Grand Lodge of Murcia</p>
+    <h1 class="page-title">Cookie <em>policy</em></h1>
+  </header>
+
+  <div class="content legal-text">
+    <h2>Does this site use cookies?</h2>
+    <p>No. glpmurcia.com sets no first-party or third-party cookies for advertising or tracking purposes, which is why no consent banner is shown.</p>
+    <h2>Cookieless statistics</h2>
+    <p>Visits are measured with GoatCounter, which works without cookies and without identifying users.</p>
+    <h2>Installable app</h2>
+    <p>If you install the website as an app on your phone, the browser keeps a local copy of some pages so they work offline. It contains no personal data and can be cleared from your browser settings.</p>
+    <h2>Social media links</h2>
+    <p>Links to Facebook, X or Telegram are plain links: no content from those platforms is loaded until you click them. From then on, their own cookie policies apply.</p>
+    <p class="legal-updated">Last updated: October 2026</p>
+  </div>
+
+  <footer>
+    <a href="https://www.gle.org" target="_blank" rel="noopener" class="footer-gle">
+      <span class="footer-gle-symbol">∴</span>
+      <span class="footer-gle-text">Grand Lodge<br>of Spain</span>
+    </a>
+    <a href="index-en.html" class="footer-logo">
+      <img src="logo.png" alt="Provincial Grand Lodge of Murcia" loading="lazy">
+      <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
+    </a>
+  </footer>
+  <div class="legal-bar"><a href="aviso-legal-en.html">Legal notice</a><span>·</span><a href="privacidad-en.html">Privacy</a><span>·</span><a href="cookies-en.html">Cookies</a><span>·</span><span>© <span class="legal-year">2026</span> Provincial Grand Lodge of Murcia</span></div>
+
+</div>
+ <script data-goatcounter="https://glpmurcia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+<button id="btn-top" aria-label="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
+<script>
+  (function(){
+    var btn = document.getElementById('btn-top');
+    window.addEventListener('scroll', function(){
+      btn.classList.toggle('visible', window.scrollY > 300);
+    }, {passive: true});
+  })();
+</script>
+<script src="asistente.js" defer></script>
+<script>try{document.querySelectorAll(".legal-year").forEach(function(e){e.textContent=new Date().getFullYear();});}catch(e){}</script>
+</body>
+</html>

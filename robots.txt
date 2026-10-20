@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /portal-formacion-glp.html
+
+Sitemap: https://glpmurcia.com/sitemap.xml
