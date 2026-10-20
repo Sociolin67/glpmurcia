@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://glpmurcia.com/">
+<link rel="alternate" hreflang="es" href="https://glpmurcia.com/">
+<link rel="alternate" hreflang="en" href="https://glpmurcia.com/index-en.html">
+<link rel="alternate" hreflang="x-default" href="https://glpmurcia.com/">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
 <!-- PWA -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0D1B2A">
@@ -154,32 +159,6 @@
   .welcome-text { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; line-height: 1.75; color: #1C2B3A; }
   .welcome-text p + p { margin-top: 0.8rem; }
   .welcome-text strong { font-weight: 600; }
-
-  @media (max-width: 768px) {
-    nav { padding: 0.9rem 1.4rem; }
-    .nav-title { display: none; }
-    .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-    .nav-cta { display: none; }
-    .nav-right { display: none; }
-    .lang-switcher { display: none; }
-    .nav-logo img { height: 44px; }
-    .hero { padding: 4rem 1.4rem 3rem; }
-    .hero-logo img { height: 85px; }
-    .pillars { padding: 3rem 1.4rem; }
-    .pillar { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); padding: 1.5rem 1rem; }
-    .pillar:last-child { border-bottom: none; }
-    .pages-strip { padding: 2.5rem 1.4rem; }
-    .lodges-strip { padding: 2rem 1.4rem; }
-    footer { padding: 1.2rem 1.4rem; }
-    .footer-inner { flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
-    .footer-logo-text { text-align: center; }
-    .welcome-section { padding: 2rem 1.4rem 1.8rem; }
-    .welcome-inner { flex-direction: column; align-items: center; gap: 1.4rem; }
-    .welcome-photo { width: 180px; }
-    .welcome-text { font-size: 1.05rem; }
-  }
-
   /* ACCESO SECRETO */
   #modal-secreto {
     display: none;
@@ -242,12 +221,42 @@
   }
   #modal-secreto .modal-close:hover { color: #f5f0e8; }
   #logo-secreto { cursor: default; user-select: none; }
+  /* ── BARRA LEGAL ── */
+  .legal-bar { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 0.8rem; padding: 0.7rem 1.4rem 0.9rem; background: rgba(13,27,42,0.92); font-family: 'Lato', sans-serif; font-size: 0.72rem; letter-spacing: 0.04em; color: #B8B0A0; }
+  .legal-bar a { color: #B8B0A0; text-decoration: none; }
+  .legal-bar a:hover { color: #C9A84C; }
 
+  @media (max-width: 768px) {
+    nav { padding: 0.9rem 1.4rem; }
+    .nav-title { display: none; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta { display: none; }
+    .nav-right { display: none; }
+    .lang-switcher { display: none; }
+    .nav-logo img { height: 44px; }
+    .hero { padding: 4rem 1.4rem 3rem; }
+    .hero-logo img { height: 85px; }
+    .pillars { padding: 3rem 1.4rem; }
+    .pillar { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); padding: 1.5rem 1rem; }
+    .pillar:last-child { border-bottom: none; }
+    .pages-strip { padding: 2.5rem 1.4rem; }
+    .lodges-strip { padding: 2rem 1.4rem; }
+    footer { padding: 1.2rem 1.4rem; }
+    .footer-inner { flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+    .footer-logo-text { text-align: center; }
+    .welcome-section { padding: 2rem 1.4rem 1.8rem; }
+    .welcome-inner { flex-direction: column; align-items: center; gap: 1.4rem; }
+    .welcome-photo { width: 180px; }
+    .welcome-text { font-size: 1.05rem; }
+  }
 </style>
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gran Logia Provincial de Murcia">
-<meta property="og:url" content="https://glpmurcia.com/index.html">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
+<meta property="og:url" content="https://glpmurcia.com/">
 <meta property="og:title" content="Gran Logia Provincial de Murcia">
 <meta property="og:description" content="Sitio oficial de la Gran Logia Provincial de Murcia. Masonería regular, fraternidad y compromiso social en la Región de Murcia.">
 <meta property="og:image" content="https://glpmurcia.com/og-image.png">
@@ -257,6 +266,7 @@
 <meta name="twitter:title" content="Gran Logia Provincial de Murcia">
 <meta name="twitter:description" content="Sitio oficial de la Gran Logia Provincial de Murcia. Masonería regular, fraternidad y compromiso social en la Región de Murcia.">
 <meta name="twitter:image" content="https://glpmurcia.com/og-image.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Gran Logia Provincial de Murcia", "alternateName": "GLP Murcia", "url": "https://glpmurcia.com/", "logo": "https://glpmurcia.com/logo.png", "email": "provgsecmurcia@gmail.com", "areaServed": "Región de Murcia", "parentOrganization": {"@type": "Organization", "name": "Gran Logia de España", "url": "https://www.gle.org"}}</script>
 </head>
 <body>
 
@@ -325,7 +335,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-logo">
-        <img src="logo.png?v=3" alt="Escudo Gran Logia Provincial de Murcia" id="logo-secreto">
+        <img src="logo.png?v=3" alt="Escudo Gran Logia Provincial de Murcia" id="logo-secreto" loading="lazy" decoding="async">
       </div>
       <div class="ornament">
         <span class="ornament-line"></span>
@@ -335,7 +345,7 @@
       <p class="hero-eyebrow">Consagrada el 5 de diciembre de 2009 &middot; Región de Murcia</p>
       <h1 class="hero-title">Masonería en<br><em>Murcia</em></h1>
       <p class="hero-subtitle">Tradición, Fraternidad y Servicio</p>
-      <p class="hero-desc">La Gran Logia Provincial de Murcia, perteneciente a la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a>, agrupa siete Logias Regulares comprometidas con los valores de la fraternidad universal, el progreso moral y el servicio a la comunidad.</p>
+      <p class="hero-desc">La Gran Logia Provincial de Murcia, perteneciente a la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a>, agrupa ocho Logias Regulares comprometidas con los valores de la fraternidad universal, el progreso moral y el servicio a la comunidad.</p>
       <div class="hero-actions">
         <a href="masoneria.html" class="btn-primary">Conviértete en masón</a>
         <a href="logias.html" class="btn-secondary">Conocer las logias</a>
@@ -449,7 +459,7 @@
       <a href="logias.html" class="page-card">
         <span class="page-card-icon">⬡</span>
         <span class="page-card-label">Logias</span>
-        <span class="page-card-desc">Las siete logias regulares de la provincia de Murcia.</span>
+        <span class="page-card-desc">Las ocho logias regulares de la provincia de Murcia.</span>
       </a>
       <a href="masoneria.html" class="page-card">
         <span class="page-card-icon">✦</span>
@@ -519,7 +529,7 @@
       <span class="footer-gle-text">Gran Logia<br>de España</span>
     </a>
     <a href="index.html" class="footer-logo">
-      <img src="logo.png?v=3" alt="Gran Logia Provincial de Murcia">
+      <img src="logo.png?v=3" alt="Gran Logia Provincial de Murcia" loading="lazy" decoding="async">
       <div class="footer-logo-text">Gran Logia Provincial<br>de Murcia</div>
     </a>
     <a href="https://glpmurcia-members.bizz.es" target="_blank" rel="noopener" class="footer-gle">
@@ -527,6 +537,7 @@
       <span class="footer-gle-text">Acceso a<br>Miembros</span>
     </a>
   </footer>
+  <div class="legal-bar"><a href="aviso-legal.html">Aviso legal</a><span>·</span><a href="privacidad.html">Privacidad</a><span>·</span><a href="cookies.html">Cookies</a><span>·</span><span>© <span class="legal-year">2026</span> Gran Logia Provincial de Murcia</span></div>
 
 </div>
 
@@ -549,7 +560,7 @@
     var err=document.getElementById('modal-error');
     var closeBtn=document.getElementById('modal-close');
     var PASS='AICRUM26';
-    var URL='https://sociolin67.github.io/glpmurcia/portal-formacion-glp.html';
+    var URL='portal-formacion-glp.html';
 
     logo.addEventListener('click',function(){
       clicks++;
@@ -595,5 +606,6 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 <script src="asistente.js" defer></script>
+<script>try{document.querySelectorAll(".legal-year").forEach(function(e){e.textContent=new Date().getFullYear();});}catch(e){}</script>
 </body>
 </html>

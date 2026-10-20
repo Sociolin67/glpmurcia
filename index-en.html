@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://glpmurcia.com/index-en.html">
+<link rel="alternate" hreflang="es" href="https://glpmurcia.com/">
+<link rel="alternate" hreflang="en" href="https://glpmurcia.com/index-en.html">
+<link rel="alternate" hreflang="x-default" href="https://glpmurcia.com/">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
 <!-- PWA -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0D1B2A">
@@ -155,31 +160,6 @@
   .welcome-text { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; line-height: 1.75; color: #1C2B3A; }
   .welcome-text p + p { margin-top: 0.8rem; }
   .welcome-text strong { font-weight: 600; }
-
-  @media (max-width: 768px) {
-    nav { padding: 0.9rem 1.4rem; }
-    .nav-title { display: none; }
-    .nav-links { display: none; }
-    .nav-hamburger { display: flex; }
-    .nav-cta { display: none; }
-    .nav-right { display: none; }
-    .lang-switcher { display: none; }
-    .nav-logo img { height: 44px; }
-    .hero { padding: 4rem 1.4rem 3rem; }
-    .hero-logo img { height: 85px; }
-    .pillars { padding: 3rem 1.4rem; }
-    .pillar { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); padding: 1.5rem 1rem; }
-    .pillar:last-child { border-bottom: none; }
-    .pages-strip { padding: 2.5rem 1.4rem; }
-    .lodges-strip { padding: 2rem 1.4rem; }
-    footer { padding: 1.8rem 1.4rem; }
-    .footer-top { flex-direction: column; align-items: flex-start; }
-    .welcome-section { padding: 2rem 1.4rem 1.8rem; }
-    .welcome-inner { flex-direction: column; align-items: center; gap: 1.4rem; }
-    .welcome-photo { width: 180px; }
-    .welcome-text { font-size: 1.05rem; }
-  }
-
   /* ACCESO SECRETO */
   #modal-secreto {
     display: none;
@@ -242,11 +222,40 @@
   }
   #modal-secreto .modal-close:hover { color: #f5f0e8; }
   #logo-secreto { cursor: default; user-select: none; }
+  /* ── BARRA LEGAL ── */
+  .legal-bar { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 0.8rem; padding: 0.7rem 1.4rem 0.9rem; background: rgba(13,27,42,0.92); font-family: 'Lato', sans-serif; font-size: 0.72rem; letter-spacing: 0.04em; color: #B8B0A0; }
+  .legal-bar a { color: #B8B0A0; text-decoration: none; }
+  .legal-bar a:hover { color: #C9A84C; }
 
+  @media (max-width: 768px) {
+    nav { padding: 0.9rem 1.4rem; }
+    .nav-title { display: none; }
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta { display: none; }
+    .nav-right { display: none; }
+    .lang-switcher { display: none; }
+    .nav-logo img { height: 44px; }
+    .hero { padding: 4rem 1.4rem 3rem; }
+    .hero-logo img { height: 85px; }
+    .pillars { padding: 3rem 1.4rem; }
+    .pillar { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.15); padding: 1.5rem 1rem; }
+    .pillar:last-child { border-bottom: none; }
+    .pages-strip { padding: 2.5rem 1.4rem; }
+    .lodges-strip { padding: 2rem 1.4rem; }
+    footer { padding: 1.8rem 1.4rem; }
+    .footer-top { flex-direction: column; align-items: flex-start; }
+    .welcome-section { padding: 2rem 1.4rem 1.8rem; }
+    .welcome-inner { flex-direction: column; align-items: center; gap: 1.4rem; }
+    .welcome-photo { width: 180px; }
+    .welcome-text { font-size: 1.05rem; }
+  }
 </style>
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Gran Logia Provincial de Murcia">
+<meta property="og:site_name" content="Provincial Grand Lodge of Murcia">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="es_ES">
 <meta property="og:url" content="https://glpmurcia.com/index-en.html">
 <meta property="og:title" content="Provincial Grand Lodge of Murcia">
 <meta property="og:description" content="Official site of the Provincial Grand Lodge of Murcia. Regular Freemasonry, fraternity and social commitment in the Region of Murcia.">
@@ -257,6 +266,7 @@
 <meta name="twitter:title" content="Provincial Grand Lodge of Murcia">
 <meta name="twitter:description" content="Official site of the Provincial Grand Lodge of Murcia. Regular Freemasonry, fraternity and social commitment in the Region of Murcia.">
 <meta name="twitter:image" content="https://glpmurcia.com/og-image.png">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "Provincial Grand Lodge of Murcia", "alternateName": "PGL Murcia", "url": "https://glpmurcia.com/index-en.html", "logo": "https://glpmurcia.com/logo.png", "email": "provgsecmurcia@gmail.com", "areaServed": "Región de Murcia", "parentOrganization": {"@type": "Organization", "name": "Gran Logia de España", "url": "https://www.gle.org"}}</script>
 </head>
 <body>
 
@@ -325,7 +335,7 @@
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-logo">
-        <img src="logo.png?v=3" alt="Coat of Arms — Provincial Grand Lodge of Murcia" id="logo-secreto">
+        <img src="logo.png?v=3" alt="Coat of Arms — Provincial Grand Lodge of Murcia" id="logo-secreto" loading="lazy" decoding="async">
       </div>
       <div class="ornament">
         <span class="ornament-line"></span>
@@ -335,7 +345,7 @@
       <p class="hero-eyebrow">Consecrated on 5 December 2009 &middot; Region of Murcia</p>
       <h1 class="hero-title">Freemasonry in<br><em>Murcia</em></h1>
       <p class="hero-subtitle">Tradition, Fraternity and Service</p>
-      <p class="hero-desc">The Provincial Grand Lodge of Murcia, belonging to the <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Grand Lodge of Spain</a>, brings together seven Regular Lodges committed to the values of universal fraternity, moral progress and service to the community.</p>
+      <p class="hero-desc">The Provincial Grand Lodge of Murcia, belonging to the <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Grand Lodge of Spain</a>, brings together eight Regular Lodges committed to the values of universal fraternity, moral progress and service to the community.</p>
       <div class="hero-actions">
         <a href="masoneria-en.html" class="btn-primary">Become a Freemason</a>
         <a href="logias-en.html" class="btn-secondary">Meet the Lodges</a>
@@ -449,7 +459,7 @@
       <a href="logias-en.html" class="page-card">
         <span class="page-card-icon">⬡</span>
         <span class="page-card-label">Lodges</span>
-        <span class="page-card-desc">The seven regular lodges of the Province of Murcia.</span>
+        <span class="page-card-desc">The eight regular lodges of the Province of Murcia.</span>
       </a>
       <a href="masoneria-en.html" class="page-card">
         <span class="page-card-icon">✦</span>
@@ -519,7 +529,7 @@
       <span class="footer-gle-text">Grand Lodge<br>of Spain</span>
     </a>
     <a href="index-en.html" class="footer-logo">
-      <img src="logo.png?v=3" alt="Provincial Grand Lodge of Murcia">
+      <img src="logo.png?v=3" alt="Provincial Grand Lodge of Murcia" loading="lazy" decoding="async">
       <div class="footer-logo-text">Provincial Grand Lodge<br>of Murcia</div>
     </a>
     <a href="https://glpmurcia-members.bizz.es" target="_blank" rel="noopener" class="footer-gle">
@@ -527,6 +537,7 @@
       <span class="footer-gle-text">Members<br>Access</span>
     </a>
   </footer>
+  <div class="legal-bar"><a href="aviso-legal-en.html">Legal notice</a><span>·</span><a href="privacidad-en.html">Privacy</a><span>·</span><a href="cookies-en.html">Cookies</a><span>·</span><span>© <span class="legal-year">2026</span> Provincial Grand Lodge of Murcia</span></div>
 
 </div>
 
@@ -550,7 +561,7 @@
     var err=document.getElementById('modal-error');
     var closeBtn=document.getElementById('modal-close');
     var PASS='AICRUM26';
-    var URL='https://sociolin67.github.io/glpmurcia/portal-formacion-glp.html';
+    var URL='portal-formacion-glp.html';
 
     logo.addEventListener('click',function(){
       clicks++;
@@ -596,5 +607,6 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 <script src="asistente.js" defer></script>
+<script>try{document.querySelectorAll(".legal-year").forEach(function(e){e.textContent=new Date().getFullYear();});}catch(e){}</script>
 </body>
 </html>
