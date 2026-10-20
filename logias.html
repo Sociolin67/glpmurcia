@@ -3,11 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://glpmurcia.com/logias.html">
+<link rel="alternate" hreflang="es" href="https://glpmurcia.com/logias.html">
+<link rel="alternate" hreflang="en" href="https://glpmurcia.com/logias-en.html">
+<link rel="alternate" hreflang="x-default" href="https://glpmurcia.com/logias.html">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
 <!-- PWA -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0D1B2A">
 <link rel="apple-touch-icon" href="icon-192x192.png">
-<meta name="description" content="Logias de la Gran Logia Provincial de Murcia — Siete Logias Regulares en la Región de Murcia.">
+<meta name="description" content="Logias de la Gran Logia Provincial de Murcia — Ocho Logias Regulares en la Región de Murcia.">
 <title>Logias | Gran Logia Provincial de Murcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -273,6 +278,12 @@
   .cronica-more.open { display: contents; }
   .cronica-btn { display: block; margin: 0.5rem auto 1rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.55rem 1.6rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
   .cronica-btn:hover { background: var(--oro); color: var(--azul-noche); }
+  /* ── LOGO NAV (antes inline) ── */
+  .nav-logo img.nav-logo-img { height:48px; width:auto; filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4)); }
+  /* ── BARRA LEGAL ── */
+  .legal-bar { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 0.8rem; padding: 0.7rem 1.4rem 0.9rem; background: rgba(13,27,42,0.92); font-family: 'Lato', sans-serif; font-size: 0.72rem; letter-spacing: 0.04em; color: #B8B0A0; }
+  .legal-bar a { color: #B8B0A0; text-decoration: none; }
+  .legal-bar a:hover { color: #C9A84C; }
 
   @media (max-width: 768px) {
     .cronica-grid { grid-template-columns: 1fr; }
@@ -294,6 +305,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gran Logia Provincial de Murcia">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
 <meta property="og:url" content="https://glpmurcia.com/logias.html">
 <meta property="og:title" content="Logias | Gran Logia Provincial de Murcia">
 <meta property="og:description" content="Crónicas y actividades de las Logias de la Gran Logia Provincial de Murcia.">
@@ -314,7 +327,7 @@
   <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-logo">
-      <img src="logo.png" alt="Gran Logia Provincial de Murcia" style="height:48px;width:auto;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4));">
+      <img src="logo.png" alt="Gran Logia Provincial de Murcia" class="nav-logo-img">
       <div class="nav-title">Gran Logia Provincial<br>de Murcia</div>
     </a>
     <ul class="nav-links">
@@ -359,7 +372,7 @@
     </div>
     <p class="page-eyebrow">Gran Logia Provincial de Murcia</p>
     <h1 class="page-title">Logias de <em>la Provincia</em></h1>
-    <p class="page-desc">La provincia de Murcia cuenta con siete Logias Regulares, que trabajan en los Ritos de Emulación, Escocés, Francés y York, en lengua española e inglesa. Si desea visitar una logia, contacte en primera instancia con su Secretario.</p>
+    <p class="page-desc">La provincia de Murcia cuenta con ocho Logias Regulares, que trabajan en los Ritos de Emulación, Escocés, Francés y York, en lengua española e inglesa. Si desea visitar una logia, contacte en primera instancia con su Secretario.</p>
     <a href="#vida-logias" style="display:inline-block;margin-top:1.4rem;font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 1.4rem;border:1px solid rgba(201,168,76,0.35);color:var(--oro);text-decoration:none;transition:all 0.3s;">↓ Vida de las Logias</a>
   </header>
 
@@ -374,7 +387,7 @@
     <div class="section-header">
       <span class="section-label">Logias Regulares</span>
       <span class="section-line"></span>
-      <span class="section-count">Siete logias · Fundada la provincia en 2009</span>
+      <span class="section-count">Ocho logias · Fundada la provincia en 2009</span>
     </div>
 
     <div class="lodges-grid">
@@ -392,7 +405,7 @@
       </div>
 
       <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-fraternidad.png" alt="Fraternidad Mediterránea"></div>
+        <div class="lodge-logo"><img src="logo-fraternidad.png" alt="Fraternidad Mediterránea" loading="lazy" decoding="async"></div>
         <p class="lodge-num">Nº 94</p>
         <h2 class="lodge-name">Fraternidad Mediterránea</h2>
         <p class="lodge-ritual">Trabaja el <span>Ritual de Emulación en español</span></p>
@@ -404,7 +417,7 @@
       </div>
 
       <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-sierra-espuna.png?v=5" alt="Sierra Espuña"></div>
+        <div class="lodge-logo"><img src="logo-sierra-espuna.png?v=5" alt="Sierra Espuña" loading="lazy" decoding="async"></div>
         <p class="lodge-num">Nº 136</p>
         <h2 class="lodge-name">Sierra Espuña</h2>
         <p class="lodge-ritual">Trabaja el <span>Ritual de Emulación en inglés</span></p>
@@ -416,7 +429,7 @@
       </div>
 
       <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-moria.png" alt="Logia Moriá"></div>
+        <div class="lodge-logo"><img src="logo-moria.png" alt="Logia Moriá" loading="lazy" decoding="async"></div>
         <p class="lodge-num">Nº 143</p>
         <h2 class="lodge-name">Moriá</h2>
         <p class="lodge-ritual">Trabaja el <span>Rito Escocés Antiguo y Aceptado en español</span></p>
@@ -428,7 +441,7 @@
       </div>
 
       <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-floridablanca.png?v=4" alt="Conde de Floridablanca" class="circular"></div>
+        <div class="lodge-logo"><img src="logo-floridablanca.png?v=4" alt="Conde de Floridablanca" class="circular" loading="lazy" decoding="async"></div>
         <p class="lodge-num">Nº 164</p>
         <h2 class="lodge-name">Conde de Floridablanca</h2>
         <p class="lodge-ritual">Trabaja el <span>Ritual de Emulación en español</span></p>
@@ -440,7 +453,7 @@
       </div>
 
       <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-caballeros.png" alt="Caballeros de Levante"></div>
+        <div class="lodge-logo"><img src="logo-caballeros.png" alt="Caballeros de Levante" loading="lazy" decoding="async"></div>
         <p class="lodge-num">Nº 193</p>
         <h2 class="lodge-name">Caballeros de Levante</h2>
         <p class="lodge-ritual">Trabaja el <span>Rito Francés en español</span></p>
@@ -452,7 +465,7 @@
       </div>
 
       <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-maestros.png" alt="Logia de Maestros Instalados"></div>
+        <div class="lodge-logo"><img src="logo-maestros.png" alt="Logia de Maestros Instalados" loading="lazy" decoding="async"></div>
         <p class="lodge-num">Nº 180</p>
         <h2 class="lodge-name">Maestros Instalados de Murcia</h2>
         <p class="lodge-ritual">Trabaja el <span>Ritual de Emulación en inglés y español</span></p>
@@ -464,7 +477,7 @@
       </div>
 
       <div class="lodge-card">
-        <div class="lodge-logo"><img src="logo-york-201.png" alt="Murcia York"></div>
+        <div class="lodge-logo"><img src="logo-york-201.png" alt="Murcia York" loading="lazy" decoding="async"></div>
         <p class="lodge-num">Nº 201</p>
         <h2 class="lodge-name">Murcia York</h2>
         <p class="lodge-ritual">Trabaja el <span>Rito de York en español e inglés</span></p>
@@ -486,7 +499,7 @@
     <div class="cronica-grid">
 
       <div class="cronica-card" id="moria-oct26">
-        <img src="logo-moria.png" alt="Logo RLS Moriá nº 143" class="cronica-logo">
+        <img src="logo-moria.png" alt="Logo RLS Moriá nº 143" class="cronica-logo" loading="lazy" decoding="async">
         <div class="cronica-content">
           <div class="cronica-meta">
             <span class="cronica-date">9 Octubre 2026</span>
@@ -498,7 +511,7 @@
       </div>
 
       <div class="cronica-card" id="murcia-york-oct26">
-        <img src="logo-york-201.png" alt="Logo R∴L∴ Murcia York nº 201" class="cronica-logo">
+        <img src="logo-york-201.png" alt="Logo R∴L∴ Murcia York nº 201" class="cronica-logo" loading="lazy" decoding="async">
         <div class="cronica-content">
           <div class="cronica-meta">
             <span class="cronica-date">3 Octubre 2026</span>
@@ -510,7 +523,7 @@
       </div>
 
       <div class="cronica-card" id="caballeros-oct26">
-        <img src="logo-caballeros.png" alt="Logo RLS Caballeros de Levante nº 193" class="cronica-logo">
+        <img src="logo-caballeros.png" alt="Logo RLS Caballeros de Levante nº 193" class="cronica-logo" loading="lazy" decoding="async">
         <div class="cronica-content">
           <div class="cronica-meta">
             <span class="cronica-date">2 Octubre 2026</span>
@@ -522,7 +535,7 @@
       </div>
 
       <div class="cronica-card" id="fraternidad-oct26">
-        <img src="logo-fraternidad.png" alt="Logo RLS Fraternidad Mediterránea nº 94" class="cronica-logo">
+        <img src="logo-fraternidad.png" alt="Logo RLS Fraternidad Mediterránea nº 94" class="cronica-logo" loading="lazy" decoding="async">
         <div class="cronica-content">
           <div class="cronica-meta">
             <span class="cronica-date">2 Octubre 2026</span>
@@ -534,7 +547,7 @@
       </div>
 
       <div class="cronica-card" id="floridablanca-sep26">
-        <img src="logo-floridablanca.png" alt="Logo RLS Conde de Floridablanca nº 164" class="cronica-logo">
+        <img src="logo-floridablanca.png" alt="Logo RLS Conde de Floridablanca nº 164" class="cronica-logo" loading="lazy" decoding="async">
         <div class="cronica-content">
           <div class="cronica-meta">
             <span class="cronica-date">25 Septiembre 2026</span>
@@ -546,7 +559,7 @@
       </div>
 
       <div class="cronica-card" id="moria-sep26">
-        <img src="logo-moria.png" alt="Logo RLS Moriá nº 143" class="cronica-logo">
+        <img src="logo-moria.png" alt="Logo RLS Moriá nº 143" class="cronica-logo" loading="lazy" decoding="async">
         <div class="cronica-content">
           <div class="cronica-meta">
             <span class="cronica-date">11 Septiembre 2026</span>
@@ -558,7 +571,7 @@
       </div>
 
       <div class="cronica-card" id="fraternidad-sep26">
-        <img src="logo-fraternidad.png" alt="Logo RLS Fraternidad Mediterránea nº 94" class="cronica-logo">
+        <img src="logo-fraternidad.png" alt="Logo RLS Fraternidad Mediterránea nº 94" class="cronica-logo" loading="lazy" decoding="async">
         <div class="cronica-content">
           <div class="cronica-meta">
             <span class="cronica-date">4 Septiembre 2026</span>
@@ -580,7 +593,7 @@
       <div class="cronica-grid">
 
         <div class="cronica-card">
-          <img src="logo-floridablanca.png" alt="Logo RLS Conde de Floridablanca nº 164" class="cronica-logo">
+          <img src="logo-floridablanca.png" alt="Logo RLS Conde de Floridablanca nº 164" class="cronica-logo" loading="lazy" decoding="async">
           <div class="cronica-content">
             <div class="cronica-meta">
               <span class="cronica-date">26 Junio 2026</span>
@@ -592,7 +605,7 @@
         </div>
 
         <div class="cronica-card">
-          <img src="logo-moria.png" alt="Logo RLS Moriá nº 143" class="cronica-logo">
+          <img src="logo-moria.png" alt="Logo RLS Moriá nº 143" class="cronica-logo" loading="lazy" decoding="async">
           <div class="cronica-content">
             <div class="cronica-meta">
               <span class="cronica-date">12 Junio 2026</span>
@@ -604,7 +617,7 @@
         </div>
 
         <div class="cronica-card">
-          <img src="logo-caballeros.png" alt="Logo RLS Caballeros de Levante nº 193" class="cronica-logo">
+          <img src="logo-caballeros.png" alt="Logo RLS Caballeros de Levante nº 193" class="cronica-logo" loading="lazy" decoding="async">
           <div class="cronica-content">
             <div class="cronica-meta">
               <span class="cronica-date">5 Junio 2026</span>
@@ -616,7 +629,7 @@
         </div>
 
         <div class="cronica-card">
-          <img src="logo-fraternidad.png" alt="Logo RLS Fraternidad Mediterránea nº 94" class="cronica-logo">
+          <img src="logo-fraternidad.png" alt="Logo RLS Fraternidad Mediterránea nº 94" class="cronica-logo" loading="lazy" decoding="async">
           <div class="cronica-content">
             <div class="cronica-meta">
               <span class="cronica-date">5 Junio 2026</span>
@@ -694,10 +707,11 @@
       <span class="footer-gle-text">Gran Logia<br>de España</span>
     </a>
     <a href="index.html" class="footer-logo">
-      <img src="logo.png" alt="Gran Logia Provincial de Murcia">
+      <img src="logo.png" alt="Gran Logia Provincial de Murcia" loading="lazy" decoding="async">
       <div class="footer-logo-text">Gran Logia Provincial<br>de Murcia</div>
     </a>
   </footer>
+  <div class="legal-bar"><a href="aviso-legal.html">Aviso legal</a><span>·</span><a href="privacidad.html">Privacidad</a><span>·</span><a href="cookies.html">Cookies</a><span>·</span><span>© <span class="legal-year">2026</span> Gran Logia Provincial de Murcia</span></div>
 
 </div>
  <script data-goatcounter="https://glpmurcia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -707,5 +721,6 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 <script src="asistente.js" defer></script>
+<script>try{document.querySelectorAll(".legal-year").forEach(function(e){e.textContent=new Date().getFullYear();});}catch(e){}</script>
 </body>
 </html>
