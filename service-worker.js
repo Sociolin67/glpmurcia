@@ -1,24 +1,31 @@
-// Service Worker — GLP Murcia PWA
-const CACHE_NAME = 'glpmurcia-v1';
+// Service Worker — GLP Murcia PWA (v2)
+// Cambie CACHE_NAME (v3, v4…) cada vez que quiera forzar la renovación de la copia offline.
+const CACHE_NAME = 'glpmurcia-v2';
 const ASSETS = [
   '/',
   '/index.html',
   '/index-en.html',
+  '/noticias.html',
+  '/noticias-en.html',
+  '/logias.html',
+  '/logias-en.html',
+  '/contacto.html',
+  '/contacto-en.html',
+  '/404.html',
+  '/logo.png',
   '/escudo-glp-murcia.png',
   '/icon-192x192.png',
   '/icon-512x512.png'
 ];
 
-// Install: pre-cache core pages
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(ASSETS))
+      .then(cache => Promise.all(ASSETS.map(url => cache.add(url).catch(() => null))))
       .then(() => self.skipWaiting())
   );
 });
 
-// Activate: clean old caches
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -27,15 +34,25 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Fetch: network first, fallback to cache
+// Red primero; si no hay conexión, copia guardada; si tampoco, página 404/offline.
 self.addEventListener('fetch', event => {
+  const req = event.request;
+  if (req.method !== 'GET') return;
+  const url = new URL(req.url);
+  if (url.origin !== self.location.origin) return; // no tocar GoatCounter, Google Fonts, Formspree…
   event.respondWith(
-    fetch(event.request)
+    fetch(req)
       .then(response => {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+        if (response && response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(req, copy));
+        }
         return response;
       })
-      .catch(() => caches.match(event.request))
+      .catch(() =>
+        caches.match(req).then(hit =>
+          hit || (req.mode === 'navigate' ? caches.match('/404.html') : undefined)
+        )
+      )
   );
 });
