@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://glpmurcia.com/caridad.html">
+<link rel="alternate" hreflang="es" href="https://glpmurcia.com/caridad.html">
+<link rel="alternate" hreflang="en" href="https://glpmurcia.com/caridad-en.html">
+<link rel="alternate" hreflang="x-default" href="https://glpmurcia.com/caridad.html">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192x192.png">
 <!-- PWA -->
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0D1B2A">
@@ -234,6 +239,26 @@
 
   /* ── SCROLL MARGIN (compensar nav sticky) ── */
   [id] { scroll-margin-top: 80px; }
+  /* ── BOTÓN VOLVER ARRIBA ── */
+  #btn-top {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--azul-noche, #0D1B2A);
+    border: 1px solid rgba(201,168,76,0.5);
+    color: #C9A84C; font-size: 1.3rem; line-height: 1;
+    cursor: pointer; opacity: 0; visibility: hidden;
+    transition: opacity 0.35s, visibility 0.35s, background 0.25s;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  }
+  #btn-top.visible { opacity: 1; visibility: visible; }
+  #btn-top:hover { background: rgba(201,168,76,0.15); }
+  /* ── LOGO NAV (antes inline) ── */
+  .nav-logo img.nav-logo-img { height:48px; width:auto; filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4)); }
+  /* ── BARRA LEGAL ── */
+  .legal-bar { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 0.8rem; padding: 0.7rem 1.4rem 0.9rem; background: rgba(13,27,42,0.92); font-family: 'Lato', sans-serif; font-size: 0.72rem; letter-spacing: 0.04em; color: #B8B0A0; }
+  .legal-bar a { color: #B8B0A0; text-decoration: none; }
+  .legal-bar a:hover { color: #C9A84C; }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
@@ -251,25 +276,12 @@
     .actions-grid { grid-template-columns: 1fr; }
     footer { padding: 1.4rem; flex-direction: column; text-align: center; }
   }
-
-  /* ── BOTÓN VOLVER ARRIBA ── */
-  #btn-top {
-    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-    width: 46px; height: 46px; border-radius: 50%;
-    background: var(--azul-noche, #0D1B2A);
-    border: 1px solid rgba(201,168,76,0.5);
-    color: #C9A84C; font-size: 1.3rem; line-height: 1;
-    cursor: pointer; opacity: 0; visibility: hidden;
-    transition: opacity 0.35s, visibility 0.35s, background 0.25s;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
-  }
-  #btn-top.visible { opacity: 1; visibility: visible; }
-  #btn-top:hover { background: rgba(201,168,76,0.15); }
 </style>
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gran Logia Provincial de Murcia">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="en_GB">
 <meta property="og:url" content="https://glpmurcia.com/caridad.html">
 <meta property="og:title" content="Caridad | Gran Logia Provincial de Murcia">
 <meta property="og:description" content="Acción social y benéfica de la Gran Logia Provincial de Murcia.">
@@ -290,7 +302,7 @@
   <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-logo">
-      <img src="logo.png" alt="Gran Logia Provincial de Murcia" style="height:48px;width:auto;filter:drop-shadow(0 1px 4px rgba(0,0,0,0.4));">
+      <img src="logo.png" alt="Gran Logia Provincial de Murcia" class="nav-logo-img">
       <div class="nav-title">Gran Logia Provincial<br>de Murcia</div>
     </a>
     <ul class="nav-links">
@@ -341,7 +353,7 @@
   <!-- CIFRAS -->
   <div class="stats-bar">
     <div class="stat-item">
-      <p class="stat-num">7</p>
+      <p class="stat-num">8</p>
       <p class="stat-label">Logias activas en la provincia</p>
     </div>
     <div class="stat-item">
@@ -363,7 +375,7 @@
         <h2 class="intro-title">Masones <em>ayudando a Murcia</em></h2>
         <div class="intro-body">
           <p>La caridad siempre ha sido una parte fundamental de la masonería. No como gesto ocasional, sino como obligación moral permanente: el compromiso de devolver a la comunidad parte de lo que la comunidad nos da.</p>
-          <p>Todas las logias de la provincia se implican activamente en su entorno local. La Gran Logia Provincial de Murcia coordina y promueve estas iniciativas, sumando el esfuerzo colectivo de sus más de <strong>200 masones</strong> repartidos en siete logias regulares.</p>
+          <p>Todas las logias de la provincia se implican activamente en su entorno local. La Gran Logia Provincial de Murcia coordina y promueve estas iniciativas, sumando el esfuerzo colectivo de sus más de <strong>200 masones</strong> repartidos en ocho logias regulares.</p>
           <p>En Murcia, casi <strong>30.000 personas</strong> dependen de los bancos de alimentos para cubrir sus necesidades básicas diarias — una cifra que no ha dejado de crecer. Ante esta realidad, la respuesta masónica es concreta, local y sostenida en el tiempo.</p>
         </div>
       </div>
@@ -496,6 +508,7 @@
       <div class="footer-logo-text">Gran Logia Provincial<br>de Murcia</div>
     </a>
   </footer>
+  <div class="legal-bar"><a href="aviso-legal.html">Aviso legal</a><span>·</span><a href="privacidad.html">Privacidad</a><span>·</span><a href="cookies.html">Cookies</a><span>·</span><span>© <span class="legal-year">2026</span> Gran Logia Provincial de Murcia</span></div>
 
 </div>
  <script data-goatcounter="https://glpmurcia.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
@@ -515,5 +528,6 @@ if ('serviceWorker' in navigator) {
   })();
 </script>
 <script src="asistente.js" defer></script>
+<script>try{document.querySelectorAll(".legal-year").forEach(function(e){e.textContent=new Date().getFullYear();});}catch(e){}</script>
 </body>
 </html>
