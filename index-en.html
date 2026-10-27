@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0D1B2A">
 <link rel="apple-touch-icon" href="icon-192x192.png">
-<meta name="description" content="Provincial Grand Lodge of Murcia — Tradition, Fraternity and Service. Regular Freemasonry in the Region of Murcia, part of the Grand Lodge of Spain.">
+<meta name="description" content="Provincial Grand Lodge of Murcia — Tradition, Fraternity and Service. Regular Freemasonry in the Region of Murcia, belonging to the Grand Lodge of Spain.">
 <title>Provincial Grand Lodge of Murcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -15,6 +15,8 @@
 
   :root {
     --oro: #C9A84C;
+    --oro-texto: #876329;
+    --oro-oscuro: #9A6F2E;
     --oro-claro: #E8D5A3;
     --azul-noche: #0D1B2A;
     --azul-medio: #1A2F45;
@@ -76,9 +78,9 @@
   .ornament-line { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, var(--oro)); }
   .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
   .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
-  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1.6rem; }
+  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.28em; color: var(--oro-texto); text-transform: uppercase; margin-bottom: 1.6rem; }
   .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; line-height: 1.08; color: #1C2B3A; margin-bottom: 0.5rem; }
-  .hero-title em { font-style: italic; color: var(--oro); }
+  .hero-title em { font-style: italic; color: var(--oro-oscuro); }
   .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2.2vw, 1.7rem); font-weight: 300; color: #2E3D4F; margin-bottom: 2.4rem; letter-spacing: 0.06em; }
   .hero-desc { font-size: 0.95rem; font-weight: 300; line-height: 1.95; color: #2E3D4F; max-width: 560px; margin: 0 auto 3rem; letter-spacing: 0.02em; }
   .hero-actions { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
@@ -97,7 +99,7 @@
   .pillar:nth-child(4) { animation-delay: 0.36s; }
   .pillar-icon { width: 42px; height: 42px; margin: 0 auto 1.2rem; border: 1px solid rgba(201,168,76,0.45); display: flex; align-items: center; justify-content: center; transform: rotate(45deg); }
   .pillar-icon span { transform: rotate(-45deg); font-size: 1rem; }
-  .pillar-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; margin-bottom: 0.7rem; }
+  .pillar-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--oro-texto); text-transform: uppercase; margin-bottom: 0.7rem; }
   .pillar-text { font-size: 0.89rem; font-weight: 300; color: #2E3D4F; line-height: 1.75; }
 
   /* ── ACCESOS RÁPIDOS ── */
@@ -111,7 +113,7 @@
 
   /* ── LOGIAS ── */
   .lodges-strip { padding: 2.4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); display: flex; align-items: center; justify-content: center; gap: 0.8rem; flex-wrap: wrap; background: #FFFFFF; }
-  .lodges-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; margin-right: 0.4rem; }
+  .lodges-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--oro-texto); text-transform: uppercase; margin-right: 0.4rem; }
   .lodge-pill { font-size: 0.78rem; font-weight: 300; color: #2E3D4F; border: 1px solid rgba(201,168,76,0.25); padding: 0.3rem 0.9rem; letter-spacing: 0.05em; transition: all 0.3s; cursor: default; }
   .lodge-pill:hover { border-color: var(--oro); color: var(--oro); }
 
@@ -149,9 +151,9 @@
   .welcome-inner { max-width: 880px; margin: 0 auto; display: flex; gap: 2.6rem; align-items: flex-start; }
   .welcome-photo { width: 220px; flex-shrink: 0; margin: 0; }
   .welcome-photo img { width: 100%; height: auto; display: block; border: 1px solid rgba(201,168,76,0.45); padding: 5px; background: #FFFFFF; }
-  .welcome-photo figcaption { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: #9A6F2E; text-align: center; line-height: 1.6; margin-top: 0.7rem; }
+  .welcome-photo figcaption { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--oro-texto); text-align: center; line-height: 1.6; margin-top: 0.7rem; }
   .welcome-content { flex: 1; min-width: 0; }
-  .welcome-eyebrow { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: #9A6F2E; margin-bottom: 0.9rem; }
+  .welcome-eyebrow { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--oro-texto); margin-bottom: 0.9rem; }
   .welcome-text { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; line-height: 1.75; color: #1C2B3A; }
   .welcome-text p + p { margin-top: 0.8rem; }
   .welcome-text strong { font-weight: 600; }
@@ -313,7 +315,7 @@
       <div class="welcome-content">
         <p class="welcome-eyebrow" id="welcome-title">Welcome from the Provincial Grand Master</p>
         <div class="welcome-text">
-          <p>It is an honour to welcome you to the website of the Provincial Grand Lodge of Murcia. We are part of the only internationally recognised regular Freemasonry and the largest in all of Spain.</p>
+          <p>It is an honour to welcome you to the website of the Provincial Grand Lodge of Murcia. We belong to the only internationally recognised regular Freemasonry, the largest in all of Spain.</p>
           <p>This space is a meeting point for Masons and non-initiates alike. To those not yet initiated, we invite you to explore the values and principles that guide our Order. We are at your disposal for any enquiry.</p>
           <p>May the light of the Great Architect of the Universe illuminate our path. <strong>Welcome to the Provincial Grand Lodge of Murcia!</strong> Fraternally.</p>
         </div>
@@ -335,7 +337,7 @@
       <p class="hero-eyebrow">Consecrated on 5 December 2009 &middot; Region of Murcia</p>
       <h1 class="hero-title">Freemasonry in<br><em>Murcia</em></h1>
       <p class="hero-subtitle">Tradition, Fraternity and Service</p>
-      <p class="hero-desc">The Provincial Grand Lodge of Murcia, belonging to the <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Grand Lodge of Spain</a>, brings together seven Regular Lodges committed to the values of universal fraternity, moral progress and service to the community.</p>
+      <p class="hero-desc">The Provincial Grand Lodge of Murcia, belonging to the <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro-texto);text-decoration:underline;text-underline-offset:3px;">Grand Lodge of Spain</a>, brings together seven Regular Lodges committed to the values of universal fraternity, moral progress and service to the community.</p>
       <div class="hero-actions">
         <a href="masoneria-en.html" class="btn-primary">Become a Freemason</a>
         <a href="logias-en.html" class="btn-secondary">Meet the Lodges</a>
@@ -345,88 +347,88 @@
 
   <!-- LATEST UPDATES -->
   <section style="padding:3rem 2rem 2rem; border-top:1px solid rgba(201,168,76,0.2); max-width:720px; margin:0 auto;">
-    <h3 style="font-family:'Cinzel',serif; font-size:0.78rem; letter-spacing:0.18em; color:#C9A84C; text-transform:uppercase; margin-bottom:1.5rem; text-align:center;">Latest Updates</h3>
+    <h3 style="font-family:'Cinzel',serif; font-size:0.78rem; letter-spacing:0.18em; color:var(--oro-texto); text-transform:uppercase; margin-bottom:1.5rem; text-align:center;">Latest Updates</h3>
     <ul style="list-style:none; padding:0; margin:0;">
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">23 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">23 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
         <a href="logias-en.html#fraternidad-oct26b" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Meeting No. 312 — R∴L∴S∴ Fraternidad Mediterránea No. 94</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">23 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">23 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
         <a href="logias-en.html#floridablanca-oct26" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Meeting — R∴L∴S∴ Conde de Floridablanca No. 164</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">22 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Orders</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">22 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Orders</span>
         <a href="ordenes-en.html#collaterals-corner" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Installation Meeting of Council Thader No.&nbsp;240 — 22 October 2026, Murcia</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">20 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Orders</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">20 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Orders</span>
         <a href="ordenes-en.html#collaterals-corner" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Meeting of Tabernacle Virgen de la Arrixaca No.&nbsp;293 — 20 October 2026, Mazarrón</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">21 Nov 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Province</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">21 Nov 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Province</span>
         <a href="noticias-en.html#charity-ball" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Grand Charity Ball — Provincial Grand Lodge of Murcia — Hotel Thalasia, 21 November 2026</a>
       </li>
     </ul>
     <!-- HISTORICAL -->
     <div style="text-align:center; margin-top:1rem;">
       <button onclick="var h=document.getElementById('historico-en');var open=h.style.display==='block';h.style.display=open?'none':'block';this.textContent=open?'View archive ▾':'Hide archive ▴';"
-        style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:#C9A84C; background:none; border:1px solid rgba(201,168,76,0.35); padding:0.4rem 1.2rem; cursor:pointer;">View archive ▾</button>
+        style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--oro-texto); background:none; border:1px solid rgba(201,168,76,0.5); padding:0.8rem 1.4rem; cursor:pointer;">View archive ▾</button>
     </div>
     <ul id="historico-en" style="list-style:none; padding:0; margin:0.5rem 0 0; display:none;">
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">16 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">App. Bodies</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">16 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">App. Bodies</span>
         <a href="ordenes-en.html#collaterals-corner" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Chapter Arroyo de Gihón No.&nbsp;38 — Meeting 16 October 2026, Murcia</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">9 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">9 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
         <a href="logias-en.html#moria-oct26" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Ordinary Meeting No. 267 — R∴L∴S∴ Moriá No. 143</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">3 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">News</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">3 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">News</span>
         <a href="noticias-en.html#murcia-york-consecration" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Consecration of R∴L∴ Murcia York No. 201 — first York Rite Lodge in Murcia</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">3 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">3 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
         <a href="logias-en.html#murcia-york-oct26" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Consecration — R∴L∴ Murcia York No. 201</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">2 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">2 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
         <a href="logias-en.html#caballeros-oct26" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Installation Meeting — R∴L∴S∴ Caballeros de Levante No. 193</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">2 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">2 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Lodges</span>
         <a href="logias-en.html#fraternidad-oct26" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Second meeting of the year — R∴L∴S∴ Fraternidad Mediterránea No. 94</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">26 Sep 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">News</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">26 Sep 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">News</span>
         <a href="noticias-en.html#secret-monitor" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Installation of the District Grand Supreme Ruler for Spain — Order of the Secret Monitor</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">26 Sep 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">News</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">26 Sep 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">News</span>
         <a href="noticias-en.html#scarlet-cord" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Installation of the District Grand Summus for Spain — Scarlet Cord</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">18 Sep 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Orders</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">18 Sep 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Orders</span>
         <a href="ordenes-en.html#collaterals-corner" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">GER ANAT Conclave 567 — Order of the Secret Monitor</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0;">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Orders</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Orders</span>
         <a href="noticias-en.html#mark-assembly-2027" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">District Grand Assembly of Mark Master Masons — Benidorm, February 2027</a>
       </li>
     </ul>
@@ -510,7 +512,7 @@
 
   <!-- SECTION: INSTALL ON MOBILE -->
   <section style="padding:3rem 2rem; border-top:1px solid rgba(201,168,76,0.2); max-width:720px; margin:0 auto; text-align:center;">
-    <h3 style="font-family:'Cinzel',serif; font-size:0.78rem; letter-spacing:0.18em; color:#C9A84C; text-transform:uppercase; margin-bottom:1.5rem;">Take the GLP with you</h3>
+    <h3 style="font-family:'Cinzel',serif; font-size:0.78rem; letter-spacing:0.18em; color:var(--oro-texto); text-transform:uppercase; margin-bottom:1.5rem;">Take the GLP with you</h3>
     <p style="font-size:0.9rem; color:#2E3D4F; line-height:1.8; font-weight:300; margin-bottom:1.5rem;">Add this site to your home screen to access it with a single tap, just like an app.</p>
     <details style="text-align:left; margin-bottom:1rem;">
       <summary style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.12em; color:#1C2B3A; cursor:pointer; padding:0.6rem 0;">Android (Chrome)</summary>

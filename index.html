@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0D1B2A">
 <link rel="apple-touch-icon" href="icon-192x192.png">
-<meta name="description" content="Gran Logia Provincial de Murcia — Tradición, Fraternidad y Servicio. Masonería regular en la Región de Murcia, parte de la Gran Logia de España.">
+<meta name="description" content="Gran Logia Provincial de Murcia — Tradición, Fraternidad y Servicio. Masonería regular en la Región de Murcia, perteneciente a la Gran Logia de España.">
 <title>Gran Logia Provincial de Murcia</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -15,6 +15,8 @@
 
   :root {
     --oro: #C9A84C;
+    --oro-texto: #876329;
+    --oro-oscuro: #9A6F2E;
     --oro-claro: #E8D5A3;
     --azul-noche: #0D1B2A;
     --azul-medio: #1A2F45;
@@ -75,9 +77,9 @@
   .ornament-line { height: 1px; width: 60px; background: linear-gradient(90deg, transparent, var(--oro)); }
   .ornament-line.r { background: linear-gradient(90deg, var(--oro), transparent); }
   .ornament-symbol { color: var(--oro); font-size: 1rem; font-family: 'Cinzel', serif; }
-  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.28em; color: var(--oro); text-transform: uppercase; margin-bottom: 1.6rem; }
+  .hero-eyebrow { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.28em; color: var(--oro-texto); text-transform: uppercase; margin-bottom: 1.6rem; }
   .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 300; line-height: 1.08; color: #1C2B3A; margin-bottom: 0.5rem; }
-  .hero-title em { font-style: italic; color: var(--oro); }
+  .hero-title em { font-style: italic; color: var(--oro-oscuro); }
   .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2.2vw, 1.7rem); font-weight: 300; color: #2E3D4F; margin-bottom: 2.4rem; letter-spacing: 0.06em; }
   .hero-desc { font-size: 0.95rem; font-weight: 300; line-height: 1.95; color: #2E3D4F; max-width: 560px; margin: 0 auto 3rem; letter-spacing: 0.02em; }
   .hero-actions { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
@@ -96,7 +98,7 @@
   .pillar:nth-child(4) { animation-delay: 0.36s; }
   .pillar-icon { width: 42px; height: 42px; margin: 0 auto 1.2rem; border: 1px solid rgba(201,168,76,0.45); display: flex; align-items: center; justify-content: center; transform: rotate(45deg); }
   .pillar-icon span { transform: rotate(-45deg); font-size: 1rem; }
-  .pillar-label { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; margin-bottom: 0.7rem; }
+  .pillar-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--oro-texto); text-transform: uppercase; margin-bottom: 0.7rem; }
   .pillar-text { font-size: 0.89rem; font-weight: 300; color: #2E3D4F; line-height: 1.75; }
 
   /* ── ACCESOS RÁPIDOS ── */
@@ -110,7 +112,7 @@
 
   /* ── LOGIAS ── */
   .lodges-strip { padding: 2.4rem 3rem; border-top: 1px solid rgba(201,168,76,0.15); display: flex; align-items: center; justify-content: center; gap: 0.8rem; flex-wrap: wrap; background: #FFFFFF; }
-  .lodges-label { font-family: 'Cinzel', serif; font-size: 0.65rem; letter-spacing: 0.2em; color: var(--oro); text-transform: uppercase; margin-right: 0.4rem; }
+  .lodges-label { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.2em; color: var(--oro-texto); text-transform: uppercase; margin-right: 0.4rem; }
   .lodge-pill { font-size: 0.78rem; font-weight: 300; color: #2E3D4F; border: 1px solid rgba(201,168,76,0.25); padding: 0.3rem 0.9rem; letter-spacing: 0.05em; transition: all 0.3s; cursor: default; }
   .lodge-pill:hover { border-color: var(--oro); color: var(--oro); }
 
@@ -148,9 +150,9 @@
   .welcome-inner { max-width: 880px; margin: 0 auto; display: flex; gap: 2.6rem; align-items: flex-start; }
   .welcome-photo { width: 220px; flex-shrink: 0; margin: 0; }
   .welcome-photo img { width: 100%; height: auto; display: block; border: 1px solid rgba(201,168,76,0.45); padding: 5px; background: #FFFFFF; }
-  .welcome-photo figcaption { font-family: 'Cinzel', serif; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: #9A6F2E; text-align: center; line-height: 1.6; margin-top: 0.7rem; }
+  .welcome-photo figcaption { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--oro-texto); text-align: center; line-height: 1.6; margin-top: 0.7rem; }
   .welcome-content { flex: 1; min-width: 0; }
-  .welcome-eyebrow { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: #9A6F2E; margin-bottom: 0.9rem; }
+  .welcome-eyebrow { font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--oro-texto); margin-bottom: 0.9rem; }
   .welcome-text { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; line-height: 1.75; color: #1C2B3A; }
   .welcome-text p + p { margin-top: 0.8rem; }
   .welcome-text strong { font-weight: 600; }
@@ -313,7 +315,7 @@
       <div class="welcome-content">
         <p class="welcome-eyebrow" id="welcome-title">Bienvenida del Gran Maestro Provincial</p>
         <div class="welcome-text">
-          <p>Es un honor darles la más cordial bienvenida a la página web de la Gran Logia Provincial de Murcia. Somos parte de la única Masonería regular reconocida internacionalmente y la más numerosa de España.</p>
+          <p>Es un honor darles la más cordial bienvenida a la página web de la Gran Logia Provincial de Murcia. Pertenecemos a la única Masonería regular reconocida internacionalmente y la más numerosa de España.</p>
           <p>Este espacio es un punto de encuentro para Masones y no iniciados. A quienes aún no pertenecen a nuestra Orden, les invitamos a explorar los valores que nos guían. Estamos a su disposición para cualquier consulta.</p>
           <p>Que la luz del Gran Arquitecto del Universo ilumine nuestro camino. <strong>¡Bienvenidos a la Gran Logia Provincial de Murcia!</strong> Fraternalmente.</p>
         </div>
@@ -335,9 +337,9 @@
       <p class="hero-eyebrow">Consagrada el 5 de diciembre de 2009 &middot; Región de Murcia</p>
       <h1 class="hero-title">Masonería en<br><em>Murcia</em></h1>
       <p class="hero-subtitle">Tradición, Fraternidad y Servicio</p>
-      <p class="hero-desc">La Gran Logia Provincial de Murcia, perteneciente a la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a>, agrupa siete Logias Regulares comprometidas con los valores de la fraternidad universal, el progreso moral y el servicio a la comunidad.</p>
+      <p class="hero-desc">La Gran Logia Provincial de Murcia, perteneciente a la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro-texto);text-decoration:underline;text-underline-offset:3px;">Gran Logia de España</a>, agrupa siete Logias Regulares comprometidas con los valores de la fraternidad universal, el progreso moral y el servicio a la comunidad.</p>
       <div class="hero-actions">
-        <a href="masoneria.html" class="btn-primary">Conviértete en masón</a>
+        <a href="masoneria.html" class="btn-primary">Conviértase en masón</a>
         <a href="logias.html" class="btn-secondary">Conocer las logias</a>
       </div>
     </div>
@@ -345,88 +347,88 @@
 
   <!-- ÚLTIMAS ACTUALIZACIONES -->
   <section style="padding:3rem 2rem 2rem; border-top:1px solid rgba(201,168,76,0.2); max-width:720px; margin:0 auto;">
-    <h3 style="font-family:'Cinzel',serif; font-size:0.78rem; letter-spacing:0.18em; color:#C9A84C; text-transform:uppercase; margin-bottom:1.5rem; text-align:center;">Últimas actualizaciones</h3>
+    <h3 style="font-family:'Cinzel',serif; font-size:0.78rem; letter-spacing:0.18em; color:var(--oro-texto); text-transform:uppercase; margin-bottom:1.5rem; text-align:center;">Últimas actualizaciones</h3>
     <ul style="list-style:none; padding:0; margin:0;">
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">23 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">23 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
         <a href="logias.html#fraternidad-oct26b" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Tenida nº 312 — R∴L∴S∴ Fraternidad Mediterránea nº 94</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">23 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">23 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
         <a href="logias.html#floridablanca-oct26" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Tenida — R∴L∴S∴ Conde de Floridablanca nº 164</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">22 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Órdenes</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">22 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Órdenes</span>
         <a href="ordenes.html#rincon-colaterales" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Tenida de Instalación del Consejo Thader N.º&nbsp;240 — 22 octubre 2026, Murcia</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">20 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Órdenes</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">20 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Órdenes</span>
         <a href="ordenes.html#rincon-colaterales" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Tenida del Tabernáculo Virgen de la Arrixaca N.º&nbsp;293 — 20 octubre 2026, Mazarrón</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">21 Nov 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Provincia</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">21 Nov 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Provincia</span>
         <a href="noticias.html#gran-baile" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Gran Baile Benéfico de la Gran Logia Provincial de Murcia — Hotel Thalasia, 21 noviembre 2026</a>
       </li>
     </ul>
     <!-- HISTÓRICO -->
     <div style="text-align:center; margin-top:1rem;">
       <button onclick="var h=document.getElementById('historico-es');var open=h.style.display==='block';h.style.display=open?'none':'block';this.textContent=open?'Ver histórico ▾':'Ocultar histórico ▴';"
-        style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:#C9A84C; background:none; border:1px solid rgba(201,168,76,0.35); padding:0.4rem 1.2rem; cursor:pointer;">Ver histórico ▾</button>
+        style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--oro-texto); background:none; border:1px solid rgba(201,168,76,0.5); padding:0.8rem 1.4rem; cursor:pointer;">Ver histórico ▾</button>
     </div>
     <ul id="historico-es" style="list-style:none; padding:0; margin:0.5rem 0 0; display:none;">
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">16 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Órdenes</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">16 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Órdenes</span>
         <a href="ordenes.html#rincon-colaterales" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Tenida del Capítulo Arroyo de Gihón N.º&nbsp;38 — 16 octubre 2026, Murcia</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">9 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">9 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
         <a href="logias.html#moria-oct26" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Tenida Ordinaria nº 267 — R∴L∴S∴ Moriá nº 143</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">3 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Noticias</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">3 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Noticias</span>
         <a href="noticias.html#murcia-york-consagracion" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Consagración R∴L∴ Murcia York nº 201 — primera Logia del Rito de York en Murcia</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">3 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">3 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
         <a href="logias.html#murcia-york-oct26" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Consagración — R∴L∴ Murcia York nº 201</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">2 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">2 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
         <a href="logias.html#caballeros-oct26" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Tenida de Instalación — R∴L∴S∴ Caballeros de Levante nº 193</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">2 Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">2 Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Logias</span>
         <a href="logias.html#fraternidad-oct26" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Segunda tenida del curso — R∴L∴S∴ Fraternidad Mediterránea nº 94</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">26 Sep 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Noticias</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">26 Sep 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Noticias</span>
         <a href="noticias.html#monitor-secreto" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Instalación del Gran Rector Supremo de Distrito para España — Orden del Monitor Secreto</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">26 Sep 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Noticias</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">26 Sep 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Noticias</span>
         <a href="noticias.html#cordon-escarlata" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Instalación del Gran Summus de Distrito de España — Cordón Escarlata</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">18 Sep 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Órdenes</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">18 Sep 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Órdenes</span>
         <a href="ordenes.html#rincon-colaterales" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Cónclave GER ANAT 567 — Orden del Monitor Secreto</a>
       </li>
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0;">
-        <span style="font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.1em; color:#C9A84C; white-space:nowrap;">Oct 2026</span>
-        <span style="font-size:0.55rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:#8B7330; background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Órdenes</span>
+        <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">Oct 2026</span>
+        <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Órdenes</span>
         <a href="noticias.html#asamblea-marca-2027" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Gran Asamblea de Distrito de Maestros Masones de Marca — Benidorm, febrero 2027</a>
       </li>
     </ul>
@@ -474,7 +476,7 @@
       <a href="masoneria.html" class="page-card">
         <span class="page-card-icon">✦</span>
         <span class="page-card-label">Sobre la Masonería</span>
-        <span class="page-card-desc">Historia, valores y cómo unirte a la fraternidad.</span>
+        <span class="page-card-desc">Historia, valores y cómo unirse a la fraternidad.</span>
       </a>
       <a href="caridad.html" class="page-card">
         <span class="page-card-icon">◇</span>
@@ -489,7 +491,7 @@
       <a href="contacto.html" class="page-card">
         <span class="page-card-icon">▷</span>
         <span class="page-card-label">Contáctenos</span>
-        <span class="page-card-desc">Escríbenos para cualquier consulta, sin compromiso.</span>
+        <span class="page-card-desc">Escríbanos para cualquier consulta, sin compromiso.</span>
       </a>
     </div>
   </section>
@@ -510,24 +512,24 @@
 
   <!-- SECCIÓN: INSTALAR EN EL MÓVIL -->
   <section style="padding:3rem 2rem; border-top:1px solid rgba(201,168,76,0.2); max-width:720px; margin:0 auto; text-align:center;">
-    <h3 style="font-family:'Cinzel',serif; font-size:0.78rem; letter-spacing:0.18em; color:#C9A84C; text-transform:uppercase; margin-bottom:1.5rem;">Lleva la GLP en tu móvil</h3>
-    <p style="font-size:0.9rem; color:#2E3D4F; line-height:1.8; font-weight:300; margin-bottom:1.5rem;">Añade esta web a la pantalla de inicio de tu teléfono para acceder con un solo toque, como una aplicación.</p>
+    <h3 style="font-family:'Cinzel',serif; font-size:0.78rem; letter-spacing:0.18em; color:var(--oro-texto); text-transform:uppercase; margin-bottom:1.5rem;">Lleve la GLP en su móvil</h3>
+    <p style="font-size:0.9rem; color:#2E3D4F; line-height:1.8; font-weight:300; margin-bottom:1.5rem;">Añada esta web a la pantalla de inicio de su teléfono para acceder con un solo toque, como una aplicación.</p>
     <details style="text-align:left; margin-bottom:1rem;">
       <summary style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.12em; color:#1C2B3A; cursor:pointer; padding:0.6rem 0;">Android (Chrome)</summary>
       <ol style="font-size:0.88rem; color:#2E3D4F; line-height:1.9; padding-left:1.5rem; font-weight:300;">
-        <li>Abre <strong>glpmurcia.com</strong> en Chrome.</li>
-        <li>Toca el menú <strong>⋮</strong> (tres puntos, arriba a la derecha).</li>
-        <li>Selecciona <strong>«Añadir a pantalla de inicio»</strong>.</li>
-        <li>Confirma pulsando <strong>«Añadir»</strong>.</li>
+        <li>Abra <strong>glpmurcia.com</strong> en Chrome.</li>
+        <li>Toque el menú <strong>⋮</strong> (tres puntos, arriba a la derecha).</li>
+        <li>Seleccione <strong>«Añadir a pantalla de inicio»</strong>.</li>
+        <li>Confirme pulsando <strong>«Añadir»</strong>.</li>
       </ol>
     </details>
     <details style="text-align:left;">
       <summary style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.12em; color:#1C2B3A; cursor:pointer; padding:0.6rem 0;">iPhone / iPad (Safari)</summary>
       <ol style="font-size:0.88rem; color:#2E3D4F; line-height:1.9; padding-left:1.5rem; font-weight:300;">
-        <li>Abre <strong>glpmurcia.com</strong> en Safari.</li>
-        <li>Toca el botón <strong>Compartir</strong> (el cuadrado con la flecha hacia arriba).</li>
-        <li>Desplázate y selecciona <strong>«Añadir a pantalla de inicio»</strong>.</li>
-        <li>Confirma pulsando <strong>«Añadir»</strong>.</li>
+        <li>Abra <strong>glpmurcia.com</strong> en Safari.</li>
+        <li>Toque el botón <strong>Compartir</strong> (el cuadrado con la flecha hacia arriba).</li>
+        <li>Desplácese y seleccione <strong>«Añadir a pantalla de inicio»</strong>.</li>
+        <li>Confirme pulsando <strong>«Añadir»</strong>.</li>
       </ol>
     </details>
   </section>

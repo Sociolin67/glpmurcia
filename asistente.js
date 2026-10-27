@@ -161,7 +161,7 @@
     '@media (max-width:760px){#btn-top{right:20px!important}}',
     '#glpa-boton:focus-visible,#glpa-panel button:focus-visible,#glpa-panel a:focus-visible{outline:2px solid #C9A84C;outline-offset:3px}',
     '@media (prefers-reduced-motion:no-preference){#glpa-panel:not([hidden]){animation:glpa-sube .22s ease-out}@keyframes glpa-sube{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}}',
-    '@media (max-width:760px){#glpa-panel{right:16px;left:16px;width:auto;max-width:none}#glpa-boton{right:16px}}'
+    '@media (max-width:760px){#glpa-panel{right:16px;left:16px;width:auto;max-width:none}#glpa-boton{right:16px;padding:.5rem}#glpa-boton .glpa-texto{display:none}#glpa-boton .glpa-sello{width:34px;height:34px}}'
   ].join('\n');
 
   /* ---------------- FUNCIONAMIENTO ---------------- */
@@ -212,7 +212,8 @@
     boton.setAttribute('aria-controls', 'glpa-panel');
     boton.setAttribute('aria-expanded', 'false');
     var bs = el('span', 'glpa-sello', '∴'); bs.setAttribute('aria-hidden', 'true');
-    var btxt = el('span', '', t.boton);
+    var btxt = el('span', 'glpa-texto', t.boton);
+    boton.setAttribute('aria-label', t.boton);
     boton.appendChild(bs); boton.appendChild(btxt);
 
     function burbuja(cls) {
