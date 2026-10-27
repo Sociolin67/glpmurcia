@@ -19,6 +19,8 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
+    --oro-texto: #876329;
+    --oro-oscuro: #9A6F2E;
     --oro: #C9A84C;
     --oro-claro: #E8D5A3;
     --azul-noche: #0D1B2A;
@@ -259,6 +261,17 @@
   .legal-bar { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 0.8rem; padding: 0.7rem 1.4rem 0.9rem; background: rgba(13,27,42,0.92); font-family: 'Lato', sans-serif; font-size: 0.72rem; letter-spacing: 0.04em; color: #B8B0A0; }
   .legal-bar a { color: #B8B0A0; text-decoration: none; }
   .legal-bar a:hover { color: #C9A84C; }
+
+  /* Auditoría de diseño 27-10-2026: contraste AA y tamaño mínimo sobre fondo claro */
+  .cta-title em { color: var(--oro-oscuro); }
+  .intro-title em { color: var(--oro-oscuro); }
+  .page-eyebrow { color: var(--oro-texto); }
+  .page-title em { color: var(--oro-oscuro); }
+  .section-label { color: var(--oro-texto); font-size: 0.68rem; }
+  .stat-label { font-size: 0.68rem; }
+  .stat-num { color: var(--oro-oscuro); }
+  .timeline-btn { color: var(--oro-texto); font-size: 0.68rem; }
+  .timeline-date { color: var(--oro-texto); }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }

@@ -19,6 +19,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <style>
   :root {
+    --oro-texto: #876329;
+    --oro-oscuro: #9A6F2E;
     --oro: #C9A84C;
     --oro-claro: #E8D5A3;
     --azul-noche: #0D1B2A;
@@ -180,6 +182,18 @@
   .legal-bar { position: relative; z-index: 1; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 0.8rem; padding: 0.7rem 1.4rem 0.9rem; background: rgba(13,27,42,0.92); font-family: 'Lato', sans-serif; font-size: 0.72rem; letter-spacing: 0.04em; color: #B8B0A0; }
   .legal-bar a { color: #B8B0A0; text-decoration: none; }
   .legal-bar a:hover { color: #C9A84C; }
+
+  /* Auditoría de diseño 27-10-2026: contraste AA y tamaño mínimo sobre fondo claro */
+  .constituciones-intro a { color: var(--oro-texto); }
+  .constituciones-note a { color: var(--oro-texto); }
+  .doc-lang { font-size: 0.68rem; }
+  .doc-year { color: var(--oro-texto); font-size: 0.68rem; }
+  .page-eyebrow { color: var(--oro-texto); }
+  .page-title em { color: var(--oro-oscuro); }
+  .resource-date { color: var(--oro-texto); font-size: 0.68rem; }
+  .resource-link { color: var(--oro-texto); font-size: 0.68rem; }
+  .resource-tag { font-size: 0.68rem; }
+  .section-label { color: var(--oro-texto); font-size: 0.68rem; }
 
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }

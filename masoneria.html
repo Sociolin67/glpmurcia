@@ -19,6 +19,8 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
+    --oro-texto: #876329;
+    --oro-oscuro: #9A6F2E;
     --oro: #C9A84C;
     --oro-claro: #E8D5A3;
     --azul-noche: #0D1B2A;
@@ -284,6 +286,15 @@
   .legal-bar a { color: #B8B0A0; text-decoration: none; }
   .legal-bar a:hover { color: #C9A84C; }
 
+  /* Auditoría de diseño 27-10-2026: contraste AA y tamaño mínimo sobre fondo claro */
+  .block-label { color: var(--oro-texto); font-size: 0.68rem; }
+  .block-title em { color: var(--oro-oscuro); }
+  .cta-title em { color: var(--oro-oscuro); }
+  .grade-name { font-size: 0.68rem; }
+  .grade-num { color: var(--oro-oscuro); }
+  .page-eyebrow { color: var(--oro-texto); }
+  .page-title em { color: var(--oro-oscuro); }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -517,7 +528,7 @@
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer-inner">Si no conoce a ningún masón con quien hablar directamente, puede <strong><a href="contacto.html" style="color:var(--oro);text-decoration:none;">ponerse en contacto con nosotros</a></strong> a través del formulario de contacto. Alguien de la provincia le responderá y podrá resolver todas sus dudas sin ningún compromiso.</div>
+            <div class="faq-answer-inner">Si no conoce a ningún masón con quien hablar directamente, puede <strong><a href="contacto.html" style="color:var(--oro-texto);text-decoration:none;">ponerse en contacto con nosotros</a></strong> a través del formulario de contacto. Alguien de la provincia le responderá y podrá resolver todas sus dudas sin ningún compromiso.</div>
           </div>
         </div>
 
@@ -527,7 +538,7 @@
     <!-- CARACTERÍSTICAS DE UN MASÓN -->
     <div class="caracteristicas-block">
       <div class="section-header" style="margin-bottom:1.8rem;">
-        <span class="section-label" style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.22em;color:var(--oro);text-transform:uppercase;white-space:nowrap;">Características de un Masón</span>
+        <span class="section-label" style="font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.22em;color:var(--oro-texto);text-transform:uppercase;white-space:nowrap;">Características de un Masón</span>
         <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.4),transparent);"></span>
       </div>
 
