@@ -19,6 +19,8 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
+    --oro-texto: #876329;
+    --oro-oscuro: #9A6F2E;
     --oro: #C9A84C;
     --oro-claro: #E8D5A3;
     --azul-noche: #0D1B2A;
@@ -267,6 +269,11 @@
   .legal-text a { color: #9A6F2E; }
   .legal-text mark.pendiente { background: #FFE9A8; color: #7A4B00; padding: 0 0.3em; font-family: 'Lato', sans-serif; font-size: 0.85em; }
   .legal-updated { margin-top: 2.6rem; font-size: 0.8rem; color: #8A8270; font-family: 'Lato', sans-serif; }
+  /* Auditoría de diseño 27-10-2026: contraste AA y tamaño mínimo sobre fondo claro */
+  .legal-updated { color: var(--oro-texto); }
+  .page-eyebrow { color: var(--oro-texto); }
+  .page-title em { color: var(--oro-oscuro); }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }

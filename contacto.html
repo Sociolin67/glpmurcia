@@ -19,6 +19,8 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
+    --oro-texto: #876329;
+    --oro-oscuro: #9A6F2E;
     --oro: #C9A84C;
     --oro-claro: #E8D5A3;
     --azul-noche: #0D1B2A;
@@ -237,6 +239,13 @@
   .legal-bar a { color: #B8B0A0; text-decoration: none; }
   .legal-bar a:hover { color: #C9A84C; }
 
+  /* Auditoría de diseño 27-10-2026: contraste AA y tamaño mínimo sobre fondo claro */
+  .form-label { color: var(--oro-texto); font-size: 0.68rem; }
+  .info-label { color: var(--oro-texto); font-size: 0.68rem; }
+  .page-eyebrow { color: var(--oro-texto); }
+  .page-title em { color: var(--oro-oscuro); }
+  .red-icon { color: var(--oro-texto); font-size: 0.68rem; }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -257,13 +266,13 @@
 <meta property="og:locale:alternate" content="en_GB">
 <meta property="og:url" content="https://glpmurcia.com/contacto.html">
 <meta property="og:title" content="Contacto | Gran Logia Provincial de Murcia">
-<meta property="og:description" content="Contacta con la Gran Logia Provincial de Murcia.">
+<meta property="og:description" content="Contacte con la Gran Logia Provincial de Murcia.">
 <meta property="og:image" content="https://glpmurcia.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contacto | Gran Logia Provincial de Murcia">
-<meta name="twitter:description" content="Contacta con la Gran Logia Provincial de Murcia.">
+<meta name="twitter:description" content="Contacte con la Gran Logia Provincial de Murcia.">
 <meta name="twitter:image" content="https://glpmurcia.com/og-image.png">
 </head>
 <body>
@@ -319,7 +328,7 @@
       <span class="ornament-line r"></span>
     </div>
     <p class="page-eyebrow">Gran Logia Provincial de Murcia</p>
-    <h1 class="page-title">Ponte en <em>contacto</em></h1>
+    <h1 class="page-title">Póngase en <em>contacto</em></h1>
     <p class="page-desc">¿Tiene preguntas sobre la masonería? ¿Le interesa unirse? ¿Desea saber más sobre nuestro trabajo caritativo? Será un placer atenderle.</p>
   </header>
 
@@ -360,7 +369,7 @@
 
       <div class="info-block">
         <p class="info-label">Gran Logia de España</p>
-        <p class="info-text">La Gran Logia Provincial de Murcia se encuentra bajo los auspicios de la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Gran Logia de España</a>, obediencia masónica regular reconocida internacionalmente.</p>
+        <p class="info-text">La Gran Logia Provincial de Murcia se encuentra bajo los auspicios de la <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro-texto);text-decoration:none;">Gran Logia de España</a>, obediencia masónica regular reconocida internacionalmente.</p>
       </div>
 
     </div>

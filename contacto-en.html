@@ -19,6 +19,8 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
+    --oro-texto: #876329;
+    --oro-oscuro: #9A6F2E;
     --oro: #C9A84C;
     --oro-claro: #E8D5A3;
     --azul-noche: #0D1B2A;
@@ -237,6 +239,13 @@
   .legal-bar a { color: #B8B0A0; text-decoration: none; }
   .legal-bar a:hover { color: #C9A84C; }
 
+  /* Auditoría de diseño 27-10-2026: contraste AA y tamaño mínimo sobre fondo claro */
+  .form-label { color: var(--oro-texto); font-size: 0.68rem; }
+  .info-label { color: var(--oro-texto); font-size: 0.68rem; }
+  .page-eyebrow { color: var(--oro-texto); }
+  .page-title em { color: var(--oro-oscuro); }
+  .red-icon { color: var(--oro-texto); font-size: 0.68rem; }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -360,7 +369,7 @@
 
       <div class="info-block">
         <p class="info-label">Grand Lodge of Spain</p>
-        <p class="info-text">The Provincial Grand Lodge of Murcia is under the auspices of the <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro);text-decoration:none;">Grand Lodge of Spain</a>, a regular Masonic obedience recognised internationally.</p>
+        <p class="info-text">The Provincial Grand Lodge of Murcia is under the auspices of the <a href="https://www.gle.org" target="_blank" rel="noopener" style="color:var(--oro-texto);text-decoration:none;">Grand Lodge of Spain</a>, a regular Masonic obedience recognised internationally.</p>
       </div>
 
     </div>
