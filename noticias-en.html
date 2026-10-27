@@ -19,6 +19,8 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
+    --oro-texto: #876329;
+    --oro-oscuro: #9A6F2E;
     --oro: #C9A84C;
     --oro-claro: #E8D5A3;
     --azul-noche: #0D1B2A;
@@ -247,6 +249,14 @@
   .legal-bar a { color: #B8B0A0; text-decoration: none; }
   .legal-bar a:hover { color: #C9A84C; }
 
+  /* Auditoría de diseño 27-10-2026: contraste AA y tamaño mínimo sobre fondo claro */
+  .news-btn { color: var(--oro-texto); font-size: 0.68rem; }
+  .news-date { color: var(--oro-texto); font-size: 0.68rem; }
+  .news-tag { font-size: 0.68rem; }
+  .page-eyebrow { color: var(--oro-texto); }
+  .page-title em { color: var(--oro-oscuro); }
+  .section-label { color: var(--oro-texto); font-size: 0.68rem; }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -358,13 +368,13 @@
 
         <p><strong>Price:</strong> €55 per person. Book via the online form:</p>
         <p style="margin:0.6rem 0;">
-          <a href="https://form.jotform.com/262763710039053" target="_blank" rel="noopener" style="display:inline-block; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.55rem 1.4rem; border:1px solid #C9A84C; color:#C9A84C; text-decoration:none; transition:all 0.3s;">Book your place</a>
+          <a href="https://form.jotform.com/262763710039053" target="_blank" rel="noopener" style="display:inline-block; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.55rem 1.4rem; border:1px solid #C9A84C; color:var(--oro-texto); text-decoration:none; transition:all 0.3s;">Book your place</a>
         </p>
         <p>Bank transfer to:<br>
         <strong>Asociación Cultural GLP Murcia</strong><br>
         IBAN: <strong>ES41 2100 6032 8602 0021 3201</strong></p>
 
-        <p><strong>Hotel offer:</strong> Hotel Thalasia is offering attendees a <strong>20% discount</strong> on accommodation, late check-out until 2:00 PM and complimentary spa access. Bookings quoting code <strong>GRANLOGIA</strong> to <a href="mailto:comercial@thalasia.com" style="color:#C9A84C;">comercial@thalasia.com</a> (attn. Ms Estela).</p>
+        <p><strong>Hotel offer:</strong> Hotel Thalasia is offering attendees a <strong>20% discount</strong> on accommodation, late check-out until 2:00 PM and complimentary spa access. Bookings quoting code <strong>GRANLOGIA</strong> to <a href="mailto:comercial@thalasia.com" style="color:var(--oro-texto);">comercial@thalasia.com</a> (attn. Ms Estela).</p>
 
         <p style="margin-top:1.2rem;">
           <a href="Carta_invitacion_Gala_2026.pdf" download style="display:inline-flex; align-items:center; gap:0.5rem; font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; padding:0.55rem 1.4rem; background:#C9A84C; color:#0D1B2A; text-decoration:none; font-weight:600; transition:opacity 0.3s;">
@@ -556,9 +566,9 @@
 
     <!-- LINK TO LODGE LIFE -->
     <div style="text-align:center; margin: 3rem 0 1rem; padding-top: 2.5rem; border-top: 1px solid rgba(201,168,76,0.15);">
-      <p style="font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.22em; color:var(--oro); text-transform:uppercase; margin-bottom:0.8rem;">Lodge Life</p>
+      <p style="font-family:'Cinzel',serif; font-size:0.68rem; letter-spacing:0.22em; color:var(--oro-texto); text-transform:uppercase; margin-bottom:0.8rem;">Lodge Life</p>
       <p style="font-size:0.9rem; font-weight:300; color:#2E3D4F; margin-bottom:1.2rem;">Chronicles of the meetings and activities of the lodges of the Province.</p>
-      <a href="logias-en.html" style="font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.14em; text-transform:uppercase; padding:0.55rem 1.6rem; border:1px solid rgba(201,168,76,0.35); color:var(--oro); text-decoration:none; transition:all 0.3s; display:inline-block;">View Lodge Life →</a>
+      <a href="logias-en.html" style="font-family:'Cinzel',serif; font-size:0.68rem; letter-spacing:0.14em; text-transform:uppercase; padding:0.55rem 1.6rem; border:1px solid rgba(201,168,76,0.35); color:var(--oro-texto); text-decoration:none; transition:all 0.3s; display:inline-block;">View Lodge Life →</a>
     </div>
 
   </div>

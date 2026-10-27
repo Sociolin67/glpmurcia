@@ -19,6 +19,8 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
+    --oro-texto: #876329;
+    --oro-oscuro: #9A6F2E;
     --oro: #C9A84C;
     --oro-claro: #E8D5A3;
     --azul-noche: #0D1B2A;
@@ -285,6 +287,18 @@
   .legal-bar a { color: #B8B0A0; text-decoration: none; }
   .legal-bar a:hover { color: #C9A84C; }
 
+  /* Auditoría de diseño 27-10-2026: contraste AA y tamaño mínimo sobre fondo claro */
+  .cronica-btn { color: var(--oro-texto); font-size: 0.68rem; }
+  .cronica-chip { font-size: 0.68rem; }
+  .cronica-date { color: var(--oro-texto); font-size: 0.68rem; }
+  .lodge-link { font-size: 0.68rem; padding: 0.6rem 0.9rem; }
+  .lodge-num { color: var(--oro-texto); }
+  .lodge-ritual span { color: var(--oro-texto); }
+  .page-eyebrow { color: var(--oro-texto); }
+  .page-title em { color: var(--oro-oscuro); }
+  .ritos-glpm-note { font-size: 0.68rem; }
+  .section-label { color: var(--oro-texto); font-size: 0.68rem; }
+
   @media (max-width: 768px) {
     .cronica-grid { grid-template-columns: 1fr; }
     nav { padding: 1rem 1.4rem; }
@@ -373,7 +387,7 @@
     <p class="page-eyebrow">Gran Logia Provincial de Murcia</p>
     <h1 class="page-title">Logias de <em>la Provincia</em></h1>
     <p class="page-desc">La provincia de Murcia cuenta con ocho Logias Regulares, que trabajan en los Ritos de Emulación, Escocés, Francés y York, en lengua española e inglesa. Si desea visitar una logia, contacte en primera instancia con su Secretario.</p>
-    <a href="#vida-logias" style="display:inline-block;margin-top:1.4rem;font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 1.4rem;border:1px solid rgba(201,168,76,0.35);color:var(--oro);text-decoration:none;transition:all 0.3s;">↓ Vida de las Logias</a>
+    <a href="#vida-logias" style="display:inline-block;margin-top:1.4rem;font-family:'Cinzel',serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 1.4rem;border:1px solid rgba(201,168,76,0.35);color:var(--oro-texto);text-decoration:none;transition:all 0.3s;">↓ Vida de las Logias</a>
   </header>
 
   <!-- AVISO VISITAS -->
