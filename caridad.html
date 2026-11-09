@@ -277,6 +277,9 @@
   /* ── FOCO, PULSACIÓN Y MOVIMIENTO REDUCIDO ── */
   .nav-links a:focus-visible, .nav-mobile a:focus-visible, .nav-cta:focus-visible, .nav-cta-mobile:focus-visible, .lang-switcher a:focus-visible, .btn-primary:focus-visible, .btn-secondary:focus-visible, .page-card:focus-visible, .lodge-pill:focus-visible, .nav-hamburger:focus-visible, .timeline-btn:focus-visible, .news-btn:focus-visible, .cronica-btn:focus-visible, .resource-link:focus-visible, .gm-link:focus-visible, .btn-submit:focus-visible, .lodge-link:focus-visible, .ritos-root-link:focus-visible, .rito-card:focus-visible, .inner-nav a:focus-visible { outline: 2px solid var(--oro, #C9A84C); outline-offset: 3px; }
   .btn-primary:active, .btn-secondary:active, .page-card:active, .btn-submit:active, .rito-card:active { transform: scale(0.98); transition-duration: 0.12s; }
+  .action-icon { color: var(--oro-oscuro); opacity: 1; display: flex; }
+  .action-icon svg.ico { width: 30px; height: 30px; }
+
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
 
   @media (max-width: 768px) {
@@ -415,22 +418,22 @@
 
     <div class="actions-grid">
       <div class="action-card">
-        <div class="action-icon" aria-hidden="true">◈</div>
+        <div class="action-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 10h16l-1.6 9H5.6L4 10zM8 10l3-5M16 10l-3-5M9 13.5v3M12 13.5v3M15 13.5v3"/></svg></div>
         <p class="action-title">Bancos de alimentos</p>
         <p class="action-body">Las logias de la provincia colaboran directamente con los servicios sociales municipales para reforzar las reservas de alimentos de los bancos locales, especialmente en períodos de mayor demanda.</p>
       </div>
       <div class="action-card">
-        <div class="action-icon" aria-hidden="true">✦</div>
+        <div class="action-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 4h8v4a4 4 0 0 1-8 0V4zM12 12v7M8.5 20h7"/></svg></div>
         <p class="action-title">Cenas benéficas</p>
         <p class="action-body">La Cena de Gala Anual de la provincia incluye actividades solidarias — rifas y colectas — cuyos fondos se destinan íntegramente a asociaciones de la región seleccionadas por su impacto social.</p>
       </div>
       <div class="action-card">
-        <div class="action-icon" aria-hidden="true">◇</div>
+        <div class="action-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.3"/><path d="M16 14.3c2.9-.3 5 1.6 5 4.2"/></svg></div>
         <p class="action-title">Apoyo a asociaciones</p>
         <p class="action-body">La provincia apoya directamente a organizaciones como <strong>MABS Murcia</strong> y <strong>Proyecto Oblatas</strong>, que trabajan con colectivos vulnerables en nuestra región.</p>
       </div>
       <div class="action-card">
-        <div class="action-icon" aria-hidden="true">⬡</div>
+        <div class="action-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M11 6.8L6 16.2M13 6.8l5 9.4M7.2 18h9.6"/></svg></div>
         <p class="action-title">Iniciativa provincial</p>
         <p class="action-body">El Gran Maestro Provincial coordina iniciativas de alcance provincial que suman el esfuerzo de todas las logias, multiplicando el impacto de cada acción individual.</p>
       </div>
