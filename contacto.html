@@ -172,7 +172,8 @@
     display: none; text-align: center; padding: 2rem 1rem;
   }
   .success-msg.visible { display: block; }
-  .success-icon { font-size: 1.5rem; color: var(--oro); margin-bottom: 1rem; }
+  .success-icon { color: var(--oro-oscuro); margin-bottom: 1rem; display: flex; justify-content: center; }
+  .success-icon svg.ico { width: 40px; height: 40px; }
   .success-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: #1C2B3A; margin-bottom: 0.5rem; }
   .success-text { font-size: 0.90rem; font-weight: 300; color: #2E3D4F; line-height: 1.75; }
 
@@ -435,7 +436,7 @@
         </div>
 
         <div class="success-msg" id="success-msg">
-          <div class="success-icon" aria-hidden="true">✦</div>
+          <div class="success-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M7.8 12.4l3 3 5.4-6"/></svg></div>
           <p class="success-title">Mensaje recibido</p>
           <p class="success-text">Gracias por ponerse en contacto con nosotros.<br>Le responderemos lo antes posible.</p>
         </div>
