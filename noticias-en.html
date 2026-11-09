@@ -61,7 +61,7 @@
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { font-size: 0.76rem; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: #C8D0D8; transition: color 0.3s; }
   .nav-links a:hover, .nav-links a.active { color: var(--oro); }
-  .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
+  .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: background-color 0.3s, color 0.3s; text-transform: uppercase; white-space: nowrap; }
   .nav-cta:hover { background: var(--oro); color: var(--azul-noche); }
 
   /* ── CABECERA ── */
@@ -177,7 +177,7 @@
   .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; }
   .nav-right { display: flex; align-items: center; gap: 1rem; }
   .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
-  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: all 0.25s; }
+  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; color: #B8B0A0; transition: color 0.25s, background-color 0.25s, border-color 0.25s; }
   .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
   .lang-switcher a:not(.active):hover { color: var(--oro); }
   .nav-mobile .lang-switcher-mobile { display: flex; gap: 0; margin-top: 0.8rem; border: 1px solid rgba(201,168,76,0.35); align-self: flex-start; }
@@ -187,7 +187,7 @@
   /* ── SHOW MORE ── */
   .news-more { display: none; }
   .news-more.open { display: contents; }
-  .news-btn { display: block; margin: 0.5rem auto 2rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.55rem 1.6rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: all 0.3s; }
+  .news-btn { display: block; margin: 0.5rem auto 2rem; font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.55rem 1.6rem; border: 1px solid rgba(201,168,76,0.35); background: none; color: var(--oro); cursor: pointer; transition: background-color 0.3s, color 0.3s; }
   .news-btn:hover { background: var(--oro); color: var(--azul-noche); }
 
   /* ── LODGE LIFE ── */
@@ -258,6 +258,11 @@
   .section-label { color: var(--oro-texto); font-size: 0.68rem; }
 
   main#contenido { display: flex; flex-direction: column; flex: 1 0 auto; }
+  /* ── FOCO, PULSACIÓN Y MOVIMIENTO REDUCIDO ── */
+  .nav-links a:focus-visible, .nav-mobile a:focus-visible, .nav-cta:focus-visible, .nav-cta-mobile:focus-visible, .lang-switcher a:focus-visible, .btn-primary:focus-visible, .btn-secondary:focus-visible, .page-card:focus-visible, .lodge-pill:focus-visible, .nav-hamburger:focus-visible, .timeline-btn:focus-visible, .news-btn:focus-visible, .cronica-btn:focus-visible, .resource-link:focus-visible, .gm-link:focus-visible, .btn-submit:focus-visible, .lodge-link:focus-visible, .ritos-root-link:focus-visible, .rito-card:focus-visible, .inner-nav a:focus-visible { outline: 2px solid var(--oro, #C9A84C); outline-offset: 3px; }
+  .btn-primary:active, .btn-secondary:active, .page-card:active, .btn-submit:active, .rito-card:active { transform: scale(0.98); transition-duration: 0.12s; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
+
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }

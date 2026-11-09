@@ -70,7 +70,7 @@
     transition: color 0.3s;
   }
   .nav-links a:hover, .nav-links a.active { color: var(--oro); }
-  .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: all 0.3s; text-transform: uppercase; white-space: nowrap; }
+  .nav-cta { font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-decoration: none; transition: background-color 0.3s, color 0.3s; text-transform: uppercase; white-space: nowrap; }
   .nav-cta:hover { background: var(--oro); color: var(--azul); }
 
   /* ── HERO ── */
@@ -361,19 +361,19 @@
   .footer-logo-text { font-family: "Cinzel", serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--gris-suave); line-height: 1.5; text-transform: uppercase; }
   /* ── MENÚ MÓVIL ── */
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: all 0.3s; }
+  .nav-hamburger span { display: block; width: 26px; height: 2px; background: var(--oro); transition: transform 0.3s, opacity 0.3s; }
   .nav-mobile { display: none; flex-direction: column; background: rgba(13,27,42,0.99); border-bottom: 1px solid rgba(201,168,76,0.2); padding: 1rem 1.4rem; position: sticky; top: 58px; z-index: 99; width: 100%; }
   .nav-mobile.open { display: flex; }
   .nav-mobile a { font-size: 0.82rem; font-weight: 300; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: #B8B0A0; padding: 0.75rem 0; border-bottom: 1px solid rgba(201,168,76,0.15); transition: color 0.3s; }
   .nav-mobile a:last-child { border-bottom: none; }
   .nav-mobile a:hover, .nav-mobile a.active { color: var(--oro); }
-  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; transition: all 0.3s; }
+  .nav-mobile .nav-cta-mobile { margin-top: 0.6rem; font-family: 'Cinzel', serif; font-size: 0.68rem; letter-spacing: 0.1em; padding: 0.5rem 1.2rem; border: 1px solid var(--oro); color: var(--oro); text-align: center; text-decoration: none; text-transform: uppercase; transition: background-color 0.3s, color 0.3s; }
   .nav-mobile .nav-cta-mobile:hover { background: var(--oro); color: var(--azul-noche); }
   
   /* ── RESPONSIVE ── */
   /* ── SELECTOR DE IDIOMA ── */
   .lang-switcher { display: flex; align-items: center; gap: 0; margin-left: 1.4rem; border: 1px solid rgba(201,168,76,0.35); }
-  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; transition: all 0.25s; color: var(--gris-suave, #B8B0A0); }
+  .lang-switcher a { font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.12em; padding: 0.3rem 0.6rem; text-decoration: none; text-transform: uppercase; transition: color 0.25s, background-color 0.25s, border-color 0.25s; color: var(--gris-suave, #B8B0A0); }
   .lang-switcher a { color: #B8B0A0; }
   .lang-switcher a.active { background: var(--oro); color: var(--azul-noche, #0D1B2A); font-weight: 600; }
   .lang-switcher a:not(.active):hover { color: var(--oro); }
@@ -490,6 +490,11 @@
   .lodge-btn { font-size: 0.68rem; }
   .lodges-label { color: var(--oro-texto); font-size: 0.68rem; }
   .order-tag { color: var(--oro-texto); font-size: 0.68rem; }
+  /* ── FOCO, PULSACIÓN Y MOVIMIENTO REDUCIDO ── */
+  .nav-links a:focus-visible, .nav-mobile a:focus-visible, .nav-cta:focus-visible, .nav-cta-mobile:focus-visible, .lang-switcher a:focus-visible, .btn-primary:focus-visible, .btn-secondary:focus-visible, .page-card:focus-visible, .lodge-pill:focus-visible, .nav-hamburger:focus-visible, .timeline-btn:focus-visible, .news-btn:focus-visible, .cronica-btn:focus-visible, .resource-link:focus-visible, .gm-link:focus-visible, .btn-submit:focus-visible, .lodge-link:focus-visible, .ritos-root-link:focus-visible, .rito-card:focus-visible, .inner-nav a:focus-visible { outline: 2px solid var(--oro, #C9A84C); outline-offset: 3px; }
+  .btn-primary:active, .btn-secondary:active, .page-card:active, .btn-submit:active, .rito-card:active { transform: scale(0.98); transition-duration: 0.12s; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
+
 
   @media (max-width: 700px) {
     nav, main, footer { padding-left: 1.4rem; padding-right: 1.4rem; }
