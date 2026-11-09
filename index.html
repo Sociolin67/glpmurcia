@@ -231,6 +231,11 @@
   /* ── FOCO, PULSACIÓN Y MOVIMIENTO REDUCIDO ── */
   .nav-links a:focus-visible, .nav-mobile a:focus-visible, .nav-cta:focus-visible, .nav-cta-mobile:focus-visible, .lang-switcher a:focus-visible, .btn-primary:focus-visible, .btn-secondary:focus-visible, .page-card:focus-visible, .lodge-pill:focus-visible, .nav-hamburger:focus-visible, .timeline-btn:focus-visible, .news-btn:focus-visible, .cronica-btn:focus-visible, .resource-link:focus-visible, .gm-link:focus-visible, .btn-submit:focus-visible, .lodge-link:focus-visible, .ritos-root-link:focus-visible, .rito-card:focus-visible, .inner-nav a:focus-visible { outline: 2px solid var(--oro, #C9A84C); outline-offset: 3px; }
   .btn-primary:active, .btn-secondary:active, .page-card:active, .btn-submit:active, .rito-card:active { transform: scale(0.98); transition-duration: 0.12s; }
+  .pillar-icon span { color: var(--oro-oscuro); display: flex; }
+  .pillar-icon svg.ico { width: 26px; height: 26px; }
+  .page-card-icon { color: var(--oro-oscuro); opacity: 1; display: flex; }
+  .page-card-icon svg.ico { width: 26px; height: 26px; }
+
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
 
   @media (max-width: 768px) {
@@ -461,22 +466,22 @@
   <section class="pillars">
     <div class="pillars-grid">
       <div class="pillar">
-        <div class="pillar-icon" aria-hidden="true"><span>⬡</span></div>
+        <div class="pillar-icon" aria-hidden="true"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/></svg></span></div>
         <p class="pillar-label">Fraternidad</p>
         <p class="pillar-text">Vínculos duraderos entre hombres de bien, más allá de diferencias sociales o culturales.</p>
       </div>
       <div class="pillar">
-        <div class="pillar-icon" aria-hidden="true"><span>◈</span></div>
+        <div class="pillar-icon" aria-hidden="true"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8"/></svg></span></div>
         <p class="pillar-label">Razón</p>
         <p class="pillar-text">El cultivo del pensamiento libre, crítico y comprometido con la búsqueda de la verdad.</p>
       </div>
       <div class="pillar">
-        <div class="pillar-icon" aria-hidden="true"><span>✦</span></div>
+        <div class="pillar-icon" aria-hidden="true"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span></div>
         <p class="pillar-label">Caridad</p>
         <p class="pillar-text">Apoyo activo a las comunidades locales y contribución a causas sociales de la región.</p>
       </div>
       <div class="pillar">
-        <div class="pillar-icon" aria-hidden="true"><span>◇</span></div>
+        <div class="pillar-icon" aria-hidden="true"><span><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 4h12M7 7h10M9 7v11M15 7v11M7 18h10M6 21h12"/></svg></span></div>
         <p class="pillar-label">Tradición</p>
         <p class="pillar-text">Herederos de siglos de historia masónica, con raíces en los grandes constructores medievales.</p>
       </div>
@@ -487,32 +492,32 @@
   <section class="pages-strip">
     <div class="pages-grid">
       <a href="noticias.html" class="page-card">
-        <span class="page-card-icon" aria-hidden="true">◈</span>
+        <span class="page-card-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="4" width="16" height="16" rx="1"/><path d="M8 9h8M8 12.5h8M8 16h5"/></svg></span>
         <span class="page-card-label">Noticias y Eventos</span>
-        <span class="page-card-desc">Mantente al día de la actividad de la provincia.</span>
+        <span class="page-card-desc">Manténgase al día de la actividad de la provincia.</span>
       </a>
       <a href="logias.html" class="page-card">
-        <span class="page-card-icon" aria-hidden="true">⬡</span>
+        <span class="page-card-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9l9-5 9 5M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 20h18"/></svg></span>
         <span class="page-card-label">Logias</span>
         <span class="page-card-desc">Las ocho logias regulares de la provincia de Murcia.</span>
       </a>
       <a href="masoneria.html" class="page-card">
-        <span class="page-card-icon" aria-hidden="true">✦</span>
+        <span class="page-card-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="4.6" r="1.4"/><path d="M11.3 5.9L5.5 20.5M12.7 5.9L18.5 20.5M8.2 15.5q3.8-2.4 7.6 0"/></svg></span>
         <span class="page-card-label">Sobre la Masonería</span>
         <span class="page-card-desc">Historia, valores y cómo unirse a la fraternidad.</span>
       </a>
       <a href="caridad.html" class="page-card">
-        <span class="page-card-icon" aria-hidden="true">◇</span>
+        <span class="page-card-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.4A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg></span>
         <span class="page-card-label">Caridad</span>
         <span class="page-card-desc">Nuestro compromiso con la comunidad murciana.</span>
       </a>
       <a href="recursos.html" class="page-card">
-        <span class="page-card-icon" aria-hidden="true">∴</span>
+        <span class="page-card-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 6c-2-1.5-5-2-8-1.5V18c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V4.5C17 4 14 4.5 12 6zM12 6v13.5"/></svg></span>
         <span class="page-card-label">Recursos</span>
         <span class="page-card-desc">Documentales, constituciones y publicaciones masónicas.</span>
       </a>
       <a href="contacto.html" class="page-card">
-        <span class="page-card-icon" aria-hidden="true">▷</span>
+        <span class="page-card-icon" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5.5" width="18" height="13" rx="1"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg></span>
         <span class="page-card-label">Contáctenos</span>
         <span class="page-card-desc">Escríbanos para cualquier consulta, sin compromiso.</span>
       </a>
