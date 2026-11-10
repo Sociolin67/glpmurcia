@@ -197,6 +197,10 @@
   /* ── FOCO, PULSACIÓN Y MOVIMIENTO REDUCIDO ── */
   .nav-links a:focus-visible, .nav-mobile a:focus-visible, .nav-cta:focus-visible, .nav-cta-mobile:focus-visible, .lang-switcher a:focus-visible, .btn-primary:focus-visible, .btn-secondary:focus-visible, .page-card:focus-visible, .lodge-pill:focus-visible, .nav-hamburger:focus-visible, .timeline-btn:focus-visible, .news-btn:focus-visible, .cronica-btn:focus-visible, .resource-link:focus-visible, .gm-link:focus-visible, .btn-submit:focus-visible, .lodge-link:focus-visible, .ritos-root-link:focus-visible, .rito-card:focus-visible, .inner-nav a:focus-visible { outline: 2px solid var(--oro, #C9A84C); outline-offset: 3px; }
   .btn-primary:active, .btn-secondary:active, .page-card:active, .btn-submit:active, .rito-card:active { transform: scale(0.98); transition-duration: 0.12s; }
+  /* Medida de lectura (10-11-2026): 45-75 caracteres por línea; títulos con interlineado 1,15 */
+  main :is(p, .faq-answer-inner, .constituciones-intro, .ritos-intro, .timeline-body, .visit-notice-text, .cta-text, .page-desc, .order-desc, .info-note-text) { max-width: 56ch; }
+  main :is([class*="eyebrow"], [style*="text-align:center"] > p) { max-width: none; }
+  main :is(.lodge-name, .cronica-title, .caract-title, .news-title, .order-name, .doc-title, .resource-title) { line-height: 1.15; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
 
 
