@@ -267,6 +267,19 @@
   main :is(.lodge-name, .cronica-title, .caract-title, .news-title, .order-name, .doc-title, .resource-title) { line-height: 1.15; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
 
+  .logo-asociacion { display: block; width: 150px; margin: 1.2rem 0 0.4rem; }
+  .logo-asociacion img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid rgba(201,168,76,0.4); padding: 8px 12px; border-radius: 4px; }
+  .logo-asociacion:focus-visible { outline: 2px solid var(--oro-texto); outline-offset: 3px; }
+  /* Carrusel de fotos de la noticia del Gran Baile (22-11-2026) */
+  .carrusel { position: relative; margin-top: 1.6rem; }
+  .carrusel-pista { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: thin; border-radius: 6px; }
+  .carrusel-slide { flex: 0 0 100%; scroll-snap-align: center; margin: 0; }
+  .carrusel-slide img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .carrusel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--oro); background: rgba(13,27,42,0.82); color: var(--oro); font-size: 1.6rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .carrusel-btn:hover, .carrusel-btn:focus-visible { background: #0D1B2A; color: #F7F3EC; outline: 2px solid var(--oro); outline-offset: 2px; }
+  .carrusel-prev { left: 0.6rem; }
+  .carrusel-next { right: 0.6rem; }
+  .carrusel-cuenta { text-align: center; margin-top: 0.5rem; font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--oro-texto); }
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -372,17 +385,26 @@
         <span class="news-tag">Province</span>
       </div>
       <h2 class="news-title">Grand Charity Ball of the Provincial Grand Lodge of Murcia</h2>
-      <div class="news-body">
-        <p>By invitation of the Provincial Grand Master of Murcia, the Provincial Grand Lodge will host its <strong>Grand Charity Ball</strong> on <strong>Saturday 21 November 2026</strong> at the <strong>Hotel Thalasia</strong>, San Pedro del Pinatar, from <strong>7:00 PM</strong>. The evening will feature a gala dinner, live music by <strong>NOVA STONE</strong>, dancing and a charity raffle. Elegant attire is required.</p>
+<div class="news-body">
+        <p>The Provincial Grand Lodge held its <strong>Grand Charity Ball</strong> on <strong>Saturday 21 November 2026</strong>, by invitation of the Provincial Grand Master of Murcia, at the <strong>Hotel Thalasia</strong>, San Pedro del Pinatar. More than sixty brethren and supporters of the cause shared an evening of gala dinner, live music by <strong>NOVA STONE</strong>, dancing and a charity raffle.</p>
 
-        <p><strong>Sold out.</strong> The call has been a great success: <strong>more than sixty people</strong> will attend the gala. Thank you all for getting behind it. The funds raised will go to the association <strong>Héroes de 4 patas</strong>, this year's beneficiary. <a href="https://www.heroesde4patas.org/" target="_blank" rel="noopener" style="color:var(--oro-texto);">Learn more about the association</a>.</p>
-
-        <p><strong>Gala Menu:</strong> Crispy squid with garlic mayonnaise and Iberian acorn-fed ham · Prawn ravioli with spinach sauce and Parmesan foam · Oven-baked sea bass with seafood stock and mussel pil pil (option: chicken stuffed with chorizo, cheese and asparagus with roasted potato) · Chocolate and orange tart with toffee ice cream or chocolate and vanilla coulant with cream ice cream · Coffee, herbal teas and petit fours · Ramón Bilbao wines (white and red). <strong>Vegetarian option</strong> available.</p>
-
-        <p><strong>Hotel offer:</strong> Hotel Thalasia is offering attendees a <strong>20% discount</strong> on accommodation, late check-out until 2:00 PM and complimentary spa access. Bookings quoting code <strong>GRANLOGIA</strong> to <a href="mailto:comercial@thalasia.com" style="color:var(--oro-texto);">comercial@thalasia.com</a> (attn. Ms Estela).</p>
+        <p>The funds raised will allow a donation of <strong>€1,200</strong> to the association <strong>Héroes de 4 patas</strong>, this year's beneficiary. The Province thanks all the brethren and supporters who took part so generously: their commitment made this charitable evening possible. <a href="https://www.heroesde4patas.org/" target="_blank" rel="noopener" style="color:var(--oro-texto);">Learn more about the association</a>.</p>
+        <a class="logo-asociacion" href="https://www.heroesde4patas.org/" target="_blank" rel="noopener" aria-label="Héroes de 4 patas association website"><img src="heroes-4-patas.png" alt="Héroes de 4 patas association logo" width="150" height="173" loading="lazy" decoding="async"></a>
       </div>
-      <div class="news-gallery" style="grid-template-columns: 1fr;">
-        <img src="baile-montaje-en.jpg" alt="Grand Charity Ball, 21 November 2026: sold out, in aid of the association Héroes de 4 patas" width="1200" height="630" style="max-width: 720px; width: 100%; height: auto; display: block; border-radius: 6px; margin: 0 auto;" loading="lazy">
+      <div class="carrusel" id="carrusel-baile" role="region" aria-roledescription="carousel" aria-label="Photographs of the Grand Charity Ball" data-fmt="Photo {n} of 8">
+        <div class="carrusel-pista" tabindex="0">
+          <figure class="carrusel-slide"><img src="gala-baile-1.jpg" alt="Brethren and supporters at the gala dinner of the Grand Charity Ball (photo 1 of 8)" width="1600" height="1200"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-2.jpg" alt="Brethren and supporters at the gala dinner of the Grand Charity Ball (photo 2 of 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-3.jpg" alt="Brethren and supporters at the gala dinner of the Grand Charity Ball (photo 3 of 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-4.jpg" alt="Brethren and supporters at the gala dinner of the Grand Charity Ball (photo 4 of 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-5.jpg" alt="Brethren and supporters at the gala dinner of the Grand Charity Ball (photo 5 of 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-6.jpg" alt="Brethren and supporters at the gala dinner of the Grand Charity Ball (photo 6 of 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-7.jpg" alt="Brethren and supporters at the gala dinner of the Grand Charity Ball (photo 7 of 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-8.jpg" alt="Brethren and supporters at the gala dinner of the Grand Charity Ball (photo 8 of 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+        </div>
+        <button type="button" class="carrusel-btn carrusel-prev" aria-label="Previous photo">&#8249;</button>
+        <button type="button" class="carrusel-btn carrusel-next" aria-label="Next photo">&#8250;</button>
+        <div class="carrusel-cuenta" aria-live="polite">Photo 1 of 8</div>
       </div>
     </div>
 
@@ -604,5 +626,17 @@ if ('serviceWorker' in navigator) {
 </script>
 <script src="asistente.js" defer></script>
 <script>try{document.querySelectorAll(".legal-year").forEach(function(e){e.textContent=new Date().getFullYear();});}catch(e){}</script>
+<script>
+(function(){
+  var c=document.getElementById('carrusel-baile'); if(!c) return;
+  var p=c.querySelector('.carrusel-pista'), n=c.querySelectorAll('.carrusel-slide').length, t=c.querySelector('.carrusel-cuenta'), f=c.getAttribute('data-fmt');
+  function i(){return Math.round(p.scrollLeft/p.clientWidth);}
+  function go(d){var k=Math.max(0,Math.min(n-1,i()+d));p.scrollTo({left:k*p.clientWidth,behavior:'smooth'});}
+  c.querySelector('.carrusel-prev').addEventListener('click',function(){go(-1);});
+  c.querySelector('.carrusel-next').addEventListener('click',function(){go(1);});
+  p.addEventListener('scroll',function(){t.textContent=f.replace('{n}',i()+1);});
+  p.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){go(1);e.preventDefault();}if(e.key==='ArrowLeft'){go(-1);e.preventDefault();}});
+})();
+</script>
 </body>
 </html>

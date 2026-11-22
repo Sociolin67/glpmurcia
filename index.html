@@ -242,17 +242,7 @@
   main :is(.lodge-name, .cronica-title, .caract-title, .news-title, .order-name, .doc-title, .resource-title) { line-height: 1.15; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
 
-  /* Aviso temporal Gran Baile Benéfico (19-11-2026) */
-  .aviso-evento { position: relative; z-index: 2; background: rgba(13,27,42,0.96); border-bottom: 1px solid rgba(201,168,76,0.45); padding: 0.7rem 2rem; text-align: center; }
-  .aviso-evento a { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.35rem 0.9rem; text-decoration: none; color: #F7F3EC; font-family: 'Cormorant Garamond', serif; font-size: 1.02rem; line-height: 1.4; }
-  .aviso-evento .aviso-logo { height: 46px; width: auto; background: #fff; padding: 3px 6px; border-radius: 4px; }
-  .aviso-evento .aviso-fecha { font-family: 'Cinzel', serif; font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oro); }
-  .aviso-evento .aviso-mas { font-family: 'Lato', sans-serif; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--oro); border-bottom: 1px solid rgba(201,168,76,0.6); }
-  .aviso-evento a:hover .aviso-mas, .aviso-evento a:focus-visible .aviso-mas { color: #F7F3EC; }
-  .aviso-evento a:focus-visible { outline: 2px solid var(--oro); outline-offset: 4px; }
   @media (max-width: 768px) {
-    .aviso-evento { padding: 0.65rem 1.2rem; }
-    .aviso-evento a { font-size: 0.98rem; }
     nav { padding: 0.9rem 1.4rem; }
     .nav-title { display: none; }
     .nav-links { display: none; }
@@ -337,14 +327,6 @@
   </div>
 
   <!-- BIENVENIDA DEL GRAN MAESTRO PROVINCIAL -->
-  <div class="aviso-evento" id="avisoEvento" role="region" aria-label="Aviso del Gran Baile Benéfico">
-    <a href="noticias.html#gran-baile"><img class="aviso-logo" src="heroes-4-patas.png" alt="Logotipo de la asociación Héroes de 4 patas" width="40" height="46"><span class="aviso-fecha">Sábado 21 de noviembre</span><span>Entradas agotadas. Gracias a todos por su entrega con la gala y con la causa de Héroes de 4 patas</span><span class="aviso-mas">Más información →</span></a>
-  </div>
-  <script>
-    /* Se retira sola a partir del domingo 22-nov-2026, 00:00 (hora de Madrid) */
-    (function(){try{var h=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Madrid'}).format(new Date());if(h>='2026-11-22'){var a=document.getElementById('avisoEvento');if(a)a.remove();}}catch(e){}})();
-  </script>
-
 <main id="contenido">
   <section class="welcome-section" aria-labelledby="welcome-title">
     <div class="welcome-inner">
@@ -412,7 +394,7 @@
       <li style="display:flex; gap:1rem; align-items:center; padding:0.65rem 0; border-bottom:1px solid rgba(201,168,76,0.12);">
         <span style="font-family:'Cinzel',serif; font-size:0.72rem; letter-spacing:0.1em; color:var(--oro-texto); white-space:nowrap;">21 Nov 2026</span>
         <span style="font-size:0.66rem; font-family:'Cinzel',serif; letter-spacing:0.08em; text-transform:uppercase; color:var(--oro-texto); background:rgba(201,168,76,0.1); border:1px solid rgba(201,168,76,0.25); padding:0.1rem 0.45rem; white-space:nowrap;">Provincia</span>
-        <a href="noticias.html#gran-baile" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Gran Baile Benéfico de la Gran Logia Provincial de Murcia — Hotel Thalasia, 21 noviembre 2026</a>
+        <a href="noticias.html#gran-baile" style="font-size:0.85rem; font-weight:300; color:#2E3D4F; text-decoration:none; line-height:1.4;">Gran Baile Benéfico de la Gran Logia Provincial de Murcia a favor de Héroes de 4 patas</a>
       </li>
     </ul>
     <!-- HISTÓRICO -->

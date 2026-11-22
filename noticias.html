@@ -267,6 +267,19 @@
   main :is(.lodge-name, .cronica-title, .caract-title, .news-title, .order-name, .doc-title, .resource-title) { line-height: 1.15; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
 
+  .logo-asociacion { display: block; width: 150px; margin: 1.2rem 0 0.4rem; }
+  .logo-asociacion img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid rgba(201,168,76,0.4); padding: 8px 12px; border-radius: 4px; }
+  .logo-asociacion:focus-visible { outline: 2px solid var(--oro-texto); outline-offset: 3px; }
+  /* Carrusel de fotos de la noticia del Gran Baile (22-11-2026) */
+  .carrusel { position: relative; margin-top: 1.6rem; }
+  .carrusel-pista { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: thin; border-radius: 6px; }
+  .carrusel-slide { flex: 0 0 100%; scroll-snap-align: center; margin: 0; }
+  .carrusel-slide img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+  .carrusel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--oro); background: rgba(13,27,42,0.82); color: var(--oro); font-size: 1.6rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .carrusel-btn:hover, .carrusel-btn:focus-visible { background: #0D1B2A; color: #F7F3EC; outline: 2px solid var(--oro); outline-offset: 2px; }
+  .carrusel-prev { left: 0.6rem; }
+  .carrusel-next { right: 0.6rem; }
+  .carrusel-cuenta { text-align: center; margin-top: 0.5rem; font-family: 'Cinzel', serif; font-size: 0.72rem; letter-spacing: 0.12em; color: var(--oro-texto); }
   @media (max-width: 768px) {
     nav { padding: 1rem 1.4rem; }
     .nav-links { display: none; }
@@ -372,17 +385,26 @@
         <span class="news-tag">Provincia</span>
       </div>
       <h2 class="news-title">Gran Baile Benéfico de la Gran Logia Provincial de Murcia</h2>
-      <div class="news-body">
-        <p>Por invitación del Gran Maestro Provincial de Murcia, la Gran Logia Provincial celebrará el <strong>sábado 21 de noviembre de 2026</strong> su <strong>Gran Baile Benéfico</strong> en el <strong>Hotel Thalasia</strong>, San Pedro del Pinatar, a partir de las <strong>19:00 horas</strong>. La velada contará con cena de gala, música en vivo a cargo de <strong>NOVA STONE</strong>, baile y sorteo benéfico. Se requiere vestimenta elegante.</p>
+<div class="news-body">
+        <p>La Gran Logia Provincial celebró el <strong>sábado 21 de noviembre de 2026</strong>, por invitación del Gran Maestro Provincial de Murcia, su <strong>Gran Baile Benéfico</strong> en el <strong>Hotel Thalasia</strong>, San Pedro del Pinatar. Más de sesenta hermanos y personas simpatizantes con la causa compartieron una velada con cena de gala, música en vivo a cargo de <strong>NOVA STONE</strong>, baile y sorteo benéfico.</p>
 
-        <p><strong>Entradas agotadas.</strong> La convocatoria ha sido un éxito: <strong>más de sesenta personas</strong> asistirán a la gala. Gracias a todos por su entrega. Los fondos recaudados se destinarán a la asociación <strong>Héroes de 4 patas</strong>, beneficiaria de la gala de este año. <a href="https://www.heroesde4patas.org/" target="_blank" rel="noopener" style="color:var(--oro-texto);">Conozca a la asociación</a>.</p>
-
-        <p><strong>Menú de gala:</strong> Calamares crujientes con mayonesa de ajo y jamón de bellota ibérico · Ravioli de gamba, salsa de espinacas y espuma de parmesano · Lubina al horno con fondo de marisco y pil pil de mejillones (opción: pollo relleno de chistorra, queso y espárragos con patata asada) · Tarta de chocolate y naranja con helado de toffee o coulant de chocolate y vainilla con helado de nata · Café, infusiones y petit fours · Vinos Ramón Bilbao (blanco y tinto). Disponible <strong>opción vegetariana</strong>.</p>
-
-        <p><strong>Oferta hotelera:</strong> El Hotel Thalasia ofrece a los asistentes un <strong>20% de descuento</strong> en alojamiento, late check-out hasta las 14:00 h y acceso gratuito al spa. Reservas indicando el código <strong>GRANLOGIA</strong> a <a href="mailto:comercial@thalasia.com" style="color:var(--oro-texto);">comercial@thalasia.com</a> (att. Srta. Estela).</p>
+        <p>Los fondos recaudados permitirán donar <strong>1.200 euros</strong> a la asociación <strong>Héroes de 4 patas</strong>, beneficiaria de la gala de este año. La Provincia agradece la gran participación de hermanos y simpatizantes: su entrega hizo posible esta velada solidaria. <a href="https://www.heroesde4patas.org/" target="_blank" rel="noopener" style="color:var(--oro-texto);">Conozca a la asociación</a>.</p>
+        <a class="logo-asociacion" href="https://www.heroesde4patas.org/" target="_blank" rel="noopener" aria-label="Web de la asociación Héroes de 4 patas"><img src="heroes-4-patas.png" alt="Logotipo de la asociación Héroes de 4 patas" width="150" height="173" loading="lazy" decoding="async"></a>
       </div>
-      <div class="news-gallery" style="grid-template-columns: 1fr;">
-        <img src="baile-montaje-es.jpg" alt="Gran Baile Benéfico, 21 de noviembre de 2026: entradas agotadas, a beneficio de la asociación Héroes de 4 patas" width="1200" height="630" style="max-width: 720px; width: 100%; height: auto; display: block; border-radius: 6px; margin: 0 auto;" loading="lazy">
+      <div class="carrusel" id="carrusel-baile" role="region" aria-roledescription="carousel" aria-label="Fotografías del Gran Baile Benéfico" data-fmt="Foto {n} de 8">
+        <div class="carrusel-pista" tabindex="0">
+          <figure class="carrusel-slide"><img src="gala-baile-1.jpg" alt="Hermanos y simpatizantes en la cena de gala del Gran Baile Benéfico (foto 1 de 8)" width="1600" height="1200"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-2.jpg" alt="Hermanos y simpatizantes en la cena de gala del Gran Baile Benéfico (foto 2 de 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-3.jpg" alt="Hermanos y simpatizantes en la cena de gala del Gran Baile Benéfico (foto 3 de 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-4.jpg" alt="Hermanos y simpatizantes en la cena de gala del Gran Baile Benéfico (foto 4 de 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-5.jpg" alt="Hermanos y simpatizantes en la cena de gala del Gran Baile Benéfico (foto 5 de 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-6.jpg" alt="Hermanos y simpatizantes en la cena de gala del Gran Baile Benéfico (foto 6 de 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-7.jpg" alt="Hermanos y simpatizantes en la cena de gala del Gran Baile Benéfico (foto 7 de 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+          <figure class="carrusel-slide"><img src="gala-baile-8.jpg" alt="Hermanos y simpatizantes en la cena de gala del Gran Baile Benéfico (foto 8 de 8)" width="1600" height="1200" loading="lazy" decoding="async"></figure>
+        </div>
+        <button type="button" class="carrusel-btn carrusel-prev" aria-label="Foto anterior">&#8249;</button>
+        <button type="button" class="carrusel-btn carrusel-next" aria-label="Foto siguiente">&#8250;</button>
+        <div class="carrusel-cuenta" aria-live="polite">Foto 1 de 8</div>
       </div>
     </div>
 
@@ -604,5 +626,17 @@ if ('serviceWorker' in navigator) {
 </script>
 <script src="asistente.js" defer></script>
 <script>try{document.querySelectorAll(".legal-year").forEach(function(e){e.textContent=new Date().getFullYear();});}catch(e){}</script>
+<script>
+(function(){
+  var c=document.getElementById('carrusel-baile'); if(!c) return;
+  var p=c.querySelector('.carrusel-pista'), n=c.querySelectorAll('.carrusel-slide').length, t=c.querySelector('.carrusel-cuenta'), f=c.getAttribute('data-fmt');
+  function i(){return Math.round(p.scrollLeft/p.clientWidth);}
+  function go(d){var k=Math.max(0,Math.min(n-1,i()+d));p.scrollTo({left:k*p.clientWidth,behavior:'smooth'});}
+  c.querySelector('.carrusel-prev').addEventListener('click',function(){go(-1);});
+  c.querySelector('.carrusel-next').addEventListener('click',function(){go(1);});
+  p.addEventListener('scroll',function(){t.textContent=f.replace('{n}',i()+1);});
+  p.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){go(1);e.preventDefault();}if(e.key==='ArrowLeft'){go(-1);e.preventDefault();}});
+})();
+</script>
 </body>
 </html>
