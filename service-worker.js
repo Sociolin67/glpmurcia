@@ -1,6 +1,6 @@
 // Service Worker — GLP Murcia PWA (v2)
 // Cambie CACHE_NAME (v3, v4…) cada vez que quiera forzar la renovación de la copia offline.
-const CACHE_NAME = 'glpmurcia-v22';
+const CACHE_NAME = 'glpmurcia-v23';
 const ASSETS = [
   '/',
   '/index.html',
