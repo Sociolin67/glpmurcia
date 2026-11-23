@@ -285,8 +285,10 @@
   main :is([class*="eyebrow"], [style*="text-align:center"] > p) { max-width: none; }
   main :is(.lodge-name, .cronica-title, .caract-title, .news-title, .order-name, .doc-title, .resource-title) { line-height: 1.15; }
   /* Logotipo de la asociación en la cronología (23-11-2026) */
-  .timeline-logo { display: block; width: 120px; margin: 0 0 0.9rem; }
+  .timeline-logo { display: block; width: 120px; margin: 0.2rem 0 0.9rem; }
   .timeline-logo img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid rgba(201,168,76,0.4); padding: 8px 12px; border-radius: 4px; }
+  .timeline-logos { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: flex-start; margin: 0.2rem 0 0.9rem; }
+  .timeline-logos .timeline-logo { margin: 0; }
   .timeline-body a { color: var(--oro-texto); text-decoration: underline; }
   .timeline-logo:focus-visible { outline: 2px solid var(--oro-texto); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
@@ -458,8 +460,8 @@
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <a class="timeline-logo" href="https://www.heroesde4patas.org/" target="_blank" rel="noopener" aria-label="Website of the Héroes de 4 patas association"><img src="heroes-4-patas.png" alt="Logo of the Héroes de 4 patas association" width="150" height="173" loading="lazy" decoding="async"></a>
         <p class="timeline-date">November 2026</p>
+        <a class="timeline-logo" href="https://www.heroesde4patas.org/" target="_blank" rel="noopener" aria-label="Website of the Héroes de 4 patas association"><img src="heroes-4-patas.png" alt="Logo of the Héroes de 4 patas association" width="150" height="173" loading="lazy" decoding="async"></a>
         <h3 class="timeline-title">Grand Charity Ball 2026: €1,200 for Héroes de 4 patas</h3>
         <p class="timeline-body">The Provincial Grand Lodge of Murcia donated the <strong>€1,200</strong> raised at its Grand Charity Ball, held on 21 November at the Hotel Thalasia, to <strong><a href="https://www.heroesde4patas.org/" target="_blank" rel="noopener">Héroes de 4 patas</a></strong>, a non-profit association that seeks homes for retired working dogs. The evening brought together nearly a hundred people, brethren and their guests.</p>
       </div>
@@ -467,6 +469,7 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <p class="timeline-date">July 2026</p>
+        <span class="timeline-logo"><img src="logo-glp-andalucia.jpg" alt="Crest of the Provincial Grand Lodge of Andalusia" width="360" height="362" loading="lazy" decoding="async"></span>
         <h3 class="timeline-title">Donation of €500 to the Provincial Grand Lodge of Andalusia Relief Fund</h3>
         <p class="timeline-body">The Provincial Grand Lodge of Murcia donated <strong>€500</strong> to the Provincial Relief Fund established by the <strong>Provincial Grand Lodge of Andalusia</strong> in response to the devastating forest fire that severely affected the municipalities of Bédar, Los Gallardos and surrounding areas in the province of Almería. A further expression of the fraternal and charitable commitment of Murcia's Freemasonry beyond its own provincial boundaries.</p>
       </div>
@@ -474,6 +477,7 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <p class="timeline-date">April 2026</p>
+        <span class="timeline-logo"><img src="logo-fuensocial.png" alt="FUENSOCIAL logo" width="360" height="163" loading="lazy" decoding="async"></span>
         <h3 class="timeline-title">Donation of €500 to FUENSOCIAL</h3>
         <p class="timeline-body">The Provincial Grand Lodge of Murcia donated <strong>€500</strong> to <strong>FUENSOCIAL</strong>, an association supporting people with disabilities or at risk of developing them, and their families, through the Provincial Grand Lodge of Andalusia. A reflection of Murcian Freemasonry's fraternal commitment beyond provincial boundaries.</p>
       </div>
@@ -481,6 +485,7 @@
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <p class="timeline-date">December 2025</p>
+        <span class="timeline-logo"><img src="logo-afacmur.png" alt="AFACMUR logo" width="360" height="116" loading="lazy" decoding="async"></span>
         <h3 class="timeline-title">Provincial Gala: €1,600 for AFACMUR</h3>
         <p class="timeline-body">The Province of Murcia donated the <strong>€1,600</strong> raised at its Provincial Gala to <strong>AFACMUR</strong>, an association dedicated to supporting children, young people and their families throughout the cancer treatment process. The Provincial Grand Master <strong>Luis Alcaina</strong> and Provincial Grand Secretary <strong>Ángel Sánchez</strong> made the presentation in person.</p>
       </div>
@@ -491,6 +496,10 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <p class="timeline-date">March 2023</p>
+          <div class="timeline-logos">
+            <span class="timeline-logo"><img src="logo-mabs.png" alt="MABS Murcia logo, Cancer Support" width="194" height="208" loading="lazy" decoding="async"></span>
+            <span class="timeline-logo"><img src="logo-oblatas.png" alt="Logo of Oblatas del Stmo. Redentor (Proyecto Oblatas)" width="360" height="210" loading="lazy" decoding="async"></span>
+          </div>
           <h3 class="timeline-title">Gala Dinner: €1,000 for MABS Murcia and Proyecto Oblatas</h3>
           <p class="timeline-body">At the Province's Annual Gala Dinner, <strong>€1,000</strong> was raised through a raffle, distributed equally between MABS Murcia and Proyecto Oblatas. The Provincial Grand Master, R.W.Bro. Terence Pierce, personally presented the cheques to representatives of both organisations.</p>
         </div>
@@ -498,6 +507,7 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <p class="timeline-date">2022</p>
+          <span class="timeline-logo"><img src="logo-luz-murcia.png" alt="Logo of Lodge Luz de Murcia No. 91" width="134" height="124" loading="lazy" decoding="async"></span>
           <h3 class="timeline-title">Luz de Murcia No. 91: €1,000 in food to Los Alcázares</h3>
           <p class="timeline-body">Luz de Murcia Lodge donated food items valued at <strong>€1,000</strong> to the social services of Los Alcázares. The donation was received by Javier Pacheco, head of Municipal Social Services, in the presence of lodge members and the Provincial Grand Master.</p>
         </div>
