@@ -284,6 +284,11 @@
   main :is(p, .faq-answer-inner, .constituciones-intro, .ritos-intro, .timeline-body, .visit-notice-text, .cta-text, .page-desc, .order-desc, .info-note-text) { max-width: 56ch; }
   main :is([class*="eyebrow"], [style*="text-align:center"] > p) { max-width: none; }
   main :is(.lodge-name, .cronica-title, .caract-title, .news-title, .order-name, .doc-title, .resource-title) { line-height: 1.15; }
+  /* Logotipo de la asociación en la cronología (23-11-2026) */
+  .timeline-logo { display: block; width: 120px; margin: 0 0 0.9rem; }
+  .timeline-logo img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid rgba(201,168,76,0.4); padding: 8px 12px; border-radius: 4px; }
+  .timeline-body a { color: var(--oro-texto); text-decoration: underline; }
+  .timeline-logo:focus-visible { outline: 2px solid var(--oro-texto); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
 
   @media (max-width: 768px) {
@@ -453,6 +458,14 @@
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
+        <a class="timeline-logo" href="https://www.heroesde4patas.org/" target="_blank" rel="noopener" aria-label="Website of the Héroes de 4 patas association"><img src="heroes-4-patas.png" alt="Logo of the Héroes de 4 patas association" width="150" height="173" loading="lazy" decoding="async"></a>
+        <p class="timeline-date">November 2026</p>
+        <h3 class="timeline-title">Grand Charity Ball 2026: €1,200 for Héroes de 4 patas</h3>
+        <p class="timeline-body">The Provincial Grand Lodge of Murcia donated the <strong>€1,200</strong> raised at its Grand Charity Ball, held on 21 November at the Hotel Thalasia, to <strong><a href="https://www.heroesde4patas.org/" target="_blank" rel="noopener">Héroes de 4 patas</a></strong>, a non-profit association that seeks homes for retired working dogs. The evening brought together nearly a hundred people, brethren and their guests.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
         <p class="timeline-date">July 2026</p>
         <h3 class="timeline-title">Donation of €500 to the Provincial Grand Lodge of Andalusia Relief Fund</h3>
         <p class="timeline-body">The Provincial Grand Lodge of Murcia donated <strong>€500</strong> to the Provincial Relief Fund established by the <strong>Provincial Grand Lodge of Andalusia</strong> in response to the devastating forest fire that severely affected the municipalities of Bédar, Los Gallardos and surrounding areas in the province of Almería. A further expression of the fraternal and charitable commitment of Murcia's Freemasonry beyond its own provincial boundaries.</p>
@@ -472,15 +485,15 @@
         <p class="timeline-body">The Province of Murcia donated the <strong>€1,600</strong> raised at its Provincial Gala to <strong>AFACMUR</strong>, an association dedicated to supporting children, young people and their families throughout the cancer treatment process. The Provincial Grand Master <strong>Luis Alcaina</strong> and Provincial Grand Secretary <strong>Ángel Sánchez</strong> made the presentation in person.</p>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-date">March 2023</p>
-        <h3 class="timeline-title">Gala Dinner: €1,000 for MABS Murcia and Proyecto Oblatas</h3>
-        <p class="timeline-body">At the Province's Annual Gala Dinner, <strong>€1,000</strong> was raised through a raffle, distributed equally between MABS Murcia and Proyecto Oblatas. The Provincial Grand Master, R.W.Bro. Terence Pierce, personally presented the cheques to representatives of both organisations.</p>
-      </div>
-
       <!-- HIDDEN ENTRIES -->
       <div class="timeline-more" id="timeline-more-en" style="display:none;">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">March 2023</p>
+          <h3 class="timeline-title">Gala Dinner: €1,000 for MABS Murcia and Proyecto Oblatas</h3>
+          <p class="timeline-body">At the Province's Annual Gala Dinner, <strong>€1,000</strong> was raised through a raffle, distributed equally between MABS Murcia and Proyecto Oblatas. The Provincial Grand Master, R.W.Bro. Terence Pierce, personally presented the cheques to representatives of both organisations.</p>
+        </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>

@@ -284,6 +284,11 @@
   main :is(p, .faq-answer-inner, .constituciones-intro, .ritos-intro, .timeline-body, .visit-notice-text, .cta-text, .page-desc, .order-desc, .info-note-text) { max-width: 56ch; }
   main :is([class*="eyebrow"], [style*="text-align:center"] > p) { max-width: none; }
   main :is(.lodge-name, .cronica-title, .caract-title, .news-title, .order-name, .doc-title, .resource-title) { line-height: 1.15; }
+  /* Logotipo de la asociación en la cronología (23-11-2026) */
+  .timeline-logo { display: block; width: 120px; margin: 0 0 0.9rem; }
+  .timeline-logo img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid rgba(201,168,76,0.4); padding: 8px 12px; border-radius: 4px; }
+  .timeline-body a { color: var(--oro-texto); text-decoration: underline; }
+  .timeline-logo:focus-visible { outline: 2px solid var(--oro-texto); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; } }
 
   @media (max-width: 768px) {
@@ -453,6 +458,14 @@
 
       <div class="timeline-item">
         <div class="timeline-dot"></div>
+        <a class="timeline-logo" href="https://www.heroesde4patas.org/" target="_blank" rel="noopener" aria-label="Web de la asociación Héroes de 4 patas"><img src="heroes-4-patas.png" alt="Logotipo de la asociación Héroes de 4 patas" width="150" height="173" loading="lazy" decoding="async"></a>
+        <p class="timeline-date">Noviembre 2026</p>
+        <h3 class="timeline-title">Gran Baile Benéfico 2026: 1.200 € para Héroes de 4 patas</h3>
+        <p class="timeline-body">La Gran Logia Provincial de Murcia donó los <strong>1.200&nbsp;€</strong> recaudados en su Gran Baile Benéfico, celebrado el 21 de noviembre en el Hotel Thalasia, a <strong><a href="https://www.heroesde4patas.org/" target="_blank" rel="noopener">Héroes de 4 patas</a></strong>, asociación sin ánimo de lucro que busca un hogar para los perros de trabajo jubilados. La velada reunió a cerca de cien personas, entre hermanos y acompañantes.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
         <p class="timeline-date">Julio 2026</p>
         <h3 class="timeline-title">Donación de 500 € al Fondo de Ayuda de la Gran Logia Provincial de Andalucía</h3>
         <p class="timeline-body">La Gran Logia Provincial de Murcia donó <strong>500 €</strong> al Fondo Provincial de Ayuda impulsado por la <strong>Gran Logia Provincial de Andalucía</strong> en respuesta al devastador incendio forestal que afectó gravemente a los municipios de Bédar, Los Gallardos y pedanías aledañas en la provincia de Almería. Una muestra del compromiso fraternal y solidario de la Masonería murciana más allá de sus fronteras provinciales.</p>
@@ -472,15 +485,15 @@
         <p class="timeline-body">La Provincia de Murcia donó los <strong>1.600 €</strong> recaudados en su Gala Provincial a <strong>AFACMUR</strong>, asociación dedicada al apoyo de niños, jóvenes y sus familias durante el proceso de tratamiento contra el cáncer. El Gran Maestro Provincial <strong>Luis Alcaina</strong> y el Secretario Provincial <strong>Ángel Sánchez</strong> realizaron la entrega en persona.</p>
       </div>
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <p class="timeline-date">Marzo 2023</p>
-        <h3 class="timeline-title">Cena de Gala: 1.000 € para MABS Murcia y Proyecto Oblatas</h3>
-        <p class="timeline-body">En la Cena de Gala Anual de la provincia se recaudaron <strong>1.000 €</strong> mediante una rifa, distribuidos a partes iguales entre MABS Murcia y Proyecto Oblatas. El Gran Maestro Provincial, R.H. Terence Pierce, hizo entrega personal de los cheques a los representantes de ambas organizaciones.</p>
-      </div>
-
       <!-- ENTRADAS OCULTAS -->
       <div class="timeline-more" id="timeline-more-es" style="display:none;">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">Marzo 2023</p>
+          <h3 class="timeline-title">Cena de Gala: 1.000 € para MABS Murcia y Proyecto Oblatas</h3>
+          <p class="timeline-body">En la Cena de Gala Anual de la provincia se recaudaron <strong>1.000 €</strong> mediante una rifa, distribuidos a partes iguales entre MABS Murcia y Proyecto Oblatas. El Gran Maestro Provincial, R.H. Terence Pierce, hizo entrega personal de los cheques a los representantes de ambas organizaciones.</p>
+        </div>
 
         <div class="timeline-item">
           <div class="timeline-dot"></div>
